@@ -28,20 +28,22 @@
 **Type: int**
 
 Set -Xmx JVM parameter. It is used to set the maximum heap size of minecraft.  
+If the value of this property is less than 1, `ArgumentException` will be thrown.  
 _Note: You can't set this property exceeding 1024 in 32bit Java._
 
 ### Session
 
 **Type: MSession**
 
-Set username, uuid, access_token of player. It is used to connect online-mode server or realm server.
+Set username, uuid, access_token of player. It is used to connect to online-mode server or realm server.
 but if you use MSession.GetOfflineSession, you can't connect these servers.
+If the value of this property is null, `ArgumentException` will be thrown. 
 
 ### JavaPath
 
 **Type: string**  _Optional_
 
-Set java path. If this property was empty and call `Cml.CreateProcess`, `CreateProcess` method will set this property to `<Your Game Path>/runtime`, check java existence, and download java if it does not exists.
+Set java path. If this property was empty and call `Cml.CreateProcess`, `CreateProcess` method will set this property to `<Your Game Path>/runtime`, check java existence, and download java if it does not exist.
 
 ### LauncherName
 
@@ -73,7 +75,8 @@ Default JVM Parameter :
 
 **Type: int**  _Optional_
 
-Set the resolution of Minecraft. It works when value of two options is bigger than 0. If one of these option is negative, ArgumentException will be thrown. Old minecraft version doesn't support this option.
+Set the resolution of Minecraft. It works when value of two options is bigger than 0. Old minecraft version doesn't support this option.  
+If one of these option is negative, `ArgumentException` will be thrown. 
 
 ### DockName
 
