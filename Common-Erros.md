@@ -5,7 +5,7 @@ In 32bit OS Envrionment, you can't set MaximumRam(XMX) exceeding 1024
 
 ### Error: could not open jvm.cfg
 Reinstall java.  
-if your launcher use MJava, remove runtime directory(default: %appdata%/.minecraft/runtime) and download java through MJava again.
+if your launcher use MJava, remove runtime directory(default: `<Your Minecraft Path>/runtime`) and download java through MJava again.
 
 # macOS  
 
