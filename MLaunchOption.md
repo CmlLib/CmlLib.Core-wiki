@@ -10,11 +10,17 @@
 
            // Optional Settings
            JavaPath = "javaw.exe",
-           LauncherName = "CmlLauncher",
+           JVMArguments = new string[] { },
+
            ServerIp = "mc.hypixel.net",
-           CustomJavaParameter = "",
+           ServerPort = 25565,
+
            ScreenWidth = 1600,
            ScreenHeight = 900,
+
+           VersionType = "CmlLauncher",
+           GameLauncherName = "CmlLauncher",
+           GameLauncherVersion = "2",
 
            // Only macOS
            DockName = "",
@@ -45,30 +51,50 @@ If the value of this property is null, `ArgumentException` will be thrown.
 
 Set java path. If this property was empty and call `Cml.CreateProcess`, `CreateProcess` method will set this property to `<Your Game Path>/runtime`, check java existence, and download java if it does not exist.
 
-### LauncherName
+### VersionType
 
 **Type: string**  _Optional_
 
-Show LauncherName bottom left of main menu in minecraft. Old minecraft version doesn't support this option.
+Set ${version_type}. Empty value will set ${version_type} to `TypeStr` property of `MProfile` class.       
+VersionType will be shown bottom left of main menu in minecraft. Old minecraft version doesn't support this option.
+
+### GameLauncherName
+
+**Type: string**  _Optional_
+
+Set ${launcher_name}. Empty value will set ${launcher_name} to `minecraft-launcher`, same as default value of mojang launcher.
+
+### GameLauncherVersion
+
+**Type: string**  _Optional_
+
+Set ${launcher_version}. Empty value will set ${launcher_name} to `2`, same as default value of mojang launcher.
 
 ### ServerIp
 
 **Type: string**  _Optional_
 
-Connect to server directly when minecraft loading is done. This option doesn't work in 1.15. It is bug of minecraft.
+Connect to server directly when minecraft loading is done.   
+This option doesn't work in 1.15. It is bug of minecraft.
 
-### CustomJavaParameter
+### ServerPort
 
-**Type: string**  _Optional_
+**Type: int**  _Optional_
 
-Set JVM parameter. If this property is empty, use default JVM parameter.  
+Set server port of `ServerIp` property. default value is 25565.
+
+### JVMArguments
+
+**Type: string[]**  _Optional_
+
+Set JVM parameter. If this property is `null`, use default JVM parameter.  
 Default JVM Parameter : 
 
-    -XX:+UnlockExperimentalVMOptions 
-    -XX:+UseG1GC 
-    -XX:G1NewSizePercent=20 
-    -XX:G1ReservePercent=20 
-    -XX:MaxGCPauseMillis=50 
+    -XX:+UnlockExperimentalVMOptions, 
+    -XX:+UseG1GC, 
+    -XX:G1NewSizePercent=20, 
+    -XX:G1ReservePercent=20, 
+    -XX:MaxGCPauseMillis=50, 
     -XX:G1HeapRegionSize=16M
 
 ### ScreenWidth / ScreenHeight
