@@ -1,3 +1,17 @@
+# Handling Events
+
+CmlLib.Core uses only two event handler, `DownloadFileChangedHandler` and `ProgressChangedEventHandler`.
+[`DownloadFileChangedHandler`](#DownloadFileChangedEventHandler) is used when the **file** being downloaded changes.  
+[`ProgressChangedEventHandler`](https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.progresschangedeventhandler?view=netcore-3.1) is used when the **progress** of the currently downloading file changes.  
+
+# DownloadFileChangedEventHandler
+
+Represents the method that will handle download progress events.  
+`public delegate void DownloadFileChangedHandler(DownloadFileChangedEventArgs e);`
+
+`e` [DownloadFileChangedEventArgs](#DownloadFileChangedEventArgs)  
+The event data
+
 # DownloadFileChangedEventArgs
 
 Represent the download progress data of `MDownloader`
@@ -36,7 +50,7 @@ Indicates game file type.
 ## Fields
 
 ### Runtime
-Java Runtime
+Java Runtime. CMLauncher.CheckJRE() raises `FileChange` event with this type.
 
 ### Library
 Libraries (GAME_DIR/libraries)
