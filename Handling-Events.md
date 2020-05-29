@@ -1,6 +1,6 @@
 # Handling Events
 
-CmlLib.Core uses only two event handler, `DownloadFileChangedHandler` and `ProgressChangedEventHandler`.
+CmlLib.Core uses only two event handler.  
 [`DownloadFileChangedHandler`](#DownloadFileChangedEventHandler) is used when the **file** being downloaded changes.  
 [`ProgressChangedEventHandler`](https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.progresschangedeventhandler?view=netcore-3.1) is used when the **progress** of the currently downloading file changes.  
 
