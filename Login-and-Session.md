@@ -87,6 +87,12 @@ Error message. It is set when `Result` property is not `MLoginResult.Success`. T
 
 ### Methods
 
+#### public bool CheckIsValid()
+Check validation of current instance
+
+#### public static MSession GetOfflineSession(string username)
+Create and return MSession  
+`Username=username`, `AccessToken="access_token"`, `UUID="user_uuid"`
 
 ## MLoginResult
 
