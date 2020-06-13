@@ -6,8 +6,9 @@ CmlLib.Core uses only two event handler.
 
 # DownloadFileChangedEventHandler
 
-Represents the method that will handle download progress events.  
 `public delegate void DownloadFileChangedHandler(DownloadFileChangedEventArgs e);`
+
+Represents the method that will handle download progress events.  
 
 `e` [DownloadFileChangedEventArgs](#DownloadFileChangedEventArgs)  
 The event data
