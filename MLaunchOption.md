@@ -38,14 +38,6 @@
 
 The version you want to launch. If you launch game using CMLauncher, you don't have to set this property. CMLauncher will automatically get version and set this.
 
-### MaximumRamMb
-
-**Type: int**
-
-Set -Xmx JVM parameter. It is used to set the maximum heap size of minecraft.  
-If the value of this property is less than 1, `ArgumentException` will be thrown.  
-_Note: You can't set this property exceeding 1024 in 32bit Java._
-
 ### Session
 
 **Type: MSession**
@@ -60,11 +52,28 @@ If the value of this property is null, `ArgumentException` will be thrown.
 
 Set java path. If this property was empty and call `Cml.CreateProcess`, `CreateProcess` method will set this property to `<Your Game Path>/runtime`, check java existence, and download java if it does not exist.
 
+### MaximumRamMb
+
+**Type: int**  _Optional_
+
+Set -Xmx JVM parameter. It is used to set the maximum heap size of minecraft.  
+If the value of this property is less than 1, `ArgumentException` will be thrown.  
+Default value is 1024. (1 GB)  
+_Note: You can't set this property exceeding 1024 in 32bit Java._
+
+
+### MinimumRamMb
+
+**Type: int**  _Optional_
+
+Set -Xms JVM parameter. It is used to set the minimum heap size of minecraft.  
+
+
 ### VersionType
 
 **Type: string**  _Optional_
 
-Set ${version_type}. Empty value will set ${version_type} to `TypeStr` property of `MProfile` class.       
+Set ${version_type}. Empty value will set ${version_type} to `TypeStr` property of `MVersion` class.       
 VersionType will be shown bottom left of main menu in minecraft. Old minecraft version doesn't support this option.
 
 ### GameLauncherName
