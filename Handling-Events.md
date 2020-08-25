@@ -19,7 +19,7 @@ The event data
 
 Represent the download progress data of `MDownloader`
 
-[Source Code](https://github.com/AlphaBs/CmlLib.Core/blob/master/CmlLib/Core/DownloadFileChangedEventArgs.cs)
+[Source Code](https://github.com/AlphaBs/CmlLib.Core/blob/master/CmlLib/Core/Downloader/DownloadFileChangedEventArgs.cs)
 
 ## Properties
 
