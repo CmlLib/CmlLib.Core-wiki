@@ -5,10 +5,11 @@
        var launchOption = new MLaunchOption()
        {
            // Required Settings
-           MaximumRamMb = 4096,
+           StartVersion = myversion,
            Session = MSession.GetOfflineSession("tester123"),
 
            // Optional Settings
+           MaximumRamMb = 4096,
            JavaPath = "javaw.exe",
            JVMArguments = new string[] { },
 
@@ -30,6 +31,12 @@
        };
 
 ## Properties
+
+### StartVersion
+
+**Type: MVersion**
+
+The version you want to launch. If you launch game using CMLauncher, you don't have to set this property. CMLauncher will automatically get version and set this.
 
 ### MaximumRamMb
 
