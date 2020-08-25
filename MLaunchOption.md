@@ -96,7 +96,7 @@ Set server port of `ServerIp` property. default value is 25565.
 
 **Type: string[]**  _Optional_
 
-Set JVM parameter. If this property is `null`, use default JVM parameter.  
+Set JVM parameter. If this property is `null`, Launcher use default JVM parameter.  
 Default JVM Parameter : 
 
     -XX:+UnlockExperimentalVMOptions, 
