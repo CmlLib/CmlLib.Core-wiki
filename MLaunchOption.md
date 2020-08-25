@@ -22,6 +22,8 @@
            GameLauncherName = "CmlLauncher",
            GameLauncherVersion = "2",
 
+           FullScreen = false,
+
            // Only macOS
            DockName = "",
            DockIcon = "",
@@ -103,6 +105,12 @@ Default JVM Parameter :
 
 Set the resolution of Minecraft. It works when value of two options is bigger than 0. Old minecraft version doesn't support this option.  
 If one of these option is negative, `ArgumentException` will be thrown. 
+
+### FullScreen
+
+**Type: bool** _Optional_
+
+If this property is true, minecraft will turn on FullScreen option. (not permanently) Old minecraft version doesn't support this option.  
 
 ### DockName
 
