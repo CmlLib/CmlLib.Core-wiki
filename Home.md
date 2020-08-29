@@ -12,3 +12,5 @@ Welcome to the CmlLib.Core wiki!
 
 [Launch Options (MLaunchOption)](https://github.com/AlphaBs/CmlLib.Core/wiki/MLaunchOption)
 
+
+[Licenses and Dependency](https://github.com/AlphaBs/CmlLib.Core/wiki/Licesnse-and-Dependency)
