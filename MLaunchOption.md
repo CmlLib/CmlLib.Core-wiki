@@ -36,77 +36,77 @@
 
 **Type: MVersion**
 
-The version you want to launch. If you launch game using CMLauncher, you don't have to set this property. CMLauncher will automatically get version and set this.
+The version you want to launch. If you launch the game using CMLauncher, you don't have to set this property. CMLauncher will automatically get the version and set this.
 
 ### Session
 
 **Type: MSession**
 
-Set username, uuid, access_token of player. It is used to connect to online-mode server or realm server.
-but if you use MSession.GetOfflineSession, you can't connect these servers.
-If the value of this property is null, `ArgumentException` will be thrown. 
+Set the username, uuid, and access_token of the player. It is used to connect to an online-mode server or a realm.
+However, if you use MSession.GetOfflineSession, you can't connect these servers.
+If the value of this property is null, an `ArgumentException` will be thrown.
 
 ### JavaPath
 
 **Type: string**  _Optional_
 
-Set java path. If this property was empty and call `Cml.CreateProcess`, `CreateProcess` method will set this property to `<Your Game Path>/runtime`, check java existence, and download java if it does not exist.
+Sets the java path. If this property is empty and you call `Cml.CreateProcess`, the `CreateProcess` method will set this property to `<Your Game Path>/runtime`, makes sure Java is installed, and downloads Java if it doesn't exist.
 
 ### MaximumRamMb
 
 **Type: int**  _Optional_
 
-Set -Xmx JVM parameter. It is used to set the maximum heap size of minecraft.  
+Sets the `-Xmx` JVM parameter. It is used to set the maximum heap size of Minecraft.  
 If the value of this property is less than 1, `ArgumentException` will be thrown.  
-Default value is 1024. (1 GB)  
-_Note: You can't set this property exceeding 1024 in 32bit Java._
+The default value is 1024. (1 GB)
+_Note: You can't set this property to any number higher than 1024 when using 32bit Java._
 
 
 ### MinimumRamMb
 
 **Type: int**  _Optional_
 
-Set -Xms JVM parameter. It is used to set the minimum heap size of minecraft.  
+Sets the `-Xms` JVM parameter. It is used to set the minimum heap size of Minecraft.  
 
 
 ### VersionType
 
 **Type: string**  _Optional_
 
-Set ${version_type}. Empty value will set ${version_type} to `TypeStr` property of `MVersion` class.       
+Sets ${version_type}. An empty value will set ${version_type} to the `TypeStr` property of the `MVersion` class.       
 VersionType will be shown bottom left of main menu in minecraft. Old minecraft version doesn't support this option.
 
 ### GameLauncherName
 
 **Type: string**  _Optional_
 
-Set ${launcher_name}. Empty value will set ${launcher_name} to `minecraft-launcher`, same as default value of mojang launcher.
+Sets ${launcher_name}. An empty value will set ${launcher_name} to `minecraft-launcher`, which is the same as the default value of the Mojang launcher.
 
 ### GameLauncherVersion
 
 **Type: string**  _Optional_
 
-Set ${launcher_version}. Empty value will set ${launcher_name} to `2`, same as default value of mojang launcher.
+Sets ${launcher_version}. An empty value will set ${launcher_name} to `2`, which is the same as the default value of the Mojang launcher.
 
 ### ServerIp
 
 **Type: string**  _Optional_
 
-Connect to server directly when minecraft loading is done.   
-This option doesn't work in 1.15. It is bug of minecraft.
+Connecting to a server directly when Minecraft is loading is done.   
+This option doesn't work in 1.15. It's a Minecraft bug.
 
 ### ServerPort
 
 **Type: int**  _Optional_
 
-Set server port of `ServerIp` property. default value is 25565.
+Sets the server port of the `ServerIp` property. The default value is 25565.
 
 ### JVMArguments
 
 **Type: string[]**  _Optional_
 
-Set JVM parameter. If this property is `null`, Launcher use default JVM parameter.  
-Default JVM Parameter : 
+Sets the JVM parameters. If this property is `null`, the launcher uses the default JVM parameters.  
+Default JVM parameters:
 
     -XX:+UnlockExperimentalVMOptions, 
     -XX:+UseG1GC, 
@@ -119,23 +119,23 @@ Default JVM Parameter :
 
 **Type: int**  _Optional_
 
-Set the resolution of Minecraft. It works when value of two options is bigger than 0. Old minecraft version doesn't support this option.  
-If one of these option is negative, `ArgumentException` will be thrown. 
+Sets the resolution of Minecraft. It works when value of the two options is bigger than 0. Old Minecraft versions don't support these options.  
+If one of these options is negative, `ArgumentException` will be thrown.
 
 ### FullScreen
 
 **Type: bool** _Optional_
 
-If this property is true, minecraft will turn on FullScreen option. (not permanently) Old minecraft version doesn't support this option.  
+If this property is true, Minecraft will be fullscreen (not permanently). Old Minecraft versions don't support this option.  
 
 ### DockName
 
 **Type: string** _Optional_
 
-Set dock name of minecraft. It works only in macOS. In some macOS version, you must set this option. [More Infomation](https://github.com/AlphaBs/CmlLib.Core/wiki/Common-Erros)
+Sets the macOS dock name of Minecraft. In some macOS versions, you must set this option. [More Infomation](https://github.com/AlphaBs/CmlLib.Core/wiki/Common-Errors)
 
 ### DockIcon
 
 **Type: string** _Optional_
 
-Set dock icon of minecraft. It should be an absolute file path which of size is `256x256` and `icns` format.
+Sets the macOS dock icon of minecraft. It should be an absolute file path to an image that has the dimensions `256x256` and is of the `icns` format.
