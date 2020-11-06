@@ -12,9 +12,11 @@ See [ChangeLog.cs](https://github.com/AlphaBs/CmlLib.Core/blob/master/CmlLibWinF
 
 ## Example
 
-    string[] versions = Changelogs.GetAvailableVersion(); // returns ["1.13", "1.14.2", etc...]
-    string changelogUrl = Changelogs.GetChangelogUrl("1.13"); // returns "https://feedback.minecraft.net/___"
-    string html = Changelogs.GetChangelogHtml("1.13"); // returns the HTML code of the 1.13 changelog
+```csharp
+string[] versions = Changelogs.GetAvailableVersion(); // returns ["1.13", "1.14.2", etc...]
+string changelogUrl = Changelogs.GetChangelogUrl("1.13"); // returns "https://feedback.minecraft.net/___"
+string html = Changelogs.GetChangelogHtml("1.13"); // returns the HTML code of the 1.13 changelog
+```
 
 ## Methods
 
