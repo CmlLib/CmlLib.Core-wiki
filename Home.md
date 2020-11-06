@@ -1,16 +1,15 @@
 Welcome to the CmlLib.Core wiki!
 
-### [Sample Codes](https://github.com/AlphaBs/CmlLib.Core/wiki/Sample-Code)
+### [Sample Code](https://github.com/AlphaBs/CmlLib.Core/wiki/Sample-Code)
 
-[Common Error](https://github.com/AlphaBs/CmlLib.Core/wiki/Common-Errors)
+[Common Errors](https://github.com/AlphaBs/CmlLib.Core/wiki/Common-Errors)
 
 [Get Minecraft Changelogs](https://github.com/AlphaBs/CmlLib.Core/wiki/Get-Minecraft-Changelogs)
 
 [Handling Events](https://github.com/AlphaBs/CmlLib.Core/wiki/Handling-Events)
 
-[Login and Session](https://github.com/AlphaBs/CmlLib.Core/wiki/Login-and-Session)    (Not completed)
+[Login and Sessions](https://github.com/AlphaBs/CmlLib.Core/wiki/Login-and-Sessions)    (Not completed)
 
 [Launch Options (MLaunchOption)](https://github.com/AlphaBs/CmlLib.Core/wiki/MLaunchOption)
 
-
-[Licenses and Dependency](https://github.com/AlphaBs/CmlLib.Core/wiki/Licesnse-and-Dependency)
+[Licenses and Dependencies](https://github.com/AlphaBs/CmlLib.Core/wiki/Licensse-and-Dependencies)

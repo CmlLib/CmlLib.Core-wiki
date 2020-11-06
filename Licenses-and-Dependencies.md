@@ -1,4 +1,4 @@
-## Licesnse and Dependency
+## Licenses and Dependencies
 
 CmlLib.Core   
 https://github.com/AlphaBs/CmlLib.Core

@@ -1,42 +1,42 @@
-# All
+# Common Errors
 
 ### Could not create Java Virtual Machine
-In 32bit OS Envrionment, you can't set MaximumRam(XMX) exceeding 1024
+In a 32 bit OS Environment, you can't set MaximumRam(XMX) higher than 1024.
 
 ### Error: could not open jvm.cfg
-Reinstall java.  
-if your launcher use MJava, remove runtime directory(default: `<Your Minecraft Path>/runtime`) and download java through MJava again.
+Reinstall Java.  
+if your launcher uses MJava, remove the runtime directory (default: `<Your Minecraft Path>/runtime`) and download Java through MJava again.
 
-# macOS  
+# macOS
 
 ### DockName
 You have to set DockName and DockIcon in LaunchOption.  
-If DockName is empty, you can't click or access to minecraft window.
+If DockName is empty, you can't click or access the Minecraft window.
 
-example:  
+Example:
 
-     var launchOption = new MLaunchOption
-     {
-         MaximumRamMb = 1024,
-         Session = session, 
-         DockName = "Minecraft"
-     };
+```csharp
+var launchOption = new MLaunchOption
+{
+    MaximumRamMb = 1024,
+    Session = session, 
+    DockName = "Minecraft"
+};
+```
 
-On macOS Catalina, Minecraft works normally without above option. but some macOS version doesn't work well.
+On macOS Catalina, Minecraft works normally without the above options. but some macOS versions don't work well.
 
 ### JRE
-Old minecraft version doesn't support OpenJDK 11.  
+Old Minecraft versions don't support OpenJDK 11.
 
-# Linux  
-Use Java 8. Old minecraft version doesn't support OpenJDK 11.
+# Linux
+Use Java 8. Old Minecraft versions don't support OpenJDK 11.
 
-    sudo apt-get update
-    sudo apt-get install openjdk-8-jre
+To install Java 8, type the following lines in terminal:
 
-and 
+```
+sudo apt-get update
+sudo apt-get install openjdk-8-jre
+```
 
-    java -version
-
-It should return
-
-    java version "1.8.0_~~~"
+To make sure it worked, type `java -version`. It should return `java version "1.8.0_~~~"`.
