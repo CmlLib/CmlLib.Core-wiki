@@ -15,12 +15,14 @@ If DockName is empty, you can't click or access the Minecraft window.
 
 Example:
 
-     var launchOption = new MLaunchOption
-     {
-         MaximumRamMb = 1024,
-         Session = session, 
-         DockName = "Minecraft"
-     };
+```csharp
+var launchOption = new MLaunchOption
+{
+    MaximumRamMb = 1024,
+    Session = session, 
+    DockName = "Minecraft"
+};
+```
 
 On macOS Catalina, Minecraft works normally without the above options. but some macOS versions don't work well.
 
@@ -32,7 +34,9 @@ Use Java 8. Old Minecraft versions don't support OpenJDK 11.
 
 To install Java 8, type the following lines in terminal:
 
-    sudo apt-get update
-    sudo apt-get install openjdk-8-jre
+```
+sudo apt-get update
+sudo apt-get install openjdk-8-jre
+```
 
 To make sure it worked, type `java -version`. It should return `java version "1.8.0_~~~"`.
