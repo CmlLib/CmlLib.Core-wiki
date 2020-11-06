@@ -11,41 +11,43 @@ You have to set the [MLaunchOption.Session](https://github.com/AlphaBs/CmlLib.Co
 
 [PremiumLogin() in CmlLibCoreSample](https://github.com/AlphaBs/CmlLib.Core/blob/master/CmlLibCoreSample/Program.cs)
 
-            MSession session;
-            var login = new MLogin();
+```csharp
+MSession session;
+var login = new MLogin();
 
-            // TryAutoLogin() reads the login cache file and check validation.
-            // If the cached session is invalid, it refreshes the session automatically.
-            // Refreshing the session doesn't always succeed, so you have to handle this.
-            Console.WriteLine("Attempting to automatically log in.");
-            session = login.TryAutoLogin();
+// TryAutoLogin() reads the login cache file and check validation.
+// If the cached session is invalid, it refreshes the session automatically.
+// Refreshing the session doesn't always succeed, so you have to handle this.
+Console.WriteLine("Attempting to automatically log in.");
+session = login.TryAutoLogin();
 
-            if (session.Result != MLoginResult.Success) // if cached session is invalid and failed to refresh token
-            {
-                Console.WriteLine("Auto login failed: {0}", session.Result.ToString());
+if (session.Result != MLoginResult.Success) // if cached session is invalid and failed to refresh token
+{
+    Console.WriteLine("Auto login failed: {0}", session.Result.ToString());
 
-                Console.WriteLine("Input your Mojang email: ");
-                var email = Console.ReadLine();
-                Console.WriteLine("Input your Mojang password: ");
-                var pw = Console.ReadLine();
+    Console.WriteLine("Input your Mojang email: ");
+    var email = Console.ReadLine();
+    Console.WriteLine("Input your Mojang password: ");
+    var pw = Console.ReadLine();
 
-                session = login.Authenticate(email, pw);
+    session = login.Authenticate(email, pw);
 
-                if (session.Result != MLoginResult.Success)
-                {
-                    // session.Message contains a detailed error message. It can be null or an empty string.
-                    Console.WriteLine("failed to login. {0} : {1}", session.Result.ToString(), session.Message);
-                    Console.ReadLine();
-                    Environment.Exit(0);
-                    return null;
-                }
-            }
+    if (session.Result != MLoginResult.Success)
+    {
+        // session.Message contains a detailed error message. It can be null or an empty string.
+        Console.WriteLine("failed to login. {0} : {1}", session.Result.ToString(), session.Message);
+        Console.ReadLine();
+        Environment.Exit(0);
+        return null;
+    }
+}
 
-            // var launchOption = new MLaunchOption()
-            // {
-            //      Session = session,
-            //      // launch options
-            // };
+// var launchOption = new MLaunchOption()
+// {
+//      Session = session,
+//      // launch options
+// };
+```
 
 ## MSession
 
