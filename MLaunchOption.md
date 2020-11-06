@@ -2,33 +2,35 @@
 
 ## Example
 
-       var launchOption = new MLaunchOption()
-       {
-           // Required Settings
-           StartVersion = myversion,
-           Session = MSession.GetOfflineSession("tester123"),
+```csharp
+var launchOption = new MLaunchOption()
+{
+    // Required Settings
+    StartVersion = myversion,
+    Session = MSession.GetOfflineSession("tester123"),
 
-           // Optional Settings
-           MaximumRamMb = 4096,
-           JavaPath = "javaw.exe",
-           JVMArguments = new string[] { },
+    // Optional Settings
+    MaximumRamMb = 4096,
+    JavaPath = "javaw.exe",
+    JVMArguments = new string[] { },
 
-           ServerIp = "mc.hypixel.net",
-           ServerPort = 25565,
+    ServerIp = "mc.hypixel.net",
+    ServerPort = 25565,
 
-           ScreenWidth = 1600,
-           ScreenHeight = 900,
+    ScreenWidth = 1600,
+    ScreenHeight = 900,
 
-           VersionType = "CmlLauncher",
-           GameLauncherName = "CmlLauncher",
-           GameLauncherVersion = "2",
+    VersionType = "CmlLauncher",
+    GameLauncherName = "CmlLauncher",
+    GameLauncherVersion = "2",
 
-           FullScreen = false,
+    FullScreen = false,
 
-           // Only macOS
-           DockName = "",
-           DockIcon = "",
-       };
+    // Only macOS
+    DockName = "",
+    DockIcon = "",
+};
+```
 
 ## Properties
 
