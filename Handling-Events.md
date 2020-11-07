@@ -4,14 +4,13 @@
 
 CmlLib.Core uses only two event handlers.  
 [`DownloadFileChangedHandler`](#DownloadFileChangedEventHandler) is used when the **file** being downloaded changes.  
-[`ProgressChangedEventHandler`](https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.progresschangedeventhandler?view=netcore-3.1) is used when the **progress** of the file currently being downloaded changes.  
+[`ProgressChangedEventHandler`](https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.progresschangedeventhandler?view=netcore-3.1) is used when the **progress** of the file currently being downloaded changes.
 
 # DownloadFileChangedEventHandler
 
 `public delegate void DownloadFileChangedHandler(DownloadFileChangedEventArgs e);`
 
-Represents the method that will handle download progress events.  
-
+Represents the method that will handle download progress events.
 
 [DownloadFileChangedEventArgs](#DownloadFileChangedEventArgs) contains the download progress.
 
@@ -24,25 +23,33 @@ Represents the download progress data of `MDownloader`.
 ## Properties
 
 ### FileKind
-*Type: [MFile](#MFile)*
+
+_Type: [MFile](#MFile)_
 
 Specifies the type of file currently being downloaded.
 
 ### FileName
-*Type: string*
+
+_Type: string_
 
 The name of the file currently being downloaded.  
-*Note: if FileKind is equal to MFile.Resource, this property would be an empty string.*
+_Note: if FileKind is equal to MFile.Resource, this property would be an empty string._
 
 ### TotalFileCount;
-*Type: int*
+
+_Type: int_
 
 The total number of files to download.
 
 ### ProgressedFileCount;
-*Type: int*
+
+_Type: int_
 
 The number of files already downloaded.
+
+# ProgressChangedEventHandler
+
+[docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.progresschangedeventhandler?view=netcore-3.1)
 
 # MFile
 
@@ -53,14 +60,17 @@ Indicates the game file type.
 ## Fields
 
 ### Runtime
-Java runtime. CMLauncher.CheckJRE() raises `FileChange` event with this type.
+
+Java runtime. `CMLauncher.CheckJRE()` raises `FileChange` event with this type.
 
 ### Library
+
 Libraries (GAME_DIR/libraries)
 
 ### Resource
+
 Resources and assets (GAME_DIR/assets)
 
 ### Minecraft
-Minecraft jar file (GAME_DIR/versions)
 
+Minecraft jar file (GAME_DIR/versions)
