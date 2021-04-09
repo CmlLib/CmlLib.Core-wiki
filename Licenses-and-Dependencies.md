@@ -1,7 +1,7 @@
 ## Licenses and Dependencies
 
 CmlLib.Core   
-https://github.com/AlphaBs/CmlLib.Core
+https://github.com/CmlLib/CmlLib.Core
 
 ```
 MIT License

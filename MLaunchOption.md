@@ -144,7 +144,7 @@ Some forge versions also don't support this option.
 
 **Type: string** _Optional_
 
-Sets the macOS dock name of Minecraft. In some macOS versions, you must set this option. [More Infomation](https://github.com/AlphaBs/CmlLib.Core/wiki/Common-Errors)
+Sets the macOS dock name of Minecraft. In some macOS versions, you must set this option. [More Infomation](https://github.com/CmlLib/CmlLib.Core/wiki/Common-Errors)
 
 ### DockIcon
 

@@ -8,7 +8,7 @@ Get minecraft changelogs.
 
 ## Sample code
 
-See [ChangeLog.cs](https://github.com/AlphaBs/CmlLib.Core/blob/master/CmlLibWinFormSample/ChangeLog.cs) in the CmlLibWinFormSample project.
+See [ChangeLog.cs](https://github.com/CmlLib/CmlLib.Core/blob/master/CmlLibWinFormSample/ChangeLog.cs) in the CmlLibWinFormSample project.
 
 ## Example
 

@@ -7,16 +7,16 @@ The `MLogin` class provides methods to communicate with the Mojang auth server.
 The `MLoginResult` class represents login result. `MLogin` methods return this object.  
 The `MSession` class represents Minecraft session data, containing `Username`, `UUID`, and `AccessToken`.
 
-You have to set the [MLaunchOption.Session](https://github.com/AlphaBs/CmlLib.Core/wiki/MLaunchOption#session) property to an `MSession` instance.
+You have to set the [MLaunchOption.Session](https://github.com/CmlLib/CmlLib.Core/wiki/MLaunchOption#session) property to an `MSession` instance.
 
 _Note: [this document](https://wiki.vg/Authentication) will help you to understand basic process of minecraft login._
 
 ## Example
 
 The basic login process is:  
-![img](https://github.com/AlphaBs/CmlLib.Core-wiki/blob/master/img/login.png?raw=true)
+![img](https://github.com/CmlLib/CmlLib.Core-wiki/blob/master/img/login.png?raw=true)
 
-[PremiumLogin() in CmlLibCoreSample](https://github.com/AlphaBs/CmlLib.Core/blob/master/CmlLibCoreSample/Program.cs)
+[PremiumLogin() in CmlLibCoreSample](https://github.com/CmlLib/CmlLib.Core/blob/master/CmlLibCoreSample/Program.cs)
 
 ```csharp
 var login = new MLogin();

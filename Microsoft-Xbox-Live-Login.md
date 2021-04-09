@@ -2,9 +2,9 @@
 
 ## Sample Project
 
-[XboxLoginTest project](https://github.com/AlphaBs/CmlLib.Core/tree/master/XboxLoginTest)
+[XboxLoginTest project](https://github.com/CmlLib/CmlLib.Core/tree/master/XboxLoginTest)
 
-![img](https://github.com/AlphaBs/CmlLib.Core-wiki/blob/master/img/XboxLoginTest.png?raw=true)
+![img](https://github.com/CmlLib/CmlLib.Core-wiki/blob/master/img/XboxLoginTest.png?raw=true)
 
 This project use additional library. [WebView2](https://docs.microsoft.com/en-us/microsoft-edge/webview2/) and [XboxAuthNet](https://github.com/AlphaBs/XboxAuthNet). You can get these libraries at nuget.  
 But you don't have to download these libraries, because visual studio will install these library automatically when you build the project.
@@ -32,7 +32,7 @@ If you suceed to get `uhs` and `xsts_token`, follow next step to get minecraft s
 
 ## Minecraft Login Process
 
-1. Call [LoginWithXbox](https://github.com/AlphaBs/CmlLib.Core/wiki/Microsoft-Xbox-Live-Login#LoginWithXbox) method using `uhs` and `xsts_token`. this method will return minecraft access token.
+1. Call [LoginWithXbox](https://github.com/CmlLib/CmlLib.Core/wiki/Microsoft-Xbox-Live-Login#LoginWithXbox) method using `uhs` and `xsts_token`. this method will return minecraft access token.
 2. Call `CheckGameOwnership` using minecraft access token to check whether the user owns minecraft.
 3. Call `GetProfileUsingToken`. using minecraft access token. this method will return `UUID` and `Username` of the user.
 4. Create `MSession` instance using minecraft access token, `UUID`, and `Username`. Use this session when you launch the game.
@@ -48,7 +48,7 @@ If you suceed to get `uhs` and `xsts_token`, follow next step to get minecraft s
 #### LoginWithXbox
 
 `public AuthenticationResponse LoginWithXbox(string uhs, string xstsToken)`  
-Return [AuthenticationResponse](https://github.com/AlphaBs/CmlLib.Core/wiki/Microsoft-Xbox-Live-Login#AuthenticationResponse%20class) instance including minecraft access token.
+Return [AuthenticationResponse](https://github.com/CmlLib/CmlLib.Core/wiki/Microsoft-Xbox-Live-Login#AuthenticationResponse%20class) instance including minecraft access token.
 
 ### AuthenticationResponse class
 

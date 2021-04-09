@@ -9,12 +9,12 @@ Downloaders should inherit `IDownloader` class. Currently, there are only two do
 #### public event DownloadFileChangedHandler ChangeFile;
 
 When the **file** being downloaded changes.  
-See [Handling-Events](/Handling-Events.md).
+See [Handling-Events](https://github.com/CmlLib/CmlLib.Core/wiki/Handling-Events).
 
 #### public event ProgressChangedEventHandler ChangeProgress;
 
 When the **progress** of the file currently being downloaded changes.  
-See [Handling-Events](/Handling-Events.md).
+See [Handling-Events](https://github.com/CmlLib/CmlLib.Core/wiki/Handling-Events).
 
 #### public Task DownloadFiles(DownloadFile[] files);
 
@@ -63,7 +63,7 @@ Represent file that requires to be downloaded.
 
 #### Type
 
-*Type: MType*
+*Type: [MFile](https://github.com/CmlLib/CmlLib.Core/wiki/Handling-Events#MFile)*
 
 #### Name
 

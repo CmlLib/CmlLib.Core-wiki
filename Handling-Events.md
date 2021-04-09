@@ -18,7 +18,7 @@ Represents the method that will handle download progress events.
 
 Represents the download progress data of `IDownloader`.
 
-[Source Code](https://github.com/AlphaBs/CmlLib.Core/blob/master/CmlLib/Core/Downloader/DownloadFileChangedEventArgs.cs)
+[Source Code](https://github.com/CmlLib/CmlLib.Core/blob/master/CmlLib/Core/Downloader/DownloadFileChangedEventArgs.cs)
 
 ## Properties
 
