@@ -19,6 +19,9 @@ Current document version: 3.2.0-pre1
 - Get game session from mojang auth server
 - Create offline game session
 
+### [Microsoft Xbox Login](https://github.com/CmlLib/CmlLib.Core/wiki/Microsoft-Xbox-Live-Login)
+- Login with Xbox account
+
 ### [Handling Events](https://github.com/CmlLib/CmlLib.Core/wiki/Handling-Events)
  - Get progress of downloading files (percentage, file count)
  - Get file info of currently downloading file (file name)
@@ -28,6 +31,13 @@ Current document version: 3.2.0-pre1
 - Direct server connecting
 - Screen resolution, Fullscreen
 - Java setting
+
+### [Mojang APIs](https://github.com/CmlLib/MojangAPI)
+- Full implementation of Mojang API
+- Getting player profile, Changing name or skin, Statistics, Blocked Server, Checking Game Ownership
+- Mojang authentication
+- Microsoft Xbox authentication
+- Security question-answer flow
 
 ### [Downloader](https://github.com/CmlLib/CmlLib.Core/wiki/Downloader)
 - AsyncParallelDownloader (default)
