@@ -1,10 +1,13 @@
 Welcome to the CmlLib.Core wiki!
 
-Current document version: 3.2.0-pre1
+Current document version: 3.2.0
 
 ### [Sample Launcher](https://github.com/CmlLib/CmlLib.Core/wiki/Sample-Code)
 - CmlLibCoreSample: simple console program
 - CmlLibWinFormSample: full features
+
+### [CMLauncher](https://github.com/CmlLib/CmlLib.Core/wiki/CMLauncher)
+- Basic usage
 
 ### [Common Errors](https://github.com/CmlLib/CmlLib.Core/wiki/Common-Errors)
 - Java runtime errors
@@ -37,6 +40,7 @@ Current document version: 3.2.0-pre1
 - AssetChecker, ClientChecker, LibraryChecker
 - Skip file hash checking
 - Skip specific game file checking
+- Use file mirror server (like BMCLAPI mirror service)
 - Make custom file checker
 
 ### [VersionLoader](https://github.com/CmlLib/CmlLib.Core/wiki/VersionLoader)
@@ -49,8 +53,6 @@ Current document version: 3.2.0-pre1
 ### [Version](https://github.com/CmlLib/CmlLib.Core/wiki/Version)
 - Get version information (version name, type, arguments, library list, asset id, etc)
 
-### [Get Minecraft Changelogs](https://github.com/CmlLib/CmlLib.Core/wiki/Get-Minecraft-Changelogs)
-- n
+### [Getting Minecraft Changelogs](https://github.com/CmlLib/CmlLib.Core/wiki/Get-Minecraft-Changelogs)
 
 ### [Licenses and Dependencies](https://github.com/CmlLib/CmlLib.Core/wiki/Licenses-and-Dependencies)
-- IMPORTANT

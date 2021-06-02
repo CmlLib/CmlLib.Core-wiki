@@ -15,6 +15,10 @@ launcher.GameFileCheckers.AssetFileChecker = null;
 // Skip hash checking of library files
 launcher.GameFileCheckers.LibraryFileChecker.CheckHash = false;
 
+// Use BMCLAPI mirror server
+launcher.GameFileCheckers.LibraryFileChecker.LibraryServer = "https://bmclapi2.bangbang93.com/maven";
+launcher.GameFileCheckers.AssetFileChecker.AssetServer = "https://bmclapi2.bangbang93.com/assets";
+
 // Add custom file checker
 launcher.GameFileCheckers.Add(new MyFileChecker());
 ```

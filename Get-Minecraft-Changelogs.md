@@ -13,28 +13,28 @@ See [ChangeLog.cs](https://github.com/CmlLib/CmlLib.Core/blob/master/CmlLibWinFo
 ## Example
 
 ```csharp
-string[] versions = Changelogs.GetAvailableVersion(); // returns ["1.13", "1.14.2", etc...]
-string changelogUrl = Changelogs.GetChangelogUrl("1.13"); // returns "https://feedback.minecraft.net/___"
-string html = Changelogs.GetChangelogHtml("1.13"); // returns the HTML code of the 1.13 changelog
+Changelogs changelogs = await Changelogs.GetChangelogs(); // get changelog informations
+string[] versions = changelogs.GetAvailableVersions(); // get all available versions
+string changelogHtml = await changelogs.GetChangelogHtml("1.16.5"); // get html of 1.16.5 changelog
 ```
 
 ## Methods
 
+### static GetChangelogs()
+
+*Returns: `Task<Changelogs>`*
+
+Get changelog informations from mojang server.
+
 ### GetAvailableVersions()
 
-**Returns: string[]**
+*Returns: `string[]`*
 
 Returns Minecraft versions which have a changelog.
 
-### GetChangelogUrl(string version)
-
-**Returns: string**
-
-Returns the changelog url of `version`.
-
 ### GetChangelogHtml(string version)
 
-**Returns: string**
+*Returns: `Task<string>`*
 
 Returns the HTML code of the changelog of `version`.  
 The HTML code contains only the changelog; there is no header or footer.

@@ -75,12 +75,12 @@ myPath.Assets = MinecraftPath.GetOSDefaultPath() + "/assets";
 ### Inheritence
 
 Create derived class of `MinecraftPath`, and override methods.  
-Each methods (`Initialize`, `NormalizePath`, etc) are described [below](#Methods).
+Each methods (`CreateDirs`, `NormalizePath`, etc) are described [below](#Methods).
 
 ```csharp
 class MyMinecraftPath : MinecraftPath
 {
-    protected override void Initialize(string p, string assetsPath)
+    public MyMinecraftPath(string p)
     {
         BasePath = NormalizePath(p);
 
@@ -89,7 +89,9 @@ class MyMinecraftPath : MinecraftPath
         Resource = NormalizePath(BasePath + "/resources");
 
         Runtime = NormalizePath(BasePath + "/java");
-        Assets = NormalizePath(assetsPath + "/assets");
+        Assets = NormalizePath(BasePath + "/assets");
+
+        CreateDirs();
     }
 
     public override string GetVersionJarPath(string id)
