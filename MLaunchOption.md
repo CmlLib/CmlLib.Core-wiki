@@ -5,11 +5,9 @@
 ```csharp
 var launchOption = new MLaunchOption()
 {
-    // Required Settings
     StartVersion = myversion,
     Session = MSession.GetOfflineSession("tester123"),
 
-    // Optional Settings
     Path = new MinecraftPath(),
     MaximumRamMb = 4096,
     JavaPath = "javaw.exe",
@@ -43,7 +41,7 @@ The version you want to launch. If you launch the game using `CMLauncher`, you d
 
 ### Session
 
-**Type: MSession**
+**Type: MSession** _Optional_
 
 Set the username, uuid, and access_token of the player. It is used to connect to an online-mode server or a realm.
 However, if you use `MSession.GetOfflineSession`, you can't connect these servers.
@@ -107,7 +105,8 @@ Sets `${launcher_version}`. An empty value will set `${launcher_name}` to `2`, w
 **Type: string** _Optional_
 
 Connecting to a server directly when Minecraft is loading is done.  
-This option doesn't work in 1.15. It's a Minecraft bug.
+This option doesn't work in 1.15. It's a Minecraft bug.  
+You can't use SRV record.
 
 ### ServerPort
 

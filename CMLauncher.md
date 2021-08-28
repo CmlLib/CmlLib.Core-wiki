@@ -65,7 +65,7 @@ launcher.ProgressChanged += (s, e) =>
 };
 ```
 
-Add event handler. It display launching progress, download progress to console.  
+Add event handler. It prints download progress to console.  
 [Event Handler](https://github.com/CmlLib/CmlLib.Core/wiki/Handling-Events)
 
 ```csharp

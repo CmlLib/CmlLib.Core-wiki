@@ -121,7 +121,7 @@ Make derived class of `IFileChecker`.
 ## FileCheckerCollection class
 
 Represents IFileChecker list to be executed.  
-It contains 3 default FileChecker, `AssetChecker`, `ClientChecker`, `LibraryChecker`.  
+It contains 4 default FileChecker, `AssetChecker`, `ClientChecker`, `LibraryChecker`, `JavaChecker`  
 You can add your FileChecker or remove default FileChecker.  
 
 ### Properties

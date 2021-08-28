@@ -1,6 +1,6 @@
 Welcome to the CmlLib.Core wiki!
 
-Current document version: 3.2.0
+Current document version: 3.3.1
 
 ### [CMLauncher](https://github.com/CmlLib/CmlLib.Core/wiki/CMLauncher)
 - Basic usage

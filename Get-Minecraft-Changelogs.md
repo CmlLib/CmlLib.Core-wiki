@@ -1,5 +1,3 @@
-This is an experimental function.
-
 # Changelogs class
 
 ![image](https://user-images.githubusercontent.com/17783561/82139750-20f0eb00-9865-11ea-8a41-c045ee123c09.png)
