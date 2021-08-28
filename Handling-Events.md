@@ -1,10 +1,31 @@
-## This document is not complete
-
 # Handling Events
 
+When you want to show progress to users, add event handlers.  
 CmlLib.Core uses only two event handlers.  
 [`DownloadFileChangedHandler`](#DownloadFileChangedEventHandler) is used when the **file** being downloaded changes.  
 [`ProgressChangedEventHandler`](https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.progresschangedeventhandler?view=netcore-3.1) is used when the **progress** of the file currently being downloaded changes.
+
+## Example
+
+```csharp
+// add event handlers
+var launcher = new CMLauncher(new MinecraftPath());
+launcher.FileChanged += Launcher_FileChanged;
+launcher.ProgressChanged += Launcher_ProgressChanged;
+```
+
+```csharp
+// event handler
+private void Launcher_FileChanged(DownloadFileChangedEventArgs e)
+{
+    Console.WriteLine("[{0}] {1} - {2}/{3}", e.FileKind.ToString(), e.FileName, e.ProgressedFileCount, e.TotalFileCount);
+}
+
+private void Launcher_ProgressChanged(object sender, System.ComponentModel.ProgressChangedEventArgs e)
+{
+    Console.WriteLine("{0}%", e.ProgressPercentage);
+}
+```
 
 # DownloadFileChangedEventHandler
 
@@ -34,6 +55,29 @@ _Type: string_
 
 The name of the file currently being downloaded.  
 _Note: if FileKind is equal to MFile.Resource, this property would be an empty string._
+
+### Source
+
+_Type: object_  
+
+The source of event. You can determine what object raised the event.  
+Example:
+```csharp
+if (e.Source is IFileChecker)
+{
+    // raised by IFileChecker
+    // game file checking
+}
+else if (e.Source is IDownloader)
+{
+    // raised by IDownloader
+    // file downloading
+}
+else
+{
+    // etc (MForge, or )
+}
+```
 
 ### TotalFileCount;
 

@@ -7,6 +7,10 @@ In a 32 bit OS Environment, you can't set MaximumRam(XMX) higher than 1024.
 Reinstall Java.  
 if your launcher uses MJava, remove the runtime directory (default: `<Your Minecraft Path>/runtime`) and download Java through MJava again.
 
+### SRV Record and `ServerIP`
+
+Minecraft cannot connect to server which has a SRV record when you use direct server connection feature (MLaunchOption.ServerIP).  
+
 # macOS
 
 ### DockName

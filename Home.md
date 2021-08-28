@@ -2,12 +2,13 @@ Welcome to the CmlLib.Core wiki!
 
 Current document version: 3.2.0
 
+### [CMLauncher](https://github.com/CmlLib/CmlLib.Core/wiki/CMLauncher)
+- Basic usage
+- **Please read this first!**
+
 ### [Sample Launcher](https://github.com/CmlLib/CmlLib.Core/wiki/Sample-Code)
 - CmlLibCoreSample: simple console program
 - CmlLibWinFormSample: full features
-
-### [CMLauncher](https://github.com/CmlLib/CmlLib.Core/wiki/CMLauncher)
-- Basic usage
 
 ### [Common Errors](https://github.com/CmlLib/CmlLib.Core/wiki/Common-Errors)
 - Java runtime errors
@@ -26,8 +27,8 @@ Current document version: 3.2.0
 - Login with Xbox account
 
 ### [Handling Events](https://github.com/CmlLib/CmlLib.Core/wiki/Handling-Events)
- - Get progress of downloading files (percentage, file count)
- - Get file info of currently downloading file (file name)
+ - Show progress of downloading files (percentage, file count)
+ - Show file info of currently downloading file (file name)
 
 ### [Launch Options (MLaunchOption)](https://github.com/CmlLib/CmlLib.Core/wiki/MLaunchOption)
 - Maximum memory size (-Xmx), Minimum memory size (-Xms)
@@ -62,6 +63,11 @@ Current document version: 3.2.0
 
 ### [Version](https://github.com/CmlLib/CmlLib.Core/wiki/Version)
 - Get version information (version name, type, arguments, library list, asset id, etc)
+
+### [Installer](https://github.com/CmlLib/CmlLib.Core/wiki/Installer)
+- Install Forge
+- Install LiteLoader
+- Install FabricMC
 
 ### [Getting Minecraft Changelogs](https://github.com/CmlLib/CmlLib.Core/wiki/Get-Minecraft-Changelogs)
 

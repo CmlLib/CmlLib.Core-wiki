@@ -53,13 +53,19 @@ If the value of this property is null, an `ArgumentException` will be thrown.
 
 **Type: MinecraftPath** _Optional_
 
-Set base directory for launching. You should not set this property if you use `CMLauncher`.
+Sets base directory for launching. You should not set this property if you use `CMLauncher`.
+
+### JavaVersion
+
+**Type: string** _Optional_
+
+Sets the java version. It overrides default java version. The default java version is determined by [JavaChecker](https://github.com/CmlLib/CmlLib.Core/wiki/FileChecker#JavaChecker). 
 
 ### JavaPath
 
 **Type: string** _Optional_
 
-Sets the java path. If this property is empty and you call `CMLauncher.CreateProcess`, the `CreateProcess` method will set this property to `<Your Game Path>/runtime`, makes sure Java is installed, and downloads Java if it doesn't exist.
+Sets the java path. It overrides default java binary path. The default java binary path is determined by [JavaChecker](https://github.com/CmlLib/CmlLib.Core/wiki/FileChecker#JavaChecker). 
 
 ### MaximumRamMb
 

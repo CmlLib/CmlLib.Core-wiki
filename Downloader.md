@@ -27,7 +27,7 @@ Download files sequentially.
 ## AsyncParallelDownloader
 
 Download files in parallel.  
-In this class, The progress of `ChangeProgress` means (received bytes) / (the sum of the byte sizes of all files to download) * 100
+In this class, The progress of `ChangeProgress` means (received bytes) / (the sum of the byte sizes of **All files** to download) * 100
 
 ### Constructors
 

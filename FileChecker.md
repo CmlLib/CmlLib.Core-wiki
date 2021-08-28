@@ -2,7 +2,7 @@
 
 Check file existence and SHA1 hash to check if file is valid or invalid, and return invalid file list. `Downloader` will download these files.
 
-All file checker should inherit `IFileChecker`. There are 3 default file checkers, `AssetChecker`, `ClientChecker`, `LibraryChecker`.
+All file checker should inherit `IFileChecker`. There are 3 default file checkers, `AssetChecker`, `ClientChecker`, `LibraryChecker`, and `JavaChecker`.
 
 ## Example
 
@@ -52,7 +52,8 @@ Default value: `http://resources.download.minecraft.net/`
 
 *Type: bool*
 
-Check SHA1 hash of file.
+Check SHA1 hash of file.  
+Default value: `true`
 
 ## LibraryChecker class
 
@@ -71,7 +72,8 @@ Default value: `https://libraries.minecraft.net/`
 
 *Type: bool*
 
-Check SHA1 hash of file.
+Check SHA1 hash of file.  
+Default value: `true`
 
 ## ClientChecker class
 
@@ -83,7 +85,34 @@ Check client jar files.
 
 *Type: bool*
 
-Check SHA1 hash of file.
+Check SHA1 hash of file.  
+Default value: `true`
+
+## ClientChecker class
+
+Check client jar files.
+
+### Properties
+
+#### CheckHash
+
+*Type: bool*
+
+Check SHA1 hash of file.  
+Default value: `true`
+
+## JavaChecker class
+
+Check java runtime files. It checks `MLaunchOption.JavaPath`, `MLaunchOption.JavaVersion`, `MVersion.JavaBinaryPath`, `MVersion.JavaVersion` in that order to decides which java to use. 
+
+### Properties
+
+#### CheckHash
+
+*Type: bool*
+
+Check SHA1 hash of file.  
+Default value: `true`
 
 ## Make custom FileChecker
 

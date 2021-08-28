@@ -59,7 +59,8 @@ MinecraftPath myPath = new MinecraftPath("./games");
 
 ## Make custom directory structure
 
-There are two ways to make custom directory structure.
+There are two ways to make custom directory structure.  
+Choose what you need.
 
 ### Set properties
 
@@ -151,18 +152,9 @@ Call `Initialize(p)` and `CreateDirs()`.
 
 ### Methods
 
-#### protected virtual void Initialize(string p)
-
-Call this.Initialize(p, p);
-
-#### protected virtual void Initialize(string p, string assetsPath)
-
-Set `BasePath`, `Assets`, `Library`, `Versions`, `Runtime`, `Resource` path.  
-Constructors call this methods first.
-
 #### public void CreateDirs()
 
-Create `BasePath`, `Assets`, `Library`, `Versions`, `Runtime`, `Resouce` directory.5
+Create `BasePath`, `Assets`, `Library`, `Versions`, `Runtime`, `Resouce` directory.
 
 #### public virtual string GetIndexFilePath(string assetId)
 
