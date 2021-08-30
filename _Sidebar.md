@@ -36,4 +36,5 @@
     <li><a href="https://github.com/Cmllib/CmlLib.Core/wiki/Get-Minecraft-Changelogs">Minecraft Changelogs</a></li>
 </ul>
 
-<a href="https://github.com/CmlLib">CmlLib Projects</a>
+<a href="https://github.com/CmlLib">CmlLib Projects</a>  
+<a href="https://github.com/CmlLib/CmlLib.Core-wiki">Contribute to wiki page</a>
