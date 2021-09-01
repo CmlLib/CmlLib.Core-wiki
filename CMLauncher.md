@@ -1,11 +1,16 @@
 # CMLauncher
 
-작성중 (writing)  
-Use google translator for english user. 
+작성중
+
+English: Writing
 
 CMLauncher 는 CmlLib.Core 의 래퍼 클래스입니다. 버전 가져오기, 게임 실행 등 라이브러리의 대부분의 기능을 이 클래스를 통해 접근할 수 있습니다.  
 
+English: CMLauncher is a wrapper class for CmlLib.Core . Most of the library's functionality, such as getting versions and running games, can be accessed through this class.
+
 CmlLib.Core의 기능을 이용할 때에는 내부 클래스에 직접 접근하기 보다는 CMLauncher 를 통해 기능을 이용하는 것이 좋습니다.
+
+English: When using the functions of CmlLib.Core, it is recommended to use the functions through CMLauncher rather than directly accessing the inner class.
 
 ## Basic Usage - Async version
 
@@ -65,7 +70,7 @@ launcher.ProgressChanged += (s, e) =>
 };
 ```
 
-Add event handler. It prints download progress to console.  
+Adds the event handler. It prints the download progress to the console.  
 [Event Handler](https://github.com/CmlLib/CmlLib.Core/wiki/Handling-Events)
 
 ```csharp
@@ -76,7 +81,7 @@ foreach (var v in versions)
 }
 ```
 
-Get all version and print all version names.  
+Gets all the versions and prints each of their names.
 [VersionLoader](https://github.com/CmlLib/CmlLib.Core/wiki/VersionLoader)
 
 ```csharp
@@ -87,7 +92,7 @@ var process = await launcher.CreateProcessAsync("1.16.5", new MLaunchOption
 });
 ```
 
-Set launch options, check game files, download game files, and return minecraft `Process` instance.  
+Once you have set launch options, checked game files, downloaded game files, this will return a Minecraft `Process` instance.  
 [MLaunchOption](https://github.com/CmlLib/CmlLib.Core/wiki/MLaunchOption)
 
 ## Basic Usage - Sync Version
@@ -136,68 +141,81 @@ launcher.FileDownloader = null;
 // ~~~
 ```
 *note: 파일 다운로드를 할 수 없기 때문에 모든 파일이 설치되어 있지 않은 경우에는 정상적으로 게임 실행이 불가할 수 있습니다.*
-
+*english note: Since files cannot be downloaded, the game may not run normally if all files are not installed.*
 ## Methods
 
 #### MVersionCollection GetAllVersions()
 
 `VersionLoader` 를 이용해 버전 목록을 반환합니다.
+English: Uses VersionLoader to return a list of versions.
 
 #### async Task<MVersionCollection> GetAllVersionsAsync()
 
 `GetAllVersions()` 의 비동기 버전입니다. 
+English: GetAllVersionsAsync() is the asynchronous version of GetAllVersions()
 
 #### MVersion GetVersion(string versionname)
 
-Get `MVersion` instance.
+Gets `MVersion` instance.
 
 #### async Task<MVersion> GetVersionAsync(string versionname)
 
-Get `MVersion` instance asynchronously.
+Gets `MVersion` instance asynchronously.
 
 #### DownloadFile[] CheckLostGameFiles(MVersion version)
 
 모든 파일을 검사하고 다운로드가 필요한 파일의 목록을 반환합니다. `GameFileCheckers` 의 모든 `IFileChecker` 를 이용해 게임 파일을 검사하고 반환하는 모든 파일을 하나의 배열로 만들어 반환합니다.
+    
+English: Scans all files and returns a list of files that need to be downloaded. Checks game files using all `IFileChecker` of `GameFileCheckers` and returns all returned files as an array.
 
 #### async Task<DownloadFile[]> CheckLostGameFilesTaskAsync(MVersion version)
 
-CheckLostGameFiles 를 비동기적으로 수행합니다.
+CheckLostGameFiles 를 비동기적으로 수행합니다 (English: asynchronously).
 
 #### async Task DownloadGameFiles(DownloadFile[] files)
 
 `FileDownloader` 를 이용해 `files` 를 모두 다운로드합니다.
+English: Downloads all files using FileDownloader.
 
 #### void CheckAndDownload(MVersion version)
 
 `versions` 의 모든 파일을 확인하고 존재하지 않거나 해시가 다른 파일을 모두 다운로드받습니다.
+English: Check all files in your versions folder and downloads some files that aren't currently there.
 
 #### async Task CheckAndDownloadAsync(MVersion version)
 
 `CheckAndDownload` 를 비동기적으로 수행합니다.
+English: Performs `CheckAndDownload` asynchronously.
 
 #### Process CreateProcess(string versionName, MLaunchOption option)
 
 `versionName` 의 이름을 가진 `Versions` 에서 찾고 게임 파일을 확인하고 다운로드 한 후 `Process` 를 반환합니다.
+English: Looks in your `Versions` folder and finds the folder called versionName and returns a `Process` after checking and downloading the game file.
 
 #### Process CreateProcess(MVersion version, MLaunchOption option)
 
 `MVersion` 의 게임 파일을 확인하고 다운로드 한 후 `Process` 를 반환합니다.
+English: It checks and downloads the game files in `MVersion` and returns a `Process`.
 
 #### async Task<Process> CreateProcessAsync(string versionName, MLaunchOption option)
 
 `CreateProcess(string versionName, MLaunchOption option)` 의 비동기 버전입니다. 
+English: Asynchronous version of `CreateProcess(string versionName, MLaunchOption option)`
 
 #### async Task<Process> CreateProcessAsync(MVersion version, MLaunchOption option)
 
 `CreateProcess(MVersion version, MLaunchOption option)` 의 비동기 버전입니다.
+English: Asynchronous version of `CreateProcess(MVersion version, MLaunchOption option)` .
 
 #### Process CreateProcess(MLaunchOption option)
 
 `option` 의 `StartVersion` 속성을 이용해 `Process` 를 만들어 반환합니다. 이 메서드는 게임 파일 확인과 다운로드를 수행하지 않습니다. 
-
+English: Creates and returns a `Process` using the `StartVersion` property of `option`. This method does not check and download game files
+    
 #### async Task<Process> CreateProcessAsync(MLaunchOption option)
 
 `CreateProcess(MLaunchOption option)` 의 비동기 버전입니다.
+English: Asynchronous version of `CreateProcess(MLaunchOption option)`.
 
 #### Process CreateProcess(string mcversion, string forgeversion, MLaunchOption option)
 
