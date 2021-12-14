@@ -69,6 +69,10 @@ Current document version: 3.3.1
 - Install LiteLoader
 - Install FabricMC
 
+### [FAQ](https://github.com/CmlLib/CmlLib.Core/wiki/FAQ)
+- Launch custom version
+- Get game output (logs)
+
 ### [Getting Minecraft Changelogs](https://github.com/CmlLib/CmlLib.Core/wiki/Get-Minecraft-Changelogs)
 
 ### [Licenses and Dependencies](https://github.com/CmlLib/CmlLib.Core/wiki/Licenses-and-Dependencies)

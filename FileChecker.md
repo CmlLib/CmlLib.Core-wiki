@@ -2,7 +2,7 @@
 
 Check file existence and SHA1 hash to check if file is valid or invalid, and return invalid file list. `Downloader` will download these files.
 
-All file checker should inherit `IFileChecker`. There are 3 default file checkers, `AssetChecker`, `ClientChecker`, `LibraryChecker`, and `JavaChecker`.
+All file checker should inherit `IFileChecker`. There are 5 default file checkers, `AssetChecker`, `ClientChecker`, `LibraryChecker`, `LogChecker`, and `JavaChecker`.
 
 ## Example
 
@@ -88,9 +88,9 @@ Check client jar files.
 Check SHA1 hash of file.  
 Default value: `true`
 
-## ClientChecker class
+## LogChecker class
 
-Check client jar files.
+Check log configuration files.
 
 ### Properties
 
@@ -143,6 +143,18 @@ Get default ClientChecker
 *Type: LibraryChecker*
 
 Get default LibraryChecker
+
+#### LogFileChecker
+
+*Type: LogChecker*
+
+Get default LogChecker
+
+#### JavaFileChecker
+
+*Type: JavaChecker*
+
+Get default JavaChecker.
 
 ### Methods
 
