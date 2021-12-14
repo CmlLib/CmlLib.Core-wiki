@@ -1,7 +1,7 @@
 # Forge Installer
 
 ## Note
-Forge installation feature in this library would not work. `MForge` has not been updated for a long time, and I will not update this anymore unless someone make pull requests. Forge installation is complex and require a lot of effort to maintain. Futhermore, Forge development team does not want anyone to make automation installation tool.
+Forge installation feature in this library would not work. `MForge` has not been updated for a long time, and I will not update this anymore unless someone make pull requests. Forge installation is complex and require a lot of effort to maintain. Futhermore, Forge development team does not want anyone to make automated installation tool.
 
 The message in forge intsaller: 
 ```
@@ -18,6 +18,8 @@ If you need forge installation feature in your launcher:
 1. Extract forge files.
 2. Upload extracted forge files into your file server or bundle it into your launcher.
 3. Write codes that copy extracted forge files into game directory.
+
+Or, make your own forge installer code.
 
 ## Extracting forge files
 
