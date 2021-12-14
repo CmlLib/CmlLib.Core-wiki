@@ -26,6 +26,7 @@
     <li><a href="https://github.com/Cmllib/CmlLib.Core/wiki/Downloader">Downloader</a></li>
     <li><a href="https://github.com/Cmllib/CmlLib.Core/wiki/VersionLoader">VersionLoader</a></li>
     <li><a href="https://github.com/Cmllib/CmlLib.Core/wiki/Version">Version</a></li>
+    <li><a href="https://github.com/Cmllib/CmlLib.Core/wiki/FAQ">FAQ</a></li>
 </ul>
 
 <h2>etc</h2>
