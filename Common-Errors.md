@@ -1,11 +1,13 @@
 # Common Errors
 
 ### Could not create Java Virtual Machine
-In a 32 bit OS Environment, you can't set MaximumRam(XMX) higher than 1024.
+In a 32-bit JVM, There is limit on `MaximumRamMb`.  
+Recommended value of `MaximumRamMb` on 32-bit JVM is `1024`.  
+[More information](https://stackoverflow.com/questions/1434779/maximum-java-heap-size-of-a-32-bit-jvm-on-a-64-bit-os/7019624#7019624)
 
 ### Error: could not open jvm.cfg
 Reinstall Java.  
-if your launcher uses MJava, remove the runtime directory (default: `<Your Minecraft Path>/runtime`) and download Java through MJava again.
+if your launcher uses `MJava` or `JavaChecker`, Remove the runtime directory (default: `<Your Minecraft Path>/runtime`) and install java again.
 
 ### SRV Record and `ServerIP`
 
