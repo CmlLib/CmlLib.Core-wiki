@@ -13,7 +13,7 @@
 <ul>
     <li><a href="https://github.com/Cmllib/CmlLib.Core/wiki/CMLauncher">CMLauncher</a></li>
     <li><a href="https://github.com/Cmllib/CmlLib.Core/wiki/MinecraftPath">MinecraftPath</a></li>
-    <li><a href="https://github.com/Cmllib/CmlLib.Core/wiki/Login-and-Session">Login and Session</a></li>
+    <li><a href="https://github.com/Cmllib/CmlLib.Core/wiki/Login-and-Sessions">Login and Sessions</a></li>
     <li><a href="https://github.com/Cmllib/CmlLib.Core/wiki/Microsoft-Xbox-Login">Microsoft Xbox Login</a></li>
     <li><a href="https://github.com/Cmllib/CmlLib.Core/wiki/Handing-Events">Handling Events</a></li>
     <li><a href="https://github.com/Cmllib/CmlLib.Core/wiki/MLaunchOption">Launch Options (MLaunchOption)</a></li>
