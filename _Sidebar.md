@@ -26,7 +26,6 @@
     <li><a href="https://github.com/Cmllib/CmlLib.Core/wiki/Downloader">Downloader</a></li>
     <li><a href="https://github.com/Cmllib/CmlLib.Core/wiki/VersionLoader">VersionLoader</a></li>
     <li><a href="https://github.com/Cmllib/CmlLib.Core/wiki/Version">Version</a></li>
-    <li><a href="https://github.com/Cmllib/CmlLib.Core/wiki/FAQ">FAQ</a></li>
 </ul>
 
 <h2>etc</h2>
@@ -35,6 +34,7 @@
     <li><a href="https://github.com/Cmllib/CmlLib.Core/wiki/Installer">Installer</a></li>
     <li><a href="https://github.com/CmlLib/MojangAPI">Mojang APIs</a></li>
     <li><a href="https://github.com/Cmllib/CmlLib.Core/wiki/Get-Minecraft-Changelogs">Minecraft Changelogs</a></li>
+    <li><a href="https://github.com/Cmllib/CmlLib.Core/wiki/FAQ">FAQ</a></li>
 </ul>
 
 <a href="https://github.com/CmlLib">CmlLib Projects</a>  

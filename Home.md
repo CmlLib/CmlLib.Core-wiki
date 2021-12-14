@@ -72,6 +72,7 @@ Current document version: 3.3.4
 ### [FAQ](https://github.com/CmlLib/CmlLib.Core/wiki/FAQ)
 - Launch custom version
 - Get game output (logs)
+- log4j2
 
 ### [Getting Minecraft Changelogs](https://github.com/CmlLib/CmlLib.Core/wiki/Get-Minecraft-Changelogs)
 
