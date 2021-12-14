@@ -23,3 +23,7 @@ Above code write all game outputs to console. You can check game logs in console
 
 same way applied to mojang launcher.  
 (writing)
+
+## [log4j2 vulnerability (CVE-2021-44228)](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-44228)
+
+Minecraft launched by `CmlLib 0.0.1` ~ `CmlLib.Core 3.3.3` has log4j2 vulnerability. It is safe after `CmlLib.Core 3.3.4` version.
