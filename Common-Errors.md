@@ -1,5 +1,13 @@
 # Common Errors
 
+### Cannot find version <version_name>
+
+If this exception throws even target version is in versions directory (default: `<Your Minecraft Path>/versions`), check version directory name, version json file file, and `id` property is all same.  
+For example, valid version file should be in `versions/myversion/myversion.json` and the `id` property of `myversion.json` should be `myversion`. so directory name `myversion` and the json file name `myversion.json` and the value of `id` property `myversion` is all same.  
+
+If the launcher still throw this exception, call `launcher.GetAllVersions()` method before `launcher.CreateProcess`.  
+If you add new version into the version directory after the launcher is initialized, you should update version list through `GetAllVersions()` or `GetAllVersionsAsync()` method.
+
 ### Could not create Java Virtual Machine
 In a 32-bit JVM, There is limit on `MaximumRamMb`.  
 Recommended value of `MaximumRamMb` on 32-bit JVM is `1024`.  
@@ -30,7 +38,7 @@ var launchOption = new MLaunchOption
 };
 ```
 
-On macOS Catalina, Minecraft works normally without the above options. but some macOS versions don't work well.
+On macOS Catalina, Minecraft works normally without the above options. Old macOS versions don't work well.
 
 ### JRE
 Old Minecraft versions don't support OpenJDK 11.

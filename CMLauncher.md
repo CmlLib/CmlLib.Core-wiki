@@ -137,7 +137,10 @@ launcher.FileDownloader = null;
 This code launch game immediately. (< 1sec)
 
 ```csharp
-var process = await launcher.CreateProcess("1.18.1", new MLaunchOption(), false);
+var process = await launcher.CreateProcess("1.18.1", new MLaunchOption()
+{
+    // game options
+}, checkAndDownload: false);
 process.Start();
 ```
 
@@ -145,11 +148,11 @@ process.Start();
 
 #### MVersionCollection GetAllVersions()
 
-Return version list using `VersionLoader` property.
+Refresh version list and return them.  
 
 #### async Task<MVersionCollection> GetAllVersionsAsync()
 
-Return version list asynchronously using `GetAllVersions()`.
+Async version of `GetAllVersions()`.  
 
 #### MVersion GetVersion(string versionname)
 
@@ -161,7 +164,7 @@ Get `MVersion` instance asynchronously.
 
 #### DownloadFile[] CheckLostGameFiles(MVersion version)
 
-Check all game files and return file list that should be downloaded. It checks all game files using `IFileChecker` in `GameFileChekers` property, combines all game files into array and return it.
+Check all game files and return file list that should be downloaded. It checks all game files using `IFileChecker` in `GameFileChekers` property, combines all game files that should be downloaded into array and return array.
 
 #### async Task<DownloadFile[]> CheckLostGameFilesTaskAsync(MVersion version)
 
@@ -223,8 +226,6 @@ MinecraftPath
 #### Versions
 
 *Type: MVersionCollection?*
-
-public
 
 #### VersionLoader
 

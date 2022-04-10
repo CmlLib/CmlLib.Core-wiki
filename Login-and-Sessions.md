@@ -1,10 +1,9 @@
 # MLogin and MSession
 
-You can get Minecraft sessions by logging in to the Mojang auth server. You can also create offline sessions.  
 This document describes how to get or create Minecraft sessions using CmlLib.Core.
 
 The `MLogin` class provides methods to communicate with the Mojang auth server.  
-The `MLoginResult` class represents login result. `MLogin` methods return this object.  
+The `MLoginResult` class represents login result. Methods in `MLogin` class return this object.  
 The `MSession` class represents Minecraft session data, containing `Username`, `UUID`, and `AccessToken`.
 
 You have to set the [MLaunchOption.Session](https://github.com/CmlLib/CmlLib.Core/wiki/MLaunchOption#session) property to an `MSession` instance.
@@ -60,7 +59,7 @@ MSession session = response.Session;
 ---
 
 You can also create offline session.  
-but you can't connect to an online-mode server or realm with this session.
+This session cannot be used in online-mode server or realm.
 
 ```csharp
 MSession session = MSession.GetOfflineSession("player-username");
