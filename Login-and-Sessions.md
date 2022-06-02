@@ -2,15 +2,25 @@
 
 This document describes how to get or create Minecraft sessions using CmlLib.Core.
 
-The `MLogin` class provides methods to communicate with the Mojang auth server.  
-The `MLoginResult` class represents login result. Methods in `MLogin` class return this object.  
-The `MSession` class represents Minecraft session data, containing `Username`, `UUID`, and `AccessToken`.
+To connect to online-mode server, you should obtain player's session data. The game session data contains player's username, UUID, and accessToken.
 
-You have to set the [MLaunchOption.Session](https://github.com/CmlLib/CmlLib.Core/wiki/MLaunchOption#session) property to an `MSession` instance.
+There are some ways to obtain game session using this library:
+
+- Mojang Login
+- Microsoft Xbox Login
+- Offline Login
+
+This library provides some classes related game session and login process: 
+
+- `MLogin` class provides methods to communicate with the Mojang auth server.  
+- `MLoginResult` class represents login result. Methods in `MLogin` class return this object.  
+- `MSession` class represents player's session data, containing `Username`, `UUID`, and `AccessToken`.
+
+After obtaining a session data, you should set the [MLaunchOption.Session](https://github.com/CmlLib/CmlLib.Core/wiki/MLaunchOption#session) property to an `MSession` instance.
 
 _Note: [this document](https://wiki.vg/Authentication) will help you to understand basic process of minecraft login._
 
-## Example
+## Mojang Login
 
 The basic login process is:  
 ![img](https://github.com/CmlLib/CmlLib.Core-wiki/blob/master/img/login.png?raw=true)
@@ -56,13 +66,22 @@ MSession session = response.Session;
 // };
 ```
 
----
+## Microsoft Xbox Login
 
-You can also create offline session.  
+go to [Microsoft Xbox Login](https://github.com/CmlLib/CmlLib.Core/wiki/Microsoft-Xbox-Live-Login)
+
+## Offline Login
+  
 This session cannot be used in online-mode server or realm.
 
 ```csharp
-MSession session = MSession.GetOfflineSession("player-username");
+MSession session = MSession.GetOfflineSession("username");
+```
+
+## Creating your own session data
+
+```csharp
+MSession session = new MSession("username", "accesstoken", "uuid");
 ```
 
 ## MLogin
