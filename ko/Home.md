@@ -27,7 +27,7 @@ Welcome to the CmlLib.Core wiki!
 - Get game session from mojang auth server
 - Create offline game session
 
-### [Microsoft Xbox Login](https://github.com/CmlLib/CmlLib.Core-wiki/blob/master/ko/Microsoft-Xbox-Live-Login.md)
+### [Microsoft Xbox Login](https://github.com/CmlLib/CmlLib.Core.Auth.Microsoft)
 - 마이크로소프트 엑스박스 계정으로 마인크래프트 로그인
 
 ### [Handling Events](https://github.com/CmlLib/CmlLib.Core-wiki/blob/master/ko/Handling-Events.md)

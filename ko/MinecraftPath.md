@@ -4,7 +4,7 @@
 
 ## 기본 경로
 
-`MinecraftPath.GetOSDefaultPath()` 를 호출하거나 `MinecraftPath` 의 인스턴스를 인수 없이 만들어 기본 게임 디렉터리 경로를 가져올 수 있습니다.  
+`MinecraftPath.GetOSDefaultPath()` 를 호출하거나 `MinecraftPath` 의 생성자를 인수 없이 만들어 기본 게임 디렉터리 경로를 가져올 수 있습니다.  
 
 OS 별 기본 경로:
 - Windows: %appdata%\.minecraft
@@ -56,7 +56,7 @@ MinecraftPath myPath = new MinecraftPath("./games");
 // myPath.GetIndexFilePath("1.16.5") : ./games/assets/indexes/1.16.5.json
 ```
 
-**Note** : 모든 경로는 절대 경로로 변환됩니다.
+**Note** : 모든 경로는 절대 경로로 바뀌어 저장됩니다.
 
 ## 디렉터리 구조 바꾸기
 
