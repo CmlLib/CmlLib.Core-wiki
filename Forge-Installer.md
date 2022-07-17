@@ -63,19 +63,3 @@ var process = await launcher.CreateProcess("1.12.2-forge-14.23.5.2855", new MLau
 });
 process.Start();
 ```
-
-## MForge
-
-Legacy class to install forge.
-
-Using `CMLauncher`: 
-```csharp
-var process = launcher.CreateProcess("<vanilla-version>", "<forge-version>", launchOptions);
-process.Start();
-```
-
-Example: 
-```csharp
-var process = launcher.CreateProcess("1.12.2", "14.23.5.2768", new MLaunchOption());
-process.Start();
-```
