@@ -1,29 +1,8 @@
 # Table of contents
 
-* [ko](README.md)
-  * [CMLauncher](ko/CMLauncher.md)
-  * [Common-Errors](ko/Common-Errors.md)
-  * [Downloader](ko/Downloader.md)
-  * [FAQ](ko/FAQ.md)
-  * [Fabric Installer](ko/Fabric-Installer.md)
-  * [FileChecker](ko/FileChecker.md)
-  * [Forge Installer](ko/Forge-Installer.md)
-  * [Changelogs class](ko/Get-Minecraft-Changelogs.md)
-  * [Handling-Events](ko/Handling-Events.md)
-  * [Home](ko/Home.md)
-  * [Installer](ko/Installer.md)
-  * [Licenses and Dependencies](ko/Licenses-and-Dependencies.md)
-  * [LiteLoader Installer](ko/LiteLoader-Installer.md)
-  * [MLogin and MSession](ko/Login-and-Sessions.md)
-  * [MLaunchOption class](ko/MLaunchOption.md)
-  * [MinecraftPath](ko/MinecraftPath.md)
-  * [예시 런처](ko/Sample-Code.md)
-  * [Version](ko/Version.md)
-  * [VersionLoader](ko/VersionLoader.md)
-
 ## 🚀 CmlLib.Core
 
-* [Home](cmllib.core/home.md)
+* [Home](README.md)
 * [Getting Started](cmllib.core/getting-started/README.md)
   * [CMLauncher](cmllib.core/getting-started/CMLauncher.md)
   * [Minecraft Path](cmllib.core/getting-started/MinecraftPath.md)
