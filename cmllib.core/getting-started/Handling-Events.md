@@ -1,11 +1,15 @@
-# Handling Events
+---
+description: Show launching progress to user
+---
 
-When you want to show progress to users, add event handlers.  
-CmlLib.Core uses only two event handlers.  
-[`DownloadFileChangedHandler`](#DownloadFileChangedEventHandler) is used when the **file** being downloaded changes.  
-[`ProgressChangedEventHandler`](https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.progresschangedeventhandler?view=netcore-3.1) is used when the **progress** of the file currently being downloaded changes.
+# Event Handling
 
-## Example
+When you want to show progress to users, add event handlers.\
+CmlLib.Core uses only two event handlers.\
+[`DownloadFileChangedHandler`](Handling-Events.md#DownloadFileChangedEventHandler) is used when the **file** being downloaded changes. (ex: file counts)\
+[`ProgressChangedEventHandler`](https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.progresschangedeventhandler?view=netcore-3.1) is used when the **progress** of the file currently being downloaded changes. (ex: byte progress)
+
+### Example
 
 ```csharp
 // add event handlers
@@ -18,7 +22,10 @@ launcher.ProgressChanged += Launcher_ProgressChanged;
 // event handler
 private void Launcher_FileChanged(DownloadFileChangedEventArgs e)
 {
-    Console.WriteLine("[{0}] {1} - {2}/{3}", e.FileKind.ToString(), e.FileName, e.ProgressedFileCount, e.TotalFileCount);
+    Console.WriteLine("FileKind: " + e.FileKind.ToString());
+    Console.WriteLine("FileName: " + e.FileName);
+    Console.WriteLine("TotalFileCount: " + e.TotalFileCount);
+    Console.WriteLine("ProgressedFiles: " + e.ProgressedFileCount);
 }
 
 private void Launcher_ProgressChanged(object sender, System.ComponentModel.ProgressChangedEventArgs e)
@@ -27,41 +34,42 @@ private void Launcher_ProgressChanged(object sender, System.ComponentModel.Progr
 }
 ```
 
-# DownloadFileChangedEventHandler
+## DownloadFileChangedEventHandler
 
 `public delegate void DownloadFileChangedHandler(DownloadFileChangedEventArgs e);`
 
 Represents the method that will handle download progress events.
 
-[DownloadFileChangedEventArgs](#DownloadFileChangedEventArgs) contains the download progress.
+[DownloadFileChangedEventArgs](Handling-Events.md#DownloadFileChangedEventArgs) contains the download progress.
 
-# DownloadFileChangedEventArgs
+## DownloadFileChangedEventArgs
 
 Represents the download progress data of `IDownloader`.
 
 [Source Code](https://github.com/CmlLib/CmlLib.Core/blob/master/CmlLib/Core/Downloader/DownloadFileChangedEventArgs.cs)
 
-## Properties
+### Properties
 
-### FileKind
+#### FileKind
 
-_Type: [MFile](#MFile)_
+_Type:_ [_MFile_](Handling-Events.md#MFile)
 
 Specifies the type of file currently being downloaded.
 
-### FileName
+#### FileName
 
 _Type: string_
 
-The name of the file currently being downloaded.  
+The name of the file currently being downloaded.\
 _Note: if FileKind is equal to MFile.Resource, this property would be an empty string._
 
-### Source
+#### Source
 
-_Type: object_  
+_Type: object_
 
-The source of event. You can determine what object raised the event.  
+The source of event. You can determine what object raised the event.\
 Example:
+
 ```csharp
 if (e.Source is IFileChecker)
 {
@@ -79,42 +87,42 @@ else
 }
 ```
 
-### TotalFileCount;
+#### TotalFileCount;
 
 _Type: int_
 
 The total number of files to download.
 
-### ProgressedFileCount;
+#### ProgressedFileCount;
 
 _Type: int_
 
 The number of files already downloaded.
 
-# ProgressChangedEventHandler
+## ProgressChangedEventHandler
 
 [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.progresschangedeventhandler?view=netcore-3.1)
 
-# MFile
+## MFile
 
 Indicates the game file type.
 
 `public enum MFile { Runtime, Library, Resource, Minecraft };`
 
-## Fields
+### Fields
 
-### Runtime
+#### Runtime
 
 Java runtime. `CMLauncher.CheckJRE()` raises `FileChange` event with this type.
 
-### Library
+#### Library
 
-Libraries (GAME_DIR/libraries)
+Libraries (GAME\_DIR/libraries)
 
-### Resource
+#### Resource
 
-Resources and assets (GAME_DIR/assets)
+Resources and assets (GAME\_DIR/assets)
 
-### Minecraft
+#### Minecraft
 
-Minecraft jar file (GAME_DIR/versions)
+Minecraft jar file (GAME\_DIR/versions)

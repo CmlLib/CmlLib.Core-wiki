@@ -1,8 +1,10 @@
-# Changelogs class
+---
+description: Get Minecraft changelogs
+---
+
+# Minecraft Changelogs
 
 ![image](https://user-images.githubusercontent.com/17783561/82139750-20f0eb00-9865-11ea-8a41-c045ee123c09.png)
-
-Get minecraft changelogs.
 
 ## Sample code
 
@@ -20,20 +22,19 @@ string changelogHtml = await changelogs.GetChangelogHtml("1.16.5"); // get html 
 
 ### static GetChangelogs()
 
-*Returns: `Task<Changelogs>`*
+_Returns: `Task<Changelogs>`_
 
 Get changelog informations from mojang server.
 
 ### GetAvailableVersions()
 
-*Returns: `string[]`*
+_Returns: `string[]`_
 
 Returns Minecraft versions which have a changelog.
 
 ### GetChangelogHtml(string version)
 
-*Returns: `Task<string>`*
+_Returns: `Task<string>`_
 
-Returns the HTML code of the changelog of `version`.  
-The HTML code contains only the changelog; there is no header or footer.
-You can display this HTML with the WebBrowser element if you'd like.
+Returns the HTML code of the changelog of `version`.\
+The HTML code contains only the changelog; there is no header or footer. You can display this HTML with the WebBrowser element if you'd like.

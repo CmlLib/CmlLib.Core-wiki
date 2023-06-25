@@ -1,29 +1,21 @@
-# MLogin and MSession
+# Legacy Mojang Account
 
-This document describes how to get or create Minecraft sessions using CmlLib.Core.
+## NOTE!!!
 
-To connect to online-mode server, you should obtain player's session data. The game session data contains player's username, UUID, and accessToken.
+You cannot use legacy mojang account anymore since Mojang closed their legacy login api. Use [Microsoft-Xbox-Live-Login.md](Microsoft-Xbox-Live-Login.md "mention") instead.
 
-There are some ways to obtain game session using this library:
+For legacy mojang account,
 
-- Mojang Login
-- Microsoft Xbox Login
-- Offline Login
+* `MLogin` class provides methods to communicate with the Mojang auth server.
+* `MLoginResponse` class represents login result. Methods in `MLogin` class return this object.
+* `MSession` class represents player's session data, containing `Username`, `UUID`, and `AccessToken`.
 
-This library provides some classes related game session and login process: 
-
-- `MLogin` class provides methods to communicate with the Mojang auth server.  
-- `MLoginResult` class represents login result. Methods in `MLogin` class return this object.  
-- `MSession` class represents player's session data, containing `Username`, `UUID`, and `AccessToken`.
-
-After obtaining a session data, you should set the [MLaunchOption.Session](https://github.com/CmlLib/CmlLib.Core/wiki/MLaunchOption#session) property to an `MSession` instance.
-
-_Note: [this document](https://wiki.vg/Authentication) will help you to understand basic process of minecraft login._
+_Note:_ [_this document_](https://wiki.vg/Authentication) _will help you to understand basic process of minecraft login._
 
 ## Mojang Login
 
-The basic login process is:  
-![img](https://github.com/CmlLib/CmlLib.Core-wiki/blob/master/img/login.png?raw=true)
+The basic login process is:\
+![img](../../img/login.png)
 
 [PremiumLogin() in CmlLibCoreSample](https://github.com/CmlLib/CmlLib.Core/blob/master/CmlLibCoreSample/Program.cs)
 
@@ -66,36 +58,17 @@ MSession session = response.Session;
 // };
 ```
 
-## Microsoft Xbox Login
-
-go to [Microsoft Xbox Login](https://github.com/CmlLib/CmlLib.Core/wiki/Microsoft-Xbox-Live-Login)
-
-## Offline Login
-  
-This session cannot be used in online-mode server or realm.
-
-```csharp
-MSession session = MSession.GetOfflineSession("username");
-```
-
-## Creating your own session data
-
-```csharp
-MSession session = new MSession("username", "accesstoken", "uuid");
-```
-
 ## MLogin
 
-Provides methods to communicate with the Mojang auth server and cache game session.  
-All methods return [MLoginResponse](#MLoginResponse). You can get the result of login and result session from `MLoginResponse`.  
+Provides methods to communicate with the Mojang auth server and cache game session.\
+All methods return [#mloginresult](Login-and-Sessions.md#mloginresult "mention"). You can get the result of login and result session from `MLoginResponse`.\
 This class fully implments [Yggdrasil authentication scheme](https://wiki.vg/Authentication).
 
 ### Constructor
 
 #### public MLogin()
 
-Initialize object with default login cache file path.
-Default path : `Path.Combine(MinecraftPath.GetOSDefaultPath(), "logintoken.json")`
+Initialize object with default login cache file path. Default path : `Path.Combine(MinecraftPath.GetOSDefaultPath(), "logintoken.json")`
 
 #### public MLogin(string sessionCacheFilePath)
 
@@ -111,8 +84,7 @@ SessionCacheFilePath
 
 #### SaveSession
 
-Save session data to `SessionCacheFilePath` if this true.
-Default value is true.
+Save session data to `SessionCacheFilePath` if this true. Default value is true.
 
 ### Methods
 
@@ -168,48 +140,7 @@ Logout the specified session.
 
 Logout using Mojang email and password.
 
-## MSession
 
-Represents a Minecraft session.
-
-### Constructor
-
-#### public MSession()
-
-Creates an empty session.
-
-#### public MSession(string username, string accesstoken, string uuid)
-
-Creates an MSession with the specified Username, AccessToken, and UUID properties.
-
-### Properties
-
-#### Username
-
-_Type: string_
-
-#### UUID
-
-_Type: string_
-
-#### AccessToken
-
-_Type: string_
-
-#### ClientToken
-
-_Type: string_
-
-### Methods
-
-#### public bool CheckIsValid()
-
-Return true if `Username`, `AccessToken`, `UUID` is not null or empty.
-
-#### public static MSession GetOfflineSession(string username)
-
-Creates a new MSession and returns it.
-`Username=username`, `AccessToken="access_token"`, `UUID="user_uuid"`
 
 ## MLoginResponse
 
@@ -225,13 +156,13 @@ Returns true if `Result` is `MLoginResult.Success`.
 
 #### Result
 
-_Type: [MLoginResult](#MLoginResult)_
+_Type:_ [#mloginresponse](Login-and-Sessions.md#mloginresponse "mention")
 
 Login Result. If this property is not `MLoginResult.Success`, then `Session` will be null.
 
 #### Session
 
-_Type: [MSession](#MSession)_
+_Type:_ [.](./ "mention")
 
 Result session.
 

@@ -1,13 +1,15 @@
+---
+description: Get version metadata list
+---
+
 # VersionLoader
 
-Get version metadata list.
-
-All VersionLoader should inherit `IVersionLoader`.  
-There are 3 version loaders, and you can make your own version loader.  
+All VersionLoader should inherit `IVersionLoader`.\
+There are 3 version loaders, and you can make your own version loader.\
 VersionLoader return version metadata list as `MVersionCollection` type.
 
-`LocalVersionLoader`: Get version metadata list from `MinecraftPath.Versions` directory.  
-`MojangVersionLoader`: Get version metadata list from mojang metadata server.  
+`LocalVersionLoader`: Get version metadata list from `MinecraftPath.Versions` directory.\
+`MojangVersionLoader`: Get version metadata list from mojang metadata server.
 
 `DefaultVersionLoader`: Get version metadatas using `LocalVersionLoader` and `MojangVersionLoader`, and merge two lists.
 
@@ -38,7 +40,7 @@ MVersion realVersion = versions.GetVersion("1.15.2");
 
 ## IVersionLoader interface
 
-#### Task<MVersionCollection> GetVersionMetadatasAsync();
+#### Task GetVersionMetadatasAsync();
 
 Get version metadata list.
 
@@ -48,7 +50,7 @@ Get version metadata list.
 
 ## LocalVersionLoader class
 
-Get version metadata list from `MinecraftPath.Versions` directory.  
+Get version metadata list from `MinecraftPath.Versions` directory.\
 Inherit `IVersionLoader`.
 
 ### Constructors
@@ -59,7 +61,7 @@ Set path to load versions.
 
 ## MojangVersionLoader class
 
-Get version metadata list from mojang version metadata server.  
+Get version metadata list from mojang version metadata server.\
 Inherit `IVersionLoader`.
 
 ## DefaultVersionLoader class
@@ -80,11 +82,11 @@ Manage MVersionMetadata lists.
 
 #### LatestReleaseVersion
 
-*Type: MVersionMetadata*
+_Type: MVersionMetadata_
 
 #### LatestSnapshotVersion
 
-*Type: MVersionMetadata*
+_Type: MVersionMetadata_
 
 ### Methods
 
@@ -98,5 +100,5 @@ Find `versionMetadata`, parse that version metadata to `MVersion`, and return it
 
 #### public void Merge(MVersionCollection from)
 
-Merge two version collections.  
+Merge two version collections.\
 Remove duplications, change `LatestReleaseVersion`, `LatestSnapshotVersion` properties.

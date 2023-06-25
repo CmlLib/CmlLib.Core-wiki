@@ -1,6 +1,8 @@
-# Fabric Installer
+---
+description: Install Fabric mod loader
+---
 
-Install Fabric versions.
+# Fabric Installer
 
 ## Example
 
@@ -36,4 +38,3 @@ await launcher.GetAllVersionsAsync();
 var process = await launcher.CreateProcessAsync(fabricVersionName, new MLaunchOption());
 process.Start();
 ```
-

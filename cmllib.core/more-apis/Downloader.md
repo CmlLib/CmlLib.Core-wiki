@@ -1,6 +1,8 @@
-# Downloader
+---
+description: Download game files
+---
 
-Download game files.  
+# Downloader
 
 Downloaders should inherit `IDownloader` class. Currently, there are only two downloader, `SequenceDownloader` and `AsyncParallelDownloader`. `AsyncParallelDownloader` is default downloader.
 
@@ -8,26 +10,26 @@ Downloaders should inherit `IDownloader` class. Currently, there are only two do
 
 #### public event DownloadFileChangedHandler ChangeFile;
 
-When the **file** being downloaded changes.  
-See [Handling-Events](https://github.com/CmlLib/CmlLib.Core/wiki/Handling-Events).
+When the **file** being downloaded changes.\
+See [Handling-Events.md](../getting-started/Handling-Events.md "mention").
 
 #### public event ProgressChangedEventHandler ChangeProgress;
 
-When the **progress** of the file currently being downloaded changes.  
-See [Handling-Events](https://github.com/CmlLib/CmlLib.Core/wiki/Handling-Events).
+When the **progress** of the file currently being downloaded changes.\
+See [Handling-Events.md](../getting-started/Handling-Events.md "mention").
 
-#### public Task DownloadFiles(DownloadFile[] files);
+#### public Task DownloadFiles(DownloadFile\[] files);
 
 Download all files.
 
 ## SequenceDownloader
 
-Download files sequentially.  
+Download files sequentially.
 
 ## AsyncParallelDownloader
 
-Download files in parallel.  
-In this class, The progress of `ChangeProgress` means (received bytes) / (the sum of the byte sizes of **All files** to download) * 100
+Download files in parallel.\
+In this class, The progress of `ChangeProgress` means (received bytes) / (the sum of the byte sizes of **All files** to download) \* 100
 
 ### Constructors
 
@@ -63,27 +65,27 @@ Represent file that requires to be downloaded.
 
 #### Type
 
-*Type: [MFile](https://github.com/CmlLib/CmlLib.Core/wiki/Handling-Events#MFile)*
+_Type: MFile_ [Handling-Events.md](../getting-started/Handling-Events.md "mention")
 
 #### Name
 
-*Type: string*
+_Type: string_
 
 #### Path
 
-*Type: string*
+_Type: string_
 
 #### Url
 
-*Type: string*
+_Type: string_
 
 #### Size
 
-*Type: long*
+_Type: long_
 
 #### AfterDownload
 
-*Type: Func\<Task>[]*
+_Type: Func\<Task>\[]_
 
 The list of work to do after download was completed.
 

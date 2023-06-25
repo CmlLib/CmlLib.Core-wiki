@@ -1,6 +1,8 @@
-# LiteLoader Installer
+---
+description: Install LiteLoader
+---
 
-Install LiteLoader versions.
+# LiteLoader Installer
 
 ## Example
 
