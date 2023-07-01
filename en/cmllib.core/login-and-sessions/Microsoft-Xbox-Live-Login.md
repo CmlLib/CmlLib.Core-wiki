@@ -4,7 +4,7 @@
 
 Microsoft login process is quite complex. I **highly** recommend you to use this library to add Microsoft login feature in your launcher.
 
-[cmllib.core.auth.microsoft](../../cmllib.core.auth.microsoft/ "mention")
+Go to [CmlLib.Core.Auth.Microsoft](../../cmllib.core.auth.microsoft/) wiki.
 
 ### **Example**
 

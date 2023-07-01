@@ -4,7 +4,7 @@
 
 Version: 3.0.0
 
-## [cmllib.core.auth.microsoft](cmllib.core.auth.microsoft/ "mention")
+## [Broken link](broken-reference "mention")
 
 Log into Minecraft: Java Edition with a Microsoft Xbox account.
 

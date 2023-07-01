@@ -2,7 +2,7 @@
 
 ## 🚀 CmlLib.Core
 
-* [Home](cmllib.core/README.md)
+* [Home](README.md)
 * [Getting Started](cmllib.core/getting-started/README.md)
   * [CMLauncher](cmllib.core/getting-started/CMLauncher.md)
   * [Minecraft Path](cmllib.core/getting-started/MinecraftPath.md)
