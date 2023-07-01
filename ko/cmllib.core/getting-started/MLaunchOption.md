@@ -47,7 +47,7 @@ var launchOption = new MLaunchOption()
 
 **Type: MSession** _선택_
 
-[undefined-2](../undefined-2/ "mention") 에서 마인크래프트에 로그인하고 세션을 가져오는 방법을 확인하세요.
+[Login-and-Sessions.md](../login-and-sessions/README.md "mention") 에서 마인크래프트에 로그인하고 세션을 가져오는 방법을 확인하세요.
 
 플레이어의 유저이름, UUID, 엑세스토큰을 설정합니다. 렐름 서버나 정품 서버에 접속하기 위해서 사용됩니다.  `MSession.GetOfflineSession` 으로 만든 세션은 정품 서버에 접속할 수 없습니다. `null` 을 설정한 경우 `ArgumentException` 예외가 발생합니다.
 
@@ -61,13 +61,13 @@ var launchOption = new MLaunchOption()
 
 **Type: string** _선택_
 
-자바 버전. 설정이 없으면 [FileChecker.md](../undefined-3/FileChecker.md "mention") 가 자동으로 결정합니다.
+자바 버전. 설정이 없으면 [FileChecker.md](../more-apis/FileChecker.md "mention") 가 자동으로 결정합니다.
 
 ### JavaPath
 
 **Type: string** _선택_
 
-자바 경로. 설정이 없으면 [FileChecker.md](../undefined-3/FileChecker.md "mention") 가 자동으로 결정합니다.
+자바 경로. 설정이 없으면 [FileChecker.md](../more-apis/FileChecker.md "mention") 가 자동으로 결정합니다.
 
 ### MaximumRamMb
 
@@ -153,7 +153,7 @@ JVM 파라미터. 이 속성이 `null` 일 경우 기본 JVM 파라미터를 선
 
 **Type: string** _선택_
 
-macOS 의 dock name 을 설정합니다. 일부 macOS 버전의 경우, 반드시 이 옵션을 설정해야 합니다. [Common-Errors.md](../undefined-5/Common-Errors.md "mention")
+macOS 의 dock name 을 설정합니다. 일부 macOS 버전의 경우, 반드시 이 옵션을 설정해야 합니다. [Common-Errors.md](../resources/Common-Errors.md "mention")
 
 ### DockIcon
 

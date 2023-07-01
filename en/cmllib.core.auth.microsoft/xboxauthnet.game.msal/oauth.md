@@ -2,7 +2,7 @@
 
 Describes a way to proceed with Microsoft OAuth via MSAL.
 
-You MUST initialize an [IPublicClientApplication](broken-reference) via YOUR [clientid.md](clientid.md "mention") before to use this!
+You MUST initialize an [IPublicClientApplication](msalclienthelper.md) via YOUR [clientid.md](clientid.md "mention") before to use this!
 
 ## Interactive
 

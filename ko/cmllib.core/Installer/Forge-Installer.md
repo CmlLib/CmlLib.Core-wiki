@@ -61,7 +61,7 @@ _NOTE: 몇몇 포지 버전은 \<forge-version-name>.jar 파일이 없습니다.
 
 ## 포지
 
-포지를 설치한 후, 포지 버전은 `launcher.GetAllVersions()` 이나 `await launcher.GetAllVersionsAsync()` 를 통해서 불러올 수 있습니다. [CMLauncher.md](../undefined-1/CMLauncher.md "mention")
+포지를 설치한 후, 포지 버전은 `launcher.GetAllVersions()` 이나 `await launcher.GetAllVersionsAsync()` 를 통해서 불러올 수 있습니다. [CMLauncher.md](../getting-started/CMLauncher.md "mention")
 
 불러온 게임 버전의 이름을 통해서 포지를 실행하세요.
 

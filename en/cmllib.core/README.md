@@ -2,7 +2,7 @@
 
 [GitHub](https://github.com/CmlLib/CmlLib.Core)
 
-version: 3.3.6
+version: 3.3.7
 
 CmlLib.Core is a .NET library for building your own **Custom Minecraft launcher**.&#x20;
 
@@ -47,7 +47,7 @@ CmlLib.Core is a .NET library for building your own **Custom Minecraft launcher*
 * Create new minecraft directory
 * Make custom minecraft directory structure
 
-#### [Login-and-Sessions.md](login-and-sessions/Login-and-Sessions.md "mention")
+#### [Login-and-Sessions.md](login-and-sessions/mojang-account.md "mention")
 
 * Get game session from mojang auth server
 * Create offline game session

@@ -11,12 +11,12 @@ Downloaders should inherit `IDownloader` class. Currently, there are only two do
 #### public event DownloadFileChangedHandler ChangeFile;
 
 When the **file** being downloaded changes.\
-See [Handling-Events.md](../undefined-1/Handling-Events.md "mention").
+See [Handling-Events.md](../getting-started/Handling-Events.md "mention").
 
 #### public event ProgressChangedEventHandler ChangeProgress;
 
 When the **progress** of the file currently being downloaded changes.\
-See [Handling-Events.md](../undefined-1/Handling-Events.md "mention").
+See [Handling-Events.md](../getting-started/Handling-Events.md "mention").
 
 #### public Task DownloadFiles(DownloadFile\[] files);
 
@@ -65,7 +65,7 @@ Represent file that requires to be downloaded.
 
 #### Type
 
-_Type: MFile_ [Handling-Events.md](../undefined-1/Handling-Events.md "mention")
+_Type: MFile_ [Handling-Events.md](../getting-started/Handling-Events.md "mention")
 
 #### Name
 

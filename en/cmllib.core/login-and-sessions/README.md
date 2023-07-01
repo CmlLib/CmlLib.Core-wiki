@@ -5,7 +5,7 @@ To connect to online-mode server, you should obtain player's session data. The g
 There are some ways to obtain game session:
 
 * [Microsoft-Xbox-Live-Login.md](Microsoft-Xbox-Live-Login.md "mention")
-* [Login-and-Sessions.md](Login-and-Sessions.md "mention")
+* [mojang-account.md](mojang-account.md "mention")
 * [offline-account.md](offline-account.md "mention")
 
 After obtaining a session data, you should set the `MLaunchOption.Session` property to an `MSession` instance. [MLaunchOption.md](../getting-started/MLaunchOption.md "mention")

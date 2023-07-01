@@ -131,6 +131,8 @@ Call `Initialize(p)` and `CreateDirs()`.
 
 <summary>Properties</summary>
 
+### Properties
+
 #### BasePath
 
 _Type: string_
@@ -166,6 +168,8 @@ Old minecraft versions use this path as Assets directory.
 <details>
 
 <summary>Methods</summary>
+
+### Methods
 
 #### public void CreateDirs()
 

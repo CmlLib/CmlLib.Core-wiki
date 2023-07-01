@@ -2,7 +2,7 @@
 
 ## 🚀 CmlLib.Core
 
-* [Home](README.md)
+* [Home](cmllib.core/README.md)
 * [Getting Started](cmllib.core/getting-started/README.md)
   * [CMLauncher](cmllib.core/getting-started/CMLauncher.md)
   * [Minecraft Path](cmllib.core/getting-started/MinecraftPath.md)
@@ -10,7 +10,7 @@
   * [Event Handling](cmllib.core/getting-started/Handling-Events.md)
 * [Login and Sessions](cmllib.core/login-and-sessions/README.md)
   * [Microsoft Xbox Account](cmllib.core/login-and-sessions/Microsoft-Xbox-Live-Login.md)
-  * [Legacy Mojang Account](cmllib.core/login-and-sessions/Login-and-Sessions.md)
+  * [Legacy Mojang Account](cmllib.core/login-and-sessions/mojang-account.md)
   * [Offline Account](cmllib.core/login-and-sessions/offline-account.md)
 * [More APIs](cmllib.core/more-apis/README.md)
   * [VersionLoader](cmllib.core/more-apis/VersionLoader.md)
@@ -31,7 +31,7 @@
 
 ## 🔓 CmlLib.Core.Auth.Microsoft
 
-* [Home](cmllib.core.auth.microsoft/home.md)
+* [Home](cmllib.core.auth.microsoft/README.md)
 * [CmlLib.Core.Auth.Microsoft](cmllib.core.auth.microsoft/cmllib.core.auth.microsoft/README.md)
   * [JELoginHandler](cmllib.core.auth.microsoft/cmllib.core.auth.microsoft/jeloginhandler.md)
   * [JELoginHandlerBuilder](cmllib.core.auth.microsoft/cmllib.core.auth.microsoft/jeloginhandlerbuilder.md)

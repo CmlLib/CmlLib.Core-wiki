@@ -74,7 +74,7 @@ foreach (var v in versions)
 }
 ```
 
-모든 버전을 불러오고 이름을 출력합니다. [VersionLoader.md](../undefined-3/VersionLoader.md "mention")참고
+모든 버전을 불러오고 이름을 출력합니다. [VersionLoader.md](../more-apis/VersionLoader.md "mention")참고
 
 ```csharp
 var process = await launcher.CreateProcessAsync("1.16.5", new MLaunchOption

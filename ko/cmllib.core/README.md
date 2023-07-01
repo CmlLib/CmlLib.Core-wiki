@@ -2,9 +2,9 @@
 
 [GitHub](https://github.com/CmlLib/CmlLib.Core)
 
-version: 3.3.6
+version: 3.3.7
 
-CmlLib.Core 는 **커스텀 마인크래프트 런처** 제작을 위한 .NET 라이브러러리입니다. &#x20;
+CmlLib.Core 는 **커스텀 마인크래프트 런처** 제작을 위한 .NET 라이브러러리입니다.
 
 ## 주요 기능
 
@@ -26,42 +26,42 @@ CmlLib.Core 는 **커스텀 마인크래프트 런처** 제작을 위한 .NET �
 
 <summary>Index</summary>
 
-#### [CMLauncher.md](cmllib.core/undefined-1/CMLauncher.md "mention")
+#### [CMLauncher.md](getting-started/CMLauncher.md "mention")
 
 * 기본적인 사용방법
 * **이 문서를 먼저 읽어 보세요!**
 
-#### [Sample-Code.md](cmllib.core/undefined-5/Sample-Code.md "mention")
+#### [Sample-Code.md](resources/Sample-Code.md "mention")
 
 * CmlLibCoreSample: 간단한 콘솔 프로그램
 * CmlLibWinFormSample: 모든 기능
 
-#### [Common-Errors.md](cmllib.core/undefined-5/Common-Errors.md "mention")
+#### [Common-Errors.md](resources/Common-Errors.md "mention")
 
 * Java runtime errors
 * macOS / Linux errors
 
-#### [MinecraftPath.md](cmllib.core/undefined-1/MinecraftPath.md "mention")
+#### [MinecraftPath.md](getting-started/MinecraftPath.md "mention")
 
 * 기본 경로 가져오기
 * 새로운 마인크래프트 디렉터리 만들기
 * 마인크래프트 디렉터리 구조 바꾸기
 
-#### [Login-and-Sessions.md](cmllib.core/undefined-2/Login-and-Sessions.md "mention")
+#### [Login-and-Sessions.md](login-and-sessions/README.md "mention")
 
 * Get game session from mojang auth server
 * Create offline game session
 
-#### [Microsoft-Xbox-Live-Login.md](cmllib.core/undefined-2/Microsoft-Xbox-Live-Login.md "mention")
+#### [Microsoft-Xbox-Live-Login.md](login-and-sessions/Microsoft-Xbox-Live-Login.md "mention")
 
 * 마이크로소프트 엑스박스 계정으로 마인크래프트 로그인
 
-#### [Handling-Events.md](cmllib.core/undefined-1/Handling-Events.md "mention")
+#### [Handling-Events.md](getting-started/Handling-Events.md "mention")
 
 * 런처의 진행 상황 표시 (percentage, file count)
 * 진행률 표시
 
-#### [MLaunchOption.md](cmllib.core/undefined-1/MLaunchOption.md "mention")
+#### [MLaunchOption.md](getting-started/MLaunchOption.md "mention")
 
 * 최대 메모리 크기 (-Xmx), 최소 메모리 크기 (-Xms)&#x20;
 * 서버 바로 접속&#x20;
@@ -76,12 +76,12 @@ CmlLib.Core 는 **커스텀 마인크래프트 런처** 제작을 위한 .NET �
 * Microsoft Xbox authentication
 * Security question-answer flow
 
-#### [Downloader.md](cmllib.core/undefined-3/Downloader.md "mention")
+#### [Downloader.md](more-apis/Downloader.md "mention")
 
 * AsyncParallelDownloader (default)
 * SequenceDownloader
 
-#### [FileChecker.md](cmllib.core/undefined-3/FileChecker.md "mention")
+#### [FileChecker.md](more-apis/FileChecker.md "mention")
 
 * AssetChecker, ClientChecker, LibraryChecker
 * Skip file hash checking
@@ -89,7 +89,7 @@ CmlLib.Core 는 **커스텀 마인크래프트 런처** 제작을 위한 .NET �
 * Use file mirror server (like BMCLAPI mirror service)
 * Make custom file checker
 
-#### [VersionLoader.md](cmllib.core/undefined-3/VersionLoader.md "mention")
+#### [VersionLoader.md](more-apis/VersionLoader.md "mention")
 
 * Get version metadata list from local directory
 * Get version metadata list from mojang server
@@ -97,24 +97,24 @@ CmlLib.Core 는 **커스텀 마인크래프트 런처** 제작을 위한 .NET �
 * Get version metadata information (version name, type, release date, etc)
 * Make custom version loader
 
-#### [Version.md](cmllib.core/undefined-3/Version.md "mention")
+#### [Version.md](more-apis/Version.md "mention")
 
 * Get version information (version name, type, arguments, library list, asset id, etc)
 
-#### [Installer](cmllib.core/Installer/ "mention")
+#### [Installer](Installer/ "mention")
 
 * Forge 설치
 * LiteLoader 설치
 * FabricMC 설치
 
-#### [FAQ.md](cmllib.core/undefined-5/FAQ.md "mention")
+#### [FAQ.md](resources/FAQ.md "mention")
 
 * 커스텀 클라이언트 실행
 * 게임 출력 확인 (logs)
 * log4j2
 
-[Get-Minecraft-Changelogs.md](cmllib.core/undefined-4/Get-Minecraft-Changelogs.md "mention")
+[Get-Minecraft-Changelogs.md](utilites/Get-Minecraft-Changelogs.md "mention")
 
-[Licenses-and-Dependencies.md](cmllib.core/undefined-5/Licenses-and-Dependencies.md "mention")
+[Licenses-and-Dependencies.md](resources/Licenses-and-Dependencies.md "mention")
 
 </details>

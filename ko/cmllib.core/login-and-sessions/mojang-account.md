@@ -61,7 +61,7 @@ MSession session = response.Session;
 ## MLogin
 
 Provides methods to communicate with the Mojang auth server and cache game session.\
-All methods return [#mloginresult](Login-and-Sessions.md#mloginresult "mention"). You can get the result of login and result session from `MLoginResponse`.\
+All methods return [#mloginresult](mojang-account.md#mloginresult "mention"). You can get the result of login and result session from `MLoginResponse`.\
 This class fully implments [Yggdrasil authentication scheme](https://wiki.vg/Authentication).
 
 ### Constructor
@@ -140,8 +140,6 @@ Logout the specified session.
 
 Logout using Mojang email and password.
 
-
-
 ## MLoginResponse
 
 Indicates the login response.
@@ -156,7 +154,7 @@ Returns true if `Result` is `MLoginResult.Success`.
 
 #### Result
 
-_Type:_ [#mloginresponse](Login-and-Sessions.md#mloginresponse "mention")
+_Type:_ [#mloginresponse](mojang-account.md#mloginresponse "mention")
 
 Login Result. If this property is not `MLoginResult.Success`, then `Session` will be null.
 
