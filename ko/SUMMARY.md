@@ -29,7 +29,7 @@
   * [예시 런처](cmllib.core/resources/Sample-Code.md)
   * [라이센스](cmllib.core/resources/Licenses-and-Dependencies.md)
 
-## 🔓 CmlLib.Core.Auth.Microsoft
+## 🔓 Auth.Microsoft
 
 * [홈](cmllib.core.auth.microsoft/README.md)
 * [CmlLib.Core.Auth.Microsoft](cmllib.core.auth.microsoft/cmllib.core.auth.microsoft/README.md)

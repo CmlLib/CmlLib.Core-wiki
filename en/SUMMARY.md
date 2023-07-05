@@ -29,7 +29,7 @@
   * [Sample Launcher](cmllib.core/resources/Sample-Code.md)
   * [License](cmllib.core/resources/Licenses-and-Dependencies.md)
 
-## 🔓 CmlLib.Core.Auth.Microsoft
+## 🔓 Auth.Microsoft
 
 * [Home](cmllib.core.auth.microsoft/README.md)
 * [CmlLib.Core.Auth.Microsoft](cmllib.core.auth.microsoft/cmllib.core.auth.microsoft/README.md)
