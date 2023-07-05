@@ -4,7 +4,7 @@
 
 Version: 3.0.0
 
-## [Broken link](broken-reference "mention")
+## [cmllib.core.auth.microsoft](cmllib.core.auth.microsoft/ "mention")
 
 마이크로소프트 엑스박스 계정으로 마인크래프트: 자바 에디션에 로그인하는 기능을 제공하는 라이브러리입니다.
 

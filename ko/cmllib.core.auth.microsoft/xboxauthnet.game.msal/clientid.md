@@ -43,4 +43,8 @@ Scroll down and 'Allow public client flows'
 
 Click 'Save' button
 
-Done. use your Application (client) ID.
+## 4. Client ID 등록하기
+
+{% embed url="https://help.minecraft.net/hc/en-us/articles/16254801392141" %}
+
+{% embed url="https://github.com/CmlLib/CmlLib.Core.Auth.Microsoft/issues/16" %}

@@ -6,6 +6,13 @@ description: Xbox Authentication
 
 Xbox 로그인을 진행하는 방법을 나타냅니다.
 
+## Example
+
+```csharp
+var authenticator = // create authenticator using login handlers
+authenticator.AddXboxAuth(xbox => xbox.Basic(XboxAuthConstants.XboxLiveRelyingParty));
+```
+
 ## Basic
 
 ```csharp
@@ -15,7 +22,7 @@ authenticator.AddXboxAuth(xbox => xbox.Basic("relyingParty"));
 가장 기본적인 방식입니다. 로그인에 필요한 최소 정보(UserToken, XstsToken)만 받아옵니다.
 
 나이 인증이 되지 않은 계정, 18세 미만인 계정은 이 방식으로 로그인할때 문제가 발생할 수 있습니다. (오류 코드 `8015dc0c`, `8015dc0d`, `8015dc0e`)\
-Full 방식이나 Sisu 방식을 사용하면 이 문제를 해결할 수 있습니다.
+[#full](xboxauth.md#full "mention") 방식이나 [#sisu](xboxauth.md#sisu "mention") 방식을 사용하면 이 문제를 해결할 수 있습니다.
 
 ## Full
 
