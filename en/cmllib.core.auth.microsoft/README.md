@@ -10,7 +10,7 @@ Log into Minecraft: Java Edition with a Microsoft Xbox account.
 
 ## [cmllib.core.bedrock.auth.md](cmllib.core.bedrock.auth.md "mention")
 
-Issue authentication tokens to access Minecraft: Badlands Edition servers with a Microsoft Xbox account.
+Issue authentication tokens to access Minecraft: Bedrock Edition servers with a Microsoft Xbox account.
 
 ## [xboxauthnet.game](xboxauthnet.game/ "mention")
 

@@ -4,7 +4,7 @@ description: Microsoft OAuth
 
 # OAuth
 
-## Usage
+## Example
 
 Add `Authenticator` through the extension methods of `ICompositeAuthenticator`.
 
@@ -12,6 +12,7 @@ Add `Authenticator` through the extension methods of `ICompositeAuthenticator`.
 using XboxAuthNet.Game;
 
 var clientInfo = new MicrosoftOAuthClientInfo("<MICROSOFT_OAUTH_CLIENT_ID>", "<MICROSOFT_OAUTH_SCOPES>");
+var authenticator = // create authenticator using login handlers
 
 // example 1
 authenticator.AddForceMicrosoftOAuth(clientInfo, oauth => oauth.Interactive());
@@ -57,24 +58,27 @@ Proceed with the login without prompting the user for a login. If the cached ses
 
 ### Signout
 
-1.
+Clears only cached OAuth sessions. The browser on user may still have user's login information.
 
 ```csharp
 authenticator.AddMicrosoftOAuthSignout(clientInfo);
 ```
 
-2.
+### Signout with Clearing Browser Cache
+
+Displays the OAuth sign out page and clears the session.
 
 ```csharp
-authenticator.AddForceMicrosoftOAuth(clientInfo, oauth => oauth.Signout(codeFlow =>
+authenticator.AddMicrosoftOAuthBrowserSignout(clientInfo);
+```
+
+or, you can set browser options:
+
+```csharp
+authenticator.AddMicrosoftOAuthBrowserSignout(clientInfo, codeFlow =>
 {
     // set more options like UI title, UI parents, etc... 
     codeFlow.WithUITitle("My Window");
 }));
 ```
 
-Displays the OAuth sign out page and clears the session.
-
-### Signout without UI
-
-Clears only cached OAuth sessions. The browser on user may still have user's login information.

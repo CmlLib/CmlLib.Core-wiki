@@ -56,9 +56,11 @@ Root directory : MinecraftPath.BasePath
 
 ## Make custom directory structure
 
-There are two ways to make custom directory structure.&#x20;
+There are two ways to make custom directory structure.
 
-**Note** : all paths are converted to absolute path.
+{% hint style="info" %}
+All paths are stored as absolute paths, even when a relative path is passed.
+{% endhint %}
 
 ### Set properties
 
@@ -72,6 +74,10 @@ myPath.Assets = MinecraftPath.GetOSDefaultPath() + "/assets";
 ```
 
 ### Inheritence
+
+{% hint style="info" %}
+When receiving a relative path as an argument, make sure to convert it to an absolute path and store it.
+{% endhint %}
 
 Create derived class of `MinecraftPath`, and override methods. Each methods (`CreateDirs`, `NormalizePath`, etc) are described in [#methods](MinecraftPath.md#methods "mention").
 
@@ -109,16 +115,16 @@ class MyMinecraftPath : MinecraftPath
 
 <summary>Constructors</summary>
 
-####
 
-####
 
-#### public MinecraftPath()
+
+
+**public MinecraftPath()**
 
 Initialize instance with default path.\
 Same as `new MinecraftPath(MinecraftPath.GetOSDefaultPath())`.
 
-#### public MinecraftPath(string p)
+**public MinecraftPath(string p)**
 
 Initializze instance with the specific path, `p`.\
 Call `Initialize(p)` and `CreateDirs()`.
@@ -129,33 +135,33 @@ Call `Initialize(p)` and `CreateDirs()`.
 
 <summary>Properties</summary>
 
-### Properties
+#### Properties
 
-#### BasePath
+**BasePath**
 
 _Type: string_
 
 Root directory path
 
-#### Assets
+**Assets**
 
 _Type: string_
 
-#### Library
+**Library**
 
 _Type: string_
 
-#### Versions
+**Versions**
 
 _Type: string_
 
-#### Runtime
+**Runtime**
 
 _Type: string_
 
 The default download path of `MJava`
 
-#### Resource
+**Resource**
 
 _Type: string_
 
@@ -167,42 +173,42 @@ Old minecraft versions use this path as Assets directory.
 
 <summary>Methods</summary>
 
-### Methods
+#### Methods
 
-#### public void CreateDirs()
+**public void CreateDirs()**
 
 Create `BasePath`, `Assets`, `Library`, `Versions`, `Runtime`, `Resouce` directory.
 
-#### public virtual string GetIndexFilePath(string assetId)
+**public virtual string GetIndexFilePath(string assetId)**
 
 Get asset index file path.
 
-#### public virtual string GetAssetObjectPath(string assetId)
+**public virtual string GetAssetObjectPath(string assetId)**
 
 Get asset object directory path.
 
-#### public virtual string GetAssetLegacyPath(string assetId)
+**public virtual string GetAssetLegacyPath(string assetId)**
 
 Get asset legacy directory path.
 
-#### public virtual string GetVersionJarPath(string id)
+**public virtual string GetVersionJarPath(string id)**
 
 Get client jar path.
 
-#### public virtual string GetVersionJsonPath(string id)
+**public virtual string GetVersionJsonPath(string id)**
 
 Get client json path.
 
-#### public virtual string GetNativePath(string id)
+**public virtual string GetNativePath(string id)**
 
 Get native directory path.\
 Native dll files will be stored here.
 
-#### protected static string Dir(string path)
+**protected static string Dir(string path)**
 
 Normalize `path` and create directory.
 
-#### protected static string NormalizePath(string path)
+**protected static string NormalizePath(string path)**
 
 Normalize `path`. Convert relative path to absolute path and replace invalid directory separator. (In windows, replace `/` to `\`)
 

@@ -2,7 +2,14 @@
 
 Describes a way to proceed with Microsoft OAuth via MSAL.
 
-You MUST initialize an [IPublicClientApplication](msalclienthelper.md) via YOUR [clientid.md](clientid.md "mention") before to use this!
+You MUST initialize an [IPublicClientApplication](msalclienthelper.md) via [YOUR CLIENT ID](clientid.md) before to use this!
+
+## Example
+
+```csharp
+var authenticator = // create authenticator using login handlers
+authenticator.AddMsalOAuth(app, msal => msal.Interactive());
+```
 
 ## Interactive
 

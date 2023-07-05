@@ -18,7 +18,10 @@ var launcher = new CMLauncher(path);
 
 launcher.FileChanged += (e) =>
 {
-    Console.WriteLine("[{0}] {1} - {2}/{3}", e.FileKind.ToString(), e.FileName, e.ProgressedFileCount, e.TotalFileCount);
+    Console.WriteLine("FileKind: " + e.FileKind.ToString());
+    Console.WriteLine("FileName: " + e.FileName);
+    Console.WriteLine("ProgressedFileCount: " + e.ProgressedFileCount);
+    Console.WriteLine("TotalFileCount: " + e.TotalFileCount);
 };
 launcher.ProgressChanged += (s, e) =>
 {
@@ -58,7 +61,10 @@ Create Minecraft directory structure and initialize launcher instance. You can c
 ```csharp
 launcher.FileChanged += (e) =>
 {
-    Console.WriteLine("[{0}] {1} - {2}/{3}", e.FileKind.ToString(), e.FileName, e.ProgressedFileCount, e.TotalFileCount);
+    Console.WriteLine("FileKind: " + e.FileKind.ToString());
+    Console.WriteLine("FileName: " + e.FileName);
+    Console.WriteLine("ProgressedFileCount: " + e.ProgressedFileCount);
+    Console.WriteLine("TotalFileCount: " + e.TotalFileCount);
 };
 launcher.ProgressChanged += (s, e) =>
 {
@@ -90,6 +96,10 @@ Set launch options, check game files, download game files, and return minecraft 
 
 ## Offline mode
 
+{% hint style="info" %}
+This works only when all game files is normally installed.
+{% endhint %}
+
 In this mode, you can launch game without internet connection. Set `FileDownloader` to `null`, and set `VersionLoader` to `LocalVersionLoader`.
 
 ```csharp
@@ -101,9 +111,11 @@ launcher.FileDownloader = null;
 // ~~~
 ```
 
-_note: this works only when all game files is normally installed._
-
 ## Launch without checking / downloading
+
+{% hint style="info" %}
+This works only when all game files is normally installed.
+{% endhint %}
 
 This code launch game super fast. (< 1sec)
 
@@ -115,78 +127,76 @@ var process = await launcher.CreateProcess("1.18.1", new MLaunchOption()
 process.Start();
 ```
 
-_note: this works only when all game files is normally installed._
-
 ## API References
 
 <details>
 
 <summary>Methods</summary>
 
-#### MVersionCollection GetAllVersions()
+**MVersionCollection GetAllVersions()**
 
 Refresh version list and return them.
 
-#### async Task GetAllVersionsAsync()
+**async Task GetAllVersionsAsync()**
 
 Async version of `GetAllVersions()`.
 
-#### MVersion GetVersion(string versionname)
+**MVersion GetVersion(string versionname)**
 
 Get `MVersion` instance.
 
-#### async Task GetVersionAsync(string versionname)
+**async Task GetVersionAsync(string versionname)**
 
 Get `MVersion` instance asynchronously.
 
-#### DownloadFile\[] CheckLostGameFiles(MVersion version)
+**DownloadFile\[] CheckLostGameFiles(MVersion version)**
 
 Check all game files and return file list that should be downloaded. It checks all game files using `IFileChecker` in `GameFileChekers` property, combines all game files that should be downloaded into array and return array.
 
-#### async Task\<DownloadFile\[]> CheckLostGameFilesTaskAsync(MVersion version)
+**async Task\<DownloadFile\[]> CheckLostGameFilesTaskAsync(MVersion version)**
 
 Asynchronous version of `CheckLostGameFiles` method.
 
-#### async Task DownloadGameFiles(DownloadFile\[] files)
+**async Task DownloadGameFiles(DownloadFile\[] files)**
 
 Download `files` using `FileDownloader` property.
 
-#### void CheckAndDownload(MVersion version)
+**void CheckAndDownload(MVersion version)**
 
 Check all game files and download files.
 
-#### async Task CheckAndDownloadAsync(MVersion version)
+**async Task CheckAndDownloadAsync(MVersion version)**
 
 Asynchrounous version of `CheckAndDownload` method.
 
-#### Process CreateProcess(string versionName, MLaunchOption option, bool checkAndDownload=true)
+**Process CreateProcess(string versionName, MLaunchOption option, bool checkAndDownload=true)**
 
 Find `versionName` version from `Versions` property, check game files, and return game process.\
 If `checkAndDownload` argument is false, It does not check game files.\
 This method does not start game process. You should call `Start()` method of process.
 
-#### Process CreateProcess(MVersion version, MLaunchOption option, bool checkAndDownload=false)
+**Process CreateProcess(MVersion version, MLaunchOption option, bool checkAndDownload=false)**
 
 Check game files of `version` and return game process. If `checkAndDownload` argument is false, It does not check game files.\
 This method does not start game process. You should call `Start()` method of process.
 
-#### async Task CreateProcessAsync(string versionName, MLaunchOption option, bool checkAndDownload=false)
+**async Task CreateProcessAsync(string versionName, MLaunchOption option, bool checkAndDownload=false)**
 
 Asynchrounous version of `CreateProcess(string versionName, MLaunchOption option)` method.
 
-#### async Task CreateProcessAsync(MVersion version, MLaunchOption option, bool checkAndDownload=false)
+**async Task CreateProcessAsync(MVersion version, MLaunchOption option, bool checkAndDownload=false)**
 
 Asynchrounous version of `CreateProcess(MVersion version, MLaunchOption option)` method.
 
-#### Process CreateProcess(MLaunchOption option)
+**Process CreateProcess(MLaunchOption option)**
 
 Create game process which game version is `StartVersion` property of `option`. This method does not check and download game files. This method does not start game process. You should call `Start()` method of process.
 
-#### async Task CreateProcessAsync(MLaunchOption option)
+**async Task CreateProcessAsync(MLaunchOption option)**
 
 Asynchrounous version of `CreateProcess(MLaunchOption option)` method.
 
-#### Process CreateProcess(string mcversion, string forgeversion, MLaunchOption option)
+**Process CreateProcess(string mcversion, string forgeversion, MLaunchOption option)**
 
 (not stable)
 
@@ -196,23 +206,23 @@ Asynchrounous version of `CreateProcess(MLaunchOption option)` method.
 
 <summary>Properties</summary>
 
-#### MinecraftPath
+**MinecraftPath**
 
 _Type: MinecraftPath_
 
-#### Versions
+**Versions**
 
 _Type: MVersionCollection?_
 
-#### VersionLoader
+**VersionLoader**
 
 _Type: IVersionLoader_
 
-#### GameFileCheckers
+**GameFileCheckers**
 
 _Type: FileCheckerCollection_
 
-#### FileDownloader
+**FileDownloader**
 
 _Type: IDownloader?_
 

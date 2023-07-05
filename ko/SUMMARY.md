@@ -2,7 +2,7 @@
 
 ## 🚀 CmlLib.Core
 
-* [홈](cmllib.core/README.md)
+* [홈](README.md)
 * [시작하기](cmllib.core/getting-started/README.md)
   * [CMLauncher](cmllib.core/getting-started/CMLauncher.md)
   * [게임 경로 설정](cmllib.core/getting-started/MinecraftPath.md)

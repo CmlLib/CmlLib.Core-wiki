@@ -1,11 +1,2 @@
----
-description: Install mod loaders
----
+# 모드 로더 인스톨러
 
-# Mod Loader Installers
-
-### [Forge-Installer.md](Forge-Installer.md "mention")
-
-### [Fabric-Installer.md](Fabric-Installer.md "mention")
-
-### [LiteLoader-Installer.md](LiteLoader-Installer.md "mention")

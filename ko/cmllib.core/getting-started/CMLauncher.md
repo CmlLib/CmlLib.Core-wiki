@@ -16,7 +16,10 @@ var launcher = new CMLauncher(path);
 
 launcher.FileChanged += (e) =>
 {
-    Console.WriteLine("[{0}] {1} - {2}/{3}", e.FileKind.ToString(), e.FileName, e.ProgressedFileCount, e.TotalFileCount);
+    Console.WriteLine("파일종류 " + e.FileKind.ToString());
+    Console.WriteLine("파일이름 " + e.FileName);
+    Console.WriteLine("진행한 파일 수: " + e.ProgressedFileCount);
+    Console.WriteLine("총 파일 수: " + e.TotalFileCount);
 };
 launcher.ProgressChanged += (s, e) =>
 {
@@ -56,7 +59,10 @@ var launcher = new CMLauncher(path);
 ```csharp
 launcher.FileChanged += (e) =>
 {
-    Console.WriteLine("[{0}] {1} - {2}/{3}", e.FileKind.ToString(), e.FileName, e.ProgressedFileCount, e.TotalFileCount);
+    Console.WriteLine("파일종류 " + e.FileKind.ToString());
+    Console.WriteLine("파일이름 " + e.FileName);
+    Console.WriteLine("진행한 파일 개수: " + e.ProgressedFileCount);
+    Console.WriteLine("총 파일 개수: " + e.TotalFileCount);
 };
 launcher.ProgressChanged += (s, e) =>
 {
@@ -84,7 +90,7 @@ var process = await launcher.CreateProcessAsync("1.16.5", new MLaunchOption
 });
 ```
 
-실행 옵션을 설정하고, 게임 파일을 검사하고, 게임 파일을 다운로드하고, 게임을 실행해 마인크래프트 `Process` 인스턴스를 반환합니다. [MLaunchOption.md](MLaunchOption.md "mention") 에서 더 많은 실행 옵션을 확인하세요.&#x20;
+실행 옵션을 설정하고, 게임 파일을 검사하고, 게임 파일을 다운로드하고, 게임을 실행해 마인크래프트 `Process` 인스턴스를 반환합니다. [MLaunchOption.md](MLaunchOption.md "mention") 에서 더 많은 실행 옵션을 확인하세요.
 
 ## 오프라인 모드
 
@@ -125,70 +131,70 @@ process.Start();
 
 <summary>Methods</summary>
 
-#### MVersionCollection GetAllVersions()
+**MVersionCollection GetAllVersions()**
 
 Refresh version list and return them.
 
-#### async Task GetAllVersionsAsync()
+**async Task GetAllVersionsAsync()**
 
 Async version of `GetAllVersions()`.
 
-#### MVersion GetVersion(string versionname)
+**MVersion GetVersion(string versionname)**
 
 Get `MVersion` instance.
 
-#### async Task GetVersionAsync(string versionname)
+**async Task GetVersionAsync(string versionname)**
 
 Get `MVersion` instance asynchronously.
 
-#### DownloadFile\[] CheckLostGameFiles(MVersion version)
+**DownloadFile\[] CheckLostGameFiles(MVersion version)**
 
 Check all game files and return file list that should be downloaded. It checks all game files using `IFileChecker` in `GameFileChekers` property, combines all game files that should be downloaded into array and return array.
 
-#### async Task\<DownloadFile\[]> CheckLostGameFilesTaskAsync(MVersion version)
+**async Task\<DownloadFile\[]> CheckLostGameFilesTaskAsync(MVersion version)**
 
 Asynchronous version of `CheckLostGameFiles` method.
 
-#### async Task DownloadGameFiles(DownloadFile\[] files)
+**async Task DownloadGameFiles(DownloadFile\[] files)**
 
 Download `files` using `FileDownloader` property.
 
-#### void CheckAndDownload(MVersion version)
+**void CheckAndDownload(MVersion version)**
 
 Check all game files and download files.
 
-#### async Task CheckAndDownloadAsync(MVersion version)
+**async Task CheckAndDownloadAsync(MVersion version)**
 
 Asynchrounous version of `CheckAndDownload` method.
 
-#### Process CreateProcess(string versionName, MLaunchOption option, bool checkAndDownload=true)
+**Process CreateProcess(string versionName, MLaunchOption option, bool checkAndDownload=true)**
 
 Find `versionName` version from `Versions` property, check game files, and return game process.\
 If `checkAndDownload` argument is false, It does not check game files.\
 This method does not start game process. You should call `Start()` method of process.
 
-#### Process CreateProcess(MVersion version, MLaunchOption option, bool checkAndDownload=false)
+**Process CreateProcess(MVersion version, MLaunchOption option, bool checkAndDownload=false)**
 
 Check game files of `version` and return game process. If `checkAndDownload` argument is false, It does not check game files.\
 This method does not start game process. You should call `Start()` method of process.
 
-#### async Task CreateProcessAsync(string versionName, MLaunchOption option, bool checkAndDownload=false)
+**async Task CreateProcessAsync(string versionName, MLaunchOption option, bool checkAndDownload=false)**
 
 Asynchrounous version of `CreateProcess(string versionName, MLaunchOption option)` method.
 
-#### async Task CreateProcessAsync(MVersion version, MLaunchOption option, bool checkAndDownload=false)
+**async Task CreateProcessAsync(MVersion version, MLaunchOption option, bool checkAndDownload=false)**
 
 Asynchrounous version of `CreateProcess(MVersion version, MLaunchOption option)` method.
 
-#### Process CreateProcess(MLaunchOption option)
+**Process CreateProcess(MLaunchOption option)**
 
 Create game process which game version is `StartVersion` property of `option`. This method does not check and download game files. This method does not start game process. You should call `Start()` method of process.
 
-#### async Task CreateProcessAsync(MLaunchOption option)
+**async Task CreateProcessAsync(MLaunchOption option)**
 
 Asynchrounous version of `CreateProcess(MLaunchOption option)` method.
 
-#### Process CreateProcess(string mcversion, string forgeversion, MLaunchOption option)
+**Process CreateProcess(string mcversion, string forgeversion, MLaunchOption option)**
 
 (not stable)
 
@@ -198,23 +204,23 @@ Asynchrounous version of `CreateProcess(MLaunchOption option)` method.
 
 <summary>Properties</summary>
 
-#### MinecraftPath
+**MinecraftPath**
 
 _Type: MinecraftPath_
 
-#### Versions
+**Versions**
 
 _Type: MVersionCollection?_
 
-#### VersionLoader
+**VersionLoader**
 
 _Type: IVersionLoader_
 
-#### GameFileCheckers
+**GameFileCheckers**
 
 _Type: FileCheckerCollection_
 
-#### FileDownloader
+**FileDownloader**
 
 _Type: IDownloader?_
 

@@ -6,7 +6,7 @@ description: 엑스박스 게임에 로그인하기 위한 기반을 제공합�
 
 마이크로소프트 로그인 관련 기능, 엑스박스 로그인 관련 기능, 그리고 계정 관리 기능 등등 엑스박스 게임 로그인 기능을 위한 공통 기능을 제공합니다.
 
-예를 들어 마인크래프트 자바 에디션에 로그인하기 위한 [README.md](../cmllib.core.auth.microsoft/README.md "mention"), 배드락 에디션에 로그인하기 위한 [cmllib.core.bedrock.auth.md](../cmllib.core.bedrock.auth.md "mention") 의 공통 기능은 모두 이 라이브러리에서 제공합니다.
+예를 들어 마인크래프트 자바 에디션에 로그인하기 위한 [cmllib.core.auth.microsoft](../cmllib.core.auth.microsoft/ "mention"), 배드락 에디션에 로그인하기 위한 [cmllib.core.bedrock.auth.md](../cmllib.core.bedrock.auth.md "mention") 의 공통 기능은 모두 이 라이브러리에서 제공합니다.
 
 ## Authenticator
 

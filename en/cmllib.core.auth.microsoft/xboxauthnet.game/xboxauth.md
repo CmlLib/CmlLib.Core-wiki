@@ -4,16 +4,23 @@ description: Xbox Authentication
 
 # XboxAuth
 
+## Example
+
+```csharp
+var authenticator = // create authenticator using login handlers
+authenticator.AddXboxAuth(xbox => xbox.Basic(XboxAuthConstants.XboxLiveRelyingParty));
+```
+
 ## Basic
 
 ```csharp
 authenticator.AddXboxAuth(xbox => xbox.Basic("relyingParty"));
 ```
 
-This is the most basic approach. It only gets the minimum information (UserToken, XstsToken) needed to log in.
+This is the most basic method. It only gets the minimum information (UserToken, XstsToken) needed to log in.
 
 Accounts that are not age-verified, and accounts that are under the age of 18 may experience issues when logging in this way (error codes `8015dc0c`, `8015dc0d`, `8015dc0e`).\
-You can work around this by using the Full method or the Sisu method.
+You can work around this by using the [#full](xboxauth.md#full "mention") method or the [#sisu](xboxauth.md#sisu "mention") method.
 
 ## Full
 
