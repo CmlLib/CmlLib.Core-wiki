@@ -6,6 +6,10 @@ description: Manage multiple accounts
 
 Describes how to manage multiple accounts. Each account is identified by a unique value called `identifier`.
 
+{% hint style="info" %}
+For more methods for Minecraft: Java Edition account, see [jeloginhandler.md](../cmllib.core.auth.microsoft/jeloginhandler.md "mention").
+{% endhint %}
+
 ## Get All Accounts
 
 ```csharp
@@ -45,31 +49,4 @@ loginHandler.AccountManager.ClearAccounts();
 
 ```csharp
 loginHandler.AccountManager.SaveAccounts();
-```
-
-## Get Minecraft:JE user information from the Account
-
-```csharp
-var accounts = loginHandler.AccountManager.GetAccounts();
-var myAccount = accounts.First();
-
-if (myAccount is JEGameAccount jeAccount)
-{
-    Console.WriteLine(jeAccount.Profile?.Username);
-    Console.WriteLine(jeAccount.Profile?.UUID);
-    Console.WriteLine(jeAccount.Token?.AccessToken);
-}
-else
-{
-    // if the account is not Minecraft: JE account
-}
-```
-
-## Get MSession for CmlLib.Core from the account
-
-```csharp
-var accounts = loginHandler.AccountManager.GetAccounts();
-var myAccount = accounts.First();
-
-MSession session = myAccount.ToLauncherSession();
 ```

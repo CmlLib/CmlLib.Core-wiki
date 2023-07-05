@@ -18,7 +18,7 @@ For more detailed initialization, which includes specifying how accounts are sto
 var session = await loginHandler.Authenticate();
 ```
 
-Load the account list and attempt to log in with the most recent account. If no account is saved, a new empty account will be used.
+This method tries [#authenticating-with-the-most-recent-account](jeloginhandler.md#authenticating-with-the-most-recent-account "mention") first and if it fails, try [#authenticating-with-new-account](jeloginhandler.md#authenticating-with-new-account "mention").
 
 ## Authenticating with New Account
 
@@ -36,7 +36,52 @@ Add a new account to sign in. Show the user the Microsoft OAuth page to enter th
 var session = await loginHandler.AuthenticateSilently();
 ```
 
-Using the account information of the most account, log in. Since the login information is already saved, the login process will be completed without the need for the user to enter their Microsoft account. If there is no saved login information or if the stored login information has expired, an exception will be thrown.
+Using the saved account information of the most account, log in.&#x20;
+
+* If the user is already logged in, this method returns the logged in information immediately.
+* If the user's login information has expired, try to refresh it. No user interaction nor webview is required during this process.&#x20;
+* If there is no saved login information or if refresh failed, an `MicrosoftOAuthException` will be thrown. In this case you should authenticate again using new account methods like [#authenticating-with-new-account](jeloginhandler.md#authenticating-with-new-account "mention").
+
+## List Accounts
+
+```csharp
+var accounts = loginHandler.AccountManager.GetAccounts();
+foreach (var account in accounts)
+{
+    if (account is not JEGameAccount jeAccount)
+        continue;
+    Console.WriteLine("Identifier: " + jeAccount.Identifier);
+    Console.WriteLine("LastAccess: " + jeAccount.LastAccess);
+    Console.WriteLine("Gamertag: " + jeAccount.XboxTokens?.XstsToken?.XuiClaims?.Gamertag);
+    Console.WriteLine("Username: " + jeAccount.Profile?.Username);
+    Console.WriteLine("UUID: " + jeAccount.Profile?.UUID);
+}
+```
+
+After a successful login, the account is saved. Above code list all saved account lists.
+
+## Select Account
+
+Select account by index number:
+
+```csharp
+var accounts = loginHandler.AccountManager.GetAccounts();
+var selectedAccount = accounts.ElementAt(1);
+```
+
+All account has **unique string** to identifiy them. Select account by identifier:
+
+```csharp
+var accounts = loginHandler.AccountManager.GetAccounts();
+var selectedAccount = accounts.GetAccount("Identifier");
+```
+
+Select account by JE username:
+
+```csharp
+var accounts = loginHandler.AccountManager.GetAccounts();
+var selectedAccount = accounts.GetJEAccountByUsername("username");
+```
 
 ## Authenticating with the Selected Account
 
@@ -96,7 +141,7 @@ Initialize `Authenticator` with the most recent account.
 
 ### 2. Microsoft OAuth
 
-See OAuth.
+See [oauth.md](../xboxauthnet.game/oauth.md "mention").
 
 #### AddMicrosoftOAuthForJE(oauthBuilder)
 
@@ -106,11 +151,11 @@ Same as `AddMicrosoftOAuth(JELoginHandler.DefaultMicrosoftOAuthClientInfo, oauth
 
 Same as `AddForceMicrosoftOAuth(JELoginHandler.DefaultMicrosoftOAuthClientInfo, oauthBuilder)`
 
-To authenticate with MSAL, please refer to here하세요.
+To authenticate with MSAL, see [oauth.md](../xboxauthnet.game.msal/oauth.md "mention")
 
 ### 3. XboxAuth
 
-See XboxAuth.
+See [xboxauth.md](../xboxauthnet.game/xboxauth.md "mention").
 
 #### AddXboxAuthForJE(xboxBuilder)
 
