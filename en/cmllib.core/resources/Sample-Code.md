@@ -1,12 +1,13 @@
 # Sample Launcher
 
-There are two sample launchers using CmlLib.Core in this repository.\
-You can download these launchers at [this release](https://github.com/CmlLib/CmlLib.Core/releases), or clone this repository and build them yourself.
+## [CmlLib-Minecraft-Launcher](https://github.com/CmlLib/CmlLib-Minecraft-Launcher)
+
+Sample launcher with CmlLib.Core and CmlLib.Core.Auth.Microsoft.
 
 ## CmlLibCoreSample
 
 [./CmlLibCoreSample/Program.cs](https://github.com/CmlLib/CmlLib.Core/tree/master/CmlLibCoreSample)\
-.NET Core console launcher. It contains only the essential code needed to launch Minecraft.
+.NET Core console launcher. It contains only the essential code needed to launch Minecraft.&#x20;
 
 ## CmlLibWinFormSample
 

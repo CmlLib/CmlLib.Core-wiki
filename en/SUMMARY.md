@@ -1,8 +1,10 @@
 # Table of contents
 
+* [🧊 CmlLib Projects](README.md)
+
 ## 🚀 CmlLib.Core
 
-* [Home](README.md)
+* [Home](<README (1).md>)
 * [Getting Started](cmllib.core/getting-started/README.md)
   * [CMLauncher](cmllib.core/getting-started/CMLauncher.md)
   * [Minecraft Path](cmllib.core/getting-started/MinecraftPath.md)
@@ -36,7 +38,6 @@
   * [JELoginHandler](cmllib.core.auth.microsoft/cmllib.core.auth.microsoft/jeloginhandler.md)
   * [JELoginHandlerBuilder](cmllib.core.auth.microsoft/cmllib.core.auth.microsoft/jeloginhandlerbuilder.md)
   * [JEAuthenticator](cmllib.core.auth.microsoft/cmllib.core.auth.microsoft/jeauthenticator.md)
-  * [Examples](cmllib.core.auth.microsoft/cmllib.core.auth.microsoft-1/examples.md)
 * [XboxAuthNet.Game](cmllib.core.auth.microsoft/xboxauthnet.game/README.md)
   * [OAuth](cmllib.core.auth.microsoft/xboxauthnet.game/oauth.md)
   * [XboxAuth](cmllib.core.auth.microsoft/xboxauthnet.game/xboxauth.md)
@@ -48,3 +49,13 @@
   * [MsalClientHelper](cmllib.core.auth.microsoft/xboxauthnet.game.msal/msalclienthelper.md)
   * [OAuth](cmllib.core.auth.microsoft/xboxauthnet.game.msal/oauth.md)
 * [CmlLib.Core.Bedrock.Auth](cmllib.core.auth.microsoft/cmllib.core.bedrock.auth.md)
+
+## 🌐 MojangAPI
+
+* [Home](mojangapi/home.md)
+* [Mojang API](mojangapi/mojang-api.md)
+* [SecurityQuestion](mojangapi/securityquestion.md)
+
+## ⚒ Installer.Forge
+
+* [Home](installer.forge/home.md)
