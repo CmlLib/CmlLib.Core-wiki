@@ -4,29 +4,15 @@ description: Install Forge mod loader
 
 # Forge Installer
 
-## Note
+## [Broken link](broken-reference "mention")
 
-**Forge installation feature in this library would not work**. `MForge` has not been updated for a long time, and I will not update this anymore unless someone make pull requests. Forge installation is complex and require a lot of effort to maintain. Futhermore, Forge development team does not want anyone to make automated installation tool.
+Use this library to install Forge mod loader automatically.
 
-The message in forge intsaller:
+## Install Forge without installer
 
-```
-Please do not automate the download and installation of Forge.
-Our efforts are supported by ads from the download page.
-If you MUST automate this, please consider supporting the project through https://www.patreon.com/LexManos
-```
-
-## Forge installation
-
-The recommend way is to download forge installer from official forge website and install it manually.
-
-If you need forge installation feature in your launcher:
-
-1. Extract forge files.
-2. Upload extracted forge files into your file server or bundle it into your launcher.
-3. Write codes that copy extracted forge files into game directory.
-
-Or, make your own forge installer code.
+1. Extract forge files
+2. Upload extracted forge files into your file server or bundle it into your launcher
+3. Write codes that copy extracted forge files into game directory
 
 ## Extracting forge files
 

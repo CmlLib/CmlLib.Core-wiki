@@ -49,6 +49,7 @@
   * [MsalClientHelper](cmllib.core.auth.microsoft/xboxauthnet.game.msal/msalclienthelper.md)
   * [OAuth](cmllib.core.auth.microsoft/xboxauthnet.game.msal/oauth.md)
 * [CmlLib.Core.Bedrock.Auth](cmllib.core.auth.microsoft/cmllib.core.bedrock.auth.md)
+* [Resources](auth.microsoft/resources.md)
 
 ## 🌐 MojangAPI
 
@@ -59,3 +60,7 @@
 ## ⚒ Installer.Forge
 
 * [Home](installer.forge/home.md)
+* [Supported Versions](installer.forge/supported-versions.md)
+* [Getting Started](installer.forge/getting-started.md)
+* [MForge](installer.forge/mforge.md)
+* [ForgeVersionLoader](installer.forge/forgeversionloader.md)
