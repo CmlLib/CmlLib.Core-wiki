@@ -30,12 +30,18 @@ authenticator.AddJEAuthenticator(je => je
 
 Sets whether to check if the game is purchased and owned. default: `false`
 
-_note: This method can only check if the game was purchased from the official site. It is recommended that you do not change the default value of `false` because if a user with a genuine Xbox GamePass account is checked with this method, it will be determined that they do not have an account._
+{% hint style="info" %}
+GameOwnershipChecker can only check if the game was purchased from the official Mojang site. It is recommended that you **DO NOT change the default value** of false because Xbox GamePass user will be determined that they do not have an account even they have valid game license.
+{% endhint %}
 
 ## JEAuthException
 
 This exception is thrown if something went wrong while logging into Minecraft JE. The `ErrorType`, `Error`, and `ErrorMessage` properties provide detailed error information.
 
-### NOT\_FOUND
+### 403: FORBIDDEN
+
+If the OAuth token is from third-party client id, you should register the client ID. See the last part of[clientid.md](../xboxauthnet.game.msal/clientid.md "mention").
+
+### 404: NOT\_FOUND
 
 The user doesn't have the game. (Demo version)

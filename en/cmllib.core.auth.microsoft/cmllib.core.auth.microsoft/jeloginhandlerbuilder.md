@@ -5,6 +5,12 @@ description: Builder for initializing JELoginHandler
 # JELoginHandlerBuilder
 
 ```csharp
+// Build with default options
+var loginHandler = JELoginHandlerBuilder.BuildDefault();
+```
+
+```csharp
+// Build with options
 var loginHandler = new JELoginHandlerBuilder()
     .WithHttpClient(httpClient)
     .WithAccountManager("accounts.json")

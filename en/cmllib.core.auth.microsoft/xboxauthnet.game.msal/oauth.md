@@ -6,9 +6,19 @@ You MUST initialize an [IPublicClientApplication](msalclienthelper.md) via [YOUR
 
 ## Example
 
+[jeloginhandler.md](../cmllib.core.auth.microsoft/jeloginhandler.md "mention") with MSAL OAuth.
+
 ```csharp
-var authenticator = // create authenticator using login handlers
+using XboxAuthNet.Game.Msal;
+
+var app = await MsalClientHelper.BuildApplicationWithCache("<CLIENT-ID>");
+var loginHandler = JELoginHandlerBuilder.BuildDefault();
+
+var authenticator = loginHandler.CreateAuthenticatorWithNewAccount(default);
 authenticator.AddMsalOAuth(app, msal => msal.Interactive());
+authenticator.AddXboxAuth(xbox => xbox.Basic());
+authenticator.AddJEAuthenticator();
+var session = await authenticator.ExecuteForLauncherAsync();
 ```
 
 ## Interactive

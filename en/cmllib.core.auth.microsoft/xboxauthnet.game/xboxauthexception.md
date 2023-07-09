@@ -12,8 +12,6 @@ Age-related issues can be resolved by changing the login mode to `Full` or `Sisu
 
 ## ErrorCode
 
-자주 발생하는 오류들의 `ErrorCode` 를 모아두었습니다.
-
 ### 0x8015dc03
 
 The device or user was banned.

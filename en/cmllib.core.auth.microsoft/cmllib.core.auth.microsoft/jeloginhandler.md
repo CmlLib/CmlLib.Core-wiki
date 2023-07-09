@@ -114,53 +114,87 @@ Load account list and sign out from second account (index number 1).
 ```csharp
 using XboxAuthNet.Game;
 
+// 1. Create Authenticator 
 var authenticator = loginHandler.CreateAuthenticator(account, default);
-authenticator.AddMicrosoftOAuthForJE(oauth => oauth.Interactive()); // Microsoft OAuth
-authenticator.AddXboxAuthForJE(xbox => xbox.Basic()); // XboxAuth
-authenticator.AddJEAuthenticator(); // JEAuthenticator
+
+// 2. OAuth
+authenticator.AddMicrosoftOAuthForJE(oauth => oauth.Interactive());
+
+// 3. XboxAuth
+authenticator.AddXboxAuthForJE(xbox => xbox.Basic());
+
+// 4. JEAuthenticator
+authenticator.AddJEAuthenticator();
+
+// Execute authenticator
 var session = await authenticator.ExecuteForLauncherAsync();
 ```
 
-There are four main steps in authentication.
+The login process has four main steps. There are many methods to customize authentication flow in each main step. You must select only one method for each step.&#x20;
 
-### 1. CreateAuthenticator
+### 1. Create Authenticator
 
-Initialize `Authenticator` instance.
+```csharp
+var authenticator = loginHandler.CreateAuthenticator(account, default);
+```
 
-#### CreateAuthenticator(XboxGameAccount account, CancellationToken cancellationToken)
+Initialize `Authenticator` instance with the specific account to login. Another ways to initialize this:
 
-Initialize `Authenticator` with specified `account`.
-
-#### CreateAuthenticatorWithNewAccount(CancellationToken cancellationToken)
+```csharp
+var authenticator = loginHandler.CreateAuthenticatorWithNewAccount(default);
+```
 
 Initialize `Authenticator` with new empty account.
 
-#### CreateAuthenticatorWithDefaultAccount(CancellationToken cancellationToken)
+```csharp
+var authenticator = loginHandler.CreateAuthenticatorWithDefaultAccount(default);
+```
 
 Initialize `Authenticator` with the most recent account.
 
-### 2. Microsoft OAuth
+You can pass [CancellationToken](https://learn.microsoft.com/en-us/dotnet/api/system.threading.cancellationtoken?view=net-7.0) instead of `default`.
 
-See [oauth.md](../xboxauthnet.game/oauth.md "mention").
+### 2. OAuth
 
-#### AddMicrosoftOAuthForJE(oauthBuilder)
+```csharp
+authenticator.AddMicrosoftOAuthForJE(oauth => oauth.Interactive());
 
-Same as `AddMicrosoftOAuth(JELoginHandler.DefaultMicrosoftOAuthClientInfo, oauthBuilder)`
+// above code is same as
+// authenticator.AddMicrosoftOAuth(JELoginHandler.DefaultMicrosoftOAuthClientInfo, oauth => oauth.Interactive());
 
-#### AddForceMicrosoftOAuthForJE(oauthBuilder)
+// another OAuth options:
+// 1) authenticator.AddForceMicrosoftOAuthForJE(oauth => oauth.Interactive());
+// 2) authenticator.AddMicrosoftOAuthForJE(oauth => oauth.Silent());
+```
 
-Same as `AddForceMicrosoftOAuth(JELoginHandler.DefaultMicrosoftOAuthClientInfo, oauthBuilder)`
+Set Microsoft OAuth mode. Instead of `oauth => oauth.Interactive()`, there are many options you can replace with. See [oauth.md](../xboxauthnet.game/oauth.md "mention").
 
-To authenticate with MSAL, see [oauth.md](../xboxauthnet.game.msal/oauth.md "mention")
+`AddMicrosoftOAuthForJE` and `AddForceMicrosoftOAuthForJE` methods add default `MicrosoftOAuthClientInfo` which Mojang Minecraft launcher uses so that you don't need to pass it everytime you use.
+
+Note that the default Microsoft OAuth is only available on Windows platform. For another platform (Linux, macOS) you need [xboxauthnet.game.msal](../xboxauthnet.game.msal/ "mention").&#x20;
+
+```csharp
+// example for XboxAuthNet.Game.Msal
+authenticator.AddMsalOAuth(app, msal => msal.Interactive());
+```
 
 ### 3. XboxAuth
 
-See [xboxauth.md](../xboxauthnet.game/xboxauth.md "mention").
+```csharp
+authenticator.AddXboxAuthForJE(xbox => xbox.Basic());
 
-#### AddXboxAuthForJE(xboxBuilder)
+// above code is same as
+// authenticator.AddXboxAuth(xbox => xbox.WithRelyingParty(JELoginHandler.RelyingParty).Basic());
 
-Provides preset `xboxBuilder` with the relyingParty as Minecraft: JE's relyingParty.
+// another xbox options:
+// 1) authenticator.AddXboxAuthForJE(xbox => xbox.Full());
+// 2) authenticator.AddXboxAuthForJE(xbox => xbox.Sisu("<CLIENT-ID>"));
+```
+
+Set Xbox authentication mode. Instead of `xbox => xbox.Basic()`, there are many options you can replace with. See [xboxauth.md](../xboxauthnet.game/xboxauth.md "mention").
+
+`AddXboxAuthForJE` and `AddForceXboxAuthForJE` methods add default xbox authentication relying party which is used for Minecraft: JE authentication so that you don't need to pass it everytime you use.
 
 ### 4. JEAuthenticator
 
-See [jeauthenticator.md](jeauthenticator.md "mention").
+Set Minecraft: JE authentication mode. See [jeauthenticator.md](jeauthenticator.md "mention").
