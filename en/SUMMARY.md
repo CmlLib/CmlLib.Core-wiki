@@ -4,7 +4,7 @@
 
 ## 🚀 CmlLib.Core
 
-* [Home](cmllib.core)
+* [Home](cmllib.core/README.md)
 * [Getting Started](cmllib.core/getting-started/README.md)
   * [CMLauncher](cmllib.core/getting-started/CMLauncher.md)
   * [Minecraft Path](cmllib.core/getting-started/MinecraftPath.md)
@@ -33,7 +33,7 @@
 
 ## 🔓 Auth.Microsoft
 
-* [Home](auth.microsoft)
+* [Home](auth.microsoft/README.md)
 * [CmlLib.Core.Auth.Microsoft](auth.microsoft/cmllib.core.auth.microsoft/README.md)
   * [JELoginHandler](auth.microsoft/cmllib.core.auth.microsoft/jeloginhandler.md)
   * [JELoginHandlerBuilder](auth.microsoft/cmllib.core.auth.microsoft/jeloginhandlerbuilder.md)

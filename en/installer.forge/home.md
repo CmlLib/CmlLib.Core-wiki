@@ -2,7 +2,7 @@
 
 [GitHub](https://github.com/CmlLib/CmlLib.Core.Installer.Forge)
 
-Forge Installer for [cmllib.core](../cmllib.core "mention").
+Forge Installer for [Broken link](broken-reference "mention").
 
 ## Features
 

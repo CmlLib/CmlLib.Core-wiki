@@ -43,4 +43,4 @@ Security question-answer flow
 
 ### Authentication
 
-For authentication, See [login-and-sessions](../cmllib.core/login-and-sessions/ "mention") or use library [auth.microsoft](../auth.microsoft "mention").
+For authentication, See [login-and-sessions](../cmllib.core/login-and-sessions/ "mention") or use library [cmllib.core.auth.microsoft](../auth.microsoft/cmllib.core.auth.microsoft/ "mention").

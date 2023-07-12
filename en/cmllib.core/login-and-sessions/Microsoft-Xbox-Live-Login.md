@@ -1,10 +1,10 @@
 # Microsoft Xbox Account
 
-## CmlLib.Core.Auth.Microsoft
+## [Broken link](broken-reference "mention")
 
 Microsoft login process is quite complex. I **highly** recommend you to use this library to add Microsoft login feature in your launcher.
 
-Go to [auth.microsoft](../../auth.microsoft) wiki.
+[Broken link](broken-reference "mention")
 
 ### **Example**
 
