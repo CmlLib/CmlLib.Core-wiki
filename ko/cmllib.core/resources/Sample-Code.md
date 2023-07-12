@@ -3,6 +3,12 @@
 이 레포지토리에서 CmlLib.Core 를 사용한 런처는 두가지가 있습니다.\
 두 런처는 [release](https://github.com/CmlLib/CmlLib.Core/releases) 에서 다운받거나, 레포를 클론하여 직접 빌드할 수 있습니다.
 
+
+## [CmlLib-Minecraft-Launcher](https://github.com/CmlLib/CmlLib-Minecraft-Launcher)
+
+CmlLib.Core 와 CmlLib.Core.Auth.Microsoft 를 함께 사용한 샘플 런처.
+
+
 ## CmlLibCoreSample
 
 [./CmlLibCoreSample/Program.cs](https://github.com/CmlLib/CmlLib.Core/tree/master/CmlLibCoreSample)\

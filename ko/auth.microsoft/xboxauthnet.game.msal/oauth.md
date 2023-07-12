@@ -6,9 +6,19 @@ MSAL 을 통해 Microsoft OAuth 를 진행하는 방법을 제공합니다.
 
 ## 예시
 
+[jeloginhandler.md](../cmllib.core.auth.microsoft/jeloginhandler.md "mention") 에서 MSAL OAuth 를 사용한 예시입니다.
+
 ```csharp
-var authenticator = // create authenticator using login handlers
+using XboxAuthNet.Game.Msal;
+
+var app = await MsalClientHelper.BuildApplicationWithCache("<CLIENT-ID>");
+var loginHandler = JELoginHandlerBuilder.BuildDefault();
+
+var authenticator = loginHandler.CreateAuthenticatorWithNewAccount(default);
 authenticator.AddMsalOAuth(app, msal => msal.Interactive());
+authenticator.AddXboxAuth(xbox => xbox.Basic());
+authenticator.AddJEAuthenticator();
+var session = await authenticator.ExecuteForLauncherAsync();
 ```
 
 ## Interactive

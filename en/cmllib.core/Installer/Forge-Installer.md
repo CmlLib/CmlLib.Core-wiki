@@ -4,7 +4,7 @@ description: Install Forge mod loader
 
 # Forge Installer
 
-## [Broken link](broken-reference "mention")
+## [installer.forge](../../installer.forge "mention")
 
 Use this library to install Forge mod loader automatically.
 

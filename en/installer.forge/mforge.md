@@ -1,6 +1,6 @@
 # MForge
 
-`MForge` is wrapper of Forge installer.&#x20;
+`MForge` is wrapper of Forge installer.
 
 ```csharp
 var forge = new MForge(launcher);

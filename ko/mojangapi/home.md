@@ -4,7 +4,7 @@
 
 [GitHub](https://github.com/CmlLib/MojangAPI)
 
-.NET Library for [Mojang API](https://wiki.vg/Mojang\_API), [Mojang Authentication](https://wiki.vg/Authentication) and [Microsoft Xbox Authentication](https://wiki.vg/Microsoft\_Authentication\_Scheme)
+[Mojang API](https://wiki.vg/Mojang\_API)를 위한 .NET 라이브러리, [Mojang Authentication](https://wiki.vg/Authentication) 와 [Microsoft Xbox Authentication](https://wiki.vg/Microsoft\_Authentication\_Scheme).
 
 * Asynchronous API
 * Getting Player Data
@@ -18,11 +18,11 @@ Support:
 
 * netstandard 2.0
 
-## Install
+## 설치
 
 Use Nuget package [MojangAPI](https://www.nuget.org/packages/MojangAPI) or download dll from [release](https://github.com/CmlLib/MojangAPI/releases).
 
-## Usage
+## 사용법
 
 Include these namespaces :
 
@@ -35,7 +35,7 @@ Sample program: [MojangAPISample](https://github.com/CmlLib/MojangAPI/tree/maste
 
 ### [mojang-api.md](mojang-api.md "mention")
 
-Getting player profile, Changing name or skin, Statistics, Blocked Server, Checking Game Ownership
+플레이어 프로필 가저오기, 이름이나 스킨 바꾸기, 통계 확인, 차단된 서버 확인, 게임 소유 확인 등등
 
 ### [securityquestion.md](securityquestion.md "mention")
 
@@ -43,4 +43,4 @@ Security question-answer flow
 
 ### Authentication
 
-For authentication, See [login-and-sessions](../cmllib.core/login-and-sessions/ "mention") or use library [auth.microsoft](../auth.microsoft "mention").
+로그인을 위해서 [login-and-sessions](../cmllib.core/login-and-sessions/ "mention") 를 확인하거나 [auth.microsoft](../auth.microsoft "mention") 라이브러리를 사용하세요. 

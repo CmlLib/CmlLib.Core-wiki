@@ -1,8 +1,10 @@
 # Table of contents
 
+* [🧊 CmlLib Projects](README.md)
+
 ## 🚀 CmlLib.Core
 
-* [홈](README.md)
+* [홈](cmllib.core)
 * [시작하기](cmllib.core/getting-started/README.md)
   * [CMLauncher](cmllib.core/getting-started/CMLauncher.md)
   * [게임 경로 설정](cmllib.core/getting-started/MinecraftPath.md)
@@ -31,19 +33,34 @@
 
 ## 🔓 Auth.Microsoft
 
-* [홈](cmllib.core.auth.microsoft/README.md)
-* [CmlLib.Core.Auth.Microsoft](cmllib.core.auth.microsoft/cmllib.core.auth.microsoft/README.md)
-  * [JELoginHandler](cmllib.core.auth.microsoft/cmllib.core.auth.microsoft/jeloginhandler.md)
-  * [JELoginHandlerBuilder](cmllib.core.auth.microsoft/cmllib.core.auth.microsoft/jeloginhandlerbuilder.md)
-  * [JEAuthenticator](cmllib.core.auth.microsoft/cmllib.core.auth.microsoft/jeauthenticator.md)
-* [XboxAuthNet.Game](cmllib.core.auth.microsoft/xboxauthnet.game/README.md)
-  * [OAuth](cmllib.core.auth.microsoft/xboxauthnet.game/oauth.md)
-  * [XboxAuth](cmllib.core.auth.microsoft/xboxauthnet.game/xboxauth.md)
-  * [XboxAuthException](cmllib.core.auth.microsoft/xboxauthnet.game/xboxauthexception.md)
-  * [AccountManager](cmllib.core.auth.microsoft/xboxauthnet.game/accountmanager.md)
-  * [Accounts](cmllib.core.auth.microsoft/xboxauthnet.game/accounts.md)
-* [XboxAuthNet.Game.Msal](cmllib.core.auth.microsoft/xboxauthnet.game.msal/README.md)
-  * [ClientID](cmllib.core.auth.microsoft/xboxauthnet.game.msal/clientid.md)
-  * [MsalClientHelper](cmllib.core.auth.microsoft/xboxauthnet.game.msal/msalclienthelper.md)
-  * [OAuth](cmllib.core.auth.microsoft/xboxauthnet.game.msal/oauth.md)
-* [CmlLib.Core.Bedrock.Auth](cmllib.core.auth.microsoft/cmllib.core.bedrock.auth.md)
+* [홈](auth.microsoft/README.md)
+* [CmlLib.Core.Auth.Microsoft](auth.microsoft/cmllib.core.auth.microsoft/README.md)
+  * [JELoginHandler](auth.microsoft/cmllib.core.auth.microsoft/jeloginhandler.md)
+  * [JELoginHandlerBuilder](auth.microsoft/cmllib.core.auth.microsoft/jeloginhandlerbuilder.md)
+  * [JEAuthenticator](auth.microsoft/cmllib.core.auth.microsoft/jeauthenticator.md)
+* [XboxAuthNet.Game](auth.microsoft/xboxauthnet.game/README.md)
+  * [OAuth](auth.microsoft/xboxauthnet.game/oauth.md)
+  * [XboxAuth](auth.microsoft/xboxauthnet.game/xboxauth.md)
+  * [XboxAuthException](auth.microsoft/xboxauthnet.game/xboxauthexception.md)
+  * [AccountManager](auth.microsoft/xboxauthnet.game/accountmanager.md)
+  * [Accounts](auth.microsoft/xboxauthnet.game/accounts.md)
+* [XboxAuthNet.Game.Msal](auth.microsoft/xboxauthnet.game.msal/README.md)
+  * [ClientID](auth.microsoft/xboxauthnet.game.msal/clientid.md)
+  * [MsalClientHelper](auth.microsoft/xboxauthnet.game.msal/msalclienthelper.md)
+  * [OAuth](auth.microsoft/xboxauthnet.game.msal/oauth.md)
+* [CmlLib.Core.Bedrock.Auth](auth.microsoft/cmllib.core.bedrock.auth.md)
+* [Resources](auth.microsoft/resources.md)
+
+## 🌐 MojangAPI
+
+* [홈](mojangapi/home.md)
+* [Mojang API](mojangapi/mojang-api.md)
+* [SecurityQuestion](mojangapi/securityquestion.md)
+
+## ⚒ Installer.Forge
+
+* [홈](installer.forge/home.md)
+* [지원되는 버전](installer.forge/supported-versions.md)
+* [시작하기](installer.forge/getting-started.md)
+* [MForge](installer.forge/mforge.md)
+* [ForgeVersionLoader](installer.forge/forgeversionloader.md)
