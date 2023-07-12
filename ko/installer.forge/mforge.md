@@ -23,7 +23,7 @@ await forge.Install("1.20.1", "47.1.0", forceUpdate: true);
 
 ## 이벤트 헨들러
 
-`FileChanged` 와 `ProgressChanged` 는 [Handling-Events.md](../cmllib.core/getting-started/Handling-Events.md "mention") 여기서 확인하세요.
+`FileChanged` 와 `ProgressChanged` 는 [Handling-Events.md](../cmllib.core/getting-started/Handling-Events.md "mention")에서 확인하세요.
 
 `InstallerOutput` 이벤트와 함께 포지 인스톨러의 로그를 확인할 수 있습니다.
 
@@ -39,7 +39,7 @@ await forge.Install("1.20.1", "47.1.0", forceUpdate: true);
 
 ### Install(string mcVersion, string forgeVersion, bool forceUpdate = false)
 
-특정한 포지 버전을 설치합니다. 
+특정한 포지 버전을 설치합니다.
 
 ### forceUpdate: true
 
@@ -55,4 +55,4 @@ Our efforts are supported by ads from the download page.
 If you MUST automate this, please consider supporting the project through https://www.patreon.com/LexManos
 ```
 
-만약 광고 표시를 원하지 않는다면, [MForge 소스코드](https://github.com/CmlLib/CmlLib.Core.Installer.Forge/blob/main/CmlLib.Core.Installer.Forge/MForge.cs)를 직접 수정하세요.&#x20;
+만약 광고 표시를 원하지 않는다면, [MForge 소스코드](https://github.com/CmlLib/CmlLib.Core.Installer.Forge/blob/main/CmlLib.Core.Installer.Forge/MForge.cs)를 직접 수정하세요.

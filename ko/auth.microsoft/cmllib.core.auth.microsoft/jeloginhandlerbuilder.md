@@ -5,7 +5,7 @@ description: JELoginHandler 초기화를 위한 빌더
 # JELoginHandlerBuilder
 
 ```csharp
-// Build with default options
+// 기본 옵션과 함께 JELoginHandler 초기화
 var loginHandler = JELoginHandlerBuilder.BuildDefault();
 ```
 

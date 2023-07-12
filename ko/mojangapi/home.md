@@ -1,4 +1,4 @@
-# Home
+# 홈
 
 ![Discord](https://img.shields.io/discord/795952027443527690?label=discord\&logo=discord\&style=for-the-badge)
 
@@ -43,4 +43,4 @@ Security question-answer flow
 
 ### Authentication
 
-로그인을 위해서 [login-and-sessions](../cmllib.core/login-and-sessions/ "mention") 를 확인하거나 [auth.microsoft](../auth.microsoft "mention") 라이브러리를 사용하세요. 
+로그인을 위해서 [login-and-sessions](../cmllib.core/login-and-sessions/ "mention") 를 확인하거나 [cmllib.core.auth.microsoft](../auth.microsoft/cmllib.core.auth.microsoft/ "mention") 라이브러리를 사용하세요.
