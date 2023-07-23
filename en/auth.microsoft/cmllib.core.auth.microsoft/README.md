@@ -29,13 +29,13 @@ Set `Session` property of [MLaunchOption.md](../../cmllib.core/getting-started/M
 
 ## Usage
 
-### [jeloginhandlerbuilder.md](jeloginhandlerbuilder.md "mention")
-
-Builder for initializing an instance of `JELoginHandler`.
-
 ### [jeloginhandler.md](jeloginhandler.md "mention")
 
 Login, logout, and account managements.
+
+### [jeloginhandlerbuilder.md](jeloginhandlerbuilder.md "mention")
+
+Builder for initializing an instance of `JELoginHandler`.
 
 ### [accountmanager.md](../xboxauthnet.game/accountmanager.md "mention")
 

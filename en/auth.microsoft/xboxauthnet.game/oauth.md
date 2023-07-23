@@ -48,6 +48,15 @@ authenticator.AddMicrosoftOAuth(clientInfo, oauth => oauth.Interactive(new Micro
 
 A window will pop up prompting the user to enter the email and password for their Microsoft account and proceed to sign in.
 
+{% hint style="info" %}
+This method uses [Microsoft WebView2](https://developer.microsoft.com/en-us/microsoft-edge/webview2/) for displaying Microsoft OAuth login page. You must know that:
+
+* **Microsoft WebView2 is only available on Windows.** For another platform, you need [xboxauthnet.game.msal](../xboxauthnet.game.msal/ "mention").
+* To run WebView2, The users (including developer and end user) **must have the WebView2 Runtime installed**. See [this document](https://learn.microsoft.com/en-us/microsoft-edge/webview2/concepts/distribution) to distribute your launcher with WebView2. (For example, you can automate runtime installation with direct download link: [https://go.microsoft.com/fwlink/p/?LinkId=2124703](https://go.microsoft.com/fwlink/p/?LinkId=2124703))
+
+If you don't want to use WebView2, you can use [xboxauthnet.game.msal](../xboxauthnet.game.msal/ "mention") instead.
+{% endhint %}
+
 ### Silent
 
 ```csharp

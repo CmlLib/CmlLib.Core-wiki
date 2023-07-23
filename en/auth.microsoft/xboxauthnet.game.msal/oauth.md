@@ -27,7 +27,7 @@ var session = await authenticator.ExecuteForLauncherAsync();
 authenticator.AddMsalOAuth(app, msal => msal.Interactive());
 ```
 
-Requests users to enter their Microsoft account. How the sign-in page is displayed is determined by the MSAL.
+Requests users to enter their Microsoft account. How the sign-in page is displayed is determined by the MSAL.&#x20;
 
 ## EmbeddedWebView
 
@@ -70,7 +70,7 @@ authenticator.AddMsalOAuth(app, msal => msal.DeviceCode(deviceCode =>
 
 Attempt to sign in using the DeviceCode method. This method doesn't require a web browser or UI on the client, but it does allow the client to log in from a different device.
 
-If you're building a launcher that only works on the console, use this method for login. The user can log in by directly opening a web browser and going to \[https://www.microsoft.com/link]. The login can be done on a completely different device than the one running your launcher. For example, a user can access the above link from their mobile phone and log in.
+If you're building a launcher that only works on the console or no GUI environment, use this method for login. The login can be done on a completely different device than the one running your launcher. For example, a user can log in from their mobile phone.
 
 The example code outputs the following message to the console:
 

@@ -16,24 +16,36 @@ For more detailed initialization, which includes specifying how accounts are sto
 
 ```csharp
 var session = await loginHandler.Authenticate();
+// var session = await loginHandler.Authenticate(selectedAccount, cancellationToken);
 ```
 
-This method tries [#authenticating-with-the-most-recent-account](jeloginhandler.md#authenticating-with-the-most-recent-account "mention") first and if it fails, try [#authenticating-with-new-account](jeloginhandler.md#authenticating-with-new-account "mention").
+This method tries [#authenticating-with-the-most-recent-account](jeloginhandler.md#authenticating-with-the-most-recent-account "mention") first and if it fails, tries [#authenticating-with-new-account](jeloginhandler.md#authenticating-with-new-account "mention").
 
 ## Authenticating with New Account
 
 ```csharp
 var session = await loginHandler.AuthenticateInteractively();
+// var session = await loginHandler.AuthenticateInteractively(selectedAccount, cancellationToken);
 ```
 
 ![](https://user-images.githubusercontent.com/17783561/154854388-38c473f1-7860-4a47-bdbe-622de37eef8b.png)
 
-Add a new account to sign in. Show the user the Microsoft OAuth page to enter their Microsoft account.
+Add a new account to sign in. Show the user the Microsoft OAuth page to enter their Microsoft account.&#x20;
+
+{% hint style="info" %}
+This method uses [Microsoft WebView2](https://developer.microsoft.com/en-us/microsoft-edge/webview2/) for displaying Microsoft OAuth login page. You must know that:
+
+* **Microsoft WebView2 is only available on Windows.** For another platform, you need [xboxauthnet.game.msal](../xboxauthnet.game.msal/ "mention").
+* To run WebView2, The users (including developer and end user) **must have the WebView2 Runtime installed**. See [this document](https://learn.microsoft.com/en-us/microsoft-edge/webview2/concepts/distribution) to distribute your launcher with WebView2. (For example, you can automate runtime installation with direct download link: [https://go.microsoft.com/fwlink/p/?LinkId=2124703](https://go.microsoft.com/fwlink/p/?LinkId=2124703))
+
+If you don't want to use WebView2, you can use [xboxauthnet.game.msal](../xboxauthnet.game.msal/ "mention") instead.
+{% endhint %}
 
 ## Authenticating with the Most Recent Account
 
 ```csharp
 var session = await loginHandler.AuthenticateSilently();
+// var session = await loginHandler.AuthenticateSilently(selectedAccount, cancellationToken);
 ```
 
 Using the saved account information of the most account, log in.&#x20;
@@ -95,16 +107,26 @@ Load account list and authenticate with second account (index number 1).
 
 ## Signing out from the most Recent Account
 
+{% hint style="info" %}
+`Signout` method does not clear WebView2 browser cache. For clearing it, call `SignoutWithBrowser` instead.
+{% endhint %}
+
 ```csharp
 await loginHandler.Signout();
+// await loginHandler.SignoutWithBrowser();
 ```
 
-## Signing out from Selected Account
+## Signing out from the Selected Account
+
+{% hint style="info" %}
+`Signout` method does not clear WebView2 browser cache. For clearing it, call `SignoutWithBrowser` instead.
+{% endhint %}
 
 ```csharp
 var accounts = loginHandler.AccountManager.GetAccounts();
 var selectedAccount = accounts.ElementAt(1);
 await loginHandler.Signout(selectedAccount);
+// await loginHandler.SignoutWithBrowser();
 ```
 
 Load account list and sign out from second account (index number 1).
@@ -162,9 +184,10 @@ authenticator.AddMicrosoftOAuthForJE(oauth => oauth.Interactive());
 // above code is same as
 // authenticator.AddMicrosoftOAuth(JELoginHandler.DefaultMicrosoftOAuthClientInfo, oauth => oauth.Interactive());
 
-// another OAuth options:
+// another OAuth method can be:
 // 1) authenticator.AddForceMicrosoftOAuthForJE(oauth => oauth.Interactive());
 // 2) authenticator.AddMicrosoftOAuthForJE(oauth => oauth.Silent());
+// ...
 ```
 
 Set Microsoft OAuth mode. Instead of `oauth => oauth.Interactive()`, there are many options you can replace with. See [oauth.md](../xboxauthnet.game/oauth.md "mention").
@@ -186,9 +209,10 @@ authenticator.AddXboxAuthForJE(xbox => xbox.Basic());
 // above code is same as
 // authenticator.AddXboxAuth(xbox => xbox.WithRelyingParty(JELoginHandler.RelyingParty).Basic());
 
-// another xbox options:
+// another xbox auth method can be:
 // 1) authenticator.AddXboxAuthForJE(xbox => xbox.Full());
 // 2) authenticator.AddXboxAuthForJE(xbox => xbox.Sisu("<CLIENT-ID>"));
+// ...
 ```
 
 Set Xbox authentication mode. Instead of `xbox => xbox.Basic()`, there are many options you can replace with. See [xboxauth.md](../xboxauthnet.game/xboxauth.md "mention").
