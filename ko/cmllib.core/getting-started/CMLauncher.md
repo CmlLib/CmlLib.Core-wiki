@@ -32,7 +32,7 @@ foreach (var v in versions)
     Console.WriteLine(v.Name);
 }
 
-var process = await launcher.CreateProcess("1.16.5", new MLaunchOption
+var process = await launcher.CreateProcessAsync("1.16.5", new MLaunchOption
 {
     MaximumRamMb = 2048,
     Session = MSession.GetOfflineSession("hello123"),
@@ -118,7 +118,7 @@ launcher.FileDownloader = null;
 게임을 아주 빠르게 실행합니다. (1초 미만)
 
 ```csharp
-var process = await launcher.CreateProcess("1.18.1", new MLaunchOption()
+var process = await launcher.CreateProcessAsync("1.18.1", new MLaunchOption()
 {
     // game options
 }, checkAndDownload: false);

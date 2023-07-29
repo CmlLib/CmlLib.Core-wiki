@@ -34,7 +34,7 @@ foreach (var v in versions)
     Console.WriteLine(v.Name);
 }
 
-var process = await launcher.CreateProcess("1.16.5", new MLaunchOption
+var process = await launcher.CreateProcessAsync("1.16.5", new MLaunchOption
 {
     MaximumRamMb = 2048,
     Session = MSession.GetOfflineSession("hello123"),
@@ -120,7 +120,7 @@ This works only when all game files is normally installed.
 This code launch game super fast. (< 1sec)
 
 ```csharp
-var process = await launcher.CreateProcess("1.18.1", new MLaunchOption()
+var process = await launcher.CreateProcessAsync("1.18.1", new MLaunchOption()
 {
     // game options
 }, checkAndDownload: false);

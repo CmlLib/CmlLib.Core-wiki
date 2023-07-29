@@ -45,14 +45,14 @@ After installing forge, you can get version name of installed forge using `launc
 Launch game using forge version name.
 
 ```csharp
-var process = await launcher.CreateProcess("forge-version-name", options);
+var process = await launcher.CreateProcessAsync("forge-version-name", options);
 process.Start();
 ```
 
 Example `1.12.2-forge-14.23.5.2855`:
 
 ```csharp
-var process = await launcher.CreateProcess("1.12.2-forge-14.23.5.2855", new MLaunchOption
+var process = await launcher.CreateProcessAsync("1.12.2-forge-14.23.5.2855", new MLaunchOption
 {
     Session = MSession.GetOfflineSession("hello"),
     MaximumRamMb = 4096

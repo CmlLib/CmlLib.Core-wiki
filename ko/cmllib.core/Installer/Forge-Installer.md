@@ -45,14 +45,14 @@ _NOTE: 몇몇 포지 버전은 \<forge-version-name>.jar 파일이 없습니다.
 불러온 게임 버전의 이름을 통해서 포지를 실행하세요.
 
 ```csharp
-var process = await launcher.CreateProcess("forge-version-name", options);
+var process = await launcher.CreateProcessAsync("forge-version-name", options);
 process.Start();
 ```
 
 Example `1.12.2-forge-14.23.5.2855`:
 
 ```csharp
-var process = await launcher.CreateProcess("1.12.2-forge-14.23.5.2855", new MLaunchOption
+var process = await launcher.CreateProcessAsync("1.12.2-forge-14.23.5.2855", new MLaunchOption
 {
     Session = MSession.GetOfflineSession("hello"),
     MaximumRamMb = 4096
