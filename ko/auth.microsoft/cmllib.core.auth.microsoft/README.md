@@ -29,13 +29,13 @@ var session = await loginHandler.Authenticate();
 
 ## 사용 방법
 
-### [jeloginhandlerbuilder.md](jeloginhandlerbuilder.md "mention")
-
-JELoginHandler 의 인스턴스를 만들어 주는 객체입니다.
-
 ### [jeloginhandler.md](jeloginhandler.md "mention")
 
 로그인, 로그아웃 기능과 계정 관리 기능을 제공합니다.
+
+### [jeloginhandlerbuilder.md](jeloginhandlerbuilder.md "mention")
+
+JELoginHandler 의 인스턴스를 만들어 주는 객체입니다.
 
 ### [accountmanager.md](../xboxauthnet.game/accountmanager.md "mention")
 
