@@ -6,6 +6,8 @@ version: 3.3.7
 
 CmlLib.Core 는 **커스텀 마인크래프트 런처** 제작을 위한 .NET 라이브러러리입니다.
 
+## [ad.md](../ad.md "mention")
+
 ## 주요 기능
 
 * online-mode 서버에 접속하기 위한 마인크래프트 로그인 (예시: 하이픽셀)
@@ -19,6 +21,8 @@ CmlLib.Core 는 **커스텀 마인크래프트 런처** 제작을 위한 .NET �
 * 크로스플랫폼(Windows, Linux, macOS)
 * 모장 API (스킨, 유저이름 변경 등)
 * 실행 과정 커스터마이징
+
+## [getting-started](getting-started/ "mention")
 
 ## 모든 기능
 
@@ -47,7 +51,7 @@ CmlLib.Core 는 **커스텀 마인크래프트 런처** 제작을 위한 .NET �
 * 새로운 마인크래프트 디렉터리 만들기
 * 마인크래프트 디렉터리 구조 바꾸기
 
-[login-and-sessions](login-and-sessions "mention")
+[login-and-sessions](login-and-sessions/ "mention")
 
 * Get game session from mojang auth server
 * Create offline game session
@@ -101,7 +105,7 @@ CmlLib.Core 는 **커스텀 마인크래프트 런처** 제작을 위한 .NET �
 
 * Get version information (version name, type, arguments, library list, asset id, etc)
 
-[Installer](Installer "mention")
+[Installer](Installer/ "mention")
 
 * Forge 설치
 * LiteLoader 설치
