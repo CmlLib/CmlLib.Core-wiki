@@ -2,19 +2,19 @@
 
 CmlLib project makes .NET libraries for building your own minecraft launcher.
 
-### [CmlLib.Core](cmllib.core/README.md "mention")
+### [Broken link](broken-reference "mention")
 
 Main library for launching Minecraft.
 
-### [Auth.Microsoft](auth.microsoft/README.md "mention")
+### [Broken link](broken-reference "mention")
 
 Authentication library for logging in Minecraft with Microsoft Xbox account.
 
-### [MojangAPI](mojangapi/home.md "mention")
+### [Broken link](broken-reference "mention")
 
 Implementation of Mojang API. Changing username or skin, getting player profile, blocked Server, checking game ownership, etc...
 
-### [Installer.Forge](installer.forge/home.md "mention")
+### [Broken link](broken-reference "mention")
 
 Forge Mod Loader Installer
 
