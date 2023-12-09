@@ -10,13 +10,15 @@ Xbox 로그인을 진행하는 방법을 나타냅니다.
 
 ```csharp
 var authenticator = // create authenticator using login handlers
-authenticator.AddXboxAuth(xbox => xbox.Basic(XboxAuthConstants.XboxLiveRelyingParty));
+authenticator.AddXboxAuthForJE(xbox => xbox.Basic());
+//authenticator.AddXboxAuth(xbox => xbox.Basic(XboxAuthConstants.XboxLiveRelyingParty));
 ```
 
 ## Basic
 
 ```csharp
-authenticator.AddXboxAuth(xbox => xbox.Basic("relyingParty"));
+authenticator.AddXboxAuthForJE(xbox => xbox.Basic());
+//authenticator.AddXboxAuth(xbox => xbox.Basic("relyingParty"));
 ```
 
 가장 기본적인 방식입니다. 로그인에 필요한 최소 정보(UserToken, XstsToken)만 받아옵니다.
@@ -27,7 +29,8 @@ authenticator.AddXboxAuth(xbox => xbox.Basic("relyingParty"));
 ## Full
 
 ```csharp
-authenticator.AddXboxAuth(xbox => xbox.Full("relyingParty"));
+authenticator.AddXboxAuthForJE(xbox => xbox.Full());
+//authenticator.AddXboxAuth(xbox => xbox.Full("relyingParty"));
 ```
 
 UserToken, DeviceToken, XstsToken 를 받아옵니다.
@@ -35,7 +38,8 @@ UserToken, DeviceToken, XstsToken 를 받아옵니다.
 ## Sisu
 
 ```csharp
-authenticator.AddXboxAuth(xbox => xbox.Sisu("relyingParty",  "<CLIENT-ID>"));
+authenticator.AddXboxAuthForJE(xbox => xbox.Sisu(XboxGameTitles.MinecraftJava));
+//authenticator.AddXboxAuth(xbox => xbox.Sisu("relyingParty",  "<CLIENT-ID>"));
 ```
 
 SISU 로그인 방식을 사용합니다. UserToken, DeviceToken, TitleToken, XstsToken 모든 토큰을 받아옵니다. 대부분의 나이 관련 문제는 이 방식으로 해결할 수 있습니다.
@@ -63,7 +67,7 @@ authenticator.AddXboxAuth(xbox => xbox
     .Full("relyingParty"));
 ```
 
-`WithAzureTokenPrefix()` 를 호출하면 Azure 클라이언트를 통해 Microsoft OAuth 세션을 얻은 경우 (MSAL 로 로그인), `WithXboxTokenPrefix()` 를 호출하면 엑스박스 게임 관련 클라이언트를 통해 Microsoft OAuth 세션을 얻은 경우 (예시: `JELoginHandler.DefaultMicrosoftOAuthClientInfo`) 사용합니다. `WithTokenPrefix("t=")` 처럼 TokenPrefix 를 직접 설정할 수 있습니다.
+`WithAzureTokenPrefix()` 는 Azure 클라이언트를 통해 Microsoft OAuth 세션을 얻은 경우 (MSAL 로 로그인), `WithXboxTokenPrefix()` 는 엑스박스 게임 관련 클라이언트를 통해 Microsoft OAuth 세션을 얻은 경우 (예시: `JELoginHandler.DefaultMicrosoftOAuthClientInfo`) 사용합니다. `WithTokenPrefix("t=")` 처럼 TokenPrefix 를 직접 설정할 수 있습니다.
 
 ## 오류 처리
 
