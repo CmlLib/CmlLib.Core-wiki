@@ -8,13 +8,15 @@ description: Xbox Authentication
 
 ```csharp
 var authenticator = // create authenticator using login handlers
-authenticator.AddXboxAuth(xbox => xbox.Basic(XboxAuthConstants.XboxLiveRelyingParty));
+authenticator.AddXboxAuthForJE(xbox => xbox.Basic());
+//authenticator.AddXboxAuth(xbox => xbox.Basic(XboxAuthConstants.XboxLiveRelyingParty)); // same code
 ```
 
 ## Basic
 
 ```csharp
-authenticator.AddXboxAuth(xbox => xbox.Basic("relyingParty"));
+authenticator.AddXboxAuthForJE(xbox => xbox.Basic());
+//authenticator.AddXboxAuth(xbox => xbox.Basic("relyingParty"));
 ```
 
 This is the most basic method. It only gets the minimum information (UserToken, XstsToken) needed to log in.
@@ -25,7 +27,8 @@ You can work around this by using the [#full](xboxauth.md#full "mention") method
 ## Full
 
 ```csharp
-authenticator.AddXboxAuth(xbox => xbox.Full("relyingParty"));
+authenticator.AddXboxAuthForJE(xbox => xbox.Full());
+//authenticator.AddXboxAuth(xbox => xbox.Full("relyingParty"));
 ```
 
 Gets the UserToken, DeviceToken, and XstsToken.
@@ -33,7 +36,8 @@ Gets the UserToken, DeviceToken, and XstsToken.
 ## Sisu
 
 ```csharp
-authenticator.AddXboxAuth(xbox => xbox.Sisu("relyingParty",  "<CLIENT-ID>"));
+authenticator.AddXboxAuthForJE(xbox => xbox.Sisu(XboxGameTitles.MinecraftJava));
+//authenticator.AddXboxAuth(xbox => xbox.Sisu("relyingParty",  "<CLIENT-ID>"));
 ```
 
 Use the SISU login method. Get all tokens: UserToken, DeviceToken, TitleToken, XstsToken. Most age-related issues can be resolved this way.

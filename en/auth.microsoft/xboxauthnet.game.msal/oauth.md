@@ -16,7 +16,7 @@ var loginHandler = JELoginHandlerBuilder.BuildDefault();
 
 var authenticator = loginHandler.CreateAuthenticatorWithNewAccount(default);
 authenticator.AddMsalOAuth(app, msal => msal.Interactive());
-authenticator.AddXboxAuth(xbox => xbox.Basic());
+authenticator.AddXboxAuthForJE(xbox => xbox.Basic());
 authenticator.AddJEAuthenticator();
 var session = await authenticator.ExecuteForLauncherAsync();
 ```
