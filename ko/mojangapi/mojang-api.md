@@ -43,6 +43,8 @@ foreach (PlayerUUID uuid in uuids)
 
 ### GetNameHistories
 
+_note: this api has been deprecated by Mojang_
+
 ```csharp
 Mojang mojang = new Mojang(new HttpClient());
 NameHistory[] response = await mojang.GetNameHistories("uuid");
