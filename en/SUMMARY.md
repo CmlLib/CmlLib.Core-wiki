@@ -27,7 +27,7 @@
   * [Minecraft Changelogs](cmllib.core/utilities/Get-Minecraft-Changelogs.md)
 * [Resources](cmllib.core/resources/README.md)
   * [FAQ](cmllib.core/resources/FAQ.md)
-  * [Common Errors](cmllib.core/resources/Common-Errors.md)
+  * [Known Issues](cmllib.core/resources/Common-Errors.md)
   * [Sample Launcher](cmllib.core/resources/Sample-Code.md)
   * [License](cmllib.core/resources/Licenses-and-Dependencies.md)
 
