@@ -28,7 +28,7 @@
   * [Minecraft Changelogs](cmllib.core/utilites/Get-Minecraft-Changelogs.md)
 * [자료](cmllib.core/resources/README.md)
   * [자주 묻는 질문](cmllib.core/resources/FAQ.md)
-  * [흔히 발생하는 오류](cmllib.core/resources/Common-Errors.md)
+  * [알려진 문제](cmllib.core/resources/Common-Errors.md)
   * [예시 런처](cmllib.core/resources/Sample-Code.md)
   * [라이센스](cmllib.core/resources/Licenses-and-Dependencies.md)
 
