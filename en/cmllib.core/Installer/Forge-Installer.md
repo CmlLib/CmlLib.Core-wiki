@@ -4,9 +4,9 @@ description: Install Forge mod loader
 
 # Forge Installer
 
-## [Broken link](broken-reference "mention")
+## [Installer.Forge](../../installer.forge/home.md)
 
-Use this library to install Forge mod loader automatically.
+[Use this library](../../installer.forge/home.md) to install Forge mod loader automatically.
 
 ## Install Forge without installer
 

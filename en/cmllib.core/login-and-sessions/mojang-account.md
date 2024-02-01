@@ -1,8 +1,10 @@
 # Legacy Mojang Account
 
-## NOTE!!!
+{% hint style="danger" %}
+This api has been deprecated since Mojang closed their legacy login api.&#x20;
 
-You cannot use legacy mojang account anymore since Mojang closed their legacy login api. Use [Microsoft-Xbox-Live-Login.md](Microsoft-Xbox-Live-Login.md "mention") instead.
+Use [Microsoft-Xbox-Live-Login.md](Microsoft-Xbox-Live-Login.md "mention") instead.
+{% endhint %}
 
 For legacy mojang account,
 
