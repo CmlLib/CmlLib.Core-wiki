@@ -1,10 +1,10 @@
 # Microsoft Xbox Account
 
-## [Auth.Microsoft](../../auth.microsoft/cmllib.core.auth.microsoft/README.md "mention")
+## [Broken link](broken-reference "mention")
 
 Microsoft login process is quite complex. I **highly** recommend you to use this library to add Microsoft login feature in your launcher.
 
-[Auth.Microsoft](../../auth.microsoft/cmllib.core.auth.microsoft/README.md "mention")
+[cmllib.core.auth.microsoft](../../auth.microsoft/cmllib.core.auth.microsoft/ "mention")
 
 ### **Example**
 
