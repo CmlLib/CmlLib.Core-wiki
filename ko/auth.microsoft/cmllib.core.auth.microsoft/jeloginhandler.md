@@ -21,7 +21,7 @@ var session = await loginHandler.Authenticate();
 // var session = await loginHandler.Authenticate(selectedAccount, cancellationToken);
 ```
 
-이 메서드는 먼저 [#가장 최근에 플레이한 계정으로 로그인](jeloginhandler.md#가장-최근에-플레이한-계정으로-로그인 "mention")을 시도하고, 만약 실패한다면 [#새로운 계정으로 로그인](jeloginhandler.md#새로운-계정으로-로그인 "mention")을 시도합니다.
+이 메서드는 먼저 [#가장-최근에-플레이한-계정으로-로그인](jeloginhandler.md#가장-최근에-플레이한-계정으로-로그인 "mention")을 시도하고, 만약 실패한다면 [#새로운-계정으로-로그인](jeloginhandler.md#새로운-계정으로-로그인 "mention")을 시도합니다.
 
 ## 새로운 계정으로 로그인
 
@@ -54,7 +54,7 @@ var session = await loginHandler.AuthenticateSilently();
 
 * 만약 이미 유저가 로그인 된 상태라면, 로그인 정보를 즉시 반환합니다.
 * 만약 로그인 정보가 만료된 상태라면, 세션 refresh 를 시도합니다. 이 과정은 유저와의 상호작용이나 웹뷰 없이 진행됩니다.
-* 만약 유저의 로그인 정보가 저장되어 있지 않거나 세션 refresh 에 실패한다면 `MicrosoftOAuthException` 예외가 발생합니다. 이 경우 [#새로운 계정으로 로그인](jeloginhandler.md#새로운-계정으로-로그인 "mention")같은 메서드를 통해 로그인을 다시 진행해야 합니다.
+* 만약 유저의 로그인 정보가 저장되어 있지 않거나 세션 refresh 에 실패한다면 `MicrosoftOAuthException` 예외가 발생합니다. 이 경우 [#새로운-계정으로-로그인](jeloginhandler.md#새로운-계정으로-로그인 "mention")같은 메서드를 통해 로그인을 다시 진행해야 합니다.
 
 ## 계정 목록 나열하기
 
@@ -195,7 +195,7 @@ Microsoft OAuth 모드를 설정합니다. `oauth => oauth.Interactive()` 대신
 
 `AddMicrosoftOAuthForJE` 와 `AddForceMicrosoftOAuthForJE` 메서드는 모장 마인크래프트 런처에서 사용하는 기본 `MicrosoftOAuthClientInfo` 를 자동으로 추가합니다.
 
-기본 Microsoft OAuth 는 Windows 플랫폼에서만 작동합니다. 다른 플랫폼(Linux, macOS) 에서 사용하기 위해서는 [xboxauthnet.game.msal](../xboxauthnet.game.msal/ "mention")을 사용하세요.
+기본 Microsoft OAuth 는 Windows 플랫폼에서만 작동합니다. 다른 플랫폼(Linux, macOS) 에서 사용하기 위해서는 [xboxauthnet.game.msal](../xboxauthnet.game.msal/ "mention") 을 사용하세요.
 
 ```csharp
 // XboxAuthNet.Game.Msal 예시

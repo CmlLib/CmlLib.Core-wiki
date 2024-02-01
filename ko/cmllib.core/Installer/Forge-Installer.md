@@ -4,9 +4,9 @@ description: Install Forge mod loader
 
 # Forge Installer
 
-## [Broken link](broken-reference "mention")
+## [Installer.Forge](../../installer.forge/home.md)
 
-포지 인스톨러 라이브러리를 사용할 수 있습니다.
+라이브러리를 사용하여 포지 설치를 자동화할 수 있습니다.
 
 ## 라이브러리 없이 포지 설치
 

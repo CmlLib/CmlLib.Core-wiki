@@ -1,8 +1,10 @@
 # 예전 모장 계정
 
-## NOTE!!!
+{% hint style="danger" %}
+이 API 는 사용 불가능합니다! 모장에서 더 이상 예전 계정으로 로그인하지 못하게 API 를 막았습니다.
 
-모장에서 이 API 를 더이상 운영하지 않기 때문에 레거시 모장 계정으로 로그인하는 기능은 사용할 수 없습니다.[Microsoft-Xbox-Live-Login.md](Microsoft-Xbox-Live-Login.md "mention") 을 사용하세요.
+[Microsoft-Xbox-Live-Login.md](Microsoft-Xbox-Live-Login.md "mention")을 사용하세요.
+{% endhint %}
 
 For legacy mojang account,
 
