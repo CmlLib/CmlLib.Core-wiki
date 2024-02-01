@@ -4,7 +4,7 @@ description: Install Forge mod loader
 
 # Forge Installer
 
-## [Installer.Forge](../../installer.forge/ "mention")
+## [Broken link](broken-reference "mention")
 
 포지 인스톨러 라이브러리를 사용할 수 있습니다.
 
