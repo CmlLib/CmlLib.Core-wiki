@@ -5,7 +5,7 @@
 
 ## 🚀 CmlLib.Core
 
-* [홈](cmllib.core/README.md)
+* [CmlLib.Core](cmllib.core/README.md)
 * [시작하기](cmllib.core/getting-started/README.md)
   * [CMLauncher](cmllib.core/getting-started/CMLauncher.md)
   * [게임 경로 설정](cmllib.core/getting-started/MinecraftPath.md)
@@ -34,7 +34,7 @@
 
 ## 🔓 Auth.Microsoft
 
-* [홈](auth.microsoft/README.md)
+* [Auth.Microsoft](auth.microsoft/README.md)
 * [CmlLib.Core.Auth.Microsoft](auth.microsoft/cmllib.core.auth.microsoft/README.md)
   * [JELoginHandler](auth.microsoft/cmllib.core.auth.microsoft/jeloginhandler.md)
   * [JELoginHandlerBuilder](auth.microsoft/cmllib.core.auth.microsoft/jeloginhandlerbuilder.md)
@@ -54,13 +54,13 @@
 
 ## 🌐 MojangAPI
 
-* [홈](mojangapi/home.md)
+* [MojangAPI](mojangapi/home.md)
 * [Mojang API](mojangapi/mojang-api.md)
 * [SecurityQuestion](mojangapi/securityquestion.md)
 
 ## ⚒ Installer.Forge
 
-* [홈](installer.forge/home.md)
+* [Installer.Forge](installer.forge/home.md)
 * [지원되는 버전](installer.forge/supported-versions.md)
 * [시작하기](installer.forge/getting-started.md)
 * [MForge](installer.forge/mforge.md)
