@@ -23,7 +23,7 @@ launcher.FileChanged += (e) =>
 };
 launcher.ProgressChanged += (s, e) =>
 {
-    Console.WriteLine("{0}%", e.ProgressPercentage);
+    Console.WriteLine(e.ProgressPercentage + "%");
 };
 
 var versions = await launcher.GetAllVersionsAsync();
@@ -47,7 +47,7 @@ process.Start();
 System.Net.ServicePointManager.DefaultConnectionLimit = 256;
 ```
 
-최대 커넥션 갯수 제한을 늘립니다. 이 코드가 다운로드 속도를 높혀 줍니다.
+최대 커넥션 갯수 제한을 늘립니다. 다운로드 속도를 최대한 높혀줍니다.
 
 ```csharp
 var path = new MinecraftPath();
@@ -66,11 +66,11 @@ launcher.FileChanged += (e) =>
 };
 launcher.ProgressChanged += (s, e) =>
 {
-    Console.WriteLine("{0}%", e.ProgressPercentage);
+    Console.WriteLine(e.ProgressPercentage + "%");
 };
 ```
 
-이벤트 헨들러를 추가합니다. 다운로드 진행 상황을 콘솔에 출력합니다. [Handling-Events.md](Handling-Events.md "mention")참고
+이벤트 헨들러를 추가합니다. 다운로드 진행 상황을 콘솔에 출력합니다. [Handling-Events.md](Handling-Events.md "mention") 참고
 
 ```csharp
 var versions = await launcher.GetAllVersionsAsync();
@@ -80,7 +80,7 @@ foreach (var v in versions)
 }
 ```
 
-모든 버전을 불러오고 이름을 출력합니다. [VersionLoader.md](../more-apis/VersionLoader.md "mention")참고
+모든 버전을 불러오고 버전이름을 출력합니다. [VersionLoader.md](../more-apis/VersionLoader.md "mention") 참고
 
 ```csharp
 var process = await launcher.CreateProcessAsync("1.16.5", new MLaunchOption
@@ -88,14 +88,15 @@ var process = await launcher.CreateProcessAsync("1.16.5", new MLaunchOption
     MaximumRamMb = 2048,
     Session = MSession.GetOfflineSession("hello123"),
 });
+process.Start();
 ```
 
-실행 옵션을 설정하고, 게임 파일을 검사하고, 게임 파일을 다운로드하고, 게임을 실행해 마인크래프트 `Process` 인스턴스를 반환합니다. [MLaunchOption.md](MLaunchOption.md "mention") 에서 더 많은 실행 옵션을 확인하세요.
+실행 옵션을 설정하고, 게임 파일을 검사하고, 게임 파일을 다운로드하고, 게임을 실행해 게임의 `Process` 인스턴스를 반환합니다. [MLaunchOption.md](MLaunchOption.md "mention") 에서 더 많은 실행 옵션을 확인하세요.
 
 ## 오프라인 모드
 
 {% hint style="info" %}
-모든 게임 파일이 정상적으로 설정되어 있을 때에만 작동합니다.
+모든 게임 파일이 정상적으로 설치되어 있을 때에만 작동합니다.
 {% endhint %}
 
 이 모드에서는 인터넷 연결 없이 게임을 실행할 수 있습니다. `FileDownloader` 를 `null` 로 설정하고, `VersionLoader` 를 `LocalVersionLoader` 로 설정하세요.
@@ -112,10 +113,10 @@ launcher.FileDownloader = null;
 ## 게임 파일 확인 / 설치 없이 실행
 
 {% hint style="info" %}
-모든 게임 파일이 정상적으로 설정되어 있을 때에만 작동합니다.
+모든 게임 파일이 정상적으로 설치어 있을 때에만 작동합니다.
 {% endhint %}
 
-게임을 아주 빠르게 실행합니다. (1초 미만)
+게임이 아주 빠르게 실행됩니다합니다. (1초 미만)
 
 ```csharp
 var process = await launcher.CreateProcessAsync("1.18.1", new MLaunchOption()

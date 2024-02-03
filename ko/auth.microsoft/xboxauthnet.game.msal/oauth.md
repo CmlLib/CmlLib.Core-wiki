@@ -60,7 +60,6 @@ MSAL 에 캐시된 계정 정보를 이용해 로그인을 시도합니다.
 ## DeviceCode
 
 ```csharp
-
 authenticator.AddMsalOAuth(app, msal => msal.DeviceCode(deviceCode =>
 {
     Console.WriteLine(deviceCode.Message);
@@ -70,7 +69,7 @@ authenticator.AddMsalOAuth(app, msal => msal.DeviceCode(deviceCode =>
 
 DeviceCode 방식으로 로그인을 시도합니다. 이 방식은 클라이언트에서 웹 브라우저나 UI 가 필요하지 않은 대신 다른 기기에서 로그인을 진행할 수 있도록 해줍니다.
 
-GUI 환경을 사용할 수 없거나 콘솔에서만 작동하는 런처를 제작한다면 이 방식을 사용하여 로그인을 진행하세요. 로그인은 유저가 웹 브라우저를 직접 열어 \[https://www.microsoft.com/link] 으로 접속하여 진행할 수 있습니다. 이때 로그인은 런처를 실행하는 기기와 전혀 다른 기기에서도 진행할 수 있습니다. 예를 들어 유저는 자신의 휴대폰으로 위 링크에 접속해 로그인을 진행할 수 있습니다.
+GUI 환경을 사용할 수 없거나 콘솔에서만 작동하는 런처를 제작한다면 이 방식을 사용하여 로그인을 진행하세요. 로그인은 유저가 웹 브라우저를 직접 열어 [https://www.microsoft.com/link](https://www.microsoft.com/link) 으로 접속하여 진행할 수 있습니다. 이때 로그인은 런처를 실행하는 기기와 전혀 다른 기기에서도 진행할 수 있습니다. 예를 들어 유저는 자신의 휴대폰으로 위 링크에 접속해 로그인을 진행할 수 있습니다.
 
 예제 코드는 콘솔에 다음과 같은 메세지를 출력합니다:
 

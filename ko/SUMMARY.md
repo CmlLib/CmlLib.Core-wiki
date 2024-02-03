@@ -50,7 +50,7 @@
   * [MsalClientHelper](auth.microsoft/xboxauthnet.game.msal/msalclienthelper.md)
   * [OAuth](auth.microsoft/xboxauthnet.game.msal/oauth.md)
 * [CmlLib.Core.Bedrock.Auth](auth.microsoft/cmllib.core.bedrock.auth.md)
-* [Resources](auth.microsoft/resources.md)
+* [자료](auth.microsoft/resources.md)
 
 ## 🌐 MojangAPI
 

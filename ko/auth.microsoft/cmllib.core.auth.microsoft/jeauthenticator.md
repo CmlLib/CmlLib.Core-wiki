@@ -30,8 +30,7 @@ authenticator.AddJEAuthenticator(je => je
 
 게임을 구매하여 소유하고 있는 지 검사하는 여부를 설정합니다. 기본 값: `false`
 
-
-{% hint style="info" %}
+{% hint style="warning" %}
 이 메서드는 공식 사이트에서 게임을 구매했는지만 검사할 수 있습니다. 엑스박스 게임패스로 정품 계정을 가지고 있는 유저를 이 메서드로 검사하면 계정을 가지고 있지 않는 것으로 판단하기 때문에 기본값 `false` 를 바꾸지 않는 것을 추천합니다.
 {% endhint %}
 

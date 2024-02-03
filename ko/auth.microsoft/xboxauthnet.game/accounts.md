@@ -32,11 +32,11 @@ XboxGameAccount 는 내부적으로 ISessionStorage 를 가지며 추가적인 �
 
 ### Identifier
 
-여러 계정을 관리하기 위해서는 여러 ISessionStorage 관리해야 합니다. 이때 각 ISessionStorage 를 구분하기 위한 식별자가 필요합니다.
+여러 계정을 관리하기 위해서는 여러 ISessionStorage 를 관리해야 합니다. 이때 각 ISessionStorage 를 구분하기 위한 식별자가 필요합니다.
 
 두 계정의 Identifier 가 같다면 ISessionStorage 가 서로 다른 데이터를 가지고 있다 하더라도 같은 계정이라고 판단합니다.
 
-예를 들어 마인크래프트 자바 에디션 계정을 나타내는 `JEGameAccount` 는 유저의 UUID 를 식별자로 사용합니다.
+XboxGameAccount 는 기본적으로 엑스박스 계정의 고유번호인 XUID 를 Identifier 으로 사용합니다.
 
 ### LastAccess
 

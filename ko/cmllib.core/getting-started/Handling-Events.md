@@ -30,7 +30,7 @@ private void Launcher_FileChanged(DownloadFileChangedEventArgs e)
 
 private void Launcher_ProgressChanged(object sender, System.ComponentModel.ProgressChangedEventArgs e)
 {
-    Console.WriteLine("{0}%", e.ProgressPercentage);
+    Console.WriteLine(e.ProgressPercentage + "%");
 }
 ```
 

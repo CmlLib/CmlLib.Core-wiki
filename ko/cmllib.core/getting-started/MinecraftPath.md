@@ -29,7 +29,7 @@ CMLauncher launcher = new CMLauncher(myPath);
 
 기본 디렉터리 경로는 다음과 같습니다:
 
-* Windows: `%appdata%.minecraft`
+* Windows: `%appdata%\.minecraft`
 * Linux: `$HOME/.minecraft`
 * macOS: `$HOME/Library/Application Support/minecraft`
 
@@ -131,7 +131,7 @@ Call `Initialize(p)` and `CreateDirs()`.
 
 <summary>Properties</summary>
 
-#### Properties
+**Properties**
 
 **BasePath**
 
@@ -169,7 +169,7 @@ Old minecraft versions use this path as Assets directory.
 
 <summary>Methods</summary>
 
-#### Methods
+**Methods**
 
 **public void CreateDirs()**
 

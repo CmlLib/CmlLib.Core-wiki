@@ -73,7 +73,7 @@ process.BeginOutputReadLine();
 
 ```
 
-모장 런처에서 실행할 수 있는 모든 버전은 CmlLib 에서도 실행 가능합니다. 반대로 말하면 모장 런처에서 실행할 수 없는 버전은 CmlLib 에서 정상 실행된다는 보장이 없습니다. 모장 런처에서 커스텀 클라이언트가 잘 실행되는 것을 확인한 후에 CmlLib 에서 사용하세요.
+모장 런처에서 실행할 수 있는 모든 버전은 CmlLib 에서도 실행 가능합니다. 반대로 말하면 모장 런처에서 실행할 수 없는 버전은 CmlLib 에서 정상 실행을 보장하지 않습니다. 모장 런처에서 커스텀 클라이언트가 잘 실행되는 것을 확인한 후에 CmlLib 에서 사용하세요.
 
 ## [log4j2 vulnerability (CVE-2021-44228)](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-44228)
 

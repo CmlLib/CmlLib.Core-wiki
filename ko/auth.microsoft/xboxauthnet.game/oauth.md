@@ -19,6 +19,9 @@ authenticator.AddForceMicrosoftOAuth(clientInfo, oauth => oauth.Interactive());
 
 // example 2
 authenticator.AddMicrosoftOAuth(clientInfo, oauth => oauth.Silent());
+
+// example 3 (with CmlLib.Core.Auth.Microsoft)
+authenticator.AddMicrosoftOAuthForJE(oauth => oauth.Interactive());
 ```
 
 ## AddMicrosoftOAuth / AddForceMicrosoftOAuth

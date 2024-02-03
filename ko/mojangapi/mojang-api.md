@@ -41,7 +41,7 @@ foreach (PlayerUUID uuid in uuids)
 }
 ```
 
-### GetNameHistories
+### ~~GetNameHistories~~
 
 _note: this api has been deprecated by Mojang_
 
@@ -177,7 +177,7 @@ Mojang mojang = new Mojang(new HttpClient());
 string[] servers = await mojang.GetBlockedServer();
 ```
 
-### GetStatistics
+### ~~GetStatistics~~
 
 _note: this api was obsoleted by mojang_
 
