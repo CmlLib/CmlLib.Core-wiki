@@ -8,12 +8,12 @@ You can customize Minecraft game directory path and structure where all game fil
 
 ## Example
 
-Initialize `CMLauncher` with custom Minecraft path and default directory structure.
+Initialize `MinecraftLauncher` with custom Minecraft path and default directory structure.
 
 ```csharp
 // initialize launcher with the specific path
 MinecraftPath myPath = new MinecraftPath("./games");
-CMLauncher launcher = new CMLauncher(myPath);
+MinecraftLauncher launcher = new MinecraftLauncher(myPath);
 
 // myPath.BasePath : ./games
 // myPath.Library : ./games/libraries
@@ -115,10 +115,6 @@ class MyMinecraftPath : MinecraftPath
 
 <summary>Constructors</summary>
 
-
-
-
-
 **public MinecraftPath()**
 
 Initialize instance with default path.\
@@ -135,7 +131,7 @@ Call `Initialize(p)` and `CreateDirs()`.
 
 <summary>Properties</summary>
 
-#### Properties
+**Properties**
 
 **BasePath**
 
@@ -173,7 +169,7 @@ Old minecraft versions use this path as Assets directory.
 
 <summary>Methods</summary>
 
-#### Methods
+**Methods**
 
 **public void CreateDirs()**
 

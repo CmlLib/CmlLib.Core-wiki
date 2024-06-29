@@ -10,13 +10,14 @@ Microsoft login process is quite complex. I **highly** recommend you to use this
 
 ```csharp
 using CmlLib.Core;
+using CmlLib.Core.ProcessBuilder;
 using CmlLib.Core.Auth.Microsoft;
 
 var loginHandler = JELoginHandlerBuilder.BuildDefault();
 var session = await loginHandler.Authenticate();
 
-var launcher = new CMLauncher();
-var process = await launcher.CreateProcessAsync("1.16.5", new MLaunchOption()
+var launcher = new MinecraftLauncher();
+var process = await launcher.InstallAndBuildProcessAsync("1.20.4", new MLaunchOption
 {
     Session = session
 });

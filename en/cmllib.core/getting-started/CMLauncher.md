@@ -1,10 +1,8 @@
 ---
-description: >-
-  Wrapper class of CmlLib.Core. You can easily access many feature of this
-  library through this class.
+description: Main class of CmlLib.Core.
 ---
 
-# CMLauncher
+# Minecraft Launcher
 
 ## Basic Usage
 
@@ -14,18 +12,17 @@ Below codes are very basic launcher but all main features are included. Copy and
 System.Net.ServicePointManager.DefaultConnectionLimit = 256;
 
 var path = new MinecraftPath();
-var launcher = new CMLauncher(path);
-
-launcher.FileChanged += (e) =>
+var launcher = new MinecraftLauncher(path);
+launcher.FileProgressChanged += (sender, args) =>
 {
-    Console.WriteLine("FileKind: " + e.FileKind.ToString());
-    Console.WriteLine("FileName: " + e.FileName);
-    Console.WriteLine("ProgressedFileCount: " + e.ProgressedFileCount);
-    Console.WriteLine("TotalFileCount: " + e.TotalFileCount);
+    Console.WriteLine($"Name: {args.Name}");
+    Console.WriteLine($"Type: {args.EventType}");
+    Console.WriteLine($"Total: {args.TotalTasks}");
+    Console.WriteLine($"Progressed: {args.ProgressedTasks}");
 };
-launcher.ProgressChanged += (s, e) =>
+launcher.ByteProgressChanged += (sender, args) =>
 {
-    Console.WriteLine("{0}%", e.ProgressPercentage);
+    Console.WriteLine($"{args.ProgressedBytes} bytes / {args.TotalBytes} bytes");
 };
 
 var versions = await launcher.GetAllVersionsAsync();
@@ -34,12 +31,12 @@ foreach (var v in versions)
     Console.WriteLine(v.Name);
 }
 
-var process = await launcher.CreateProcessAsync("1.16.5", new MLaunchOption
+await launcher.InstallAsync("1.20.4");
+var process = await launcher.BuildProcessAsync("1.20.4", new MLaunchOption
 {
-    MaximumRamMb = 2048,
-    Session = MSession.GetOfflineSession("hello123"),
+    Session = MSession.CreateOfflineSession("Gamer123"),
+    MaximumRamMb = 4096
 });
-
 process.Start();
 ```
 
@@ -53,22 +50,22 @@ Increase the maximum number of concurrent connections. This code would increase 
 
 ```csharp
 var path = new MinecraftPath();
-var launcher = new CMLauncher(path);
+var launcher = new MinecraftLauncher(path);
 ```
 
 Create Minecraft directory structure and initialize launcher instance. You can change minecraft path and directory structure. See [MinecraftPath.md](MinecraftPath.md "mention")
 
 ```csharp
-launcher.FileChanged += (e) =>
+launcher.FileProgressChanged += (sender, args) =>
 {
-    Console.WriteLine("FileKind: " + e.FileKind.ToString());
-    Console.WriteLine("FileName: " + e.FileName);
-    Console.WriteLine("ProgressedFileCount: " + e.ProgressedFileCount);
-    Console.WriteLine("TotalFileCount: " + e.TotalFileCount);
+    Console.WriteLine($"Name: {args.Name}");
+    Console.WriteLine($"Type: {args.EventType}");
+    Console.WriteLine($"Total: {args.TotalTasks}");
+    Console.WriteLine($"Progressed: {args.ProgressedTasks}");
 };
-launcher.ProgressChanged += (s, e) =>
+launcher.ByteProgressChanged += (sender, args) =>
 {
-    Console.WriteLine("{0}%", e.ProgressPercentage);
+    Console.WriteLine($"{args.ProgressedBytes} bytes / {args.TotalBytes} bytes");
 };
 ```
 
@@ -82,50 +79,19 @@ foreach (var v in versions)
 }
 ```
 
-Get all version and print its names. See [VersionLoader.md](../more-apis/VersionLoader.md "mention")
+Get all version and print its names. See [versions.md](versions.md "mention")
 
 ```csharp
-var process = await launcher.CreateProcessAsync("1.16.5", new MLaunchOption
+await launcher.InstallAsync("1.20.4");
+var process = await launcher.BuildProcessAsync("1.20.4", new MLaunchOption
 {
-    MaximumRamMb = 2048,
-    Session = MSession.GetOfflineSession("hello123"),
+    Session = MSession.CreateOfflineSession("Gamer123"),
+    MaximumRamMb = 4096
 });
+process.Start();
 ```
 
 Set launch options, check game files, download game files, and return minecraft `Process` instance. See [MLaunchOption.md](MLaunchOption.md "mention") for more launch options.
-
-## Offline mode
-
-{% hint style="info" %}
-This works only when all game files is normally installed.
-{% endhint %}
-
-In this mode, you can launch game without internet connection. Set `FileDownloader` to `null`, and set `VersionLoader` to `LocalVersionLoader`.
-
-```csharp
-var launcher = new CMLauncher(path);
-
-launcher.VersionLoader = new LocalVersionLoader(launcher.MinecraftPath);
-launcher.FileDownloader = null;
-
-// ~~~
-```
-
-## Launch without checking / downloading
-
-{% hint style="info" %}
-This works only when all game files is normally installed.
-{% endhint %}
-
-This code launch game super fast. (< 1sec)
-
-```csharp
-var process = await launcher.CreateProcessAsync("1.18.1", new MLaunchOption()
-{
-    // game options
-}, checkAndDownload: false);
-process.Start();
-```
 
 ## API References
 

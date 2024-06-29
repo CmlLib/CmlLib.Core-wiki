@@ -2,7 +2,7 @@
 
 [GitHub](https://github.com/CmlLib/CmlLib.Core)
 
-version: 3.3.7
+version: 4.0.0
 
 CmlLib.Core is a .NET library for building your own **Custom Minecraft launcher**.
 
@@ -13,7 +13,7 @@ CmlLib.Core is a .NET library for building your own **Custom Minecraft launcher*
 * Download and install vanilla Minecraft version
 * Install appropriate Java runtime automatically
 * Install mod loaders (Fabric, LiteLoader)
-* Launch all game version (tested up to 1.19)
+* Launch all game version (tested up to 1.20)
 * Launch custom game version (ex: Forge, Fabric, LiteLoader, or any modified client)
 * Launch with various options (direct server connecting, screen resolutions, etc)
 * Crossplatform (Windows, Linux, macOS)
@@ -81,7 +81,7 @@ CmlLib.Core is a .NET library for building your own **Custom Minecraft launcher*
 * Use file mirror server (like BMCLAPI mirror service)
 * Make custom file checker
 
-[VersionLoader.md](more-apis/VersionLoader.md "mention")
+[Broken link](broken-reference "mention")
 
 * Get version metadata list from local directory
 * Get version metadata list from mojang server
@@ -89,7 +89,7 @@ CmlLib.Core is a .NET library for building your own **Custom Minecraft launcher*
 * Get version metadata information (version name, type, release date, etc)
 * Make custom version loader
 
-[Version.md](more-apis/Version.md "mention")
+[Broken link](broken-reference "mention")
 
 * Get version information (version name, type, arguments, library list, asset id, etc)
 

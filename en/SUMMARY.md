@@ -6,8 +6,9 @@
 
 * [Home](cmllib.core/README.md)
 * [Getting Started](cmllib.core/getting-started/README.md)
-  * [CMLauncher](cmllib.core/getting-started/CMLauncher.md)
+  * [Minecraft Launcher](cmllib.core/getting-started/CMLauncher.md)
   * [Minecraft Path](cmllib.core/getting-started/MinecraftPath.md)
+  * [Versions](cmllib.core/getting-started/versions.md)
   * [Launch Options](cmllib.core/getting-started/MLaunchOption.md)
   * [Event Handling](cmllib.core/getting-started/Handling-Events.md)
 * [Login and Sessions](cmllib.core/login-and-sessions/README.md)
@@ -15,10 +16,8 @@
   * [Legacy Mojang Account](cmllib.core/login-and-sessions/mojang-account.md)
   * [Offline Account](cmllib.core/login-and-sessions/offline-account.md)
 * [More APIs](cmllib.core/more-apis/README.md)
-  * [VersionLoader](cmllib.core/more-apis/VersionLoader.md)
-  * [Version](cmllib.core/more-apis/Version.md)
-  * [FileChecker](cmllib.core/more-apis/FileChecker.md)
-  * [Downloader](cmllib.core/more-apis/Downloader.md)
+  * [FileExtractor](cmllib.core/more-apis/FileChecker.md)
+  * [GameInstaller](cmllib.core/more-apis/Downloader.md)
 * [Mod Loader Installers](cmllib.core/Installer/README.md)
   * [Forge Installer](cmllib.core/Installer/Forge-Installer.md)
   * [Fabric Installer](cmllib.core/Installer/Fabric-Installer.md)
@@ -57,7 +56,7 @@
 * [Mojang API](mojangapi/mojang-api.md)
 * [SecurityQuestion](mojangapi/securityquestion.md)
 
-## ⚒ Installer.Forge
+## ⚒️ Installer.Forge
 
 * [Home](installer.forge/home.md)
 * [Supported Versions](installer.forge/supported-versions.md)
