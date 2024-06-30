@@ -2,7 +2,7 @@
 
 [GitHub](https://github.com/CmlLib/CmlLib.Core.Auth.Microsoft)
 
-Version: 3.0.0
+Version: 3.1.0
 
 ## [cmllib.core.auth.microsoft](cmllib.core.auth.microsoft/ "mention")
 

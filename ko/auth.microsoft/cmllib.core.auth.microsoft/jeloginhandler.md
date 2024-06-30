@@ -37,10 +37,10 @@ var session = await loginHandler.AuthenticateInteractively();
 {% hint style="info" %}
 이 메서드는 마이크로소프트 OAuth 로그인 페이지를 표시하기 위해서 [Microsoft WebView2](https://developer.microsoft.com/en-us/microsoft-edge/webview2/) 를 사용합니다. 이 내용을 반드시 숙지하고 있어야 합니다.
 
-* **Microsoft WebView2 는 Windows 에서만 사용 가능합니다.** 다른 플랫폼에서 사용하기 위해서는 [xboxauthnet.game.msal](../xboxauthnet.game.msal/ "mention") 가 필요합니다.
+* **Microsoft WebView2 는 Windows 에서만 사용 가능합니다.** 다른 플랫폼에서 사용하기 위해서는 [authentication-with-msal.md](authentication-with-msal.md "mention")가 필요합니다.
 * WebView2 를 사용하기 위해서는 유저들은 (개발자와 최종 사용자 포함) **반드시 WebView2 Runtime이 설치되어 있어야 합니다.** [이 문서](https://learn.microsoft.com/en-us/microsoft-edge/webview2/concepts/distribution)를 참고하여 런처를 WebView2와 함께 배포하는 방법을 알아보세요. (예를 들어 런타임 설치를 direct download link 로 자동화 할 수 있습니다: [https://go.microsoft.com/fwlink/p/?LinkId=2124703](https://go.microsoft.com/fwlink/p/?LinkId=2124703))
 
-만약 WebView2 없이 로그인을 하고 싶다면 [xboxauthnet.game.msal](../xboxauthnet.game.msal/ "mention") 을 대신 사용할 수 있습니다.
+만약 WebView2 없이 로그인을 하고 싶다면 [authentication-with-msal.md](authentication-with-msal.md "mention")을 대신 사용할 수 있습니다.
 {% endhint %}
 
 ## 가장 최근에 플레이한 계정으로 로그인 <a href="#silent" id="silent"></a>
@@ -72,7 +72,7 @@ foreach (var account in accounts)
 }
 ```
 
-로그인에 성공한 계정은 자동으로 계정 정보가 파일에 저장됩니다. 위 코드는 저장되어 있는 모든 계정의 정보를 출력합니다.&#x20;
+로그인에 성공한 계정은 자동으로 계정 정보가 파일에 저장됩니다. 위 코드는 저장되어 있는 모든 계정의 정보를 출력합니다.
 
 계정 정보를 파일에 저장하는 방식을 바꾸려면 [#withaccountmanager](jeloginhandlerbuilder.md#withaccountmanager "mention")를 참고하세요.
 
@@ -101,13 +101,42 @@ var selectedAccount = accounts.GetJEAccountByUsername("username");
 
 ## 선택한 계정으로 로그인
 
+[#silent-1](jeloginhandler.md#silent-1 "mention")을 먼저 시도하고 실패한다면 [#interactive-1](jeloginhandler.md#interactive-1 "mention")을 시도합니다.&#x20;
+
 ```csharp
 var accounts = loginHandler.AccountManager.GetAccounts();
 var selectedAccount = accounts.ElementAt(1);
-var session = await loginHandler.Authenticate(selectedAccount);
+
+var session = await loginHandler.Authenticate(selectedAccount, CancellationToken.None);
 ```
 
 계정 목록을 불러온 후 두번째 계정 (index number 1) 으로 로그인을 시도합니다.
+
+## 선택한 계정으로 Interactive 로그인
+
+Microsoft 로그인 페이지를 표시하고 유저가 계정 이메일과 비밀번호를 입력하여 로그인을 시도합니다.
+
+```csharp
+var accounts = loginHandler.AccountManager.GetAccounts();
+var selectedAccount = accounts.ElementAt(1);
+
+var session = await loginHandler.AuthenticateInteractively(selectedAccount, CancellationToken.None);
+```
+
+## 선택한 계정으로 Silent 로그인
+
+유저가 계정 정보를 입력할 필요 없이 프로그램에서 자동으로 저장된 계정 정보를 이용하여 로그인을 시도합니다.
+
+* 만약 이미 유저가 로그인 된 상태라면, 로그인 정보를 즉시 반환합니다.
+* 만약 로그인 정보가 만료된 상태라면, 세션 refresh 를 시도합니다. 이 과정은 유저와의 상호작용이나 웹뷰 없이 진행됩니다.
+* 만약 유저의 로그인 정보가 저장되어 있지 않거나 세션 refresh 에 실패한다면 `MicrosoftOAuthException` 예외가 발생합니다. 이 경우 [#interactive-1](jeloginhandler.md#interactive-1 "mention")같은 메서드를 통해 로그인을 다시 진행해야 합니다.
+
+```csharp
+var accounts = loginHandler.AccountManager.GetAccounts();
+var selectedAccount = accounts.ElementAt(1);
+
+var session = await loginHandler.AuthenticateSilently(selectedAccount, CancellationToken.None);
+```
 
 ## 가장 최근에 로그인한 계정을 로그아웃
 
@@ -197,7 +226,7 @@ Microsoft OAuth 모드를 설정합니다. `oauth => oauth.Interactive()` 대신
 
 `AddMicrosoftOAuthForJE` 와 `AddForceMicrosoftOAuthForJE` 메서드는 모장 마인크래프트 런처에서 사용하는 기본 `MicrosoftOAuthClientInfo` 를 자동으로 추가합니다.
 
-`AddMicrosoftOAuth` 는 Windows 플랫폼에서만 작동합니다. 다른 플랫폼(Linux, macOS) 에서 사용하기 위해서는 [xboxauthnet.game.msal](../xboxauthnet.game.msal/ "mention") 을 사용하세요.
+`AddMicrosoftOAuth` 는 Windows 플랫폼에서만 작동합니다. 다른 플랫폼(Linux, macOS) 에서 사용하기 위해서는 [authentication-with-msal.md](authentication-with-msal.md "mention")을 사용하세요.
 
 ```csharp
 // XboxAuthNet.Game.Msal 예시

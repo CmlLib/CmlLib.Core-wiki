@@ -8,7 +8,7 @@
 
 기본 구현체인 `IRulesEvaluator` 인 `RulesEvaluator` 는 모장 런처와 동일한 동작을 합니다. 대부분의 상황에서 이것만으로 충분합니다. 만약 다른 동작을 원한다면 `IRulesEvaluator` 를 직접 구현하세요.
 
-`IRulesEvaluator` 는 [minecraftlauncherparameters.md](minecraftlauncherparameters.md "mention")에서 설정할 수 있습니다.
+기본값인 `RulesEvaluator` 가 아닌 다른 구현체를 사용하려면  [minecraftlauncherparameters.md](minecraftlauncherparameters.md "mention")의 [#rulesevaluator](minecraftlauncherparameters.md#rulesevaluator "mention")을 설정하세요.
 
 ### RulesEvaluatorContext
 

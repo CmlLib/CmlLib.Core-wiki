@@ -1,10 +1,10 @@
 ---
-description: CmlLib.Core 의 메인 클래
+description: CmlLib.Core 의 메인 클래스
 ---
 
 # 런처
 
-본 사용방법
+### 기본 사용법
 
 ```csharp
 System.Net.ServicePointManager.DefaultConnectionLimit = 256;

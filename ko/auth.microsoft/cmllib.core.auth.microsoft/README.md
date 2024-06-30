@@ -17,7 +17,7 @@ var loginHandler = JELoginHandlerBuilder.BuildDefault();
 var session = await loginHandler.Authenticate();
 ```
 
-여기서 얻은 session 변수를 [MLaunchOption.md](../../cmllib.core/getting-started/MLaunchOption.md "mention")의 `Session` 속성으로 설정하세요.
+여기서 얻은 session 변수를 [MLaunchOption.md](../../cmllib.core/getting-started/MLaunchOption.md "mention")의 [#session](../../cmllib.core/getting-started/MLaunchOption.md#session "mention") 속성으로 설정하세요.
 
 ## 예제
 

@@ -40,6 +40,7 @@
   * [JELoginHandler](auth.microsoft/cmllib.core.auth.microsoft/jeloginhandler.md)
   * [JELoginHandlerBuilder](auth.microsoft/cmllib.core.auth.microsoft/jeloginhandlerbuilder.md)
   * [JEAuthenticator](auth.microsoft/cmllib.core.auth.microsoft/jeauthenticator.md)
+  * [Authentication with MSAL](auth.microsoft/cmllib.core.auth.microsoft/authentication-with-msal.md)
 * [XboxAuthNet.Game](auth.microsoft/xboxauthnet.game/README.md)
   * [OAuth](auth.microsoft/xboxauthnet.game/oauth.md)
   * [XboxAuth](auth.microsoft/xboxauthnet.game/xboxauth.md)

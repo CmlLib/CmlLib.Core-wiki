@@ -39,7 +39,7 @@ var launcher = new MinecraftLauncher(parameters);
 
 ### MinecraftPath
 
-[MinecraftPath.md](../getting-started/MinecraftPath.md "mention")참고
+[MinecraftPath.md](../getting-started/MinecraftPath.md "mention") 참고
 
 ```csharp
 var path = new MinecraftPath();
@@ -58,7 +58,7 @@ var parameters = MinecraftLauncherParameters.CreateDefault(path, httpClient);
 
 ### RulesEvaluator
 
-[rules.md](rules.md "mention")참고
+[rules.md](rules.md "mention") 참고
 
 ```csharp
 parameters.RulesEvaluator = new RulesEvaluator();
@@ -66,15 +66,23 @@ parameters.RulesEvaluator = new RulesEvaluator();
 
 ### VersionLoader
 
-[java.md](java.md "mention")참고
+[undefined.md](../getting-started/undefined.md "mention") 참고
 
 ```csharp
 parameters.VersionLoader = new MojangJsonVersionLoaderV2(path, httpClient);
 ```
 
+### JavaPathResolver
+
+[java.md](java.md "mention") 참고
+
+```csharp
+parameters.JavaPathResolver = new MinecraftJavaPathResolver(path);
+```
+
 ### GameInstaller
 
-[Downloader.md](Downloader.md "mention")참고
+[Downloader.md](Downloader.md "mention") 참고
 
 ```csharp
 parameters.GameInstaller = ParallelGameInstaller.CreateAsCoreCount(httpClient);
@@ -82,7 +90,7 @@ parameters.GameInstaller = ParallelGameInstaller.CreateAsCoreCount(httpClient);
 
 ### FileExtractors
 
-[FileChecker.md](FileChecker.md "mention")참고
+[FileChecker.md](FileChecker.md "mention") 참고
 
 ```csharp
 var extractors = DefaultFileExtractors.CreateDefault(

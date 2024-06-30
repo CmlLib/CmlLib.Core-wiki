@@ -113,15 +113,13 @@ macOS 에서의 Minecraft dock icon. `256x256` 크기와 `icns` 포멧을 가진
 
 **Type: int**
 
-Minecraft 창 크기 설정. 두 옵션 모두 0보다 큰 값으로 설정될 경우 활성화됩니다. 만약 두 옵션 모두 0으로 설정된 경우라면 게임에서 창 크기를 직접 정하도록.합니다. 만약 두 옵션의 값에 음수가 있을 경우 `ArgumentOutOfRangeException` 이 발생합니다.&#x20;
+Minecraft 창 크기 설정. 두 옵션 모두 0보다 큰 값으로 설정될 경우 활성화됩니다. 만약 두 옵션 모두 0이라면게임에서 창 크기를 직접 정합니다. 만약 두 옵션의 값에 음수가 있을 경우 `ArgumentOutOfRangeException` 이 발생합니다.&#x20;
 
 모든 버전이 이 옵션을 지원하지는 않습니다.
 
 ### FullScreen <a href="#fullscreen" id="fullscreen"></a>
 
 **Type: bool**
-
-Launch Minecraft as full screen. Not all versions of Minecraft support this option.
 
 Minecraft 를 전체 화면으로 실행합니다.&#x20;
 
@@ -155,7 +153,7 @@ Minecraft 를 전체 화면으로 실행합니다.&#x20;
 
 **Type: string / int**
 
-게임 로딩이 끝나면 지정한 서버로 즉시 접속합니다. `ServerPort` 의 기본값은 25565 입니다. 만약 `ServerPort` 의 값이 올바른 포트 번호 (0-65535) 가 아니라면, `ArgumentOutOfRangeException` 예외가 발생합니다. 만약 실행할 버전이 [QuickPlay](https://minecraft.wiki/w/Quick\_Play) 를 지원한다면, QuickPlayMultiplayer 기능을 활성화하고, 지원하지 않는 버전이라면 `--serverIp` 와 `--serverPort` 파라미터를 추가합니다.
+게임 로딩이 끝나면 지정한 서버로 즉시 접속합니다. `ServerPort` 의 기본값은 25565 입니다. 만약 `ServerPort` 의 값이 올바른 포트 번호 (0-65535) 가 아니라면, `ArgumentOutOfRangeException` 예외가 발생합니다. 만약 실행할 버전이 [QuickPlay](https://minecraft.wiki/w/Quick\_Play) 를 지원한다면, `QuickPlayMultiplayer` 기능을 활성화하고, 지원하지 않는 버전이라면 `--serverIp` 와 `--serverPort` 파라미터를 추가합니다.
 
 참고1: 모든 버전이 이 옵션을 지원하지는 않습니다.
 

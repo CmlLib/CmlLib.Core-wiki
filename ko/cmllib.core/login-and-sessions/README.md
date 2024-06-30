@@ -7,4 +7,4 @@ online-mode 서버에 접속하기 위해서는 플레이어의 세션 데이터
 * [Microsoft-Xbox-Live-Login.md](Microsoft-Xbox-Live-Login.md "mention")
 * [offline-account.md](offline-account.md "mention")
 
-세션을 얻은 후에는 `MLaunchOption.Session` 속성을 설정해야 합니다. [MLaunchOption.md](../getting-started/MLaunchOption.md "mention")
+세션을 얻은 후에는 `MLaunchOption.Session` 속성을 설정해야 합니다. [#session](../getting-started/MLaunchOption.md#session "mention")
