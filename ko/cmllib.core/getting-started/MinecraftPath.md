@@ -8,12 +8,12 @@ description: 마인크래프트 디렉터리의 경로와 구조를 나타냅니
 
 ## Example
 
-마인크래프트 경로를 `./games` 로 설정하고 기본 디렉터리 구조로 `CMLauncher` 를 초기화합니다.
+마인크래프트 경로를 `./games` 로 설정하고 기본 디렉터리 구조로 `MinecraftLauncher` 를 초기화합니다.
 
 ```csharp
 // initialize launcher with the specific path
 MinecraftPath myPath = new MinecraftPath("./games");
-CMLauncher launcher = new CMLauncher(myPath);
+MinecraftLauncher launcher = new MinecraftLauncher(myPath);
 
 // myPath.BasePath : ./games
 // myPath.Library : ./games/libraries

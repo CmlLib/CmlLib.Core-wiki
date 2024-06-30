@@ -7,19 +7,20 @@
 
 * [홈](cmllib.core/README.md)
 * [시작하기](cmllib.core/getting-started/README.md)
-  * [CMLauncher](cmllib.core/getting-started/CMLauncher.md)
+  * [런처](cmllib.core/getting-started/CMLauncher.md)
   * [게임 경로 설정](cmllib.core/getting-started/MinecraftPath.md)
+  * [버전](cmllib.core/getting-started/undefined.md)
   * [실행 옵션 설정](cmllib.core/getting-started/MLaunchOption.md)
   * [이벤트 처리](cmllib.core/getting-started/Handling-Events.md)
 * [로그인과 세션](cmllib.core/login-and-sessions/README.md)
   * [마이크로소프트 엑스박스 계정](cmllib.core/login-and-sessions/Microsoft-Xbox-Live-Login.md)
-  * [예전 모장 계정](cmllib.core/login-and-sessions/mojang-account.md)
   * [오프라인 계정](cmllib.core/login-and-sessions/offline-account.md)
 * [고급 기능](cmllib.core/more-apis/README.md)
-  * [VersionLoader](cmllib.core/more-apis/VersionLoader.md)
-  * [Version](cmllib.core/more-apis/Version.md)
-  * [FileChecker](cmllib.core/more-apis/FileChecker.md)
-  * [Downloader](cmllib.core/more-apis/Downloader.md)
+  * [MinecraftLauncherParameters](cmllib.core/more-apis/minecraftlauncherparameters.md)
+  * [Rules](cmllib.core/more-apis/rules.md)
+  * [FileExtractor](cmllib.core/more-apis/FileChecker.md)
+  * [GameInstaller](cmllib.core/more-apis/Downloader.md)
+  * [Java](cmllib.core/more-apis/java.md)
 * [모드 로더 인스톨러](cmllib.core/Installer/README.md)
   * [Forge Installer](cmllib.core/Installer/Forge-Installer.md)
   * [Fabric Installer](cmllib.core/Installer/Fabric-Installer.md)
@@ -58,7 +59,7 @@
 * [Mojang API](mojangapi/mojang-api.md)
 * [SecurityQuestion](mojangapi/securityquestion.md)
 
-## ⚒ Installer.Forge
+## ⚒️ Installer.Forge
 
 * [홈](installer.forge/home.md)
 * [지원되는 버전](installer.forge/supported-versions.md)

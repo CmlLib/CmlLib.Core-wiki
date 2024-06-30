@@ -1,128 +1,59 @@
 ---
-description: 실행 과정을 유저에게 보여줍니다.
+description: 설치 진행 과정을 유저에게 보여줍니다.
 ---
 
 # 이벤트 처리
 
-런처의 진행 상황을 유저에게 보여주고 싶다면 이벤트 헨들러를 등록하세요.\
-CmlLib.Core 는 오직 두가지의 이벤트 헨들러만 사용합니다.\
-[`DownloadFileChangedHandler`](Handling-Events.md#DownloadFileChangedEventHandler) 는 처리중인 파일이 바뀌었을 때, 어떤 파일을 처리 중인지, 남은 파일의 수는 얼마나 되는지 등을 알려주기 위한 헨들러입니다.\
-[`ProgressChangedEventHandler`](https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.progresschangedeventhandler?view=netcore-3.1) 는 진행 상황을 바이트 단위로 계산하여 백분율을 알려주기 위한 헨들러입니다.
+게임 설치 중에는 두 종류의 이벤트가 발생됩니다.
 
-### 예시
+* `FileProgress` 는 파일의 이름, 종류, 완료된 파일의 갯수를 알려줍니다.
+* `ByteProgress` 는 완료된 파일의 크기 / 전체 파일의 크기를 바이트 단위로 알려줍니다.
 
-```csharp
-// 이벤트 헨들러 등록
-var launcher = new CMLauncher(new MinecraftPath());
-launcher.FileChanged += Launcher_FileChanged;
-launcher.ProgressChanged += Launcher_ProgressChanged;
-```
+이벤트 처리기를 등록하는 방법은 두 가지가 있습니다.
 
-```csharp
-// 이벤트 헨들러
-private void Launcher_FileChanged(DownloadFileChangedEventArgs e)
-{
-    Console.WriteLine("파일종류: " + e.FileKind.ToString());
-    Console.WriteLine("파일이름: " + e.FileName);
-    Console.WriteLine("전체 파일개수: " + e.TotalFileCount);
-    Console.WriteLine("진행한 파일개수: " + e.ProgressedFileCount);
-}
+* `IProgress<>` 인터페이스의 구현체를 게임 설치 메서드를 호출할 때 넘겨주기
+* 이벤트 헨들러 등록하기 (여기서 등록한 이벤트 헨들러는 현재 `SynchronizationContext` 위에서 실행되므로 UI 요소에 접근해도 안전합니다)
 
-private void Launcher_ProgressChanged(object sender, System.ComponentModel.ProgressChangedEventArgs e)
-{
-    Console.WriteLine(e.ProgressPercentage + "%");
-}
-```
+만약 `IProgress<>` 를 메서드로 넘겨준 경우, 모든 이벤트 헨들러는 무시됩니다.&#x20;
 
-## DownloadFileChangedEventHandler
-
-`public delegate void DownloadFileChangedHandler(DownloadFileChangedEventArgs e);`
-
-Represents the method that will handle download progress events.
-
-[#downloadfilechangedeventargs](Handling-Events.md#downloadfilechangedeventargs "mention") contains the download progress.
-
-## DownloadFileChangedEventArgs
-
-Represents the download progress data of `IDownloader`.
-
-[Source Code](https://github.com/CmlLib/CmlLib.Core/blob/master/CmlLib/Core/Downloader/DownloadFileChangedEventArgs.cs)
-
-### Properties
-
-#### FileKind
-
-_Type:_ [_MFile_](Handling-Events.md#MFile)
-
-Specifies the type of file currently being downloaded.
-
-#### FileName
-
-_Type: string_
-
-The name of the file currently being downloaded.\
-_Note: if FileKind is equal to MFile.Resource, this property would be an empty string._
-
-#### Source
-
-_Type: object_
-
-The source of event. You can determine what object raised the event.\
-Example:
+### 예시 (IProgress 사용)
 
 ```csharp
-if (e.Source is IFileChecker)
-{
-    // raised by IFileChecker
-    // game file checking
-}
-else if (e.Source is IDownloader)
-{
-    // raised by IDownloader
-    // file downloading
-}
-else
-{
-    // etc (MForge, or )
-}
+var launcher = new MinecraftLauncher();
+await launcher.InstallAsync(
+    "1.20.4", 
+    new Progress<InstallerProgressChangedEventArgs>(e =>
+    {
+        Console.WriteLine("Name: " + e.Name);
+        Console.WriteLine("EventType: " + e.EventType);
+        Console.WriteLine("TotalTasks: " + e.TotalTasks);
+        Console.WriteLine("ProgressedTasks: " + e.ProgressedTasks);
+    }),
+    new Progress<ByteProgress>(e =>
+    {
+        Console.WriteLine("TotalBytes: " + e.TotalBytes);
+        Console.WriteLine("ProgressedBytes: " + e.ProgressedBytes);
+        Console.WriteLine("Percentage: " + e.ToRatio() * 100);
+    }),
+    CancellationToken.None);
 ```
 
-#### TotalFileCount;
+## 예시 (이벤트 헨들러 사용)
 
-_Type: int_
-
-The total number of files to download.
-
-#### ProgressedFileCount;
-
-_Type: int_
-
-The number of files already downloaded.
-
-## ProgressChangedEventHandler
-
-[docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.progresschangedeventhandler?view=netcore-3.1)
-
-## MFile
-
-Indicates the game file type.
-
-`public enum MFile { Runtime, Library, Resource, Minecraft };`
-
-### Fields
-
-#### Runtime
-
-Java runtime. `CMLauncher.CheckJRE()` raises `FileChange` event with this type.
-
-#### Library
-
-Libraries (GAME\_DIR/libraries)
-
-#### Resource
-
-Resources and assets (GAME\_DIR/assets)
-
-#### Minecraft
-
-Minecraft jar file (GAME\_DIR/versions)
+```csharp
+var launcher = new MinecraftLauncher();
+launcher.FileProgressChanged += (_, e) =>
+{
+    Console.WriteLine("Name: " + e.Name);
+    Console.WriteLine("EventType: " + e.EventType);
+    Console.WriteLine("TotalTasks: " + e.TotalTasks);
+    Console.WriteLine("ProgressedTasks: " + e.ProgressedTasks);
+};
+launcher.ByteProgressChanged += (_, e) =>
+{
+    Console.WriteLine("TotalBytes: " + e.TotalBytes);
+    Console.WriteLine("ProgressedBytes: " + e.ProgressedBytes);
+    Console.WriteLine("Percentage: " + e.ToRatio() * 100);
+};
+await launcher.InstallAsync("1.20.4", CancellationToken.None);
+```

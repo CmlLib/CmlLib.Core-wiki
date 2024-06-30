@@ -2,7 +2,7 @@
 
 [GitHub](https://github.com/CmlLib/CmlLib.Core)
 
-version: 3.3.9
+version: 4.0.0
 
 CmlLib.Core 는 **커스텀 마인크래프트 런처** 제작을 위한 .NET 라이브러러리입니다.
 
@@ -15,7 +15,7 @@ CmlLib.Core 는 **커스텀 마인크래프트 런처** 제작을 위한 .NET �
 * 바닐라 마인크래프트 다운로드, 설치
 * 자바 런타임 자동 설치
 * 모드 로더 설치 (Fabric, LiteLoader)
-* 모든 게임 버전 실행 (1.20.1 버전까지 테스트)
+* 모든 게임 버전 실행 (1.20 버전까지 테스트)
 * 커스텀 게임 버전 실행 (ex: Forge, Fabric, LiteLoader, 등등 수정된 클라이언트)
 * 다양한 실행 옵션 (서버 바로 접속, 화면 크기설정)
 * 크로스플랫폼(Windows, Linux, macOS)
@@ -93,7 +93,7 @@ CmlLib.Core 는 **커스텀 마인크래프트 런처** 제작을 위한 .NET �
 * Use file mirror server (like BMCLAPI mirror service)
 * Make custom file checker
 
-[VersionLoader.md](more-apis/VersionLoader.md "mention")
+[Broken link](broken-reference "mention")
 
 * Get version metadata list from local directory
 * Get version metadata list from mojang server
@@ -101,7 +101,7 @@ CmlLib.Core 는 **커스텀 마인크래프트 런처** 제작을 위한 .NET �
 * Get version metadata information (version name, type, release date, etc)
 * Make custom version loader
 
-[Version.md](more-apis/Version.md "mention")
+[Broken link](broken-reference "mention")
 
 * Get version information (version name, type, arguments, library list, asset id, etc)
 
