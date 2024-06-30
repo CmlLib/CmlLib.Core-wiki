@@ -6,13 +6,14 @@ description: Main class of CmlLib.Core.
 
 ## Basic Usage
 
-Below codes are very basic launcher but all main features are included. Copy and paste to Console project and try it by yourself.
-
 ```csharp
 System.Net.ServicePointManager.DefaultConnectionLimit = 256;
 
+// initialize the launcher
 var path = new MinecraftPath();
 var launcher = new MinecraftLauncher(path);
+
+// add event handlers
 launcher.FileProgressChanged += (sender, args) =>
 {
     Console.WriteLine($"Name: {args.Name}");
@@ -25,14 +26,16 @@ launcher.ByteProgressChanged += (sender, args) =>
     Console.WriteLine($"{args.ProgressedBytes} bytes / {args.TotalBytes} bytes");
 };
 
+// get all versions
 var versions = await launcher.GetAllVersionsAsync();
 foreach (var v in versions)
 {
     Console.WriteLine(v.Name);
 }
 
-await launcher.InstallAsync("1.20.4");
-var process = await launcher.BuildProcessAsync("1.20.4", new MLaunchOption
+// install and launch the game
+await launcher.InstallAsync("1.20.6");
+var process = await launcher.BuildProcessAsync("1.20.6", new MLaunchOption
 {
     Session = MSession.CreateOfflineSession("Gamer123"),
     MaximumRamMb = 4096
@@ -46,14 +49,14 @@ process.Start();
 System.Net.ServicePointManager.DefaultConnectionLimit = 256;
 ```
 
-Increase the maximum number of concurrent connections. This code would increase download speed.
+Increase the maximum number of concurrent connections. This code would increase the download speed.
 
 ```csharp
 var path = new MinecraftPath();
 var launcher = new MinecraftLauncher(path);
 ```
 
-Create Minecraft directory structure and initialize launcher instance. You can change minecraft path and directory structure. See [MinecraftPath.md](MinecraftPath.md "mention")
+Create Minecraft directory structure and initialize launcher instance. You can change the path and directory structure. See [MinecraftPath.md](MinecraftPath.md "mention") and [minecraftlauncherparameters.md](../more-apis/minecraftlauncherparameters.md "mention")
 
 ```csharp
 launcher.FileProgressChanged += (sender, args) =>
@@ -91,7 +94,7 @@ var process = await launcher.BuildProcessAsync("1.20.4", new MLaunchOption
 process.Start();
 ```
 
-Set launch options, check game files, download game files, and return minecraft `Process` instance. See [MLaunchOption.md](MLaunchOption.md "mention") for more launch options.
+Install the game and build the game process and return it. See [MLaunchOption.md](MLaunchOption.md "mention") for more launch options.
 
 ## API References
 
@@ -99,72 +102,9 @@ Set launch options, check game files, download game files, and return minecraft 
 
 <summary>Methods</summary>
 
-**MVersionCollection GetAllVersions()**
+**ValueTask InstallAndBuildProcessAsync(string versionName, MLaunchOption launchOption, CancellationToken cancellationToken = default)**
 
-Refresh version list and return them.
-
-**async Task GetAllVersionsAsync()**
-
-Async version of `GetAllVersions()`.
-
-**MVersion GetVersion(string versionname)**
-
-Get `MVersion` instance.
-
-**async Task GetVersionAsync(string versionname)**
-
-Get `MVersion` instance asynchronously.
-
-**DownloadFile\[] CheckLostGameFiles(MVersion version)**
-
-Check all game files and return file list that should be downloaded. It checks all game files using `IFileChecker` in `GameFileChekers` property, combines all game files that should be downloaded into array and return array.
-
-**async Task\<DownloadFile\[]> CheckLostGameFilesTaskAsync(MVersion version)**
-
-Asynchronous version of `CheckLostGameFiles` method.
-
-**async Task DownloadGameFiles(DownloadFile\[] files)**
-
-Download `files` using `FileDownloader` property.
-
-**void CheckAndDownload(MVersion version)**
-
-Check all game files and download files.
-
-**async Task CheckAndDownloadAsync(MVersion version)**
-
-Asynchrounous version of `CheckAndDownload` method.
-
-**Process CreateProcess(string versionName, MLaunchOption option, bool checkAndDownload=true)**
-
-Find `versionName` version from `Versions` property, check game files, and return game process.\
-If `checkAndDownload` argument is false, It does not check game files.\
-This method does not start game process. You should call `Start()` method of process.
-
-**Process CreateProcess(MVersion version, MLaunchOption option, bool checkAndDownload=false)**
-
-Check game files of `version` and return game process. If `checkAndDownload` argument is false, It does not check game files.\
-This method does not start game process. You should call `Start()` method of process.
-
-**async Task CreateProcessAsync(string versionName, MLaunchOption option, bool checkAndDownload=false)**
-
-Asynchrounous version of `CreateProcess(string versionName, MLaunchOption option)` method.
-
-**async Task CreateProcessAsync(MVersion version, MLaunchOption option, bool checkAndDownload=false)**
-
-Asynchrounous version of `CreateProcess(MVersion version, MLaunchOption option)` method.
-
-**Process CreateProcess(MLaunchOption option)**
-
-Create game process which game version is `StartVersion` property of `option`. This method does not check and download game files. This method does not start game process. You should call `Start()` method of process.
-
-**async Task CreateProcessAsync(MLaunchOption option)**
-
-Asynchrounous version of `CreateProcess(MLaunchOption option)` method.
-
-**Process CreateProcess(string mcversion, string forgeversion, MLaunchOption option)**
-
-(not stable)
+Install `versionName` and build process.
 
 </details>
 
@@ -175,21 +115,5 @@ Asynchrounous version of `CreateProcess(MLaunchOption option)` method.
 **MinecraftPath**
 
 _Type: MinecraftPath_
-
-**Versions**
-
-_Type: MVersionCollection?_
-
-**VersionLoader**
-
-_Type: IVersionLoader_
-
-**GameFileCheckers**
-
-_Type: FileCheckerCollection_
-
-**FileDownloader**
-
-_Type: IDownloader?_
 
 </details>

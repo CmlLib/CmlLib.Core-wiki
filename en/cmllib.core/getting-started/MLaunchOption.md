@@ -12,6 +12,7 @@ var launchOption = new MLaunchOption
     Session = MSession.CreateOfflineSession("gamer123"),
     Features = new string[] { "feature_name" },
 
+    JavaPath = "javaw.exe",
     MaximumRamMb = 4096,
     MinimumRamMb = 1024,
     DockName = "Minecraft",
@@ -180,7 +181,7 @@ _note2: The game would not be able to resolve the address if you pass a domain w
 
 **Type: IReadOnlyDictionary\<string, string>**
 
-When building an argument in the launcher, ${variable\_name} will be replaced with the appropriate value. This option specifies variable\_name as the key and the string to be replaced as the value.
+When building an argument in the launcher, `${variable_name}` will be replaced with the appropriate value. This option specifies `variable_name` as the key and the string to be replaced as the value.
 
 ### JVMArgumentOverrides
 

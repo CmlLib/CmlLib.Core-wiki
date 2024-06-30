@@ -47,7 +47,7 @@ CmlLib.Core is a .NET library for building your own **Custom Minecraft launcher*
 * Create new minecraft directory
 * Make custom minecraft directory structure
 
-[mojang-account.md](login-and-sessions/mojang-account.md "mention")
+[Broken link](broken-reference "mention")
 
 * Get game session from mojang auth server
 * Create offline game session
