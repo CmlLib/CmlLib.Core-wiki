@@ -1,5 +1,9 @@
 # 🧊 CmlLib Projects
 
+{% hint style="info" %}
+이 문서는 최신 버전이 아닙니다. 4.0.0 문서는 [여기에](https://alphabs.gitbook.io/cmllib/v/v4-kr) 있습니다.
+{% endhint %}
+
 CmlLib 프로젝트는 커스텀 마인크래프트 런처를 만들기 위한 .NET 라이브러리를 제작하고 있습니다.
 
 ## [CmlLib.Core](cmllib.core/)

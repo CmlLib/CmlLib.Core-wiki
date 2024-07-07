@@ -58,7 +58,7 @@
 * [Mojang API](mojangapi/mojang-api.md)
 * [SecurityQuestion](mojangapi/securityquestion.md)
 
-## ⚒ Installer.Forge
+## ⚒️ Installer.Forge
 
 * [홈](installer.forge/home.md)
 * [지원되는 버전](installer.forge/supported-versions.md)

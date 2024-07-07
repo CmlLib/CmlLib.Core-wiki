@@ -2,7 +2,11 @@
 
 [GitHub](https://github.com/CmlLib/CmlLib.Core)
 
-version: 3.3.9
+{% hint style="info" %}
+이 문서는 최신 버전이 아닙니다. 4.0.0 문서는 [여기에](https://alphabs.gitbook.io/cmllib/v/v4-kr/cmllib.core/cmllib.core) 있습니다.
+{% endhint %}
+
+version: 3.3.10
 
 CmlLib.Core 는 **커스텀 마인크래프트 런처** 제작을 위한 .NET 라이브러러리입니다.
 

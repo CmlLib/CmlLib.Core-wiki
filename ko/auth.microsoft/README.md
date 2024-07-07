@@ -2,6 +2,10 @@
 
 [GitHub](https://github.com/CmlLib/CmlLib.Core.Auth.Microsoft)
 
+{% hint style="info" %}
+이 문서는 최신 버전이 아닙니다. 3.1.0 버전은 [여기에](https://alphabs.gitbook.io/cmllib/v/v4-kr/auth.microsoft/auth.microsoft) 있습니다.&#x20;
+{% endhint %}
+
 Version: 3.0.0
 
 ## [cmllib.core.auth.microsoft](cmllib.core.auth.microsoft/ "mention")
