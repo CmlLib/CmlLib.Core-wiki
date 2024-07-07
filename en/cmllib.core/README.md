@@ -2,7 +2,11 @@
 
 [GitHub](https://github.com/CmlLib/CmlLib.Core)
 
-version: 3.3.7
+{% hint style="info" %}
+This documentation is out of date. The 4.0.0 documentation is [here](https://alphabs.gitbook.io/cmllib/v/v4-en/cmllib.core/cmllib.core)
+{% endhint %}
+
+version: 3.3.10
 
 CmlLib.Core is a .NET library for building your own **Custom Minecraft launcher**.
 

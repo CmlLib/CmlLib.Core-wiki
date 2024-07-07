@@ -57,7 +57,7 @@
 * [Mojang API](mojangapi/mojang-api.md)
 * [SecurityQuestion](mojangapi/securityquestion.md)
 
-## ⚒ Installer.Forge
+## ⚒️ Installer.Forge
 
 * [Home](installer.forge/home.md)
 * [Supported Versions](installer.forge/supported-versions.md)
