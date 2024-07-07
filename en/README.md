@@ -1,5 +1,9 @@
 # 🧊 CmlLib Projects
 
+{% hint style="info" %}
+This documentation is out of date. The 4.0.0 documentation is [here](https://alphabs.gitbook.io/cmllib/v/v4-en)
+{% endhint %}
+
 CmlLib project makes .NET libraries for building your own minecraft launcher.
 
 ## [CmlLib.Core](cmllib.core/)
