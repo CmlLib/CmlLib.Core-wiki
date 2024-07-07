@@ -3,7 +3,7 @@
 [GitHub](https://github.com/CmlLib/CmlLib.Core.Installer.Forge)
 
 {% hint style="info" %}
-This documentation is out of date. The 4.0.0 documentation is [here](https://alphabs.gitbook.io/cmllib/v/v4-en/installer.forge/home)
+This documentation is out of date. The 1.0.0 documentation is [here](https://alphabs.gitbook.io/cmllib/v/v4-en/installer.forge/home)
 {% endhint %}
 
 Forge Installer for [CmlLib.Core](../cmllib.core/).
