@@ -3,7 +3,7 @@
 [GitHub](https://github.com/CmlLib/CmlLib.Core.Auth.Microsoft)
 
 {% hint style="info" %}
-This documentation is out of date. The 4.0.0 documentation is [here](https://alphabs.gitbook.io/cmllib/v/v4-en/auth.microsoft/auth.microsoft)
+This documentation is out of date. The 3.1.0 documentation is [here](https://alphabs.gitbook.io/cmllib/v/v4-en/auth.microsoft/auth.microsoft)
 {% endhint %}
 
 Version: 3.0.0
