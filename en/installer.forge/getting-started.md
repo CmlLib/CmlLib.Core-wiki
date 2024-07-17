@@ -7,6 +7,12 @@ Install nuget package [CmlLib.Core.Installer.Forge](https://www.nuget.org/packag
 ## Example
 
 ```csharp
+using CmlLib.Core;
+using CmlLib.Core.Auth;
+using CmlLib.Core.Installer.Forge;
+using CmlLib.Core.Installers;
+using CmlLib.Core.ProcessBuilder;
+
 var path = new MinecraftPath(); // use default directory
 var launcher = new MinecraftLauncher(path);
 

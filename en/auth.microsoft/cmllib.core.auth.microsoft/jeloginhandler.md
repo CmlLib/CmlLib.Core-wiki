@@ -30,15 +30,15 @@ var session = await loginHandler.AuthenticateInteractively();
 
 ![](https://user-images.githubusercontent.com/17783561/154854388-38c473f1-7860-4a47-bdbe-622de37eef8b.png)
 
-Add a new account to sign in. Show the user the Microsoft OAuth page to enter their Microsoft account.&#x20;
+Add a new account to sign in. Show the user the Microsoft OAuth page to enter their Microsoft account.
 
 {% hint style="info" %}
 This method uses [Microsoft WebView2](https://developer.microsoft.com/en-us/microsoft-edge/webview2/) for displaying Microsoft OAuth login page. You must know that:
 
-* **Microsoft WebView2 is only available on Windows.** For another platform, you need [xboxauthnet.game.msal](../xboxauthnet.game.msal/ "mention").
+* **Microsoft WebView2 is only available on Windows.** For another platform, see [Authentication with MSAL](authentication-with-msal.md).
 * To run WebView2, The users (including developer and end user) **must have the WebView2 Runtime installed**. See [this document](https://learn.microsoft.com/en-us/microsoft-edge/webview2/concepts/distribution) to distribute your launcher with WebView2. (For example, you can automate runtime installation with direct download link: [https://go.microsoft.com/fwlink/p/?LinkId=2124703](https://go.microsoft.com/fwlink/p/?LinkId=2124703))
 
-If you don't want to use WebView2, you can use [xboxauthnet.game.msal](../xboxauthnet.game.msal/ "mention") instead.
+If you don't want to use WebView2, see [Authentication with MSAL](authentication-with-msal.md).
 {% endhint %}
 
 ## Authenticating with the Most Recent Account
@@ -48,10 +48,10 @@ var session = await loginHandler.AuthenticateSilently();
 // var session = await loginHandler.AuthenticateSilently(selectedAccount, cancellationToken);
 ```
 
-Using the saved account information of the most account, log in.&#x20;
+Using the saved account information of the most account, log in.
 
 * If the user is already logged in, this method returns the logged in information immediately.
-* If the user's login information has expired, try to refresh it. No user interaction nor webview is required during this process.&#x20;
+* If the user's login information has expired, try to refresh it. No user interaction nor webview is required during this process.
 * If there is no saved login information or if refresh failed, an `MicrosoftOAuthException` will be thrown. In this case you should authenticate again using new account methods like [#authenticating-with-new-account](jeloginhandler.md#authenticating-with-new-account "mention").
 
 ## List Accounts
@@ -152,7 +152,7 @@ authenticator.AddJEAuthenticator();
 var session = await authenticator.ExecuteForLauncherAsync();
 ```
 
-The login process has four main steps. There are many methods to customize authentication flow in each main step. You must select only one method for each step.&#x20;
+The login process has four main steps. There are many methods to customize authentication flow in each main step. You must select only one method for each step.
 
 ### 1. Create Authenticator
 
@@ -194,7 +194,7 @@ Set Microsoft OAuth mode. Instead of `oauth => oauth.Interactive()`, there are m
 
 `AddMicrosoftOAuthForJE` and `AddForceMicrosoftOAuthForJE` methods add default `MicrosoftOAuthClientInfo` which Mojang Minecraft launcher uses so that you don't need to pass it everytime you use.
 
-Note that the default Microsoft OAuth is only available on Windows platform. For another platform (Linux, macOS) you need [xboxauthnet.game.msal](../xboxauthnet.game.msal/ "mention").&#x20;
+Note that the default Microsoft OAuth is only available on Windows platform. For another platform (Linux, macOS) you need [xboxauthnet.game.msal](../xboxauthnet.game.msal/ "mention").
 
 ```csharp
 // example for XboxAuthNet.Game.Msal
