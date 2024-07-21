@@ -10,10 +10,10 @@ You can set the `IJavaPathResolver` in [minecraftlauncherparameters.md](minecraf
 
 ### JavaFileExtractor
 
-The library installs the Java provided by Mojang, so you don't need to have Java pre-installed on the user's PC. See `JavaFileExtractor` in[FileChecker.md](FileChecker.md "mention").
+The library installs the Java provided by Mojang, so you don't need to have Java pre-installed on the user's PC. See `JavaFileExtractor` in [FileChecker.md](FileChecker.md "mention").
 
 {% hint style="info" %}
-`JavaFileExtractor` does not support all platforms. On unsupported platform you should specify Java binary path yourself. See `JavaPath` in[MLaunchOption.md](../getting-started/MLaunchOption.md "mention").
+`JavaFileExtractor` does not support all platforms. On unsupported platform you should specify Java binary path yourself. See `JavaPath` in [MLaunchOption.md](../getting-started/MLaunchOption.md "mention").
 
 Supported platform:
 

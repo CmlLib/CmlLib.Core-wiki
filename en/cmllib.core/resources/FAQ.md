@@ -2,10 +2,12 @@
 
 ## Get game outputs (logs)
 
-You can read standard output of game process so that you can easily check process status and read game logs.  
+You can read standard output of game process.\
 As `CreateProcess` method returns `Process` instance, you can use all APIs of `Process`. ([reference](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.process?view=net-6.0))
 
 ```csharp
+process.StartInfo.CreateNoWindow = false;
+process.StartInfo.UseShellExecute = false;
 process.StartInfo.RedirectStandardError = true;
 process.StartInfo.RedirectStandardOutput = true;
 process.EnableRaisingEvents = true;
@@ -21,10 +23,11 @@ Above code write all game outputs to console. You can check game logs in console
 
 ## Launch custom game client
 
-You need two file: `<version_name>.jar`, `<version_name>.json`.  
-Put these files into `<game_directory>/versions/<version_name>` directory.   
+You need two file: `<version_name>.jar`, `<version_name>.json`.\
+Put these files into `<game_directory>/versions/<version_name>` directory.
 
 Example)
+
 ```
 <game_directory>
  | - versions
@@ -33,9 +36,9 @@ Example)
  |    |    | - myversion.json
 ```
 
-Make sure that version directory name, jar file name, json file name, and `id` property in version json file is all same.   
+Make sure that version directory name, jar file name, json file name, and `id` property in version json file is all same.
 
-If you copy version json file from vanilla version json file, you should remove `downloads` property in version json file to prevent launcher overwrites your custom version jar file with vanilla version file.   
+If you copy version json file from vanilla version json file, you should remove `downloads` property in version json file to prevent launcher overwrites your custom version jar file with vanilla version file.
 
 (Example for 1.12.2.json)
 
@@ -76,4 +79,4 @@ All version which Mojang launcher can launch also can be launched by CmlLib.Core
 
 ## [log4j2 vulnerability (CVE-2021-44228)](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-44228)
 
-Minecraft launched by `CmlLib 0.0.1` ~ `CmlLib.Core 3.3.3` may have log4j2 vulnerability. It is safe after `CmlLib.Core 3.3.4` version.
+Minecraft launched by `CmlLib 0.0.1` \~ `CmlLib.Core 3.3.3` may have log4j2 vulnerability. It is safe after `CmlLib.Core 3.3.4` version.

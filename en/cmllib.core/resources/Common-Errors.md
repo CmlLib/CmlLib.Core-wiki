@@ -1,27 +1,5 @@
 # Known Issues
 
-### Game crashed with Offline session (1.20\~)
-
-Use below code to create offline session.
-
-```csharp
-public static MSession CreateFakeSession(string username)
-{
-    return new MSession
-    {
-        Username = username,
-        UUID = "2749420bc7a54b05ab622b34e61b8a79", // fake UUID
-        AccessToken = "accesstoken", // fake access token
-        UserType = "Mojang"
-    };
-}
-
-// usage:
-// var session = CreateFakeSession("username123");
-```
-
-[ref](https://github.com/CmlLib/CmlLib.Core/issues/88)
-
 ### Can't load some texture in loading screen when using \`ServerIP\` option
 
 * [\[BUG\] When i provide server ip and port for auto connect to server on startup, the background does not load in 1.16.5 OptiFine](https://github.com/CmlLib/CmlLib.Core/issues/93)

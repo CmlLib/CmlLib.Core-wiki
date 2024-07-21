@@ -4,37 +4,41 @@ description: Install Fabric mod loader
 
 # Fabric Installer
 
-## Example
+### Get Minecraft versions
 
 ```csharp
- var path = new MinecraftPath();
- var launcher = new CMLauncher(path);
- launcher.FileChanged += Downloader_ChangeFile;
- launcher.ProgressChanged += Downloader_ChangeProgress;
+var fabricInstaller = new FabricInstaller(new HttpClient());
+var versions = await fabricInstaller.GetSupportedVersionNames();
 
- // initialize fabric version loader
- var fabricVersionLoader = new FabricVersionLoader();
- var fabricVersions = await fabricVersionLoader.GetVersionMetadatasAsync();
+foreach (var version in versions)
+{
+    Console.WriteLine(version);
+}
+```
 
- // print fabric versions
- foreach (var v in fabricVersions)
- {
-     Console.WriteLine(v.Name);
- }
+### Get Fabric versions
 
-Console.WriteLine("select version: ");
-var fabricVersionName = Console.ReadLine();
+```csharp
+var fabricInstaller = new FabricInstaller(new HttpClient());
+var versions = await fabricInstaller.GetLoaders("1.20.6");
 
-if (string.IsNullOrEmpty(fabricVersionName))
-    return;
+foreach (var version in versions)
+{
+    Console.WriteLine(version.Version);
+}
+```
 
-// install
-var fabric = fabricVersions.GetVersionMetadata(fabricVersionName);
-await fabric.SaveAsync(path);
+### Install
 
-// update version list
-await launcher.GetAllVersionsAsync();
+```csharp
+var path = new MinecraftPath();
+var launcher = new MinecraftLauncher(path);
 
-var process = await launcher.CreateProcessAsync(fabricVersionName, new MLaunchOption());
-process.Start();
+var fabricInstaller = new FabricInstaller(new HttpClient());
+
+// install the latest fabric loader for 1.20.4
+var versionName = await fabricInstaller.Install("1.20.4", path);
+
+// install the specific fabric loader
+var versionName = await fabricInstaller.Install("1.20.4", "0.16.0", path);
 ```
