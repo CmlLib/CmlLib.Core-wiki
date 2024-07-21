@@ -1,27 +1,5 @@
 # 알려진 문제
 
-### Offline session 사용 후 게임 크래쉬 (1.20\~)
-
-Use below code to create offline session.
-
-```csharp
-public static MSession CreateFakeSession(string username)
-{
-    return new MSession
-    {
-        Username = username,
-        UUID = "2749420bc7a54b05ab622b34e61b8a79", // fake UUID
-        AccessToken = "accesstoken", // fake access token
-        UserType = "Mojang"
-    };
-}
-
-// usage:
-// var session = CreateFakeSession("username123");
-```
-
-[ref](https://github.com/CmlLib/CmlLib.Core/issues/88)
-
 ### \`ServerIP\` 옵션과 함께 게임 실행 시 로딩 스크린에서 텍스쳐 깨짐
 
 * [\[BUG\] When i provide server ip and port for auto connect to server on startup, the background does not load in 1.16.5 OptiFine](https://github.com/CmlLib/CmlLib.Core/issues/93)
@@ -29,7 +7,7 @@ public static MSession CreateFakeSession(string username)
 
 Unfortunately, These bugs are Minecraft's bug. We can't fix.
 
-### 비활성화된 '멀티플레이'  버튼, Not authenticated with Minecraft.net
+### 비활성화된 '멀티플레이' 버튼, Not authenticated with Minecraft.net
 
 Your xbox account would block multiplay feature. Check your account settings. [More Informations](https://support.xbox.com/ko-KR/help/family-online-safety/online-safety/manage-a-members-safety-settings-to-access-minecraft-features)
 

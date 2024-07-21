@@ -6,6 +6,8 @@
 `CreateProcess` 메서드가 .NET 에서 제공하는 `Process` 인스턴스를 반환하기 때문에, `Process` 의 모든 API 를 사용할 수 있습니다. ([reference](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.process?view=net-6.0))
 
 ```csharp
+process.StartInfo.CreateNoWindow = false;
+process.StartInfo.UseShellExecute = false;
 process.StartInfo.RedirectStandardError = true;
 process.StartInfo.RedirectStandardOutput = true;
 process.EnableRaisingEvents = true;
