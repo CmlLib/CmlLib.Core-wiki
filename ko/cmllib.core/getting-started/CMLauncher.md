@@ -85,10 +85,11 @@ foreach (var v in versions)
 모든 버전을 불러오고 버전 이름을 출력합니다. [undefined.md](undefined.md "mention") 참고
 
 ```csharp
-var process = await launcher.CreateProcessAsync("1.16.5", new MLaunchOption
+await launcher.InstallAsync("1.20.4");
+var process = await launcher.BuildProcessAsync("1.20.4", new MLaunchOption
 {
-    MaximumRamMb = 2048,
-    Session = MSession.GetOfflineSession("hello123"),
+    Session = MSession.CreateOfflineSession("Gamer123"),
+    MaximumRamMb = 4096
 });
 process.Start();
 ```
