@@ -33,7 +33,7 @@ var launchOption = new MLaunchOption
     GameLauncherName = "CmlLib",
     GameLauncherVersion = "2",
     UserProperties = "{}",
-
+    
     ArgumentDictionary = new Dictionary<string, string>
     {
         { "key", "value" },
@@ -45,12 +45,13 @@ var launchOption = new MLaunchOption
     },
     ExtraJvmArguments = new MArgument[]
     {
-        new MArgument("--key=value")
+        new MArgument("--key=value"),
+        MArgument.FromCommandLine("-Dminecraft.api.env=custom -Dminecraft.api.auth.host=https://invalid.invalid -Dminecraft.api.account.host=https://invalid.invalid -Dminecraft.api.session.host=https://invalid.invalid -Dminecraft.api.services.host=https://invalid.invalid"),
     },
     ExtraGameArguments = new MArgument[]
     {
         new MArgument("--key=value"),
-        new MArgument("--disableMultiplayer")
+        new MArgument(["--key1", "--key2", "value2"]),
     }
 };
 ```
