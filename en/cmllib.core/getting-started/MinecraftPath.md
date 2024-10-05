@@ -12,8 +12,8 @@ Initialize `MinecraftLauncher` with custom Minecraft path and default directory 
 
 ```csharp
 // initialize launcher with the specific path
-MinecraftPath myPath = new MinecraftPath("./games");
-MinecraftLauncher launcher = new MinecraftLauncher(myPath);
+MinecraftPath myPath = new("./games");
+MinecraftLauncher launcher = new(myPath);
 
 // myPath.BasePath : ./games
 // myPath.Library : ./games/libraries
@@ -67,7 +67,7 @@ All paths are stored as absolute paths, even when a relative path is passed.
 Set path properties to what you want. All properties (`Libraries`, `Versions`, etc) are described in [#properties](MinecraftPath.md#properties "mention")
 
 ```csharp
-MinecraftPath myPath = new MinecraftPath();
+MinecraftPath myPath = new();
 myPath.Libraries = "./commons/libs";
 myPath.Versions = "./commons/versions";
 myPath.Assets = MinecraftPath.GetOSDefaultPath() + "/assets";
