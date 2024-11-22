@@ -75,7 +75,7 @@ myPath.Assets = MinecraftPath.GetOSDefaultPath() + "/assets";
 
 ### 상속
 
-`MinecraftPath` 를 상속받는 클래스를 만들고 메서드를 오버라이드하세요. 모든 메서드는 (`CreateDirs`, `NormalizePath`, 등) [#methods](MinecraftPath.md#methods "mention") 에서 확인하세요.
+`MinecraftPath` 를 상속받는 클래스를 만들고 메서드를 오버라이드하세요. 모든 메서드 (`CreateDirs`, `NormalizePath`, 등등) 은은 [#methods](MinecraftPath.md#methods "mention") 에서 확인하세요.
 
 {% hint style="info" %}
 상대 경로를 인수로 받은 경우 반드시 절대 경로로 바꾸어 저장하세요.
@@ -107,19 +107,19 @@ class MyMinecraftPath : MinecraftPath
     public override string GetNativePath(string id)
         => NormalizePath($"{Versions}/{id}/natives");
     
-    // NOTE: 마인크래프트에서 바뀐 경로를 인식하지 못하기에 이것을 바꾸지 마세요!
+    // 주의: 이 경로를 바꾸면 마인크래프트에서 인식하지 못할수도 있습니다
     public override string GetIndexFilePath(string assetId)
         => NormalizePath($"{Assets}/indexes/{assetId}.json");
 
-    // NOTE: 마인크래프트에서 바뀐 경로를 인식하지 못하기에 이것을 바꾸지 마세요!   
+    // 주의: 이 경로를 바꾸면 마인크래프트에서 인식하지 못할수도 있습니다
     public override string GetAssetObjectPath(string assetId)
         => NormalizePath($"{Assets}/objects");
 
-    // NOTE: 마인크래프트에서 바뀐 경로를 인식하지 못하기에 이것을 바꾸지 마세요!
+    // 주의: 이 경로를 바꾸면 마인크래프트에서 인식하지 못할수도 있습니다
     public override string GetAssetLegacyPath(string assetId)
         => NormalizePath($"{Assets}/virtual/legacy");
 
-    // NOTE: 마인크래프트에서 바뀐 경로를 인식하지 못하기에 이것을 바꾸지 마세요!
+    // 주의: 이 경로를 바꾸면 마인크래프트에서 인식하지 못할수도 있습니다
     public override string GetLogConfigFilePath(string configId)
         => NormalizePath($"{Assets}/log_configs/{configId}" + (!configId.EndsWith(".xml") ? ".xml" : ""));
 }

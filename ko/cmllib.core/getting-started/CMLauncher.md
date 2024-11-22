@@ -72,7 +72,7 @@ launcher.ByteProgressChanged += (sender, args) =>
 };
 ```
 
-이벤트 헨들러를 추가합니다. 다운로드 진행 상황을 콘솔에 출력합니다. [Handling-Events.md](Handling-Events.md "mention") 참고
+이벤트 헨들러를 추가합니다. 설치 진행률을 콘솔에 출력합니다. [Handling-Events.md](Handling-Events.md "mention") 참고
 
 ```csharp
 var versions = await launcher.GetAllVersionsAsync();
@@ -96,7 +96,7 @@ process.Start();
 
 실행 옵션을 설정하고, 게임 파일을 검사하고, 게임 파일을 다운로드하고, 게임을 실행해 게임의 `Process` 인스턴스를 반환합니다. [MLaunchOption.md](MLaunchOption.md "mention") 에서 더 많은 실행 옵션을 확인하세요.
 
-## 모든메서드
+## 모든 메서드
 
 버전 실행에 필요한 모든 파일 목록 가져오기
 
@@ -143,7 +143,7 @@ IVersion version = await launcher.GetVersionAsync("1.20.4", cancellationToken);
 string? javaPath = await launcher.GetJavaPath(version);
 ```
 
-설치된 첫번째자바 경로 가져오기
+설치된 첫번째 자바 경로 가져오기
 
 ```csharp
 string? javaPath = await launcher.GetDefaultJavaPath();
