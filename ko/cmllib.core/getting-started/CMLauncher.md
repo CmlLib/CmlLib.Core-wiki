@@ -95,3 +95,56 @@ process.Start();
 ```
 
 실행 옵션을 설정하고, 게임 파일을 검사하고, 게임 파일을 다운로드하고, 게임을 실행해 게임의 `Process` 인스턴스를 반환합니다. [MLaunchOption.md](MLaunchOption.md "mention") 에서 더 많은 실행 옵션을 확인하세요.
+
+## 모든메서드
+
+버전 실행에 필요한 모든 파일 목록 가져오기
+
+```csharp
+// 버전 이름으로
+IEnumerable<GameFile> files = await launcher.ExtractFiles("1.20.4", cancellationToken);
+```
+
+```csharp
+// IVersion 으로
+IVersion version = await launcher.GetVersionAsync("1.20.4", cancellationToken);
+IEnumerable<GameFile> files = await launcher.ExtractFiles(version, cancellationToken);
+```
+
+파일 검사하고 다운로드가 필요한 파일이 있으면 다운로드
+
+```csharp
+// 설치 진행률을 launcher.FileProgressChanged, launcher.ByteProgressChanged 으로 보고
+await launcher.InstallAsync("1.20.4", cancellationToken); // 버전 이름으로 설치
+await launcher.InstallAsync(version, cancellationToken); // IVersion 으로 설치
+
+// 설치 진행률을 fileProgress, byteProgress 으로 보고
+await launcher.InstallAsync("1.20.4", fileProgress, byteProgress, cancellationToken); // 버전 이름으로 설치
+await launcher.InstallAsync(version, fileProgress, byteProgress, cancellationToken); // IVersion 으로 설치
+```
+
+게임 프로세스 만들기
+
+```csharp
+// 버전 이름으로
+Process process = await launcher.BuildProcessAsync("1.20.4", new MLaunchOption(), cancellationTokene);
+```
+
+```csharp
+// IVersion 으로 
+IVersion version = await launcher.GetVersionAsync("1.20.4", cancellationToken);
+Process process = launcher.BuildProcess(version, new MLaunchOption());
+```
+
+버전 실행에 필요한 자바 경로 가져오기
+
+```csharp
+IVersion version = await launcher.GetVersionAsync("1.20.4", cancellationToken);
+string? javaPath = await launcher.GetJavaPath(version);
+```
+
+설치된 첫번째자바 경로 가져오기
+
+```csharp
+string? javaPath = await launcher.GetDefaultJavaPath();
+```

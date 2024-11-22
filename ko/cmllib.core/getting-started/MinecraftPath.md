@@ -99,13 +99,29 @@ class MyMinecraftPath : MinecraftPath
     }
 
     public override string GetVersionJarPath(string id)
-        => NormalizePath($"{Versions}/{id}/client.jar");
-    
-    public override string GetVersionJsonPath(string id)
-        => NormalizePath($"{Versions}/{id}/client.json");
+        => NormalizePath($"{Versions}/{id}/{id}.jar");
 
+    public override string GetVersionJsonPath(string id)
+        => NormalizePath($"{Versions}/{id}/{id}.json");
+
+    public override string GetNativePath(string id)
+        => NormalizePath($"{Versions}/{id}/natives");
+    
+    // NOTE: 마인크래프트에서 바뀐 경로를 인식하지 못하기에 이것을 바꾸지 마세요!
+    public override string GetIndexFilePath(string assetId)
+        => NormalizePath($"{Assets}/indexes/{assetId}.json");
+
+    // NOTE: 마인크래프트에서 바뀐 경로를 인식하지 못하기에 이것을 바꾸지 마세요!   
     public override string GetAssetObjectPath(string assetId)
-        => NormalizePath($"{Assets}/files");
+        => NormalizePath($"{Assets}/objects");
+
+    // NOTE: 마인크래프트에서 바뀐 경로를 인식하지 못하기에 이것을 바꾸지 마세요!
+    public override string GetAssetLegacyPath(string assetId)
+        => NormalizePath($"{Assets}/virtual/legacy");
+
+    // NOTE: 마인크래프트에서 바뀐 경로를 인식하지 못하기에 이것을 바꾸지 마세요!
+    public override string GetLogConfigFilePath(string configId)
+        => NormalizePath($"{Assets}/log_configs/{configId}" + (!configId.EndsWith(".xml") ? ".xml" : ""));
 }
 ```
 
