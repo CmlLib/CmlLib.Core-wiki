@@ -96,6 +96,59 @@ process.Start();
 
 Install the game and build the game process and return it. See [MLaunchOption.md](MLaunchOption.md "mention") for more launch options.
 
+### More Methods <a href="#undefined-2" id="undefined-2"></a>
+
+Get all files to launch the version
+
+```csharp
+// by version name
+IEnumerable<GameFile> files = await launcher.ExtractFiles("1.20.4", cancellationToken);
+```
+
+```csharp
+// by IVersion 
+IVersion version = await launcher.GetVersionAsync("1.20.4", cancellationToken);
+IEnumerable<GameFile> files = await launcher.ExtractFiles(version, cancellationToken);
+```
+
+Scan files and download any files that need to be downloaded
+
+```csharp
+// report install progress to launcher.FileProgressChanged, launcher.ByteProgressChanged
+await launcher.InstallAsync("1.20.4", cancellationToken); // by version name
+await launcher.InstallAsync(version, cancellationToken); // by IVersion 
+
+// report install progress to fileProgress, byteProgress
+await launcher.InstallAsync("1.20.4", fileProgress, byteProgress, cancellationToken); // by version name 
+await launcher.InstallAsync(version, fileProgress, byteProgress, cancellationToken); // by IVersion 
+```
+
+Build game process
+
+```csharp
+// by version name
+Process process = await launcher.BuildProcessAsync("1.20.4", new MLaunchOption(), cancellationTokene);
+```
+
+```csharp
+// by IVersion
+IVersion version = await launcher.GetVersionAsync("1.20.4", cancellationToken);
+Process process = launcher.BuildProcess(version, new MLaunchOption());
+```
+
+Get the Java path required to launch the version
+
+```csharp
+IVersion version = await launcher.GetVersionAsync("1.20.4", cancellationToken);
+string? javaPath = await launcher.GetJavaPath(version);
+```
+
+Get the path to the first installed Java
+
+```csharp
+string? javaPath = await launcher.GetDefaultJavaPath();
+```
+
 ## API References
 
 <details>

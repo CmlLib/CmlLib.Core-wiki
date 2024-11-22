@@ -99,13 +99,29 @@ class MyMinecraftPath : MinecraftPath
     }
 
     public override string GetVersionJarPath(string id)
-        => NormalizePath($"{Versions}/{id}/client.jar");
-    
-    public override string GetVersionJsonPath(string id)
-        => NormalizePath($"{Versions}/{id}/client.json");
+        => NormalizePath($"{Versions}/{id}/{id}.jar");
 
+    public override string GetVersionJsonPath(string id)
+        => NormalizePath($"{Versions}/{id}/{id}.json");
+
+    public override string GetNativePath(string id)
+        => NormalizePath($"{Versions}/{id}/natives");
+    
+    // NOTE: Minecraft may not recognize the changed path
+    public override string GetIndexFilePath(string assetId)
+        => NormalizePath($"{Assets}/indexes/{assetId}.json");
+
+    // NOTE: Minecraft may not recognize the changed path
     public override string GetAssetObjectPath(string assetId)
-        => NormalizePath($"{Assets}/files");
+        => NormalizePath($"{Assets}/objects");
+
+    // NOTE: Minecraft may not recognize the changed path
+    public override string GetAssetLegacyPath(string assetId)
+        => NormalizePath($"{Assets}/virtual/legacy");
+
+    // NOTE: Minecraft may not recognize the changed path
+    public override string GetLogConfigFilePath(string configId)
+        => NormalizePath($"{Assets}/log_configs/{configId}" + (!configId.EndsWith(".xml") ? ".xml" : ""));
 }
 ```
 
