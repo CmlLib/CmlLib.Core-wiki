@@ -29,7 +29,7 @@ You can get default game directory path using `MinecraftPath.GetOSDefaultPath()`
 
 Default Minecraft path is:
 
-* Windows: `%appdata%.minecraft`
+* Windows: `%appdata%\.minecraft`
 * Linux: `$HOME/.minecraft`
 * macOS: `$HOME/Library/Application Support/minecraft`
 

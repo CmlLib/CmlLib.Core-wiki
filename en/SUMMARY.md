@@ -23,6 +23,7 @@
 * [Mod Loader Installers](cmllib.core/Installer/README.md)
   * [Forge Installer](cmllib.core/Installer/Forge-Installer.md)
   * [Fabric Installer](cmllib.core/Installer/Fabric-Installer.md)
+  * [Quilt Installer](cmllib.core/installer/fabric-installer-1.md)
   * [LiteLoader Installer](cmllib.core/Installer/LiteLoader-Installer.md)
 * [Utilities](cmllib.core/utilities/README.md)
   * [Minecraft Changelogs](cmllib.core/utilities/Get-Minecraft-Changelogs.md)

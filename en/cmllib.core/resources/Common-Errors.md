@@ -22,8 +22,8 @@ Make sure that Mojang launcher can find your version and launch your version wit
 If this exception throws even target version is in versions directory (default: `<Your Minecraft Path>/versions`), check version directory name, version json file file, and `id` property is all same.\
 For example, assume you want to launch your own version named `myversion`. your version json file should be in `versions/myversion/myversion.json` and the `id` property of `myversion.json` should be `myversion`. so directory name `myversion` and the json file name `myversion.json` and the value of `id` property `myversion` is all same.
 
-If the launcher still throw this exception, call `launcher.GetAllVersions()` method before `launcher.CreateProcess`.\
-If you add new version into the version directory after the launcher is initialized, you should update version list through `GetAllVersions()` or `GetAllVersionsAsync()` method.
+If the launcher still throw this exception, call `launcher.GetAllVersionsAsync()` method before `launcher.BuildProcess`.\
+If you add new version into the version directory after the launcher is initialized, you should update version list through `GetAllVersionsAsync()` method.
 
 ### Could not create Java Virtual Machine
 

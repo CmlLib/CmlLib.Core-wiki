@@ -30,6 +30,7 @@ launcher.ByteProgressChanged += (sender, args) =>
 var versions = await launcher.GetAllVersionsAsync();
 foreach (var v in versions)
 {
+    Console.WriteLine(v.GetVersionType());
     Console.WriteLine(v.Name);
 }
 

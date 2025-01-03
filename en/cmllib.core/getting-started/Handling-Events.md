@@ -11,10 +11,10 @@ The game installer provides two types of event:
 
 And there are two ways to register an event handler:
 
-* Pass `IProgress<>` interface to the method of the game installer.
+* Pass `IProgress<>` to the method of the game installer.
 * Register event handler. (will be invoked on the current `SynchronizationContext`, so it is safe to access UI components)
 
-If the `IProgress<>` interface is passed to the method, any event handlers will be ignored.&#x20;
+If the `IProgress<>` is passed to the method, any event handlers will be ignored.&#x20;
 
 ### Example (with IProgress)
 
@@ -60,7 +60,7 @@ await launcher.InstallAsync("1.20.4", CancellationToken.None);
 
 ## Performance Tips
 
-`FileProgress` is called very frequently (4000 to 8000 times), so if you put time-consuming tasks in the event handler, it can affect the performance of your program. `ByteProgress`, on the other hand, is only called 3-4 times per second.
+`FileProgress` is called very frequently (4000 to 8000 times at each launch), so if you put time-consuming tasks in the event handler, it can affect the performance of your program. `ByteProgress`, on the other hand, is only called 3-4 times per second.
 
 When you register an event handler, it is internally converted to a `new Progress<T>(handler)`.  [Progress\<T>](https://learn.microsoft.com/en-us/dotnet/api/system.progress-1?view=net-8.0) will have different behavior depending on the current SynchronizationContext. If it's a WinForm or WPF app, the handler's code will run in the UI thread, and if it's a console app, it will run in the ThreadPool.
 
