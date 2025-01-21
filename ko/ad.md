@@ -6,6 +6,6 @@
 
 **디스코드 ksi123456ab 로 연락 주세요!**
 
-[주문 제작 신청하기](https://cafe.naver.com/alphacml/76)
+[주문 제작 신청하기](https://minecraft.alphabeta.pw/launcher)
 
 [제작한 런처 보기](https://cafe.naver.com/alphacml)

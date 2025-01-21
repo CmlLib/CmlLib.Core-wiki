@@ -16,7 +16,7 @@ Nuget package [XboxAuthNet.Game.Msal](https://www.nuget.org/packages/XboxAuthNet
 
 ## [clientid.md](clientid.md "mention")
 
-`IPublicClientApplication` 사용을 위한 Azure App Id 를 발급받는 방법을 설명합니다.
+`IPublicClientApplication` 초기화를 위한 Azure App Id 를 발급받는 방법을 설명합니다.
 
 ## [msalclienthelper.md](msalclienthelper.md "mention")
 

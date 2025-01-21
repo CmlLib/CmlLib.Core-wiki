@@ -4,10 +4,10 @@ JELoginHandler 는 기본적으로 Windows 에서만 작동합니다. 다른 플
 
 MSAL 을 CmlLib.Core.Auth.Microsoft 와 함께 사용하기 위해서는 두 가지 방법이 있습니다.
 
-* `JELoginHandler` 초기화 할 때 `OAuthProvider` 등록하기
+* `JELoginHandler` 초기화 할 때 `OAuthProvider` 등록하기 (권장)
 * `IAuthenticator` 만들고 MSAL OAuth 추가하기
 
-### OAuthProvider 등록하기
+### OAuthProvider 등록하기 (권장)
 
 `JELoginHandler` 초기화 할 때 `OAuthProvider` 를 등록하면 이후 호출하는 모든 메서드가 MSAL 을 사용하여 로그인을 처리합니다.&#x20;
 
@@ -34,6 +34,8 @@ await loginHandler.SignoutWithBrowser();
 ```
 
 loginHandler 에 대한 더 자세한 정보는 [jeloginhandler.md](jeloginhandler.md "mention")를 참고하세요.
+
+CLIENT-ID 를 발급받는 방법과 더 많은 MSAL 로그인 방식을 확인하려면 [xboxauthnet.game.msal](../xboxauthnet.game.msal/ "mention") 을 참고하세요.
 
 ### AddMsalOAuth 메서드 사용하기
 

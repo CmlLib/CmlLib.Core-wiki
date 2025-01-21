@@ -10,7 +10,7 @@ var versions = await launcher.GetAllVersionsAsync();
 foreach (var version in versions)
 {
     Console.WriteLine("Name: " + version.Name);
-    Console.WriteLine("Type: " + version.Type);
+    Console.WriteLine("Type: " + version.GetVersionType());
     Console.WriteLine("ReleaseTime: " + version.ReleaseTime);
 }
 ```

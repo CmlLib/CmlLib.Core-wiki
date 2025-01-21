@@ -1,14 +1,21 @@
 # Rules
 
-### RulesEvaluator
+## RulesEvaluator
 
-`IRulesEvaluator` 는 주어진 rules 를 평가하여 파일이나 파라미터를 사용해야 할 지 말아야 할 지 결정하는 역할을 합니다.
+`IRulesEvaluator` 인터페이스는 주어진 규칙을 평가하여 특정 파일 또는 매개변수를 사용할지 여부를 결정합니다. 일부 매개변수나 파일은 특정 운영 체제(OS) 버전에서만 적용되거나 특정 기능이 활성화된 경우에만 사용 가능합니다.
 
-일부 파라미터나 파일은 특정 OS 버전이나 특정 feature 가 활성화된 상태에서만 사용됩니다. 예를 들어 윈도우용 네이티브 lwjgl 라이브러리는 윈도우에서만 사용되어야 합니다. 또 다른 예시로 `--demo` 파라미터는 `is_demo_user` feature 가 활성화된 경우에만 사용되어야 합니다. 게임 버전에서는 `rules` 프로퍼티를 제공하여 어떤 환경에서 기능이 활성화되어야 할 지 알려줍니다.
+### 예시
 
-기본 구현체인 `IRulesEvaluator` 인 `RulesEvaluator` 는 모장 런처와 동일한 동작을 합니다. 대부분의 상황에서 이것만으로 충분합니다. 만약 다른 동작을 원한다면 `IRulesEvaluator` 를 직접 구현하세요.
+* **OS별 파일**: `lwjgl-windowsd`는 Windows에서만 활성화됩니다.
+* **기능별 매개변수**: `--demo` 매개변수는 `is_demo_user` 기능이 활성화된 경우에만 사용됩니다.
 
-기본값인 `RulesEvaluator` 가 아닌 다른 구현체를 사용하려면  [minecraftlauncherparameters.md](minecraftlauncherparameters.md "mention")의 [#rulesevaluator](minecraftlauncherparameters.md#rulesevaluator "mention")을 설정하세요.
+게임 버전은 특정 기능이 활성화되어야 하는 환경을 명시하기 위해 `rules` 속성을 제공합니다.
+
+### 기본 구현
+
+`IRulesEvaluator`의 기본 구현체인 `RulesEvaluator`는 Mojang 런처의 구현과 동일하게 동작합니다. 대부분의 경우 이 구현체로 충분합니다.
+
+다른동작이 필요한 경우, 사용자 정의 `IRulesEvaluator`를 구현할 수 있습니다. [minecraftlauncherparameters.md](minecraftlauncherparameters.md "mention") 에서 `IRulesEvaluator 를 바꿀 수 있습니다.`
 
 ### RulesEvaluatorContext
 
