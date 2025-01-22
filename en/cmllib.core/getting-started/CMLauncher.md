@@ -47,7 +47,13 @@ process.Start();
 ### Explaination
 
 ```csharp
-System.Net.ServicePointManager.DefaultConnectionLimit = 256;
+var socketsHttpHandler = new SocketsHttpHandler()
+{
+    MaxConnectionsPerServer = 256
+};
+var launcherparams = MinecraftLauncherParameters.CreateDefault();
+launcherparams.HttpClient = new HttpClient(socketsHttpHandler);
+var launcher = new MinecraftLauncher(launcherparams);
 ```
 
 Increase the maximum number of concurrent connections. This code would increase the download speed.
