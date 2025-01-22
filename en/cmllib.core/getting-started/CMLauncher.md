@@ -51,6 +51,7 @@ System.Net.ServicePointManager.DefaultConnectionLimit = 256;
 ```
 
 Increase the maximum number of concurrent connections. This code would increase the download speed.
+(only works in .net framework)
 
 ```csharp
 var path = new MinecraftPath();
