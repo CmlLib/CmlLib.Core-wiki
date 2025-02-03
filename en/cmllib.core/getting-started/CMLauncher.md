@@ -6,9 +6,14 @@ description: Main class of CmlLib.Core.
 
 ## Basic Usage
 
-```csharp
-System.Net.ServicePointManager.DefaultConnectionLimit = 256;
+{% hint style="info" %}
+In .NET Framework, add the following code to maximize the download speed. This is not necessary in .NET Core.
 
+<pre class="language-csharp"><code class="lang-csharp"><strong>System.Net.ServicePointManager.DefaultConnectionLimit = 256;
+</strong></code></pre>
+{% endhint %}
+
+```csharp
 // initialize the launcher
 var path = new MinecraftPath();
 var launcher = new MinecraftLauncher(path);
@@ -45,13 +50,6 @@ process.Start();
 ```
 
 ### Explaination
-
-```csharp
-System.Net.ServicePointManager.DefaultConnectionLimit = 256;
-```
-
-Increase the maximum number of concurrent connections. This code would increase the download speed.
-(only works in .net framework)
 
 ```csharp
 var path = new MinecraftPath();
