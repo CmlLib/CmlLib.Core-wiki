@@ -6,9 +6,15 @@ description: CmlLib.Core 의 메인 클래스
 
 ### 기본 사용법
 
+{% hint style="info" %}
+.NET Framework 에서는 빠른 다운로드 속도를 위해 다음 코드를 추가하세요. .NET Core 에서는 필요하지 않습니다.
+
 ```csharp
 System.Net.ServicePointManager.DefaultConnectionLimit = 256;
+```
+{% endhint %}
 
+```csharp
 // 런처 초기화
 var path = new MinecraftPath();
 var launcher = new MinecraftLauncher(path);
@@ -45,13 +51,6 @@ process.Start();
 ```
 
 ### 코드설명
-
-```csharp
-System.Net.ServicePointManager.DefaultConnectionLimit = 256;
-```
-
-.net framework를 사용하는 경우 최대 커넥션 갯수 제한을 늘립니다. 다운로드 속도를 최대한 높혀줍니다.
-.net Core 를 사용하는 경우 효과가 없습니다.
 
 ```csharp
 var path = new MinecraftPath();
