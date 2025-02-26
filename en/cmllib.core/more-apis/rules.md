@@ -6,7 +6,7 @@ The `IRulesEvaluator` interface evaluates the given rules to determine whether a
 
 ### Examples
 
-* **OS-specific files**: `lwjgl-windowsd` is only enabled on Windows.
+* **OS-specific files**: `lwjgl-windows` is only enabled on Windows.
 * **Feature-specific parameters**: The `--demo` parameter is only used if the `is_demo_user` feature is enabled.
 
 Game versions provide a `rules` property to specify in which environments particular features should be enabled.

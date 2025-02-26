@@ -1,10 +1,6 @@
----
-description: Main class of CmlLib.Core.
----
-
 # Minecraft Launcher
 
-## Basic Usage
+Basic Usage
 
 {% hint style="info" %}
 In .NET Framework, add the following code to maximize the download speed. This is not necessary in .NET Core.
@@ -156,17 +152,5 @@ string? javaPath = await launcher.GetDefaultJavaPath();
 <summary>Methods</summary>
 
 **ValueTask InstallAndBuildProcessAsync(string versionName, MLaunchOption launchOption, CancellationToken cancellationToken = default)**
-
-Install `versionName` and build process.
-
-</details>
-
-<details>
-
-<summary>Properties</summary>
-
-**MinecraftPath**
-
-_Type: MinecraftPath_
 
 </details>
