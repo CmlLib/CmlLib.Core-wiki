@@ -36,40 +36,39 @@ MinecraftLauncher launcher = new MinecraftLauncher(myPath);
 ## 기본 디렉터리 구조
 
 ```
-Root directory : MinecraftPath.BasePath
- | - assets : MinecraftPath.Assets
- |    | - indexes
- |    |    | - {asset id}.json : MinecraftPath.GetIndexFilePath(assetId)
- |    | - objects : MinecraftPath.GetAssetObjectPath(assetId)
- |    | - virtual
- |         | - legacy : MinecraftPath.GetAssetLegacyPath(assetId)
- |
- | - libraries : MinecraftPath.Library
- | - resources : MinecraftPath.Resource
- | - runtime : MinecraftPath.Runtime
- | - versions : MinecraftPath.Versions
-      | - {version name}
-            | - {version name}.jar : MinecraftPath.GetVersionJarPath("version_name")
-            | - {version name}.json : MinecraftPath.GetVersionJsonPath("version_name")
-            | - natives : MinecraftPath.GetNativePath("version_name")
+/ (MinecraftPath.BasePath)
+├── assets/ (MinecraftPath.Assets)
+│   ├── indexes/
+│   │   └── {asset_id}.json (MinecraftPath.GetIndexFilePath(assetId))
+│   ├── objects/ (MinecraftPath.GetAssetObjectPath(assetId))
+│   └── virtual/
+│       └── legacy/ (MinecraftPath.GetAssetLegacyPath(assetId))
+├── libraries/ (MinecraftPath.Library)
+├── resources/ (MinecraftPath.Resource)
+├── runtime/ (MinecraftPath.Runtime)
+└── versions/ (MinecraftPath.Versions)
+    └── {version_name}/
+        ├── {version_name}.jar (MinecraftPath.GetVersionJarPath("version_name"))
+        ├── {version_name}.json (MinecraftPath.GetVersionJsonPath("version_name"))
+        └── natives/ (MinecraftPath.GetNativePath("version_name"))
 ```
 
 ## 커스텀 디렉터리 구조 만들기
 
 커스텀 디렉터리 구조를 만들기 위한 두가지 방법이 있습니다.
 
-{% hint style="info" %}
-모든 경로는 절대 경로로 저장됩니다. 상대 경로를 인수로 받은 경우, 절대 경로로 바꾸어 저장됩니다.
-{% endhint %}
-
 ### 속성 설정하기
 
-경로 속성을 바꾸세요. 모든 속성 (`Libraries`, `Versions`, 등) 은 [#properties](MinecraftPath.md#properties "mention") 에서 확인하세요
+경로 속성을 바꾸세요. 모든 속성은 [#properties](MinecraftPath.md#properties "mention") 에서 확인하세요
+
+{% hint style="info" %}
+반드시 절대 경로만 입력하세요.
+{% endhint %}
 
 ```csharp
 MinecraftPath myPath = new MinecraftPath();
-myPath.Libraries = "./commons/libs";
-myPath.Versions = "./commons/versions";
+myPath.Libraries = myPath.BasePath + "/commons/libs";
+myPath.Versions = myPath.BasePath + "/commons/versions";
 myPath.Assets = MinecraftPath.GetOSDefaultPath() + "/assets";
 ```
 

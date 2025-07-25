@@ -16,4 +16,4 @@ description: 게임 파일 추출
 
 여기서 추출된 모든 `GameFile` 들은 [Downloader.md](Downloader.md "mention")으로 전달되며 파일을 설치합니다.
 
-만약 런처에서 더 많은파일 (예시: 모드 파일) 을 검사하고 다운로드하도록 만들려면 `IFileExtractor` 를 직접 구현하고 [minecraftlauncherparameters.md](minecraftlauncherparameters.md "mention")의 [#fileextractors](minecraftlauncherparameters.md#fileextractors "mention")에 추가하세요.
+만약 런처에서 더 많은 파일 (예시: 모드 파일) 을 검사하고 다운로드하도록 만들려면 `IFileExtractor` 를 직접 구현하고 [minecraftlauncherparameters.md](minecraftlauncherparameters.md "mention")의 [#fileextractors](minecraftlauncherparameters.md#fileextractors "mention")에 추가하세요.

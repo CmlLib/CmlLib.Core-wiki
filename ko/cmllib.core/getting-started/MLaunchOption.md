@@ -62,7 +62,7 @@ var launchOption = new MLaunchOption
 
 [login-and-sessions](../login-and-sessions/ "mention")을 참고하여 마인크래프트에 로그인하는 방법과 게임 세션을 가져오는 방법을 확인하세요.
 
-게임 세션 (Username, UUID, AccessToken, 등등). null 이 설정될 경우, 기본값이 사용됩니다. (`tester123` 이름을 가진 세션)
+게임 세션 (Username, UUID, AccessToken, 등등). null 이 설정될 경우, 기본값으로 유저네임 `tester123` 이 설정됩니다.
 
 ### Features <a href="#features" id="features"></a>
 
@@ -130,7 +130,7 @@ Minecraft 를 전체 화면으로 실행합니다.&#x20;
 
 **Type: string**
 
-`QuickPlayPath` 인수설정. [QuickPlay](https://minecraft.wiki/w/Quick\_Play)&#x20;
+`QuickPlayPath` 인수설정. [QuickPlay](https://minecraft.wiki/w/Quick_Play)&#x20;
 
 모든 버전이 이 옵션을 지원하지는 않습니다.
 
@@ -138,7 +138,7 @@ Minecraft 를 전체 화면으로 실행합니다.&#x20;
 
 **Type: string**
 
-`QuickPlaySingleplayer` 인수 설정. [QuickPlay](https://minecraft.wiki/w/Quick\_Play)
+`QuickPlaySingleplayer` 인수 설정. [QuickPlay](https://minecraft.wiki/w/Quick_Play)
 
 모든 버전이 이 옵션을 지원하지는 않습니다.
 
@@ -146,7 +146,7 @@ Minecraft 를 전체 화면으로 실행합니다.&#x20;
 
 **Type: string**
 
-`QuickPlayRealms` 인수  설정. [QuickPlay](https://minecraft.wiki/w/Quick\_Play)
+`QuickPlayRealms` 인수  설정. [QuickPlay](https://minecraft.wiki/w/Quick_Play)
 
 모든 버전이 이 옵션을 지원하지는 않습니다.
 
@@ -154,11 +154,11 @@ Minecraft 를 전체 화면으로 실행합니다.&#x20;
 
 **Type: string / int**
 
-게임 로딩이 끝나면 지정한 서버로 즉시 접속합니다. `ServerPort` 의 기본값은 25565 입니다. 만약 `ServerPort` 의 값이 올바른 포트 번호 (0-65535) 가 아니라면, `ArgumentOutOfRangeException` 예외가 발생합니다. 만약 실행할 버전이 [QuickPlay](https://minecraft.wiki/w/Quick\_Play) 를 지원한다면, `QuickPlayMultiplayer` 기능을 활성화하고, 지원하지 않는 버전이라면 `--serverIp` 와 `--serverPort` 파라미터를 추가합니다.
+게임 로딩이 끝나면 지정한 서버로 즉시 접속합니다. `ServerPort` 의 기본값은 25565 입니다. 만약 `ServerPort` 의 값이 올바른 포트 번호 (0-65535) 가 아니라면, `ArgumentOutOfRangeException` 예외가 발생합니다. 만약 실행할 버전이 [QuickPlay](https://minecraft.wiki/w/Quick_Play) 를 지원한다면, `QuickPlayMultiplayer` 기능을 활성화하고, 지원하지 않는 버전이라면 `--serverIp` 와 `--serverPort` 파라미터를 추가합니다.
 
 참고1: 모든 버전이 이 옵션을 지원하지는 않습니다.
 
-참고2: SRV 레코드를 가진 도메인은 서버 주소를 제대로 인식하지 못합니다.&#x20;
+참고2: SRV 레코드를 가진 도메인을 설정할 경우 접속에 실패할 수 있습니다. SRV 레코드가 가리키는 실제 주소와 포트를 직접 설정하세요.
 
 ### ClientId <a href="#clientid" id="clientid"></a>
 
@@ -204,11 +204,15 @@ Minecraft 를 전체 화면으로 실행합니다.&#x20;
 
 모든 JVM argument 를 이 옵션의 값으로 덮어씌웁니다. 이 옵션이 설정된 경우 `ExtraJVMArguments` 와 `JVMArguments` 의 값은 무시됩니다.
 
+[margument.md](../more-apis/margument.md "mention") 참고
+
 ### ExtraJVMArguments <a href="#extrajvmarguments" id="extrajvmarguments"></a>
 
 **Type: IEnumerable\<MArgument>**
 
-추가 JVM argument 를 지정합니다. 기본값은 다음과 같습니다:
+추가 JVM argument 를 지정합니다. [margument.md](../more-apis/margument.md "mention") 참고
+
+기본값은 다음과 같습니다:
 
 ```
 -XX:+UnlockExperimentalVMOptions
@@ -223,4 +227,4 @@ Minecraft 를 전체 화면으로 실행합니다.&#x20;
 
 **Type: IEnumerable\<MArgument>**
 
-추가 game argument 를 지정합니다.
+추가 game argument 를 지정합니다. [margument.md](../more-apis/margument.md "mention") 참고

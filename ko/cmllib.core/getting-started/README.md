@@ -10,10 +10,4 @@
 
 NuGet 으로 CmlLib.Core 패키지를 설치하세요. [https://www.nuget.org/packages/CmlLib.Core](https://www.nuget.org/packages/CmlLib.Core)
 
-```csharp
-using CmlLib.Core;
-using CmlLib.Core.Auth;
-using CmlLib.Core.ProcessBuilder;
-```
-
 다음 페이지에서 계속 ->
