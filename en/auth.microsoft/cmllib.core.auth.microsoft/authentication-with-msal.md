@@ -1,13 +1,13 @@
 # Authentication with MSAL
 
-`JELoginHandler` only works on Windows. To use it on another platform, you must use it with [XboxAuthNet.Game.Msal](../xboxauthnet.game.msal/).
+`JELoginHandler` only works on Windows. To use it on another platform, you must use it with [XboxAuthNet.Game.Msal](../xboxauthnet.game.msal/README.md).
 
 There are two ways to use `CmlLib.Core.Auth.Microsoft` with `XboxAuthNet.Game.Msal`.
 
 * Register an `OAuthProvider` when initializing `JELoginHandler`.
 * Create an `IAuthenticator` and add a MSAL authenticator.
 
-### Register an OAuthProvider <a href="#oauthprovider" id="oauthprovider"></a>
+### Register an OAuthProvider
 
 Register the `OAuthProvider` when initializing the `JELoginHandler` so that all subsequent methods you call will handle the login with the MSAL.
 

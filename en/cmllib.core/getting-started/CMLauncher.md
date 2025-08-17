@@ -2,12 +2,12 @@
 
 Basic Usage
 
-{% hint style="info" %}
-In .NET Framework, add the following code to maximize the download speed. This is not necessary in .NET Core.
+!!! tip ".NET Framework Optimization"
+    In .NET Framework, add the following code to maximize the download speed. This is not necessary in .NET Core.
 
-<pre class="language-csharp"><code class="lang-csharp"><strong>System.Net.ServicePointManager.DefaultConnectionLimit = 256;
-</strong></code></pre>
-{% endhint %}
+    ```csharp
+    System.Net.ServicePointManager.DefaultConnectionLimit = 256;
+    ```
 
 ```csharp
 // initialize the launcher
@@ -45,14 +45,14 @@ var process = await launcher.BuildProcessAsync("1.20.6", new MLaunchOption
 process.Start();
 ```
 
-### Explaination
+### Explanation
 
 ```csharp
 var path = new MinecraftPath();
 var launcher = new MinecraftLauncher(path);
 ```
 
-Create Minecraft directory structure and initialize launcher instance. You can change the path and directory structure. See [MinecraftPath.md](MinecraftPath.md "mention") and [minecraftlauncherparameters.md](../more-apis/minecraftlauncherparameters.md "mention")
+Create Minecraft directory structure and initialize launcher instance. You can change the path and directory structure. See [Minecraft Path](MinecraftPath.md) and [MinecraftLauncherParameters](../more-apis/minecraftlauncherparameters.md)
 
 ```csharp
 launcher.FileProgressChanged += (sender, args) =>
@@ -68,7 +68,7 @@ launcher.ByteProgressChanged += (sender, args) =>
 };
 ```
 
-Add event handler. It prints download progress to console. See [Handling-Events.md](Handling-Events.md "mention")
+Add event handler. It prints download progress to console. See [Event Handling](Handling-Events.md)
 
 ```csharp
 var versions = await launcher.GetAllVersionsAsync();
@@ -78,7 +78,7 @@ foreach (var v in versions)
 }
 ```
 
-Get all version and print its names. See [versions.md](versions.md "mention")
+Get all version and print its names. See [Versions](versions.md)
 
 ```csharp
 await launcher.InstallAsync("1.20.4");
@@ -90,9 +90,9 @@ var process = await launcher.BuildProcessAsync("1.20.4", new MLaunchOption
 process.Start();
 ```
 
-Install the game and build the game process and return it. See [MLaunchOption.md](MLaunchOption.md "mention") for more launch options.
+Install the game and build the game process and return it. See [Launch Options](MLaunchOption.md) for more launch options.
 
-### More Methods <a href="#undefined-2" id="undefined-2"></a>
+### More Methods
 
 Get all files to launch the version
 
@@ -123,7 +123,7 @@ Build game process
 
 ```csharp
 // by version name
-Process process = await launcher.BuildProcessAsync("1.20.4", new MLaunchOption(), cancellationTokene);
+Process process = await launcher.BuildProcessAsync("1.20.4", new MLaunchOption(), cancellationToken);
 ```
 
 ```csharp
@@ -147,10 +147,6 @@ string? javaPath = await launcher.GetDefaultJavaPath();
 
 ## API References
 
-<details>
+??? abstract "Methods"
 
-<summary>Methods</summary>
-
-**ValueTask InstallAndBuildProcessAsync(string versionName, MLaunchOption launchOption, CancellationToken cancellationToken = default)**
-
-</details>
+    **ValueTask InstallAndBuildProcessAsync(string versionName, MLaunchOption launchOption, CancellationToken cancellationToken = default)**

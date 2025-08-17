@@ -60,13 +60,13 @@ var launchOption = new MLaunchOption
 
 **Type: MSession**
 
-See [login-and-sessions](../login-and-sessions/ "mention") for how to log in Minecraft and get game session.
+See [login-and-sessions](../login-and-sessions/README.md) for how to log in Minecraft and get game session.
 
 Game session (Username, UUID, AccessToken, etc...). If the value is null, the default session is used. (username `tester123`)
 
 ### Features
 
-**Type: IEnumerable\<string>**
+**Type: `IEnumerable<string>`**
 
 Enable features.
 
@@ -80,8 +80,8 @@ Java binary path. If the value is null, `ArgumentNullException` is thrown.
 
 **Type: int**
 
-`-Xmx` JVM parameter. It is used to set the maximum heap size of Minecraft.\
-If the value is a negative value, `ArgumentOutOfRangeException` is thrown.\
+`-Xmx` JVM parameter. It is used to set the maximum heap size of Minecraft.
+If the value is a negative value, `ArgumentOutOfRangeException` is thrown.
 The default value is 2048 (2GB) for X64, 1024 (1GB) for other platforms. _Note: You can't set this property to any number higher than 1024 when using 32bit Java._
 
 ### MinimumRamMb
@@ -94,7 +94,7 @@ The default value is 2048 (2GB) for X64, 1024 (1GB) for other platforms. _Note: 
 
 **Type: string**
 
-macOS dock name of Minecraft. In some macOS versions, you must set this option. [Common-Errors.md](../resources/Common-Errors.md "mention")
+macOS dock name of Minecraft. In some macOS versions, you must set this option. [Known Issues](../resources/Common-Errors.md)
 
 ### DockIcon
 
@@ -124,25 +124,25 @@ Launch Minecraft as full screen. Not all versions of Minecraft support this opti
 
 **Type: string**
 
-Set `QuickPlayPath` argument. [QuickPlay](https://minecraft.wiki/w/Quick\_Play)
+Set `QuickPlayPath` argument. [QuickPlay](https://minecraft.wiki/w/Quick_Play)
 
 ### QuickPlaySingleplayer
 
 **Type: string**
 
-Set `QuickPlaySingleplayer` argument. [QuickPlay](https://minecraft.wiki/w/Quick\_Play)
+Set `QuickPlaySingleplayer` argument. [QuickPlay](https://minecraft.wiki/w/Quick_Play)
 
 ### QuickPlayRealms
 
 **Type: string**
 
-Set `QuickPlayRealms` argument. [QuickPlay](https://minecraft.wiki/w/Quick\_Play)
+Set `QuickPlayRealms` argument. [QuickPlay](https://minecraft.wiki/w/Quick_Play)
 
 ### ServerIp / ServerPort
 
 **Type: string / int**
 
-Connecting to a server directly when Minecraft is loading is done. The default value of `ServerPort` is 25565. If `ServerPort` is not a valid port number (0-65535), `ArgumentOutOfRangeException` is thrown. If the starting version supports [QuickPlay](https://minecraft.wiki/w/Quick\_Play), the launcher will enable QuickPlayMultiplayer feature, otherwise the launcher will append `--serverIp` and `--serverPort` arguments.
+Connecting to a server directly when Minecraft is loading is done. The default value of `ServerPort` is 25565. If `ServerPort` is not a valid port number (0-65535), `ArgumentOutOfRangeException` is thrown. If the starting version supports [QuickPlay](https://minecraft.wiki/w/Quick_Play), the launcher will enable QuickPlayMultiplayer feature, otherwise the launcher will append `--serverIp` and `--serverPort` arguments.
 
 _note1: Not all versions of Minecraft support this option._
 
@@ -180,19 +180,19 @@ _note2: The game would not be able to resolve the address if you pass a domain w
 
 ### ArgumentDictionary
 
-**Type: IReadOnlyDictionary\<string, string>**
+**Type: `IReadOnlyDictionary<string, string>`**
 
 When building an argument in the launcher, `${variable_name}` will be replaced with the appropriate value. This option specifies `variable_name` as the key and the string to be replaced as the value.
 
 ### JVMArgumentOverrides
 
-**Type: IEnumerable\<MArgument>**
+**Type: `IEnumerable<MArgument>`**
 
 Override all JVM arguments. When this option is not null, `ExtraJVMArguments` and `JVMArguments` are ignored.
 
 ### ExtraJVMArguments
 
-**Type: IEnumerable\<MArgument>**
+**Type: `IEnumerable<MArgument>`**
 
 Set extra JVM arguments. Default arguments are:
 
@@ -207,6 +207,6 @@ Set extra JVM arguments. Default arguments are:
 
 ### ExtraGameArguments
 
-**Type: IEnumerable\<MArgument>**
+**Type: `IEnumerable<MArgument>`**
 
 Set extra game arguments.

@@ -17,7 +17,7 @@ var loginHandler = JELoginHandlerBuilder.BuildDefault();
 var session = await loginHandler.Authenticate();
 ```
 
-Set `Session` property of [MLaunchOption.md](../../cmllib.core/getting-started/MLaunchOption.md "mention").
+Set `Session` property of [Launch Options](../../cmllib.core/getting-started/MLaunchOption.md).
 
 ## Example
 
@@ -29,14 +29,14 @@ Set `Session` property of [MLaunchOption.md](../../cmllib.core/getting-started/M
 
 ## Usage
 
-### [jeloginhandler.md](jeloginhandler.md "mention")
+### [JELoginHandler](jeloginhandler.md)
 
 Login, logout, and account managements.
 
-### [jeloginhandlerbuilder.md](jeloginhandlerbuilder.md "mention")
+### [JELoginHandlerBuilder](jeloginhandlerbuilder.md)
 
 Builder for initializing an instance of `JELoginHandler`.
 
-### [accountmanager.md](../xboxauthnet.game/accountmanager.md "mention")
+### [AccountManager](../xboxauthnet.game/accountmanager.md)
 
 Manage account list.

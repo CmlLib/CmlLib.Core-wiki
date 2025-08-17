@@ -2,7 +2,7 @@
 
 [GitHub](https://github.com/CmlLib/CmlLib.Core.Installer.Forge)
 
-Forge Installer for [CmlLib.Core](../cmllib.core/).
+Forge Installer for [CmlLib.Core](../cmllib.core/README.md).
 
 ## Features
 

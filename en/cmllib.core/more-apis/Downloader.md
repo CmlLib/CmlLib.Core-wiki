@@ -6,7 +6,7 @@ description: Download game files
 
 `IGameInstaller` checks for the existence and integrity of the file and downloads it if necessary.
 
-The GameInstaller fires events that indicate the progress of the installation. See [Handling-Events.md](../getting-started/Handling-Events.md "mention")
+The GameInstaller fires events that indicate the progress of the installation. See [Event Handling](../getting-started/Handling-Events.md)
 
 ### Example
 

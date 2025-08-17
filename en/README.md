@@ -2,11 +2,11 @@
 
 CmlLib project makes .NET libraries for building your own minecraft launcher.
 
-## [CmlLib.Core](cmllib.core/)
+## [CmlLib.Core](cmllib.core/README.md)
 
 Main library for launching Minecraft.
 
-## [Auth.Microsoft](auth.microsoft/)
+## [Auth.Microsoft](auth.microsoft/README.md)
 
 Authentication library for logging in Minecraft with Microsoft Xbox account.
 

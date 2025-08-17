@@ -4,7 +4,7 @@ description: Extract game files
 
 # FileExtractor
 
-`IFileExtractor` extracts all `GameFile` from a given version.&#x20;
+`IFileExtractor` extracts all `GameFile` from a given version.  
 
 The library provides five built-in extractors:
 
@@ -14,6 +14,6 @@ The library provides five built-in extractors:
 * LibraryFileExtractor: extract library files (\<game\_directory>/libraries)
 * LogFileExtractor: extract log config file (\<game\_directory>/assets/log\_configs)
 
-Any `GameFile` generated here is passed to [Downloader.md](Downloader.md "mention"), which would download a file if the file does not exist or its checksum is not equal.
+Any `GameFile` generated here is passed to [GameInstaller](Downloader.md), which would download a file if the file does not exist or its checksum is not equal.
 
-Implement the `IFileExtractor` interface and add it to the launcher if you want the launcher to check and download more files (e.g. mod files). See [minecraftlauncherparameters.md](minecraftlauncherparameters.md "mention")
+Implement the `IFileExtractor` interface and add it to the launcher if you want the launcher to check and download more files (e.g. mod files). See [MinecraftLauncherParameters](minecraftlauncherparameters.md)

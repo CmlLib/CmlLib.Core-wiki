@@ -14,14 +14,14 @@ Nuget package [XboxAuthNet.Game.Msal](https://www.nuget.org/packages/XboxAuthNet
 
 To use this package, you must properly initialize `IPublicClientApplication`.
 
-## [clientid.md](clientid.md "mention")
+## [ClientID](clientid.md)
 
 Describes how to register Azure application for `IPublicClientApplication`.
 
-## [msalclienthelper.md](msalclienthelper.md "mention")
+## [MsalClientHelper](msalclienthelper.md)
 
 Describes how to initialize an `IPublicClientApplication` for Xbox games.
 
-## [oauth.md](oauth.md "mention")
+## [OAuth](oauth.md)
 
 Describes a way to perform Microsoft OAuth using MSAL.

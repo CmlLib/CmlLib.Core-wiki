@@ -8,7 +8,7 @@ description: Represents the errors during Xbox authentication.
 
 **If you purchased Minecraft, most of the errors below will not occur. Make sure the account you are trying to log in with is the account that purchased Minecraft.**
 
-Age-related issues can be resolved by changing the login mode to `Full` or `Sisu`. [xboxauth.md](xboxauth.md "mention")
+Age-related issues can be resolved by changing the login mode to `Full` or `Sisu`. [XboxAuth](xboxauth.md)
 
 ## ErrorCode
 

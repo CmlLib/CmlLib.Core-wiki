@@ -10,7 +10,7 @@ description: Login, logout, account managements.
 var loginHandler = JELoginHandlerBuilder.BuildDefault();
 ```
 
-For more detailed initialization, which includes specifying how accounts are stored, setting up HttpClient, and more, please refer to [jeloginhandlerbuilder.md](jeloginhandlerbuilder.md "mention").
+For more detailed initialization, which includes specifying how accounts are stored, setting up HttpClient, and more, please refer to [JELoginHandlerBuilder](jeloginhandlerbuilder.md).
 
 ## Basic Authentication
 
@@ -19,7 +19,7 @@ var session = await loginHandler.Authenticate();
 // var session = await loginHandler.Authenticate(selectedAccount, cancellationToken);
 ```
 
-This method tries [#authenticating-with-the-most-recent-account](jeloginhandler.md#authenticating-with-the-most-recent-account "mention") first and if it fails, tries [#authenticating-with-new-account](jeloginhandler.md#authenticating-with-new-account "mention").
+This method tries [#authenticating-with-the-most-recent-account](jeloginhandler.md#authenticating-with-the-most-recent-account) first and if it fails, tries [#authenticating-with-new-account](jeloginhandler.md#authenticating-with-new-account).
 
 ## Authenticating with New Account
 
@@ -32,14 +32,13 @@ var session = await loginHandler.AuthenticateInteractively();
 
 Add a new account to sign in. Show the user the Microsoft OAuth page to enter their Microsoft account.
 
-{% hint style="info" %}
-This method uses [Microsoft WebView2](https://developer.microsoft.com/en-us/microsoft-edge/webview2/) for displaying Microsoft OAuth login page. You must know that:
+!!! info "Microsoft WebView2 Requirements"
+    This method uses [Microsoft WebView2](https://developer.microsoft.com/en-us/microsoft-edge/webview2/) for displaying Microsoft OAuth login page. You must know that:
 
-* **Microsoft WebView2 is only available on Windows.** For another platform, see [Authentication with MSAL](authentication-with-msal.md).
-* To run WebView2, The users (including developer and end user) **must have the WebView2 Runtime installed**. See [this document](https://learn.microsoft.com/en-us/microsoft-edge/webview2/concepts/distribution) to distribute your launcher with WebView2. (For example, you can automate runtime installation with direct download link: [https://go.microsoft.com/fwlink/p/?LinkId=2124703](https://go.microsoft.com/fwlink/p/?LinkId=2124703))
+    * **Microsoft WebView2 is only available on Windows.** For another platform, see [Authentication with MSAL](authentication-with-msal.md).
+    * To run WebView2, The users (including developer and end user) **must have the WebView2 Runtime installed**. See [this document](https://learn.microsoft.com/en-us/microsoft-edge/webview2/concepts/distribution) to distribute your launcher with WebView2. (For example, you can automate runtime installation with direct download link: [https://go.microsoft.com/fwlink/p/?LinkId=2124703](https://go.microsoft.com/fwlink/p/?LinkId=2124703))
 
-If you don't want to use WebView2, see [Authentication with MSAL](authentication-with-msal.md).
-{% endhint %}
+    If you don't want to use WebView2, see [Authentication with MSAL](authentication-with-msal.md).
 
 ## Authenticating with the Most Recent Account
 
@@ -52,7 +51,7 @@ Using the saved account information of the most account, log in.
 
 * If the user is already logged in, this method returns the logged in information immediately.
 * If the user's login information has expired, try to refresh it. No user interaction nor webview is required during this process.
-* If there is no saved login information or if refresh failed, an `MicrosoftOAuthException` will be thrown. In this case you should authenticate again using new account methods like [#authenticating-with-new-account](jeloginhandler.md#authenticating-with-new-account "mention").
+* If there is no saved login information or if refresh failed, an `MicrosoftOAuthException` will be thrown. In this case you should authenticate again using new account methods like [#authenticating-with-new-account](jeloginhandler.md#authenticating-with-new-account).
 
 ## List Accounts
 
@@ -81,7 +80,7 @@ var accounts = loginHandler.AccountManager.GetAccounts();
 var selectedAccount = accounts.ElementAt(1);
 ```
 
-All account has **unique string** to identifiy them. Select account by identifier:
+All account has **unique string** to identify them. Select account by identifier:
 
 ```csharp
 var accounts = loginHandler.AccountManager.GetAccounts();
@@ -107,9 +106,8 @@ Load account list and authenticate with second account (index number 1).
 
 ## Signing out from the most Recent Account
 
-{% hint style="info" %}
-`Signout` method does not clear WebView2 browser cache. For clearing it, call `SignoutWithBrowser` instead.
-{% endhint %}
+!!! info "Browser Cache"
+    `Signout` method does not clear WebView2 browser cache. For clearing it, call `SignoutWithBrowser` instead.
 
 ```csharp
 await loginHandler.Signout();
@@ -118,9 +116,8 @@ await loginHandler.Signout();
 
 ## Signing out from the Selected Account
 
-{% hint style="info" %}
-`Signout` method does not clear WebView2 browser cache. For clearing it, call `SignoutWithBrowser` instead.
-{% endhint %}
+!!! info "Browser Cache"
+    `Signout` method does not clear WebView2 browser cache. For clearing it, call `SignoutWithBrowser` instead.
 
 ```csharp
 var accounts = loginHandler.AccountManager.GetAccounts();
@@ -190,11 +187,11 @@ authenticator.AddMicrosoftOAuthForJE(oauth => oauth.Interactive());
 // ...
 ```
 
-Set Microsoft OAuth mode. Instead of `oauth => oauth.Interactive()`, there are many options you can replace with. See [oauth.md](../xboxauthnet.game/oauth.md "mention").
+Set Microsoft OAuth mode. Instead of `oauth => oauth.Interactive()`, there are many options you can replace with. See [OAuth](../xboxauthnet.game/oauth.md).
 
 `AddMicrosoftOAuthForJE` and `AddForceMicrosoftOAuthForJE` methods add default `MicrosoftOAuthClientInfo` which Mojang Minecraft launcher uses so that you don't need to pass it everytime you use.
 
-Note that the default Microsoft OAuth is only available on Windows platform. For another platform (Linux, macOS) you need [xboxauthnet.game.msal](../xboxauthnet.game.msal/ "mention").
+Note that the default Microsoft OAuth is only available on Windows platform. For another platform (Linux, macOS) you need [xboxauthnet.game.msal](../xboxauthnet.game.msal/README.md).
 
 ```csharp
 // example for XboxAuthNet.Game.Msal
@@ -215,10 +212,10 @@ authenticator.AddXboxAuthForJE(xbox => xbox.Basic());
 // ...
 ```
 
-Set Xbox authentication mode. Instead of `xbox => xbox.Basic()`, there are many options you can replace with. See [xboxauth.md](../xboxauthnet.game/xboxauth.md "mention").
+Set Xbox authentication mode. Instead of `xbox => xbox.Basic()`, there are many options you can replace with. See [XboxAuth](../xboxauthnet.game/xboxauth.md).
 
 `AddXboxAuthForJE` and `AddForceXboxAuthForJE` methods add default xbox authentication relying party which is used for Minecraft: JE authentication so that you don't need to pass it everytime you use.
 
 ### 4. JEAuthenticator
 
-Set Minecraft: JE authentication mode. See [jeauthenticator.md](jeauthenticator.md "mention").
+Set Minecraft: JE authentication mode. See [JEAuthenticator](jeauthenticator.md).

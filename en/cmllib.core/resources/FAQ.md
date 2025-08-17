@@ -2,7 +2,7 @@
 
 ## Get game outputs (logs)
 
-You can read standard output of game process.\
+You can read standard output of game process. 
 As `CreateProcess` method returns `Process` instance, you can use all APIs of `Process`. ([reference](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.process?view=net-6.0))
 
 ```csharp
@@ -23,7 +23,7 @@ Above code write all game outputs to console. You can check game logs in console
 
 ## Launch custom game client
 
-You need two file: `<version_name>.jar`, `<version_name>.json`.\
+You need two file: `<version_name>.jar`, `<version_name>.json`. 
 Put these files into `<game_directory>/versions/<version_name>` directory.
 
 Example)

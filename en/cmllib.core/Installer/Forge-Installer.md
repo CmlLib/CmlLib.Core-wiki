@@ -17,7 +17,7 @@ description: Install Forge mod loader
 ## Extracting forge files
 
 1. Delete `.minecraft` directory
-2. Launch vanilla version of forge that you want to extract using official mojang launcher. (not thrid party launcher including CmlLib.Core launcher)
+2. Launch vanilla version of forge that you want to extract using official mojang launcher. (not third party launcher including CmlLib.Core launcher)
 3. Install forge using official forge installer.
 4. In `.minecraft` directory, copy `libraries` directory and `versions/<forge-version-name>` directory. These two directory is extracted forge files.
 
@@ -40,7 +40,7 @@ _NOTE: some forge version does not have \<forge-version-name>.jar file. it's oka
 
 ## Launching forge
 
-After installing forge, you can get version name of installed forge using `launcher.GetAllVersions()` or `await launcher.GetAllVersionsAsync()`. [CMLauncher.md](../getting-started/CMLauncher.md "mention")
+After installing forge, you can get version name of installed forge using `launcher.GetAllVersions()` or `await launcher.GetAllVersionsAsync()`. [Minecraft Launcher](../getting-started/CMLauncher.md)
 
 Launch game using forge version name.
 

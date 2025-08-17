@@ -13,13 +13,13 @@ Game versions provide a `rules` property to specify in which environments partic
 
 ### Built-in Implementation
 
-The built-in implementation of `IRulesEvaluator`, named `RulesEvaluator`, behaves identically to the Mojang Launcher’s implementation. In most cases, this implementation is sufficient.
+The built-in implementation of `IRulesEvaluator`, named `RulesEvaluator`, behaves identically to the Mojang Launcher's implementation. In most cases, this implementation is sufficient.
 
-If you need custom behavior, you can implement your own `IRulesEvaluator`. You can set your `IRulesEvaluator` in [minecraftlauncherparameters.md](minecraftlauncherparameters.md "mention").
+If you need custom behavior, you can implement your own `IRulesEvaluator`. You can set your `IRulesEvaluator` in [MinecraftLauncherParameters](minecraftlauncherparameters.md).
 
 ## RulesEvaluatorContext
 
-`RulesEvaluatorContext` represents the current environment information for evaluating the given rules. This includes the OS type, version, architecture, and list of enabled features currently running.&#x20;
+`RulesEvaluatorContext` represents the current environment information for evaluating the given rules. This includes the OS type, version, architecture, and list of enabled features currently running.  
 
 The code below creates a `RulesEvaluatorContext` that represents the current environment.
 
@@ -27,7 +27,7 @@ The code below creates a `RulesEvaluatorContext` that represents the current env
 var context = new RulesEvaluatorContext(LauncherOSRule.Current, []);
 ```
 
-If you want to simulate running in a different environment, you can initialize the `RulesEvaluatorContext` by yourself.&#x20;
+If you want to simulate running in a different environment, you can initialize the `RulesEvaluatorContext` by yourself.  
 
 ```csharp
 var context = new RulesEvaluatorContext(new LauncherOSRule("windows", "64", "10.0"), []);

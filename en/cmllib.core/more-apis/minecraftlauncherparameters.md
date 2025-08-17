@@ -37,7 +37,7 @@ var launcher = new MinecraftLauncher(parameters);
 
 ### MinecraftPath
 
-See [MinecraftPath.md](../getting-started/MinecraftPath.md "mention")
+See [Minecraft Path](../getting-started/MinecraftPath.md)
 
 ```csharp
 var path = new MinecraftPath();
@@ -56,7 +56,7 @@ var parameters = MinecraftLauncherParameters.CreateDefault(path, httpClient);
 
 ### RulesEvaluator
 
-See [rules.md](rules.md "mention")
+See [Rules](rules.md)
 
 ```csharp
 parameters.RulesEvaluator = new RulesEvaluator();
@@ -64,7 +64,7 @@ parameters.RulesEvaluator = new RulesEvaluator();
 
 ### VersionLoader
 
-See [versions.md](../getting-started/versions.md "mention")
+See [Versions](../getting-started/versions.md)
 
 ```csharp
 parameters.VersionLoader = new MojangJsonVersionLoaderV2(path, httpClient);
@@ -72,7 +72,7 @@ parameters.VersionLoader = new MojangJsonVersionLoaderV2(path, httpClient);
 
 ### JavaPathResolver
 
-See [java.md](java.md "mention")
+See [Java](java.md)
 
 ```csharp
 parameters.JavaPathResolver = new MinecraftJavaPathResolver(path);
@@ -80,7 +80,7 @@ parameters.JavaPathResolver = new MinecraftJavaPathResolver(path);
 
 ### GameInstaller
 
-See [Downloader.md](Downloader.md "mention")
+See [GameInstaller](Downloader.md)
 
 ```csharp
 parameters.GameInstaller = ParallelGameInstaller.CreateAsCoreCount(httpClient);
@@ -88,7 +88,7 @@ parameters.GameInstaller = ParallelGameInstaller.CreateAsCoreCount(httpClient);
 
 ### FileExtractors
 
-See [FileChecker.md](FileChecker.md "mention")
+See [FileExtractor](FileChecker.md)
 
 ```csharp
 var extractors = DefaultFileExtractors.CreateDefault(

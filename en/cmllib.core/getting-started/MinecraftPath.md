@@ -58,13 +58,12 @@ Root directory : MinecraftPath.BasePath
 
 There are two ways to make custom directory structure.
 
-{% hint style="info" %}
-All paths are stored as absolute paths, even when a relative path is passed.
-{% endhint %}
+!!! info "Information"
+    All paths are stored as absolute paths, even when a relative path is passed.
 
 ### Set properties
 
-Set path properties to what you want. All properties (`Libraries`, `Versions`, etc) are described in [#properties](MinecraftPath.md#properties "mention")
+Set path properties to what you want. All properties (`Libraries`, `Versions`, etc) are described in [Properties](#properties)
 
 ```csharp
 MinecraftPath myPath = new MinecraftPath();
@@ -75,11 +74,10 @@ myPath.Assets = MinecraftPath.GetOSDefaultPath() + "/assets";
 
 ### Inheritence
 
-{% hint style="info" %}
-When receiving a relative path as an argument, make sure to convert it to an absolute path and store it.
-{% endhint %}
+!!! info "Information"
+    When receiving a relative path as an argument, make sure to convert it to an absolute path and store it.
 
-Create derived class of `MinecraftPath`, and override methods. Each methods (`CreateDirs`, `NormalizePath`, etc) are described in [#methods](MinecraftPath.md#methods "mention").
+Create derived class of `MinecraftPath`, and override methods. Each methods (`CreateDirs`, `NormalizePath`, etc) are described in [Methods](#methods).
 
 ```csharp
 class MyMinecraftPath : MinecraftPath
@@ -127,101 +125,91 @@ class MyMinecraftPath : MinecraftPath
 
 ## API References
 
-<details>
+### Constructors
 
-<summary>Constructors</summary>
+??? abstract "Constructors"
 
-**public MinecraftPath()**
+    **public MinecraftPath()**
 
-Initialize instance with default path.\
-Same as `new MinecraftPath(MinecraftPath.GetOSDefaultPath())`.
+    Initialize instance with default path.  
+    Same as `new MinecraftPath(MinecraftPath.GetOSDefaultPath())`.
 
-**public MinecraftPath(string p)**
+    **public MinecraftPath(string p)**
 
-Initializze instance with the specific path, `p`.\
-Call `Initialize(p)` and `CreateDirs()`.
+    Initialize instance with the specific path, `p`.  
+    Call `Initialize(p)` and `CreateDirs()`.
 
-</details>
+### Properties
 
-<details>
+??? abstract "Properties"
 
-<summary>Properties</summary>
+    **BasePath**
 
-**Properties**
+    *Type: string*
 
-**BasePath**
+    Root directory path
 
-_Type: string_
+    **Assets**
 
-Root directory path
+    *Type: string*
 
-**Assets**
+    **Library**
 
-_Type: string_
+    *Type: string*
 
-**Library**
+    **Versions**
 
-_Type: string_
+    *Type: string*
 
-**Versions**
+    **Runtime**
 
-_Type: string_
+    *Type: string*
 
-**Runtime**
+    The default download path of `MJava`
 
-_Type: string_
+    **Resource**
 
-The default download path of `MJava`
+    *Type: string*
 
-**Resource**
+    Old minecraft versions use this path as Assets directory.
 
-_Type: string_
+### Methods
 
-Old minecraft versions use this path as Assets directory.
+??? abstract "Methods"
 
-</details>
+    **public void CreateDirs()**
 
-<details>
+    Create `BasePath`, `Assets`, `Library`, `Versions`, `Runtime`, `Resource` directory.
 
-<summary>Methods</summary>
+    **public virtual string GetIndexFilePath(string assetId)**
 
-**Methods**
+    Get asset index file path.
 
-**public void CreateDirs()**
+    **public virtual string GetAssetObjectPath(string assetId)**
 
-Create `BasePath`, `Assets`, `Library`, `Versions`, `Runtime`, `Resouce` directory.
+    Get asset object directory path.
 
-**public virtual string GetIndexFilePath(string assetId)**
+    **public virtual string GetAssetLegacyPath(string assetId)**
 
-Get asset index file path.
+    Get asset legacy directory path.
 
-**public virtual string GetAssetObjectPath(string assetId)**
+    **public virtual string GetVersionJarPath(string id)**
 
-Get asset object directory path.
+    Get client jar path.
 
-**public virtual string GetAssetLegacyPath(string assetId)**
+    **public virtual string GetVersionJsonPath(string id)**
 
-Get asset legacy directory path.
+    Get client json path.
 
-**public virtual string GetVersionJarPath(string id)**
+    **public virtual string GetNativePath(string id)**
 
-Get client jar path.
+    Get native directory path.  
+    Native dll files will be stored here.
 
-**public virtual string GetVersionJsonPath(string id)**
+    **protected static string Dir(string path)**
 
-Get client json path.
+    Normalize `path` and create directory.
 
-**public virtual string GetNativePath(string id)**
+    **protected static string NormalizePath(string path)**
 
-Get native directory path.\
-Native dll files will be stored here.
-
-**protected static string Dir(string path)**
-
-Normalize `path` and create directory.
-
-**protected static string NormalizePath(string path)**
-
-Normalize `path`. Convert relative path to absolute path and replace invalid directory separator. (In windows, replace `/` to `\`)
-
-</details>
+    Normalize `path`. Convert relative path to absolute path and replace invalid directory separator. (In windows, replace `/` to `\`)
