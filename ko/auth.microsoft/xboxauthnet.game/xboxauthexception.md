@@ -10,7 +10,7 @@ description: Represents the errors during Xbox authentication.
 
 **마인크래프트를 구매한 계정이라면 아래 대부분의 오류는 발생하지 않습니다. 로그인을 시도하고 있는 계정이 마인크래프트를 구매한 계정이 맞는지 확인하세요.**
 
-나이 관련 문제는 로그인 모드를 `Full` 이나 `Sisu` 로 바꾸어 문제를 해결할 수 있습니다. [xboxauth.md](xboxauth.md "mention")
+나이 관련 문제는 로그인 모드를 `Full` 이나 `Sisu` 로 바꾸어 문제를 해결할 수 있습니다. [xboxauth](xboxauth.md)
 
 ## ErrorCode
 

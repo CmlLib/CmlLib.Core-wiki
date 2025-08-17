@@ -30,5 +30,5 @@ HTTP 요청에 사용될 `HttpClient` 객체를 설정합니다. 모든 HTTP 요
 
 ### WithLogger
 
-로그 기록을 위한 [ILogger](https://learn.microsoft.com/en-us/dotnet/api/microsoft.extensions.logging.ilogger?view=dotnet-plat-ext-7.0) 인스턴스를 설정합니다. 자세한 정보는 [#logs](../resources.md#logs "mention")확인
+로그 기록을 위한 [ILogger](https://learn.microsoft.com/en-us/dotnet/api/microsoft.extensions.logging.ilogger?view=dotnet-plat-ext-7.0) 인스턴스를 설정합니다. 자세한 정보는 [자료](../resources.md#logs)확인
 

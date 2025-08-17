@@ -60,13 +60,13 @@ var launchOption = new MLaunchOption
 
 **Type: MSession**
 
-[login-and-sessions](../login-and-sessions/ "mention")을 참고하여 마인크래프트에 로그인하는 방법과 게임 세션을 가져오는 방법을 확인하세요.
+[로그인과 세션](../login-and-sessions/README.md)을 참고하여 마인크래프트에 로그인하는 방법과 게임 세션을 가져오는 방법을 확인하세요.
 
 게임 세션 (Username, UUID, AccessToken, 등등). null 이 설정될 경우, 기본값으로 유저네임 `tester123` 이 설정됩니다.
 
 ### Features <a href="#features" id="features"></a>
 
-**Type: IEnumerable\<string>**
+**Type: `IEnumerable<string>`**
 
 Enable features.
 
@@ -94,7 +94,7 @@ Enable features.
 
 **Type: string**
 
-macOS 에서의 Minecraft dock name. 일부 macOS 버전에서는 이 옵션을 반드시 설정해야 합니다. [Common-Errors.md](../resources/Common-Errors.md "mention")
+macOS 에서의 Minecraft dock name. 일부 macOS 버전에서는 이 옵션을 반드시 설정해야 합니다. [알려진 문제](../resources/Common-Errors.md)
 
 ### DockIcon <a href="#dockicon" id="dockicon"></a>
 
@@ -114,7 +114,7 @@ macOS 에서의 Minecraft dock icon. `256x256` 크기와 `icns` 포멧을 가진
 
 **Type: int**
 
-Minecraft 창 크기 설정. 두 옵션 모두 0보다 큰 값으로 설정될 경우 활성화됩니다. 만약 두 옵션 모두 0이라면게임에서 창 크기를 직접 정합니다. 만약 두 옵션의 값에 음수가 있을 경우 `ArgumentOutOfRangeException` 이 발생합니다.&#x20;
+Minecraft 창 크기 설정. 두 옵션 모두 0보다 큰 값으로 설정될 경우 활성화됩니다. 만약 두 옵션 모두 0이라면게임에서 창 크기를 직접 정합니다. 만약 두 옵션의 값에 음수가 있을 경우 `ArgumentOutOfRangeException` 이 발생합니다.
 
 모든 버전이 이 옵션을 지원하지는 않습니다.
 
@@ -122,7 +122,7 @@ Minecraft 창 크기 설정. 두 옵션 모두 0보다 큰 값으로 설정될 �
 
 **Type: bool**
 
-Minecraft 를 전체 화면으로 실행합니다.&#x20;
+Minecraft 를 전체 화면으로 실행합니다.
 
 모든 버전이 이 옵션을 지원하지는 않습니다.
 
@@ -130,7 +130,7 @@ Minecraft 를 전체 화면으로 실행합니다.&#x20;
 
 **Type: string**
 
-`QuickPlayPath` 인수설정. [QuickPlay](https://minecraft.wiki/w/Quick_Play)&#x20;
+`QuickPlayPath` 인수설정. [QuickPlay](https://minecraft.wiki/w/Quick_Play)
 
 모든 버전이 이 옵션을 지원하지는 않습니다.
 
@@ -194,23 +194,23 @@ Minecraft 를 전체 화면으로 실행합니다.&#x20;
 
 ### ArgumentDictionary <a href="#argumentdictionary" id="argumentdictionary"></a>
 
-**Type: IReadOnlyDictionary\<string, string>**
+**Type: `IReadOnlyDictionary<string, string>`**
 
-런처에서 실행 인수를 만드는 과정에서 `${variable_name}` 템플릿은 다른 문자열로 치환됩니다. 이 옵션은 `variable_name` 을 키로, 치환될 문자열을 값으로 하는 키-값 컬렉션을 지정합니다.&#x20;
+런처에서 실행 인수를 만드는 과정에서 `${variable_name}` 템플릿은 다른 문자열로 치환됩니다. 이 옵션은 `variable_name` 을 키로, 치환될 문자열을 값으로 하는 키-값 컬렉션을 지정합니다.
 
 ### JVMArgumentOverrides <a href="#jvmargumentoverrides" id="jvmargumentoverrides"></a>
 
-**Type: IEnumerable\<MArgument>**
+**Type: `IEnumerable<MArgument>`**
 
 모든 JVM argument 를 이 옵션의 값으로 덮어씌웁니다. 이 옵션이 설정된 경우 `ExtraJVMArguments` 와 `JVMArguments` 의 값은 무시됩니다.
 
-[margument.md](../more-apis/margument.md "mention") 참고
+[MArgument](../more-apis/margument.md) 참고
 
 ### ExtraJVMArguments <a href="#extrajvmarguments" id="extrajvmarguments"></a>
 
-**Type: IEnumerable\<MArgument>**
+**Type: `IEnumerable<MArgument>`**
 
-추가 JVM argument 를 지정합니다. [margument.md](../more-apis/margument.md "mention") 참고
+추가 JVM argument 를 지정합니다. [MArgument](../more-apis/margument.md) 참고
 
 기본값은 다음과 같습니다:
 
@@ -225,6 +225,6 @@ Minecraft 를 전체 화면으로 실행합니다.&#x20;
 
 ### ExtraGameArguments <a href="#extragamearguments" id="extragamearguments"></a>
 
-**Type: IEnumerable\<MArgument>**
+**Type: `IEnumerable<MArgument>`**
 
-추가 game argument 를 지정합니다. [margument.md](../more-apis/margument.md "mention") 참고
+추가 game argument 를 지정합니다. [MArgument](../more-apis/margument.md) 참고

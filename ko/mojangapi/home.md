@@ -1,10 +1,10 @@
 # 홈
 
-![Discord](https://img.shields.io/discord/795952027443527690?label=discord\&logo=discord\&style=for-the-badge)
+![Discord](https://img.shields.io/discord/795952027443527690?label=discord&logo=discord&style=for-the-badge)
 
 [GitHub](https://github.com/CmlLib/MojangAPI)
 
-[Mojang API](https://wiki.vg/Mojang\_API)를 위한 .NET 라이브러리, [Mojang Authentication](https://wiki.vg/Authentication) 와 [Microsoft Xbox Authentication](https://wiki.vg/Microsoft\_Authentication\_Scheme).
+[Mojang API](https://wiki.vg/Mojang_API)를 위한 .NET 라이브러리, [Mojang Authentication](https://wiki.vg/Authentication) 와 [Microsoft Xbox Authentication](https://wiki.vg/Microsoft_Authentication_Scheme).
 
 * Asynchronous API
 * Getting Player Data
@@ -33,14 +33,14 @@ using MojangAPI.Model;
 
 Sample program: [MojangAPISample](https://github.com/CmlLib/MojangAPI/tree/master/MojangAPISample)
 
-### [mojang-api.md](mojang-api.md "mention")
+### [mojang-api](mojang-api.md)
 
 플레이어 프로필 가저오기, 이름이나 스킨 바꾸기, 통계 확인, 차단된 서버 확인, 게임 소유 확인 등등
 
-### [securityquestion.md](securityquestion.md "mention")
+### [securityquestion](securityquestion.md)
 
 Security question-answer flow
 
 ### Authentication
 
-로그인을 위해서 [login-and-sessions](../cmllib.core/login-and-sessions/ "mention") 를 확인하거나 [cmllib.core.auth.microsoft](../auth.microsoft/cmllib.core.auth.microsoft/ "mention") 라이브러리를 사용하세요.
+로그인을 위해서 [로그인과 세션](../cmllib.core/login-and-sessions/README.md) 를 확인하거나 [CmlLib.Core.Auth.Microsoft](../auth.microsoft/cmllib.core.auth.microsoft/README.md) 라이브러리를 사용하세요.

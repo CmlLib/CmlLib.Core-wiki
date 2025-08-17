@@ -14,14 +14,14 @@ Nuget package [XboxAuthNet.Game.Msal](https://www.nuget.org/packages/XboxAuthNet
 
 이 패키지를 사용하기 위해서는 반드시 `IPublicClientApplication` 을 적절하게 초기화해야 합니다.
 
-## [clientid.md](clientid.md "mention")
+## [ClientID](clientid.md)
 
 `IPublicClientApplication` 초기화를 위한 Azure App Id 를 발급받는 방법을 설명합니다.
 
-## [msalclienthelper.md](msalclienthelper.md "mention")
+## [MsalClientHelper](msalclienthelper.md)
 
 마인크래프트 로그인을 위한 `IPublicClientApplication` 초기화 방법을 설명합니다.
 
-## [oauth.md](oauth.md "mention")
+## [OAuth](oauth.md)
 
 MSAL 을 이용해 마이크로소프트 OAuth 를 진행할 수 있는 방법을 제공합니다.

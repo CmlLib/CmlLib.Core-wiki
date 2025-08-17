@@ -1,10 +1,10 @@
 # Mojang API
 
-If the request is failed, it throws appropriate exception. For example, `MojangException` is thrown when the mojang server returns error message.
+요청이 실패하면 적절한 예외가 발생합니다. 예를 들어, Mojang 서버가 오류 메시지를 반환할 때 `MojangException`이 발생합니다.
 
-## How to get `AccessToken` or `UUID`?
+## `AccessToken` 또는 `UUID`를 어떻게 얻나요?
 
-You can get these token by Mojang Authentication or Microsoft Xbox Authentication. See [login-and-sessions](../cmllib.core/login-and-sessions/ "mention").
+이 토큰들은 Mojang 인증 또는 Microsoft Xbox 인증을 통해 얻을 수 있습니다. [로그인과 세션](../cmllib.core/login-and-sessions/README.md)을 참조하세요.
 
 ```csharp
 var session = await loginHandler.Authenticate();
@@ -12,11 +12,11 @@ var username = session.Username;
 var uuid = session.UUID;
 ```
 
-## Methods
+## 메서드
 
 ### GetUUID
 
-username -> uuid
+사용자명 -> UUID
 
 ```csharp
 Mojang mojang = new Mojang(new HttpClient());
@@ -29,7 +29,7 @@ PlayerUUID uuid = await mojang.GetUUID("username");
 
 ### GetUUIDs
 
-usernames -> uuids
+사용자명들 -> UUID들
 
 ```csharp
 Mojang mojang = new Mojang(new HttpClient());
@@ -41,9 +41,9 @@ foreach (PlayerUUID uuid in uuids)
 }
 ```
 
-### ~~GetNameHistories~~
+### GetNameHistories
 
-_note: this api has been deprecated by Mojang_
+_참고: 이 API는 Mojang에 의해 더 이상 사용되지 않습니다_
 
 ```csharp
 Mojang mojang = new Mojang(new HttpClient());
@@ -71,7 +71,7 @@ PlayerProfile profile = await mojang.GetProfileUsingUUID("uuid");
 
 ### GetProfileUsingAccessToken
 
-_note: this api only works on xbox account_
+_참고: 이 API는 Xbox 계정에서만 작동합니다_
 
 ```csharp
 Mojang mojang = new Mojang(new HttpClient());
@@ -80,7 +80,7 @@ PlayerProfile profile = await mojang.GetProfileUsingAccessToken("accessToken");
 
 ### GetPlayerAttributes
 
-_note: this api only works on xbox account_
+_참고: 이 API는 Xbox 계정에서만 작동합니다_
 
 ```csharp
 Mojang mojang = new Mojang(new HttpClient());
@@ -95,7 +95,7 @@ PlayerAttributes attributes = await mojang.GetPlayerAttributes("accessToken");
 
 ### GetPlayerBlocklist
 
-_note: this api only works on xbox account_
+_참고: 이 API는 Xbox 계정에서만 작동합니다_
 
 ```csharp
 Mojang mojang = new Mojang(new HttpClient());
@@ -104,7 +104,7 @@ string[] blocklists = await mojang.GetPlayerBlocklist("accessToken");
 
 ### GetPlayerCertificates
 
-_note: this api only works on xbox account_
+_참고: 이 API는 Xbox 계정에서만 작동합니다_
 
 ```csharp
 Mojang mojang = new Mojang(new HttpClient());
@@ -126,7 +126,7 @@ string? result = await mojang.CheckNameAvailability("accessToken", "newName");
 
 ### ChangeName
 
-_note: this api only works on xbox account_
+_참고: 이 API는 Xbox 계정에서만 작동합니다_
 
 ```csharp
 Mojang mojang = new Mojang(new HttpClient());
@@ -135,35 +135,35 @@ PlayerProfile profile = await mojang.ChangeName("accessToken", "newName");
 
 ### ChangeSkin
 
-_note: this api only works on xbox account_
+_참고: 이 API는 Xbox 계정에서만 작동합니다_
 
 ```csharp
 Mojang mojang = new Mojang(new HttpClient());
 
-// SkinType.Steve or SkinType.Alex
+// SkinType.Steve 또는 SkinType.Alex
 PlayerProfile response = await mojang.ChangeSkin("uuid", "accessToken", SkinType.Steve, "skinUrl");
 ```
 
 ### UploadSkin
 
-_note: this api only works on xbox account_
+_참고: 이 API는 Xbox 계정에서만 작동합니다_
 
 ```csharp
 Mojang mojang = new Mojang(new HttpClient());
 
-// SkinType.Steve or SkinType.Alex
+// SkinType.Steve 또는 SkinType.Alex
 await mojang.UploadSkin("accessToken", SkinType.Steve, "skin_png_file_path");
 ```
 
 ```csharp
 Mojang mojang = new Mojang(new HttpClient());
-Stream stream; // create stream for uploading skin
+Stream stream; // 스킨 업로드를 위한 스트림 생성
 await mojang.UploadSkin("accessToken", SkinType.Steve, stream, "file_name");
 ```
 
 ### ResetSkin
 
-_note: this api only works on xbox account_
+_참고: 이 API는 Xbox 계정에서만 작동합니다_
 
 ```csharp
 Mojang mojang = new Mojang(new HttpClient());
@@ -177,9 +177,9 @@ Mojang mojang = new Mojang(new HttpClient());
 string[] servers = await mojang.GetBlockedServer();
 ```
 
-### ~~GetStatistics~~
+### GetStatistics
 
-_note: this api was obsoleted by mojang_
+_참고: 이 API는 Mojang에 의해 폐지되었습니다_
 
 ```csharp
 Mojang mojang = new Mojang(new HttpClient());
@@ -195,15 +195,15 @@ Statistics stats = await mojang.GetStatistics(
 
 ### CheckGameOwnership
 
-_note1: this api only works on xbox account_\
-_note2: this api does not check xbox game pass. if the user has xbox game pass instead of purchase minecraft, this api return `false`. but the user owns minecraft and can play it._
+_참고1: 이 API는 Xbox 계정에서만 작동합니다_\
+_참고2: 이 API는 Xbox 게임 패스를 확인하지 않습니다. 사용자가 구매 대신 Xbox 게임 패스로 마인크래프트를 가지고 있다면, 이 API는 `false`를 반환합니다. 하지만 사용자는 마인크래프트를 소유하고 있으며 플레이할 수 있습니다._
 
 ```csharp
 Mojang mojang = new Mojang(new HttpClient());
 bool result = await mojang.CheckGameOwnership("accessToken");
 
 if (result)
-    Console.WriteLine("You have Minecraft JE");
+    Console.WriteLine("마인크래프트 JE를 소유하고 있습니다");
 else
-    Console.WriteLine("You don't have Minecraft JE");
+    Console.WriteLine("마인크래프트 JE를 소유하고 있지 않습니다");
 ```

@@ -30,11 +30,10 @@ authenticator.AddJEAuthenticator(je => je
 
 게임을 구매하여 소유하고 있는 지 검사하는 여부를 설정합니다. 기본 값: `false`
 
-{% hint style="warning" %}
-이 메서드를 활성화하면 공식 사이트에서 게임을 구매한 유저만 로그인할 수 있습니다. 엑스박스 게임패스로 정품 계정을 소유한 유저는 로그인할 수 없습니다.
+!!! warning
+    이 메서드를 활성화하면 공식 사이트에서 게임을 구매한 유저만 로그인할 수 있습니다. 엑스박스 게임패스로 정품 계정을 소유한 유저는 로그인할 수 없습니다.
 
-일반적으로 메서드를 사용하지 않아도 게임 구매 여부는 자동으로 검증됩니다.
-{% endhint %}
+    일반적으로 메서드를 사용하지 않아도 게임 구매 여부는 자동으로 검증됩니다.
 
 ## JEAuthException
 
@@ -42,7 +41,7 @@ authenticator.AddJEAuthenticator(je => je
 
 ### 403: FORBIDDEN
 
-만약 OAuth 토큰을 써드파티의 클라이언트 아이디로부터 발급받는 경우라면, 클라이언트 아이디를 등록해야 합니다. [clientid.md](../xboxauthnet.game.msal/clientid.md "mention") 의 마지막 부분을 참고하세요.
+만약 OAuth 토큰을 써드파티의 클라이언트 아이디로부터 발급받는 경우라면, 클라이언트 아이디를 등록해야 합니다. [ClientID](../xboxauthnet.game.msal/clientid.md) 의 마지막 부분을 참고하세요.
 
 ### 404: NOT\_FOUND
 

@@ -4,10 +4,10 @@
 
 ## 모드 로더 자동 설치
 
-* Forge: [Broken link](broken-reference "mention")
-* Fabric: [Fabric-Installer.md](Fabric-Installer.md "mention")
-* Quilt: [quilt-installer.md](../installer/quilt-installer.md "mention")
-* LiteLoader: [LiteLoader-Installer.md](LiteLoader-Installer.md "mention")
+* Forge: [홈](../../installer.forge/home.md)
+* Fabric: [Fabric-Installer](Fabric-Installer.md)
+* Quilt: [Quilt Installer](../installer/quilt-installer.md)
+* LiteLoader: [LiteLoader-Installer](LiteLoader-Installer.md)
 
 ## 서드파티 라이브러리
 
@@ -19,6 +19,6 @@
 
 만약 설치하려는 모드 로더가 위 목록에 존재하지 않거나, 지원하지 않는 버전이 있다면, 파일을 직접 추출하여 설치할 수 있습니다.
 
-[Forge-Installer.md](Forge-Installer.md "mention") 참고
+[Forge-Installer](Forge-Installer.md) 참고
 
 추출된 파일들을 런처와 함께 배포하세요. 흔히 사용되는 방법으로 추출한 파일을 본인의 파일 서버에 업로드해두고, 런처는 서버로부터 파일을 다운로드받아 적절한 경로에 파일을 복사하면 됩니다.

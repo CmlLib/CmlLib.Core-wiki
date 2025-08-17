@@ -12,7 +12,7 @@ using XboxAuthNet.Game.Msal;
 IPublicClientApplication app = await MsalClientHelper.BuildApplicationWithCache("<CLIENT-ID>");
 ```
 
-`<CLIENT-ID>` 에 발급받은 Azure App Id 를 입력하면 됩니다. 자세한 내용은 [clientid.md](clientid.md "mention") 문서를 참고하세요.
+`<CLIENT-ID>` 에 발급받은 Azure App Id 를 입력하면 됩니다. 자세한 내용은 [ClientID](clientid.md) 문서를 참고하세요.
 
 ## CreateDefaultApplicationBuilder(string cid)
 

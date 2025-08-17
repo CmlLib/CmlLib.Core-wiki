@@ -1,10 +1,10 @@
 # 마이크로소프트 엑스박스 계정
 
-## [CmlLib.Core.Auth.Microsoft](../../auth.microsoft/cmllib.core.auth.microsoft/)
+## [CmlLib.Core.Auth.Microsoft](../../auth.microsoft/cmllib.core.auth.microsoft/README.md)
 
 마이크로소프트 로그인 과정은 꽤나 복잡합니다. 따라서 이 기능은 별도의 라이브러리로 제공합니다. 이 라이브러리를 사용하세요.
 
-[cmllib.core.auth.microsoft](../../auth.microsoft/cmllib.core.auth.microsoft/ "mention")
+[CmlLib.Core.Auth.Microsoft](../../auth.microsoft/cmllib.core.auth.microsoft/README.md)
 
 ### **Example**
 

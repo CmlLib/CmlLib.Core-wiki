@@ -36,7 +36,7 @@ Example:
         |- <forge-version-name>.jar
 ```
 
-_NOTE: some forge version does not have \<forge-version-name>.jar file. it's okay_
+_NOTE: some forge version does not have `<forge-version-name>.jar` file. it's okay_
 
 ## Launching forge
 

@@ -2,9 +2,8 @@
 
 Forge, fabric 뿐만 아니라 어떤 형태의 클라이언트든 모두 파일을 추출하여 설치를 자동화 할 수 있습니다.
 
-{% hint style="danger" %}
-**추출한 파일에는 저작권으로 보호된 파일이 포함되어 있을 수 있습니다. 이러한 파일을 배포할 경우 Minecraft EULA 위반 혹은 관련 법령을 위반할 수 있습니다. 배포하기 전 반드시 확인하세요.**
-{% endhint %}
+!!! danger "저작권 주의사항"
+    **추출한 파일에는 저작권으로 보호된 파일이 포함되어 있을 수 있습니다. 이러한 파일을 배포할 경우 Minecraft EULA 위반 혹은 관련 법령을 위반할 수 있습니다. 배포하기 전 반드시 확인하세요.**
 
 ## 추출 방법
 
@@ -27,12 +26,11 @@ Forge, fabric 뿐만 아니라 어떤 형태의 클라이언트든 모두 파일
         └── 1.21.4-forge-54.1.0.json
 ```
 
-{% hint style="danger" %}
-만약 versions/<버전 이름>/<버전 이름>.jar 파일이 존재하는 경우, **배포하기 전 반드시 확인하세요!**
+!!! danger "JAR 파일 주의사항"
+    만약 versions/<버전 이름>/<버전 이름>.jar 파일이 존재하는 경우, **배포하기 전 반드시 확인하세요!**
 
-* 대부분의 경우 해당 파일이 없어도 CmlLib 는 해당 파일을 Mojang 공식 배포 서버로부터 설치합니다.
-* 배포가 필요하다면, **Minecraft EULA 혹은 저작권 법률을 위반하지 않았는지 확인하세요.**
-{% endhint %}
+    * 대부분의 경우 해당 파일이 없어도 CmlLib 는 해당 파일을 Mojang 공식 배포 서버로부터 설치합니다.
+    * 배포가 필요하다면, **Minecraft EULA 혹은 저작권 법률을 위반하지 않았는지 확인하세요.**
 
 ## 배포 및 설치
 
@@ -45,7 +43,7 @@ Forge, fabric 뿐만 아니라 어떤 형태의 클라이언트든 모두 파일
 
 ## 실행
 
-버전을 불러오면 설치된 버전의 이름이 표시됩니다. 해당 버전의 이름을 통해 게임을 실행하세요. [CMLauncher.md](../getting-started/CMLauncher.md "mention") 참고
+버전을 불러오면 설치된 버전의 이름이 표시됩니다. 해당 버전의 이름을 통해 게임을 실행하세요. [런처](../getting-started/CMLauncher.md) 참고
 
 ```csharp
 var versions = await launcher.GetAllVersionsAsync();

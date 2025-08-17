@@ -23,7 +23,7 @@ await forge.Install("1.20.1", "47.1.0", forceUpdate: true);
 
 ## 이벤트 헨들러
 
-`FileChanged` 와 `ProgressChanged` 는 [Handling-Events.md](../cmllib.core/getting-started/Handling-Events.md "mention")에서 확인하세요.
+`FileChanged` 와 `ProgressChanged` 는 [이벤트 처리](../cmllib.core/getting-started/Handling-Events.md)에서 확인하세요.
 
 `InstallerOutput` 이벤트와 함께 포지 인스톨러의 로그를 확인할 수 있습니다.
 

@@ -51,14 +51,13 @@ authenticator.AddMicrosoftOAuth(clientInfo, oauth => oauth.Interactive(new Micro
 
 유저가 마이크로소프트 계정의 이메일과 비밀번호를 입력하도록 로그인 창을 띄웁니다.
 
-{% hint style="info" %}
-이 메서드는 마이크로소프트 OAuth 로그인 페이지를 표시하기 위해서 [Microsoft WebView2](https://developer.microsoft.com/en-us/microsoft-edge/webview2/) 를 사용합니다. 이 내용을 반드시 숙지하고 있어야 합니다.
+!!! info "Microsoft WebView2"
+    이 메서드는 마이크로소프트 OAuth 로그인 페이지를 표시하기 위해서 [Microsoft WebView2](https://developer.microsoft.com/en-us/microsoft-edge/webview2/) 를 사용합니다. 이 내용을 반드시 숙지하고 있어야 합니다.
 
-* **Microsoft WebView2 는 Windows 에서만 사용 가능합니다.** 다른 플랫폼에서 사용하기 위해서는 [xboxauthnet.game.msal](../xboxauthnet.game.msal/ "mention")가 필요합니다.
-* WebView2 를 사용하기 위해서는 유저들은 (개발자와 최종 사용자 포함) **반드시 WebView2 Runtime이 설치되어 있어야 합니다.** [이 문서](https://learn.microsoft.com/en-us/microsoft-edge/webview2/concepts/distribution)를 참고하여 런처를 WebView2와 함께 배포하는 방법을 알아보세요. (예를 들어 런타임 설치를 direct download link 로 자동화 할 수 있습니다: [https://go.microsoft.com/fwlink/p/?LinkId=2124703](https://go.microsoft.com/fwlink/p/?LinkId=2124703))
+    * **Microsoft WebView2 는 Windows 에서만 사용 가능합니다.** 다른 플랫폼에서 사용하기 위해서는 [XboxAuthNet.Game.Msal](../xboxauthnet.game.msal/README.md)가 필요합니다.
+    * WebView2 를 사용하기 위해서는 유저들은 (개발자와 최종 사용자 포함) **반드시 WebView2 Runtime이 설치되어 있어야 합니다.** [이 문서](https://learn.microsoft.com/en-us/microsoft-edge/webview2/concepts/distribution)를 참고하여 런처를 WebView2와 함께 배포하는 방법을 알아보세요. (예를 들어 런타임 설치를 direct download link 로 자동화 할 수 있습니다: [https://go.microsoft.com/fwlink/p/?LinkId=2124703](https://go.microsoft.com/fwlink/p/?LinkId=2124703))
 
-만약 WebView2 없이 로그인을 하고 싶다면 [xboxauthnet.game.msal](../xboxauthnet.game.msal/ "mention") 을 대신 사용할 수 있습니다.
-{% endhint %}
+    만약 WebView2 없이 로그인을 하고 싶다면 [XboxAuthNet.Game.Msal](../xboxauthnet.game.msal/README.md) 을 대신 사용할 수 있습니다.
 
 ### Silent
 

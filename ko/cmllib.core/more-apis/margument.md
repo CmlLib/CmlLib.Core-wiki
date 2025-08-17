@@ -8,12 +8,11 @@
 * `--key=${template}` 와 같이, 런처가 적절한 값으로 대체할 `${template}` 형식을 포함할 수 있습니다.
 * `value`에 공백이 포함될 경우, 큰따옴표로 묶습니다. (예: `--key="hello world"`, `"this value"`)
 
-{% hint style="info" %}
-argument는 기본적으로 공백으로 구분되지만, 큰따옴표로 묶인 공백은 argument를 구분하지 않습니다.
+!!! info
+    argument는 기본적으로 공백으로 구분되지만, 큰따옴표로 묶인 공백은 argument를 구분하지 않습니다.
 
-* `--username ${auth_player_name}`: 이것은 `--username`과 `${auth_player_name}` 이라는 **두 개의 argument** 입니다.
-* `-Dminecraft.launcher.brand="hello world"`: 이것은 큰따옴표로 묶여있어 공백을 포함하지만 **하나의 argument** 입니다.
-{% endhint %}
+    * `--username ${auth_player_name}`: 이것은 `--username`과 `${auth_player_name}` 이라는 **두 개의 argument** 입니다.
+    * `-Dminecraft.launcher.brand="hello world"`: 이것은 큰따옴표로 묶여있어 공백을 포함하지만 **하나의 argument** 입니다.
 
 `MArgument`는 이러한 argument들의 목록을 관리하는 타입입니다. `MArgument`를 초기화할 때는 반드시 각 원소에 **하나의 argument**만 포함해야 합니다.
 
@@ -33,7 +32,7 @@ var result = arguments.InterpolateValues(new Dictionary<string, string?>
 
 CmlLib는 `InterpolateValues` 메서드를 호출하여 `${template}` 부분을 실제 값으로 자동 치환합니다. 치환된 값에 공백이 포함될 경우, 자동으로 큰따옴표를 추가해주므로 별도의 처리가 필요 없습니다.
 
-기본적으로 제공하는 템플릿은 다음과 같습니다. 더 많은 템플릿을 등록하려면, 실행 옵션의 `ArgumentDictionary`를 설정하세요. [MLaunchOption.md](../getting-started/MLaunchOption.md "mention")
+기본적으로 제공하는 템플릿은 다음과 같습니다. 더 많은 템플릿을 등록하려면, 실행 옵션의 `ArgumentDictionary`를 설정하세요. [실행 옵션 설정](../getting-started/MLaunchOption.md)
 
 | Template Key            | 설명                                                                                                      |
 | ----------------------- | ------------------------------------------------------------------------------------------------------- |

@@ -15,7 +15,7 @@ Your xbox account would block multiplay feature. Check your account settings. [M
 
 [https://github.com/CmlLib/CmlLib.Core/issues/85](https://github.com/CmlLib/CmlLib.Core/issues/85)
 
-### Cannot find version \<version\_name>
+### Cannot find version `<version\_name>`
 
 Make sure that Mojang launcher can find your version and launch your version without any problem. CmlLib.Core will not able to find or launch the version which Mojang launcher can't.
 

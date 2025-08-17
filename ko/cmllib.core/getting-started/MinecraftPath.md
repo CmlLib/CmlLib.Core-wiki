@@ -59,11 +59,10 @@ MinecraftLauncher launcher = new MinecraftLauncher(myPath);
 
 ### 속성 설정하기
 
-경로 속성을 바꾸세요. 모든 속성은 [#properties](MinecraftPath.md#properties "mention") 에서 확인하세요
+경로 속성을 바꾸세요. 모든 속성은 [Properties](#properties) 에서 확인하세요
 
-{% hint style="info" %}
-반드시 절대 경로만 입력하세요.
-{% endhint %}
+!!! info
+    반드시 절대 경로만 입력하세요.
 
 ```csharp
 MinecraftPath myPath = new MinecraftPath();
@@ -74,11 +73,10 @@ myPath.Assets = MinecraftPath.GetOSDefaultPath() + "/assets";
 
 ### 상속
 
-`MinecraftPath` 를 상속받는 클래스를 만들고 메서드를 오버라이드하세요. 모든 메서드 (`CreateDirs`, `NormalizePath`, 등등) 은은 [#methods](MinecraftPath.md#methods "mention") 에서 확인하세요.
+`MinecraftPath` 를 상속받는 클래스를 만들고 메서드를 오버라이드하세요. 모든 메서드 (`CreateDirs`, `NormalizePath`, 등등) 은 [Methods](#methods) 에서 확인하세요.
 
-{% hint style="info" %}
-상대 경로를 인수로 받은 경우 반드시 절대 경로로 바꾸어 저장하세요.
-{% endhint %}
+!!! info
+    상대 경로를 인수로 받은 경우 반드시 절대 경로로 바꾸어 저장하세요.
 
 ```csharp
 class MyMinecraftPath : MinecraftPath
@@ -126,101 +124,91 @@ class MyMinecraftPath : MinecraftPath
 
 ## API References
 
-<details>
+### Constructors
 
-<summary>Constructors</summary>
+??? abstract "Constructors"
 
-**public MinecraftPath()**
+    **public MinecraftPath()**
 
-Initialize instance with default path.\
-Same as `new MinecraftPath(MinecraftPath.GetOSDefaultPath())`.
+    기본 경로로 인스턴스를 초기화합니다.
+    `new MinecraftPath(MinecraftPath.GetOSDefaultPath())` 와 동일합니다.
 
-**public MinecraftPath(string p)**
+    **public MinecraftPath(string p)**
 
-Initializze instance with the specific path, `p`.\
-Call `Initialize(p)` and `CreateDirs()`.
+    지정된 경로 `p`로 인스턴스를 초기화합니다.
+    `Initialize(p)` 와 `CreateDirs()` 를 호출합니다.
 
-</details>
+### Properties
 
-<details>
+??? abstract "Properties"
 
-<summary>Properties</summary>
+    **BasePath**
 
-**Properties**
+    *Type: string*
 
-**BasePath**
+    루트 디렉터리 경로
 
-_Type: string_
+    **Assets**
 
-Root directory path
+    *Type: string*
 
-**Assets**
+    **Library**
 
-_Type: string_
+    *Type: string*
 
-**Library**
+    **Versions**
 
-_Type: string_
+    *Type: string*
 
-**Versions**
+    **Runtime**
 
-_Type: string_
+    *Type: string*
 
-**Runtime**
+    `MJava`의 기본 다운로드 경로
 
-_Type: string_
+    **Resource**
 
-The default download path of `MJava`
+    *Type: string*
 
-**Resource**
+    구버전 마인크래프트에서 Assets 디렉터리로 사용하는 경로
 
-_Type: string_
+### Methods
 
-Old minecraft versions use this path as Assets directory.
+??? abstract "Methods"
 
-</details>
+    **public void CreateDirs()**
 
-<details>
+    `BasePath`, `Assets`, `Library`, `Versions`, `Runtime`, `Resource` 디렉터리를 생성합니다.
 
-<summary>Methods</summary>
+    **public virtual string GetIndexFilePath(string assetId)**
 
-**Methods**
+    에셋 인덱스 파일 경로를 가져옵니다.
 
-**public void CreateDirs()**
+    **public virtual string GetAssetObjectPath(string assetId)**
 
-Create `BasePath`, `Assets`, `Library`, `Versions`, `Runtime`, `Resouce` directory.
+    에셋 객체 디렉터리 경로를 가져옵니다.
 
-**public virtual string GetIndexFilePath(string assetId)**
+    **public virtual string GetAssetLegacyPath(string assetId)**
 
-Get asset index file path.
+    에셋 레거시 디렉터리 경로를 가져옵니다.
 
-**public virtual string GetAssetObjectPath(string assetId)**
+    **public virtual string GetVersionJarPath(string id)**
 
-Get asset object directory path.
+    클라이언트 jar 파일 경로를 가져옵니다.
 
-**public virtual string GetAssetLegacyPath(string assetId)**
+    **public virtual string GetVersionJsonPath(string id)**
 
-Get asset legacy directory path.
+    클라이언트 json 파일 경로를 가져옵니다.
 
-**public virtual string GetVersionJarPath(string id)**
+    **public virtual string GetNativePath(string id)**
 
-Get client jar path.
+    네이티브 디렉터리 경로를 가져옵니다.
+    네이티브 dll 파일들이 여기에 저장됩니다.
 
-**public virtual string GetVersionJsonPath(string id)**
+    **protected static string Dir(string path)**
 
-Get client json path.
+    `path`를 정규화하고 디렉터리를 생성합니다.
 
-**public virtual string GetNativePath(string id)**
+    **protected static string NormalizePath(string path)**
 
-Get native directory path.\
-Native dll files will be stored here.
-
-**protected static string Dir(string path)**
-
-Normalize `path` and create directory.
-
-**protected static string NormalizePath(string path)**
-
-Normalize `path`. Convert relative path to absolute path and replace invalid directory separator. (In windows, replace `/` to `\`)
-
-</details>
+    `path`를 정규화합니다. 상대 경로를 절대 경로로 변환하고 잘못된 디렉터리 구분자를 교체합니다. (Windows에서는 `/`를 `\`로 교체)

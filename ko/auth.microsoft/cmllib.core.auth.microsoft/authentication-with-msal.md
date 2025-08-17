@@ -1,6 +1,6 @@
 # Authentication with MSAL
 
-JELoginHandler 는 기본적으로 Windows 에서만 작동합니다. 다른 플랫폼에서도 작동하기 위해서는 반드시 [xboxauthnet.game.msal](../xboxauthnet.game.msal/ "mention")와 함께 사용해야 합니다.
+JELoginHandler 는 기본적으로 Windows 에서만 작동합니다. 다른 플랫폼에서도 작동하기 위해서는 반드시 [XboxAuthNet.Game.Msal](../xboxauthnet.game.msal/README.md)와 함께 사용해야 합니다.
 
 MSAL 을 CmlLib.Core.Auth.Microsoft 와 함께 사용하기 위해서는 두 가지 방법이 있습니다.
 
@@ -9,7 +9,7 @@ MSAL 을 CmlLib.Core.Auth.Microsoft 와 함께 사용하기 위해서는 두 가
 
 ### OAuthProvider 등록하기 (권장)
 
-`JELoginHandler` 초기화 할 때 `OAuthProvider` 를 등록하면 이후 호출하는 모든 메서드가 MSAL 을 사용하여 로그인을 처리합니다.&#x20;
+`JELoginHandler` 초기화 할 때 `OAuthProvider` 를 등록하면 이후 호출하는 모든 메서드가 MSAL 을 사용하여 로그인을 처리합니다.
 
 ```csharp
 var app = await MsalClientHelper.BuildApplicationWithCache("CLIENT-ID");
@@ -33,9 +33,9 @@ await loginHandler.Signout();
 await loginHandler.SignoutWithBrowser();
 ```
 
-loginHandler 에 대한 더 자세한 정보는 [jeloginhandler.md](jeloginhandler.md "mention")를 참고하세요.
+loginHandler 에 대한 더 자세한 정보는 [jeloginhandler](jeloginhandler.md)를 참고하세요.
 
-CLIENT-ID 를 발급받는 방법과 더 많은 MSAL 로그인 방식을 확인하려면 [xboxauthnet.game.msal](../xboxauthnet.game.msal/ "mention") 을 참고하세요.
+CLIENT-ID 를 발급받는 방법과 더 많은 MSAL 로그인 방식을 확인하려면 [XboxAuthNet.Game.Msal](../xboxauthnet.game.msal/README.md) 을 참고하세요.
 
 ### AddMsalOAuth 메서드 사용하기
 
@@ -83,6 +83,4 @@ authenticator.AddJESignout();
 var session = await authenticator.ExecuteForLauncherAsync();
 ```
 
-`msal.Interactive()`, `msal.Silent()` 등등 msal 의 더 많은 메서드들은 [oauth.md](../xboxauthnet.game.msal/oauth.md "mention")를 참고하세요.
-
-`authenticator` 의 더 자세한 사용 방법은 [#undefined-6](jeloginhandler.md#undefined-6 "mention")을 참고하세요.
+`msal.Interactive()`, `msal.Silent()` 등등 msal 의 더 많은 메서드들은 [OAuth](../xboxauthnet.game.msal/oauth.md)를 참고하세요.

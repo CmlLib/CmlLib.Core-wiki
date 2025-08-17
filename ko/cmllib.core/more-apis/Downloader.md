@@ -4,7 +4,7 @@ description: 게임 파일 설치
 
 # GameInstaller
 
-`IGameInstaller` 는 파일의 존재 여부와 무결성 검사를 하고 필요한 경우 파일을 다운로드 받습니다. 설치 중 발생하는 이벤트를 확인하려면 [Handling-Events.md](../getting-started/Handling-Events.md "mention")를 참고하세요.
+`IGameInstaller` 는 파일의 존재 여부와 무결성 검사를 하고 필요한 경우 파일을 다운로드 받습니다. 설치 중 발생하는 이벤트를 확인하려면 [이벤트 처리](../getting-started/Handling-Events.md)를 참고하세요.
 
 ### 예시
 
