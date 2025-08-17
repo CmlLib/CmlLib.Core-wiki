@@ -10,6 +10,11 @@ Basic Usage
     ```
 
 ```csharp
+using CmlLib.Core;
+using CmlLib.Core.Auth;
+using CmlLib.Core.ProcessBuilder;
+using CmlLib.Core.VersionMetadata;
+
 // initialize the launcher
 var path = new MinecraftPath();
 var launcher = new MinecraftLauncher(path);
@@ -42,7 +47,15 @@ var process = await launcher.BuildProcessAsync("1.20.6", new MLaunchOption
     Session = MSession.CreateOfflineSession("Gamer123"),
     MaximumRamMb = 4096
 });
-process.Start();
+Console.WriteLine(process.StartInfo.Arguments);
+
+// launch the game
+var processWrapper = new ProcessWrapper(process);
+processWrapper.OutputReceived += (s, e) => Console.WriteLine(e);
+processWrapper.StartWithEvents();
+
+var exitCode = await processWrapper.WaitForExitTaskAsync();
+Console.WriteLine($"Exited with code {exitCode}");
 ```
 
 ### Explanation
@@ -91,6 +104,23 @@ process.Start();
 ```
 
 Install the game and build the game process and return it. See [Launch Options](MLaunchOption.md) for more launch options.
+
+!!! info "Installation Recommendation"
+    It is recommended to always call the InstallAsync method before launching, regardless of whether it is installed or not. The InstallAsync method checks all installed files and only downloads files that are corrupted or missing.
+
+```csharp
+var processWrapper = new ProcessWrapper(process);
+processWrapper.OutputReceived += (s, e) => Console.WriteLine(e);
+processWrapper.StartWithEvents();
+
+var exitCode = await processWrapper.WaitForExitTaskAsync();
+Console.WriteLine($"Exited with code {exitCode}");
+```
+
+Launch the game process and output game logs to console. Wait for the game to exit and output the exit code. See [processwrapper.md](../utilities/processwrapper.md)
+
+!!! info "Process Object"
+    The `process` variable is a standard .NET [Process](https://learn.microsoft.com/en-us/dotnet/api/system.diagnostics.process) object. You can launch it immediately with `process.Start();` without using `ProcessWrapper`.
 
 ### More Methods
 

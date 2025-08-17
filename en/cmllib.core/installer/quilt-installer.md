@@ -4,7 +4,7 @@ description: Install Quilt mod loader
 
 # Quilt Installer
 
-### Get Minecraft versions
+## Get Minecraft versions
 
 ```csharp
 var quiltInstaller = new QuiltInstaller(new HttpClient());
@@ -28,7 +28,7 @@ foreach (var version in versions)
 }
 ```
 
-### Install
+### Installation
 
 ```csharp
 var path = new MinecraftPath();

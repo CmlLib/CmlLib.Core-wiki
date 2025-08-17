@@ -9,7 +9,6 @@ theme:
 
 nav:
   - '🧊 CmlLib Projects': README.md
-  - '[AD] 커스텀 런처 주문제작': ad.md
   - '🚀 CmlLib.Core':
     - '홈': cmllib.core/README.md
     - '시작하기':
@@ -32,12 +31,12 @@ nav:
       - 'Java': cmllib.core/more-apis/java.md
       - 'MArgument': cmllib.core/more-apis/margument.md
     - '모드 로더 인스톨러':
-      - '모드 로더 인스톨러': cmllib.core/Installer/README.md
-      - '모드 로더 파일 추출': cmllib.core/Installer/Forge-Installer.md
-      - 'Forge Installer': cmllib.core/installer/forge-installer-1.md
-      - 'Fabric Installer': cmllib.core/Installer/Fabric-Installer.md
+      - '모드 로더 인스톨러': cmllib.core/installer/README.md
+      - '모드 로더 파일 추출': cmllib.core/installer/extract-files.md
+      - 'Forge Installer': cmllib.core/installer/forge-installer.md
+      - 'Fabric Installer': cmllib.core/installer/fabric-installer.md
       - 'Quilt Installer': cmllib.core/installer/quilt-installer.md
-      - 'LiteLoader Installer': cmllib.core/Installer/LiteLoader-Installer.md
+      - 'LiteLoader Installer': cmllib.core/installer/liteloader-installer.md
     - '유틸리티':
       - '유틸리티': cmllib.core/utilites/README.md
       - 'Minecraft Changelogs': cmllib.core/utilites/Get-Minecraft-Changelogs.md
@@ -80,3 +79,4 @@ nav:
     - '시작하기': installer.forge/getting-started.md
     - 'MForge': installer.forge/mforge.md
     - 'ForgeVersionLoader': installer.forge/forgeversionloader.md
+  - '[AD] 커스텀 런처 주문제작': ad.md

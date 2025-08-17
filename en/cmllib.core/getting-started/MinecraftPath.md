@@ -36,39 +36,38 @@ Default Minecraft path is:
 ## Default directory structure
 
 ```
-Root directory : MinecraftPath.BasePath
- | - assets : MinecraftPath.Assets
- |    | - indexes
- |    |    | - {asset id}.json : MinecraftPath.GetIndexFilePath(assetId)
- |    | - objects : MinecraftPath.GetAssetObjectPath(assetId)
- |    | - virtual
- |         | - legacy : MinecraftPath.GetAssetLegacyPath(assetId)
- |
- | - libraries : MinecraftPath.Library
- | - resources : MinecraftPath.Resource
- | - runtime : MinecraftPath.Runtime
- | - versions : MinecraftPath.Versions
-      | - {version name}
-            | - {version name}.jar : MinecraftPath.GetVersionJarPath("version_name")
-            | - {version name}.json : MinecraftPath.GetVersionJsonPath("version_name")
-            | - natives : MinecraftPath.GetNativePath("version_name")
+/ (MinecraftPath.BasePath)
+├── assets/ (MinecraftPath.Assets)
+│   ├── indexes/
+│   │   └── {asset_id}.json (MinecraftPath.GetIndexFilePath(assetId))
+│   ├── objects/ (MinecraftPath.GetAssetObjectPath(assetId))
+│   └── virtual/
+│       └── legacy/ (MinecraftPath.GetAssetLegacyPath(assetId))
+├── libraries/ (MinecraftPath.Library)
+├── resources/ (MinecraftPath.Resource)
+├── runtime/ (MinecraftPath.Runtime)
+└── versions/ (MinecraftPath.Versions)
+    └── {version_name}/
+        ├── {version_name}.jar (MinecraftPath.GetVersionJarPath("version_name"))
+        ├── {version_name}.json (MinecraftPath.GetVersionJsonPath("version_name"))
+        └── natives/ (MinecraftPath.GetNativePath("version_name"))
 ```
 
 ## Make custom directory structure
 
 There are two ways to make custom directory structure.
 
-!!! info "Information"
-    All paths are stored as absolute paths, even when a relative path is passed.
-
 ### Set properties
 
-Set path properties to what you want. All properties (`Libraries`, `Versions`, etc) are described in [Properties](#properties)
+Set path properties to what you want. All properties are described in [Properties](#properties)
+
+!!! info "Information"
+    Make sure to use absolute paths only.
 
 ```csharp
 MinecraftPath myPath = new MinecraftPath();
-myPath.Libraries = "./commons/libs";
-myPath.Versions = "./commons/versions";
+myPath.Libraries = myPath.BasePath + "/commons/libs";
+myPath.Versions = myPath.BasePath + "/commons/versions";
 myPath.Assets = MinecraftPath.GetOSDefaultPath() + "/assets";
 ```
 

@@ -62,7 +62,7 @@ var launchOption = new MLaunchOption
 
 See [login-and-sessions](../login-and-sessions/README.md) for how to log in Minecraft and get game session.
 
-Game session (Username, UUID, AccessToken, etc...). If the value is null, the default session is used. (username `tester123`)
+Game session (Username, UUID, AccessToken, etc...). If the value is null, the default session with username `tester123` is used.
 
 ### Features
 
@@ -146,7 +146,7 @@ Connecting to a server directly when Minecraft is loading is done. The default v
 
 _note1: Not all versions of Minecraft support this option._
 
-_note2: The game would not be able to resolve the address if you pass a domain with an SRV record._
+_note2: If you set a domain with an SRV record, the connection may fail. Set the actual address and port that the SRV record points to directly._
 
 ### ClientId
 
@@ -190,11 +190,15 @@ When building an argument in the launcher, `${variable_name}` will be replaced w
 
 Override all JVM arguments. When this option is not null, `ExtraJVMArguments` and `JVMArguments` are ignored.
 
+See [margument.md](../more-apis/margument.md)
+
 ### ExtraJVMArguments
 
 **Type: `IEnumerable<MArgument>`**
 
-Set extra JVM arguments. Default arguments are:
+Set extra JVM arguments. See [margument.md](../more-apis/margument.md)
+
+Default arguments are:
 
 ```
 -XX:+UnlockExperimentalVMOptions
@@ -209,4 +213,4 @@ Set extra JVM arguments. Default arguments are:
 
 **Type: `IEnumerable<MArgument>`**
 
-Set extra game arguments.
+Set extra game arguments. See [margument.md](../more-apis/margument.md)

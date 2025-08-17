@@ -2,7 +2,7 @@
 
 ## [CmlLib.Core.Auth.Microsoft](../../auth.microsoft/cmllib.core.auth.microsoft/README.md)
 
-Microsoft login process is quite complex. I **highly** recommend you to use this library to add Microsoft login feature in your launcher.
+Microsoft login process is quite complex. Therefore, this functionality is provided as a separate library. Use this library.
 
 [CmlLib.Core.Auth.Microsoft](../../auth.microsoft/cmllib.core.auth.microsoft/README.md)
 
