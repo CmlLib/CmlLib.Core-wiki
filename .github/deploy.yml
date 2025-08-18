@@ -1,0 +1,71 @@
+# 워크플로 이름
+name: Deploy MkDocs to GitHub Pages
+
+# 워크플로 실행 조건: master 브랜치에 push 될 때마다 실행
+on:
+  push:
+    branches:
+      - master
+  # 수동으로 워크플로를 실행할 수 있도록 허용
+  workflow_dispatch:
+
+# 배포 작업에 필요한 권한 설정
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build-and-deploy:
+    # 실행 환경
+    runs-on: ubuntu-latest
+    steps:
+      # 1. 소스 코드 체크아웃
+      # git-revision-date-localized 플러그인이 전체 기록을 필요로 하므로 fetch-depth: 0 설정
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # 2. Python 환경 설정
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.11
+
+      # 3. Pip 캐시 설정 (빌드 속도 향상)
+      - name: Cache dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      # 4. 의존성 라이브러리 설치
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      # 5. MkDocs 빌드 (영어, 한국어 버전 순차 실행)
+      # 이 부분이 핵심입니다. 두 개의 설정 파일을 모두 사용하여 빌드합니다.
+      - name: Build MkDocs site
+        run: |
+          mkdocs build --config-file mkdocs.en.yml
+          mkdocs build --config-file mkdocs.ko.yml
+
+      # 6. (선택사항) 루트 경로 리디렉션 페이지 생성
+      # 사용자가 사이트 루트(/)로 접속했을 때 기본 언어(예: 영어)로 자동 이동시킵니다.
+      - name: Create redirect page
+        run: |
+          echo '<!DOCTYPE html><html><head><meta http-equiv="refresh" content="0; url=./en/"></head><body></body></html>' > site/index.html
+
+      # 7. 빌드 결과물(site 폴더)을 아티팩트로 업로드
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./site
+
+      # 8. 아티팩트를 GitHub Pages에 배포
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
