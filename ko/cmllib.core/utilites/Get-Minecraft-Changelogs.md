@@ -8,7 +8,7 @@ description: Get Minecraft changelogs
 
 ## Sample code
 
-See [ChangeLog.cs](https://github.com/CmlLib/CmlLib.Core/blob/master/CmlLibWinFormSample/ChangeLog.cs) in the CmlLibWinFormSample project.
+See [ChangeLog.cs](https://github.com/CmlLib/CmlLib.Core/blob/master/examples/winform/ChangeLog.cs) in the CmlLibWinFormSample project.
 
 ## Example
 
@@ -36,5 +36,5 @@ Returns Minecraft versions which have a changelog.
 
 _Returns: `Task<string>`_
 
-Returns the HTML code of the changelog of `version`.\
+Returns the HTML code of the changelog of `version`.
 The HTML code contains only the changelog; there is no header or footer. You can display this HTML with the WebBrowser element if you'd like.

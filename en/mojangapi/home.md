@@ -33,14 +33,14 @@ using MojangAPI.Model;
 
 Sample program: [MojangAPISample](https://github.com/CmlLib/MojangAPI/tree/master/MojangAPISample)
 
-### [mojang-api.md](mojang-api.md "mention")
+### [Mojang API](mojang-api.md)
 
 Getting player profile, Changing name or skin, Statistics, Blocked Server, Checking Game Ownership
 
-### [securityquestion.md](securityquestion.md "mention")
+### [SecurityQuestion](securityquestion.md)
 
 Security question-answer flow
 
 ### Authentication
 
-For authentication, See [login-and-sessions](../cmllib.core/login-and-sessions/ "mention") or use library [cmllib.core.auth.microsoft](../auth.microsoft/cmllib.core.auth.microsoft/ "mention").
+For authentication, See [Login and Sessions](../cmllib.core/login-and-sessions/README.md) or use library [CmlLib.Core.Auth.Microsoft](../auth.microsoft/cmllib.core.auth.microsoft/README.md).

@@ -23,8 +23,8 @@ authenticator.AddXboxAuthForJE(xbox => xbox.Basic());
 
 가장 기본적인 방식입니다. 로그인에 필요한 최소 정보(UserToken, XstsToken)만 받아옵니다.
 
-나이 인증이 되지 않은 계정, 18세 미만인 계정은 이 방식으로 로그인할때 문제가 발생할 수 있습니다. (오류 코드 `8015dc0c`, `8015dc0d`, `8015dc0e`)\
-[#full](xboxauth.md#full "mention") 방식이나 [#sisu](xboxauth.md#sisu "mention") 방식을 사용하면 이 문제를 해결할 수 있습니다.
+나이 인증이 되지 않은 계정, 18세 미만인 계정은 이 방식으로 로그인할때 문제가 발생할 수 있습니다. (오류 코드 `8015dc0c`, `8015dc0d`, `8015dc0e`)
+[Full](#full) 방식이나 [Sisu](#sisu) 방식을 사용하면 이 문제를 해결할 수 있습니다.
 
 ## Full
 
@@ -46,7 +46,7 @@ SISU 로그인 방식을 사용합니다. UserToken, DeviceToken, TitleToken, Xs
 
 이 방식은 `<CLIENT-ID>` 가 엑스박스 게임과 관련된 것일때만 작동합니다. (예시: 마인크래프트 런처에서 사용하는 CLIENT-ID)
 
-개인이 발급한 Azure ID 를 사용할 수 없습니다. 즉 [xboxauthnet.game.msal](../xboxauthnet.game.msal/ "mention") 와 함께 사용할 수 없습니다.
+개인이 발급한 Azure ID 를 사용할 수 없습니다. 즉 [XboxAuthNet.Game.Msal](../xboxauthnet.game.msal/README.md) 와 함께 사용할 수 없습니다.
 
 ## Device Options
 
@@ -73,4 +73,4 @@ authenticator.AddXboxAuth(xbox => xbox
 
 Xbox 인증 시 다양한 오류 시나리오가 있습니다. 인증 시 오류가 발생하면 `XboxAuthException` 이 발생하며 ErrorCode 와 ErrorMessage 를 얻을 수 있습니다.
 
-모든 ErrorCode 는 [xboxauthexception.md](xboxauthexception.md "mention") 에서 확인할 수 있습니다.
+모든 ErrorCode 는 [XboxAuthException](xboxauthexception.md) 에서 확인할 수 있습니다.

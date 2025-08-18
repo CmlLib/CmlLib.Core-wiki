@@ -1,22 +1,23 @@
 # Microsoft Xbox Account
 
-## [cmllib.core.auth.microsoft](../../auth.microsoft/cmllib.core.auth.microsoft/ "mention")
+## [CmlLib.Core.Auth.Microsoft](../../auth.microsoft/cmllib.core.auth.microsoft/README.md)
 
-Microsoft login process is quite complex. I **highly** recommend you to use this library to add Microsoft login feature in your launcher.
+Microsoft login process is quite complex. Therefore, this functionality is provided as a separate library. Use this library.
 
-[cmllib.core.auth.microsoft](../../auth.microsoft/cmllib.core.auth.microsoft/ "mention")
+[CmlLib.Core.Auth.Microsoft](../../auth.microsoft/cmllib.core.auth.microsoft/README.md)
 
 ### **Example**
 
 ```csharp
 using CmlLib.Core;
+using CmlLib.Core.ProcessBuilder;
 using CmlLib.Core.Auth.Microsoft;
 
 var loginHandler = JELoginHandlerBuilder.BuildDefault();
 var session = await loginHandler.Authenticate();
 
-var launcher = new CMLauncher();
-var process = await launcher.CreateProcessAsync("1.16.5", new MLaunchOption()
+var launcher = new MinecraftLauncher();
+var process = await launcher.InstallAndBuildProcessAsync("1.20.4", new MLaunchOption
 {
     Session = session
 });

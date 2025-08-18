@@ -1,18 +1,14 @@
 # 🧊 CmlLib Projects
 
-{% hint style="info" %}
-This documentation is out of date. The 4.0.0 documentation is [here](https://alphabs.gitbook.io/cmllib/v/v4-en)
-{% endhint %}
+CmlLib project develops various .NET libraries for building custom Minecraft launchers.
 
-CmlLib project makes .NET libraries for building your own minecraft launcher.
+## [CmlLib.Core](cmllib.core/README.md)
 
-## [CmlLib.Core](cmllib.core/)
+Minecraft installation and launching
 
-Main library for launching Minecraft.
+## [Auth.Microsoft](auth.microsoft/README.md)
 
-## [Auth.Microsoft](auth.microsoft/)
-
-Authentication library for logging in Minecraft with Microsoft Xbox account.
+Microsoft Xbox account login for Minecraft accounts
 
 ## [MojangAPI](mojangapi/home.md)
 

@@ -1,229 +1,182 @@
----
-description: >-
-  Wrapper class of CmlLib.Core. You can easily access many feature of this
-  library through this class.
----
+# Minecraft Launcher
 
-# CMLauncher
+Basic Usage
 
-## Basic Usage
+!!! tip ".NET Framework Optimization"
+    In .NET Framework, add the following code to maximize the download speed. This is not necessary in .NET Core.
 
-Below codes are very basic launcher but all main features are included. Copy and paste to Console project and try it by yourself.
+    ```csharp
+    System.Net.ServicePointManager.DefaultConnectionLimit = 256;
+    ```
 
 ```csharp
-System.Net.ServicePointManager.DefaultConnectionLimit = 256;
+using CmlLib.Core;
+using CmlLib.Core.Auth;
+using CmlLib.Core.ProcessBuilder;
+using CmlLib.Core.VersionMetadata;
 
+// initialize the launcher
 var path = new MinecraftPath();
-var launcher = new CMLauncher(path);
+var launcher = new MinecraftLauncher(path);
 
-launcher.FileChanged += (e) =>
+// add event handlers
+launcher.FileProgressChanged += (sender, args) =>
 {
-    Console.WriteLine("FileKind: " + e.FileKind.ToString());
-    Console.WriteLine("FileName: " + e.FileName);
-    Console.WriteLine("ProgressedFileCount: " + e.ProgressedFileCount);
-    Console.WriteLine("TotalFileCount: " + e.TotalFileCount);
+    Console.WriteLine($"Name: {args.Name}");
+    Console.WriteLine($"Type: {args.EventType}");
+    Console.WriteLine($"Total: {args.TotalTasks}");
+    Console.WriteLine($"Progressed: {args.ProgressedTasks}");
 };
-launcher.ProgressChanged += (s, e) =>
+launcher.ByteProgressChanged += (sender, args) =>
 {
-    Console.WriteLine("{0}%", e.ProgressPercentage);
+    Console.WriteLine($"{args.ProgressedBytes} bytes / {args.TotalBytes} bytes");
 };
 
+// get all versions
+var versions = await launcher.GetAllVersionsAsync();
+foreach (var v in versions)
+{
+    Console.WriteLine(v.GetVersionType());
+    Console.WriteLine(v.Name);
+}
+
+// install and launch the game
+await launcher.InstallAsync("1.20.6");
+var process = await launcher.BuildProcessAsync("1.20.6", new MLaunchOption
+{
+    Session = MSession.CreateOfflineSession("Gamer123"),
+    MaximumRamMb = 4096
+});
+Console.WriteLine(process.StartInfo.Arguments);
+
+// launch the game
+var processWrapper = new ProcessWrapper(process);
+processWrapper.OutputReceived += (s, e) => Console.WriteLine(e);
+processWrapper.StartWithEvents();
+
+var exitCode = await processWrapper.WaitForExitTaskAsync();
+Console.WriteLine($"Exited with code {exitCode}");
+```
+
+### Explanation
+
+```csharp
+var path = new MinecraftPath();
+var launcher = new MinecraftLauncher(path);
+```
+
+Create Minecraft directory structure and initialize launcher instance. You can change the path and directory structure. See [Minecraft Path](MinecraftPath.md) and [MinecraftLauncherParameters](../more-apis/minecraftlauncherparameters.md)
+
+```csharp
+launcher.FileProgressChanged += (sender, args) =>
+{
+    Console.WriteLine($"Name: {args.Name}");
+    Console.WriteLine($"Type: {args.EventType}");
+    Console.WriteLine($"Total: {args.TotalTasks}");
+    Console.WriteLine($"Progressed: {args.ProgressedTasks}");
+};
+launcher.ByteProgressChanged += (sender, args) =>
+{
+    Console.WriteLine($"{args.ProgressedBytes} bytes / {args.TotalBytes} bytes");
+};
+```
+
+Add event handler. It prints download progress to console. See [Event Handling](Handling-Events.md)
+
+```csharp
 var versions = await launcher.GetAllVersionsAsync();
 foreach (var v in versions)
 {
     Console.WriteLine(v.Name);
 }
+```
 
-var process = await launcher.CreateProcessAsync("1.16.5", new MLaunchOption
+Get all version and print its names. See [Versions](versions.md)
+
+```csharp
+await launcher.InstallAsync("1.20.4");
+var process = await launcher.BuildProcessAsync("1.20.4", new MLaunchOption
 {
-    MaximumRamMb = 2048,
-    Session = MSession.GetOfflineSession("hello123"),
+    Session = MSession.CreateOfflineSession("Gamer123"),
+    MaximumRamMb = 4096
 });
-
 process.Start();
 ```
 
-### Explaination
+Install the game and build the game process and return it. See [Launch Options](MLaunchOption.md) for more launch options.
+
+!!! info "Installation Recommendation"
+    It is recommended to always call the InstallAsync method before launching, regardless of whether it is installed or not. The InstallAsync method checks all installed files and only downloads files that are corrupted or missing.
 
 ```csharp
-System.Net.ServicePointManager.DefaultConnectionLimit = 256;
+var processWrapper = new ProcessWrapper(process);
+processWrapper.OutputReceived += (s, e) => Console.WriteLine(e);
+processWrapper.StartWithEvents();
+
+var exitCode = await processWrapper.WaitForExitTaskAsync();
+Console.WriteLine($"Exited with code {exitCode}");
 ```
 
-Increase the maximum number of concurrent connections. This code would increase download speed.
+Launch the game process and output game logs to console. Wait for the game to exit and output the exit code. See [ProcessWrapper](../utilities/processwrapper.md)
+
+!!! info "Process Object"
+    The `process` variable is a standard .NET [Process](https://learn.microsoft.com/en-us/dotnet/api/system.diagnostics.process) object. You can launch it immediately with `process.Start();` without using `ProcessWrapper`.
+
+### More Methods
+
+Get all files to launch the version
 
 ```csharp
-var path = new MinecraftPath();
-var launcher = new CMLauncher(path);
+// by version name
+IEnumerable<GameFile> files = await launcher.ExtractFiles("1.20.4", cancellationToken);
 ```
 
-Create Minecraft directory structure and initialize launcher instance. You can change minecraft path and directory structure. See [MinecraftPath.md](MinecraftPath.md "mention")
-
 ```csharp
-launcher.FileChanged += (e) =>
-{
-    Console.WriteLine("FileKind: " + e.FileKind.ToString());
-    Console.WriteLine("FileName: " + e.FileName);
-    Console.WriteLine("ProgressedFileCount: " + e.ProgressedFileCount);
-    Console.WriteLine("TotalFileCount: " + e.TotalFileCount);
-};
-launcher.ProgressChanged += (s, e) =>
-{
-    Console.WriteLine("{0}%", e.ProgressPercentage);
-};
+// by IVersion 
+IVersion version = await launcher.GetVersionAsync("1.20.4", cancellationToken);
+IEnumerable<GameFile> files = await launcher.ExtractFiles(version, cancellationToken);
 ```
 
-Add event handler. It prints download progress to console. See [Handling-Events.md](Handling-Events.md "mention")
+Scan files and download any files that need to be downloaded
 
 ```csharp
-var versions = await launcher.GetAllVersionsAsync();
-foreach (var v in versions)
-{
-    Console.WriteLine(v.Name);
-}
+// report install progress to launcher.FileProgressChanged, launcher.ByteProgressChanged
+await launcher.InstallAsync("1.20.4", cancellationToken); // by version name
+await launcher.InstallAsync(version, cancellationToken); // by IVersion 
+
+// report install progress to fileProgress, byteProgress
+await launcher.InstallAsync("1.20.4", fileProgress, byteProgress, cancellationToken); // by version name 
+await launcher.InstallAsync(version, fileProgress, byteProgress, cancellationToken); // by IVersion 
 ```
 
-Get all version and print its names. See [VersionLoader.md](../more-apis/VersionLoader.md "mention")
+Build game process
 
 ```csharp
-var process = await launcher.CreateProcessAsync("1.16.5", new MLaunchOption
-{
-    MaximumRamMb = 2048,
-    Session = MSession.GetOfflineSession("hello123"),
-});
+// by version name
+Process process = await launcher.BuildProcessAsync("1.20.4", new MLaunchOption(), cancellationToken);
 ```
 
-Set launch options, check game files, download game files, and return minecraft `Process` instance. See [MLaunchOption.md](MLaunchOption.md "mention") for more launch options.
-
-## Offline mode
-
-{% hint style="info" %}
-This works only when all game files is normally installed.
-{% endhint %}
-
-In this mode, you can launch game without internet connection. Set `FileDownloader` to `null`, and set `VersionLoader` to `LocalVersionLoader`.
-
 ```csharp
-var launcher = new CMLauncher(path);
-
-launcher.VersionLoader = new LocalVersionLoader(launcher.MinecraftPath);
-launcher.FileDownloader = null;
-
-// ~~~
+// by IVersion
+IVersion version = await launcher.GetVersionAsync("1.20.4", cancellationToken);
+Process process = launcher.BuildProcess(version, new MLaunchOption());
 ```
 
-## Launch without checking / downloading
-
-{% hint style="info" %}
-This works only when all game files is normally installed.
-{% endhint %}
-
-This code launch game super fast. (< 1sec)
+Get the Java path required to launch the version
 
 ```csharp
-var process = await launcher.CreateProcessAsync("1.18.1", new MLaunchOption()
-{
-    // game options
-}, checkAndDownload: false);
-process.Start();
+IVersion version = await launcher.GetVersionAsync("1.20.4", cancellationToken);
+string? javaPath = await launcher.GetJavaPath(version);
+```
+
+Get the path to the first installed Java
+
+```csharp
+string? javaPath = await launcher.GetDefaultJavaPath();
 ```
 
 ## API References
 
-<details>
+??? abstract "Methods"
 
-<summary>Methods</summary>
-
-**MVersionCollection GetAllVersions()**
-
-Refresh version list and return them.
-
-**async Task GetAllVersionsAsync()**
-
-Async version of `GetAllVersions()`.
-
-**MVersion GetVersion(string versionname)**
-
-Get `MVersion` instance.
-
-**async Task GetVersionAsync(string versionname)**
-
-Get `MVersion` instance asynchronously.
-
-**DownloadFile\[] CheckLostGameFiles(MVersion version)**
-
-Check all game files and return file list that should be downloaded. It checks all game files using `IFileChecker` in `GameFileChekers` property, combines all game files that should be downloaded into array and return array.
-
-**async Task\<DownloadFile\[]> CheckLostGameFilesTaskAsync(MVersion version)**
-
-Asynchronous version of `CheckLostGameFiles` method.
-
-**async Task DownloadGameFiles(DownloadFile\[] files)**
-
-Download `files` using `FileDownloader` property.
-
-**void CheckAndDownload(MVersion version)**
-
-Check all game files and download files.
-
-**async Task CheckAndDownloadAsync(MVersion version)**
-
-Asynchrounous version of `CheckAndDownload` method.
-
-**Process CreateProcess(string versionName, MLaunchOption option, bool checkAndDownload=true)**
-
-Find `versionName` version from `Versions` property, check game files, and return game process.\
-If `checkAndDownload` argument is false, It does not check game files.\
-This method does not start game process. You should call `Start()` method of process.
-
-**Process CreateProcess(MVersion version, MLaunchOption option, bool checkAndDownload=false)**
-
-Check game files of `version` and return game process. If `checkAndDownload` argument is false, It does not check game files.\
-This method does not start game process. You should call `Start()` method of process.
-
-**async Task CreateProcessAsync(string versionName, MLaunchOption option, bool checkAndDownload=false)**
-
-Asynchrounous version of `CreateProcess(string versionName, MLaunchOption option)` method.
-
-**async Task CreateProcessAsync(MVersion version, MLaunchOption option, bool checkAndDownload=false)**
-
-Asynchrounous version of `CreateProcess(MVersion version, MLaunchOption option)` method.
-
-**Process CreateProcess(MLaunchOption option)**
-
-Create game process which game version is `StartVersion` property of `option`. This method does not check and download game files. This method does not start game process. You should call `Start()` method of process.
-
-**async Task CreateProcessAsync(MLaunchOption option)**
-
-Asynchrounous version of `CreateProcess(MLaunchOption option)` method.
-
-**Process CreateProcess(string mcversion, string forgeversion, MLaunchOption option)**
-
-(not stable)
-
-</details>
-
-<details>
-
-<summary>Properties</summary>
-
-**MinecraftPath**
-
-_Type: MinecraftPath_
-
-**Versions**
-
-_Type: MVersionCollection?_
-
-**VersionLoader**
-
-_Type: IVersionLoader_
-
-**GameFileCheckers**
-
-_Type: FileCheckerCollection_
-
-**FileDownloader**
-
-_Type: IDownloader?_
-
-</details>
+    **ValueTask InstallAndBuildProcessAsync(string versionName, MLaunchOption launchOption, CancellationToken cancellationToken = default)**

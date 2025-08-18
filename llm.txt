@@ -1,0 +1,37 @@
+# 1
+
+you have a mission: read all markdown files in /ko and fix errors.
+
+- remove unnecessary tooltips ("mention")
+- convert HTML to markdown
+- convert {% hint %} to Admonitions. we use python markdown extension. (??? or !!!)
+- fix small typo
+- escape > as \> but do not escape inside of codeblock or URL, and do not escape <
+- if hyperlink has no title, reference mkdocs.ko.yml to find its title. for example, replace [login-and-sessions](../login-and-sessions/README.md) to [로그인과 세션](../login-and-sessions/README.md)
+- DO NOT insert \ or <br> for linebreak. just let it be
+- DO NOT change the content of documents
+- if you find broken link or ambigious, let me know before working
+
+there are so many files that you may forgot which file is done and which file is not proceed yet.
+use `llm-checklist.txt` file as a checklist. process only unchecked files and skip checked files. mark 'check' after you've done each file.
+
+# 2
+
+you have a mission: find all hyperlinks in markdown documents in /ko directory and fix its title
+reference mkdocs.ko.yml to find its title and replace it. for example, replace [login-and-sessions](../login-and-sessions/README.md) to [로그인과 세션](../login-and-sessions/README.md)
+there are so many files in /ko so you may prefer write an regex script or something instead of reading every files.
+
+# 3
+
+I updated documents in /ko but I didn't update English version yet. please update english version. 
+
+RULES:
+- /en and /ko have a same directory structure.
+- remove unnecessary tooltips ("mention")
+- convert HTML to markdown
+- convert {% hint %} to Admonitions. we use python markdown extension. (??? or !!!)
+- fix small typo
+- escape > as \> but do not escape inside of codeblock or URL, and do not escape <
+- DO NOT insert \ or <br> for linebreak. just let it be
+- DO NOT change the content of documents
+- if you find broken link or ambigious, let me know before working

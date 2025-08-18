@@ -6,15 +6,15 @@ description: Provides the foundation for Xbox game authenticating.
 
 It provides common functionality for Xbox game authentication, including Microsoft OAuth, Xbox authentication, and account management.
 
-For example, the common functionality of [cmllib.core.auth.microsoft](../cmllib.core.auth.microsoft/ "mention") for logging into Minecraft Java Edition and [cmllib.core.bedrock.auth.md](../cmllib.core.bedrock.auth.md "mention") for logging into Badrock Edition are both provided by this library.
+For example, the common functionality of [CmlLib.Core.Auth.Microsoft](../cmllib.core.auth.microsoft/README.md) for logging into Minecraft Java Edition and [CmlLib.Core.Bedrock.Auth](../cmllib.core.bedrock.auth.md) for logging into Badrock Edition are both provided by this library.
 
 ## Authenticator
 
-### [oauth.md](oauth.md "mention")
+### [OAuth](oauth.md)
 
 Provides OAuth sign-in with a Microsoft account.
 
-### [xboxauth.md](xboxauth.md "mention")
+### [XboxAuth](xboxauth.md)
 
 Provides for Xbox authentication with a Microsoft OAuth token.
 
@@ -22,14 +22,14 @@ Provides for Xbox authentication with a Microsoft OAuth token.
 
 Authentication are designed to be easily extensible: you can easily add new authenticator, and you can freely reorder them.
 
-For example, there is extension library for Microsoft OAuth using MSAL library, [xboxauthnet.game.msal](../xboxauthnet.game.msal/ "mention").
+For example, there is extension library for Microsoft OAuth using MSAL library, [xboxauthnet.game.msal](../xboxauthnet.game.msal/README.md).
 
 ## Account
 
-### [accountmanager.md](accountmanager.md "mention")
+### [AccountManager](accountmanager.md)
 
 Manage account list.
 
-### [accounts.md](accounts.md "mention")
+### [Accounts](accounts.md)
 
 Manage each account.

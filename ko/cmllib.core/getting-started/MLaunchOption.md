@@ -7,155 +7,224 @@ description: MLaunchOption 클래스
 ## 예제
 
 ```csharp
-var launchOption = new MLaunchOption()
+var launchOption = new MLaunchOption 
 {
-    StartVersion = myversion,
-    Session = MSession.GetOfflineSession("tester123"),
+    Session = MSession.CreateOfflineSession("gamer123"),
+    Features = new string[] { "feature_name" },
 
-    Path = new MinecraftPath(),
-    MaximumRamMb = 4096,
     JavaPath = "javaw.exe",
-    JVMArguments = new string[] { },
+    MaximumRamMb = 4096,
+    MinimumRamMb = 1024,
+    DockName = "Minecraft",
+    DockIcon = "/path/icon.icns",
 
+    IsDemo = false,
+    ScreenWidth = 1600,
+    ScreenHeight = 900,
+    FullScreen = false,
+    QuickPlayPath = "/path/quickplay",
+    QuickPlaySingleplayer = "world name",
+    QuickPlayRealms = "realm id",
     ServerIp = "mc.hypixel.net",
     ServerPort = 25565,
 
-    ScreenWidth = 1600,
-    ScreenHeight = 900,
-
-    VersionType = "CmlLauncher",
-    GameLauncherName = "CmlLauncher",
+    ClientId = "clientid",
+    VersionType = "CmlLib",
+    GameLauncherName = "CmlLib",
     GameLauncherVersion = "2",
+    UserProperties = "{}",
 
-    FullScreen = false,
-
-    // Only macOS
-    DockName = "",
-    DockIcon = "",
+    ArgumentDictionary = new Dictionary<string, string>
+    {
+        { "key", "value" },
+        { "auth_xuid", "12345678" }
+    },
+    JvmArgumentOverrides = new MArgument[]
+    {
+        new MArgument("--key=value")
+    },
+    ExtraJvmArguments = new MArgument[]
+    {
+        new MArgument("--key=value"),
+        MArgument.FromCommandLine("-Dminecraft.api.env=custom -Dminecraft.api.auth.host=https://invalid.invalid -Dminecraft.api.account.host=https://invalid.invalid -Dminecraft.api.session.host=https://invalid.invalid -Dminecraft.api.services.host=https://invalid.invalid"),
+    },
+    ExtraGameArguments = new MArgument[]
+    {
+        new MArgument("--key=value"),
+        new MArgument(["--key1", "--key2", "value2"]),
+    }
 };
 ```
 
-## Properties
+### Session <a href="#session" id="session"></a>
 
-### StartVersion
+**Type: MSession**
 
-**Type: MVersion**
+[로그인과 세션](../login-and-sessions/README.md)을 참고하여 마인크래프트에 로그인하는 방법과 게임 세션을 가져오는 방법을 확인하세요.
 
-실행하려는 버전. `CMLauncher` 를 통해 게임을 실행하려는 경우 이 속성을 설정할 필요가 없습니다. `CMLauncher` 에서 자동으로 설정합니다.
+게임 세션 (Username, UUID, AccessToken, 등등). null 이 설정될 경우, 기본값으로 유저네임 `tester123` 이 설정됩니다.
 
-### Session
+### Features <a href="#features" id="features"></a>
 
-**Type: MSession** _선택_
+**Type: `IEnumerable<string>`**
 
-[login-and-sessions](../login-and-sessions/ "mention") 에서 마인크래프트에 로그인하고 세션을 가져오는 방법을 확인하세요.
+Enable features.
 
-플레이어의 유저이름, UUID, 엑세스토큰을 설정합니다. 렐름 서버나 정품 서버에 접속하기 위해서 사용됩니다. `MSession.GetOfflineSession` 으로 만든 세션은 정품 서버에 접속할 수 없습니다. `null` 을 설정한 경우 `ArgumentException` 예외가 발생합니다.
+### JavaPath <a href="#javapath" id="javapath"></a>
 
-### Path
+**Type: string**
 
-**Type: MinecraftPath** _선택_
+자바 바이너리 경로. null 이 설정될 경우 `ArgumentNullException` 이 발생합니다.
 
-실행할 폴더. `CMLauncher` 를 사용하는 경우 이 속성을 설정하지 않아도 됩니다.
+### MaximumRamMb <a href="#maximumrammb" id="maximumrammb"></a>
 
-### JavaVersion
+**Type: int**
 
-**Type: string** _선택_
+`-Xmx` JVM 파라미터. 마인크래프트의 최대 힙 사이즈를 지정합니다. 만약 음수가 설정되면 `ArgumentOutOfRangeException` 이 발생합니다. 기본값은 X64 에서 2048 (2GB), X86 에서 1024 (1GB) 입니다.
 
-자바 버전. 설정이 없으면 [FileChecker.md](../more-apis/FileChecker.md "mention") 가 자동으로 결정합니다.
+참고: 32bit 자바를 사용할 경우 이 값을 1024 보다 크게 설정할 수 없습니다.
 
-### JavaPath
+### MinimumRamMb <a href="#minimumrammb" id="minimumrammb"></a>
 
-**Type: string** _선택_
+**Type: int**
 
-자바 경로. 설정이 없으면 [FileChecker.md](../more-apis/FileChecker.md "mention") 가 자동으로 결정합니다.
+`-Xms` JVM 파라미터. 마인크래프트의 최소 힙 사이즈를 지정합니다. 만약 음수가 설정되거나 `MaximumRamMb` 보다 큰 값이 설정되면 `ArgumentOutOfRangeException` 이 발생합니다.
 
-### MaximumRamMb
+### DockName <a href="#dockname" id="dockname"></a>
 
-**Type: int** _선택_
+**Type: string**
 
-`-Xmx` 파라미터. 게임에서 사용하는 최대 힙 사이즈를 제한.\
-만약 이 속성의 값이 1보다 작다면 `ArgumentException` 예외가 발생합니다.\
-기본값은 1024. (1 GB)\
-_Note: 32bit 자바에서는 이 속성은 1024보다 높게 설정할 수 없습니다._
+macOS 에서의 Minecraft dock name. 일부 macOS 버전에서는 이 옵션을 반드시 설정해야 합니다. [알려진 문제](../resources/Common-Errors.md)
 
-### MinimumRamMb
+### DockIcon <a href="#dockicon" id="dockicon"></a>
 
-**Type: int** _선택_
+**Type: string**
 
-`-Xms` 파라미터. 게임에서 사용하는 최소 힙 사이즈를 제한.\
-만약 이 속성을 `MaximumRamMb` 보다 크게 설정하면 `ArgumentException` 예외가 발생합니다.
+macOS 에서의 Minecraft dock icon. `256x256` 크기와 `icns` 포멧을 가진 이미지 파일의 절대 경로를 나타냅니다.
 
-### VersionType
+### IsDemo <a href="#isdemo" id="isdemo"></a>
 
-**Type: string** _선택_
+**Type: bool**
 
-`${version_type}` 설정. 이 속성을 설정하지 않으면 `${version_type}` 는 실행할 `MVersion` 의 `TypeStr` 속성으로 설정됩니다.\
-이 속성을 설정할 경우 마인크래프트 메인 화면의 왼쪽 아래에 속성의 값이 표시됩니다. 모든 마인크래프트 버전이 이 옵션을 지원하지는 않습니다.
+`is_demo_user` 기능을 활성화하고 게임을 데모 버전으로 실행합니다.
 
-### GameLauncherName
+모든 버전이 이 옵션을 지원하지는 않습니다.
 
-**Type: string** _선택_
+### ScreenWidth / ScreenHeight <a href="#screenwidth-screenheight" id="screenwidth-screenheight"></a>
 
-`${launcher_name}` 설정. 기본값은 `minecraft-launcher` 이며 이 값은 모장 런처가 사용하는 값과 동일합니다.
+**Type: int**
 
-### GameLauncherVersion
+Minecraft 창 크기 설정. 두 옵션 모두 0보다 큰 값으로 설정될 경우 활성화됩니다. 만약 두 옵션 모두 0이라면게임에서 창 크기를 직접 정합니다. 만약 두 옵션의 값에 음수가 있을 경우 `ArgumentOutOfRangeException` 이 발생합니다.
 
-**Type: string** _선택_
+모든 버전이 이 옵션을 지원하지는 않습니다.
 
-`${launcher_version}` 설정. 기본값은 `2` 입니다.
+### FullScreen <a href="#fullscreen" id="fullscreen"></a>
 
-### ServerIp
+**Type: bool**
 
-**Type: string** _선택_
+Minecraft 를 전체 화면으로 실행합니다.
 
-마인크래프트 로딩이 끝나면 설정한 서버 주소로 즉시 접속합니다.\
-SRV 레코드를 사용할 경우 접속이 되지 않을 수 있습니다.
+모든 버전이 이 옵션을 지원하지는 않습니다.
 
-### ServerPort
+### QuickPlayPath <a href="#quickplaypath" id="quickplaypath"></a>
 
-**Type: int** _선택_
+**Type: string**
 
-`ServerIp` 속성을 설정하는 경우 접속할 포트를 선택합니다. 기본값은 25565 입니다.\
-값 범위 : `0-65535`
+`QuickPlayPath` 인수설정. [QuickPlay](https://minecraft.wiki/w/Quick_Play)
 
-### JVMArguments
+모든 버전이 이 옵션을 지원하지는 않습니다.
 
-**Type: string\[]** _선택_
+### QuickPlaySingleplayer <a href="#quickplaysingleplayer" id="quickplaysingleplayer"></a>
 
-JVM 파라미터. 이 속성이 `null` 일 경우 기본 JVM 파라미터를 선택합니다.\
-기본 JVM 파라미터:
+**Type: string**
+
+`QuickPlaySingleplayer` 인수 설정. [QuickPlay](https://minecraft.wiki/w/Quick_Play)
+
+모든 버전이 이 옵션을 지원하지는 않습니다.
+
+### QuickPlayRealms <a href="#quickplayrealms" id="quickplayrealms"></a>
+
+**Type: string**
+
+`QuickPlayRealms` 인수  설정. [QuickPlay](https://minecraft.wiki/w/Quick_Play)
+
+모든 버전이 이 옵션을 지원하지는 않습니다.
+
+### ServerIp / ServerPort <a href="#serverip-serverport" id="serverip-serverport"></a>
+
+**Type: string / int**
+
+게임 로딩이 끝나면 지정한 서버로 즉시 접속합니다. `ServerPort` 의 기본값은 25565 입니다. 만약 `ServerPort` 의 값이 올바른 포트 번호 (0-65535) 가 아니라면, `ArgumentOutOfRangeException` 예외가 발생합니다. 만약 실행할 버전이 [QuickPlay](https://minecraft.wiki/w/Quick_Play) 를 지원한다면, `QuickPlayMultiplayer` 기능을 활성화하고, 지원하지 않는 버전이라면 `--serverIp` 와 `--serverPort` 파라미터를 추가합니다.
+
+참고1: 모든 버전이 이 옵션을 지원하지는 않습니다.
+
+참고2: SRV 레코드를 가진 도메인을 설정할 경우 접속에 실패할 수 있습니다. SRV 레코드가 가리키는 실제 주소와 포트를 직접 설정하세요.
+
+### ClientId <a href="#clientid" id="clientid"></a>
+
+**Type: string**
+
+`${clientid}`
+
+### VersionType <a href="#versiontype" id="versiontype"></a>
+
+**Type: string**
+
+`${version_type}`. null 이 설정된 경우 실행할 버전의 `Type` 속성이 사용됩니다. 설정한 `VersionType` 은 게임 메인화면의 좌측 하단에 표시됩니다.
+
+모든 버전이 이 옵션을 지원하지는 않습니다.
+
+### GameLauncherName <a href="#gamelaunchername" id="gamelaunchername"></a>
+
+**Type: string**
+
+`${launcher_name}`. 기본값은 모장 런처와 같은`minecraft-launcher` 입니다.
+
+### GameLauncherVersion <a href="#gamelauncherversion" id="gamelauncherversion"></a>
+
+**Type: string**
+
+`${launcher_version}`. 기본값은 모장 런처와 같은 `2` 입니다.
+
+### UserProperties <a href="#userproperties" id="userproperties"></a>
+
+**Type: string**
+
+`${user_properties}`. 트위치 라이브스트리밍 기능
+
+### ArgumentDictionary <a href="#argumentdictionary" id="argumentdictionary"></a>
+
+**Type: `IReadOnlyDictionary<string, string>`**
+
+런처에서 실행 인수를 만드는 과정에서 `${variable_name}` 템플릿은 다른 문자열로 치환됩니다. 이 옵션은 `variable_name` 을 키로, 치환될 문자열을 값으로 하는 키-값 컬렉션을 지정합니다.
+
+### JVMArgumentOverrides <a href="#jvmargumentoverrides" id="jvmargumentoverrides"></a>
+
+**Type: `IEnumerable<MArgument>`**
+
+모든 JVM argument 를 이 옵션의 값으로 덮어씌웁니다. 이 옵션이 설정된 경우 `ExtraJVMArguments` 와 `JVMArguments` 의 값은 무시됩니다.
+
+[MArgument](../more-apis/margument.md) 참고
+
+### ExtraJVMArguments <a href="#extrajvmarguments" id="extrajvmarguments"></a>
+
+**Type: `IEnumerable<MArgument>`**
+
+추가 JVM argument 를 지정합니다. [MArgument](../more-apis/margument.md) 참고
+
+기본값은 다음과 같습니다:
 
 ```
--XX:+UnlockExperimentalVMOptions,
--XX:+UseG1GC,
--XX:G1NewSizePercent=20,
--XX:G1ReservePercent=20,
--XX:MaxGCPauseMillis=50,
+-XX:+UnlockExperimentalVMOptions
+-XX:+UseG1GC
+-XX:G1NewSizePercent=20
+-XX:G1ReservePercent=20
+-XX:MaxGCPauseMillis=50
 -XX:G1HeapRegionSize=16M
 ```
 
-### ScreenWidth / ScreenHeight
+### ExtraGameArguments <a href="#extragamearguments" id="extragamearguments"></a>
 
-**Type: int** _선택_
+**Type: `IEnumerable<MArgument>`**
 
-마인크래프트 창의 해상도를 설정합니다. 창 해상도 설정은 두 속성이 모두 0보다 커야 작동합니다. 옛날 버전의 경우 작동하지 않습니다.\
-두 값이 모두 0일 경우, 마인크래프트가 스스로 창 크기를 결정하도록 합니다.\
-두 속성 중 하나라도 음수일 경우, `ArgumentException` 이 발생합니다.
-
-### FullScreen
-
-**Type: bool** _선택_
-
-이 속성이 `true` 인 경우, 마인크래프트가 전체 화면으로 실행됩니다. 옛날 버전과 일부 포지 버전의 경우 이 옵션을 지원하지 않습니다.
-
-### DockName
-
-**Type: string** _선택_
-
-macOS 의 dock name 을 설정합니다. 일부 macOS 버전의 경우, 반드시 이 옵션을 설정해야 합니다. [Common-Errors.md](../resources/Common-Errors.md "mention")
-
-### DockIcon
-
-**Type: string** _선택_
-
-macOS 의 dock icon 을 설정합니다. 이 속성의 값은 `icns` 포맷의 `256x256` 사이즈를 가진 이미지 파일의 절대 경로로 설정해야 합니다.
+추가 game argument 를 지정합니다. [MArgument](../more-apis/margument.md) 참고

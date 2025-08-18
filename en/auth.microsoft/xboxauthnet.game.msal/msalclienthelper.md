@@ -12,7 +12,7 @@ using XboxAuthNet.Game.Msal;
 IPublicClientApplication app = await MsalClientHelper.BuildApplicationWithCache("<CLIENT-ID>");
 ```
 
-Fill your Azure App Id in `<CLIENT-ID>`. For more information, see the [clientid.md](clientid.md "mention").
+Fill your Azure App Id in `<CLIENT-ID>`. For more information, see the [ClientID](clientid.md).
 
 ## CreateDefaultApplicationBuilder(string cid)
 

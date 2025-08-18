@@ -2,10 +2,12 @@
 
 ## 게임 출력 가져오기 (logs)
 
-게임 프로세스의 표준 입출력을 통해 프로세스의 상태와 로그를 쉽게 얻을 수 있습니다.\
+게임 프로세스의 표준 입출력을 통해 프로세스의 상태와 로그를 쉽게 얻을 수 있습니다.
 `CreateProcess` 메서드가 .NET 에서 제공하는 `Process` 인스턴스를 반환하기 때문에, `Process` 의 모든 API 를 사용할 수 있습니다. ([reference](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.process?view=net-6.0))
 
 ```csharp
+process.StartInfo.CreateNoWindow = false;
+process.StartInfo.UseShellExecute = false;
 process.StartInfo.RedirectStandardError = true;
 process.StartInfo.RedirectStandardOutput = true;
 process.EnableRaisingEvents = true;
@@ -21,7 +23,7 @@ process.BeginOutputReadLine();
 
 ## 커스텀 클라이언트 실행
 
-두 파일이 필요합니다: `<버전_이름>.jar`, `<버전_이름>.json`.\
+두 파일이 필요합니다: `<버전_이름>.jar`, `<버전_이름>.json`.
 두 파일을 `<게임_폴더>/versions/<버전_이름>` 디렉토리에 넣으세요.
 
 예시)

@@ -1,128 +1,75 @@
 ---
-description: Show launching progress to user
+description: Show installer progress to user
 ---
 
 # Event Handling
 
-When you want to show progress to users, add event handlers.\
-CmlLib.Core uses only two event handlers.\
-[`DownloadFileChangedHandler`](Handling-Events.md#DownloadFileChangedEventHandler) is used when the **file** being downloaded changes. (ex: file counts)\
-[`ProgressChangedEventHandler`](https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.progresschangedeventhandler?view=netcore-3.1) is used when the **progress** of the file currently being downloaded changes. (ex: byte progress)
+The game installer provides two types of event:
 
-### Example
+* `FileProgress` indicates the name, type, and number of files in progress.
+* `ByteProgress` indicates the size of files processed / the size of all files in bytes.
 
-```csharp
-// add event handlers
-var launcher = new CMLauncher(new MinecraftPath());
-launcher.FileChanged += Launcher_FileChanged;
-launcher.ProgressChanged += Launcher_ProgressChanged;
-```
+And there are two ways to register an event handler:
 
-```csharp
-// event handler
-private void Launcher_FileChanged(DownloadFileChangedEventArgs e)
-{
-    Console.WriteLine("FileKind: " + e.FileKind.ToString());
-    Console.WriteLine("FileName: " + e.FileName);
-    Console.WriteLine("TotalFileCount: " + e.TotalFileCount);
-    Console.WriteLine("ProgressedFiles: " + e.ProgressedFileCount);
-}
+* Pass `IProgress<>` to the method of the game installer.
+* Register event handler. (will be invoked on the current `SynchronizationContext`, so it is safe to access UI components)
 
-private void Launcher_ProgressChanged(object sender, System.ComponentModel.ProgressChangedEventArgs e)
-{
-    Console.WriteLine("{0}%", e.ProgressPercentage);
-}
-```
+If the `IProgress<>` is passed to the method, any event handlers will be ignored.  
 
-## DownloadFileChangedEventHandler
-
-`public delegate void DownloadFileChangedHandler(DownloadFileChangedEventArgs e);`
-
-Represents the method that will handle download progress events.
-
-[DownloadFileChangedEventArgs](Handling-Events.md#DownloadFileChangedEventArgs) contains the download progress.
-
-## DownloadFileChangedEventArgs
-
-Represents the download progress data of `IDownloader`.
-
-[Source Code](https://github.com/CmlLib/CmlLib.Core/blob/master/CmlLib/Core/Downloader/DownloadFileChangedEventArgs.cs)
-
-### Properties
-
-#### FileKind
-
-_Type:_ [_MFile_](Handling-Events.md#MFile)
-
-Specifies the type of file currently being downloaded.
-
-#### FileName
-
-_Type: string_
-
-The name of the file currently being downloaded.\
-_Note: if FileKind is equal to MFile.Resource, this property would be an empty string._
-
-#### Source
-
-_Type: object_
-
-The source of event. You can determine what object raised the event.\
-Example:
+### Example (with IProgress)
 
 ```csharp
-if (e.Source is IFileChecker)
-{
-    // raised by IFileChecker
-    // game file checking
-}
-else if (e.Source is IDownloader)
-{
-    // raised by IDownloader
-    // file downloading
-}
-else
-{
-    // etc (MForge, or )
-}
+var launcher = new MinecraftLauncher();
+await launcher.InstallAsync(
+    "1.20.4", 
+    new Progress<InstallerProgressChangedEventArgs>(e =>
+    {
+        Console.WriteLine("Name: " + e.Name);
+        Console.WriteLine("EventType: " + e.EventType);
+        Console.WriteLine("TotalTasks: " + e.TotalTasks);
+        Console.WriteLine("ProgressedTasks: " + e.ProgressedTasks);
+    }),
+    new Progress<ByteProgress>(e =>
+    {
+        Console.WriteLine("TotalBytes: " + e.TotalBytes);
+        Console.WriteLine("ProgressedBytes: " + e.ProgressedBytes);
+        Console.WriteLine("Percentage: " + e.ToRatio() * 100);
+    }),
+    CancellationToken.None);
 ```
 
-#### TotalFileCount;
+### Example (with Event handler)
 
-_Type: int_
+```csharp
+var launcher = new MinecraftLauncher();
+launcher.FileProgressChanged += (_, e) =>
+{
+    Console.WriteLine("Name: " + e.Name);
+    Console.WriteLine("EventType: " + e.EventType);
+    Console.WriteLine("TotalTasks: " + e.TotalTasks);
+    Console.WriteLine("ProgressedTasks: " + e.ProgressedTasks);
+};
+launcher.ByteProgressChanged += (_, e) =>
+{
+    Console.WriteLine("TotalBytes: " + e.TotalBytes);
+    Console.WriteLine("ProgressedBytes: " + e.ProgressedBytes);
+    Console.WriteLine("Percentage: " + e.ToRatio() * 100);
+};
+await launcher.InstallAsync("1.20.4", CancellationToken.None);
+```
 
-The total number of files to download.
+## Performance Tips
 
-#### ProgressedFileCount;
+`FileProgress` is called very frequently (4000 to 8000 times each time InstallAsync is called), so if you put time-consuming tasks in the event handler, it can affect the performance of your program. `ByteProgress`, on the other hand, is only called 3-4 times per second, so it's relatively less sensitive to performance.
 
-_Type: int_
+When you register an event handler, it is internally converted to a `new Progress<T>(handler)`.  [Progress<T\>](https://learn.microsoft.com/en-us/dotnet/api/system.progress-1?view=net-8.0) will have different behavior depending on the current SynchronizationContext. If it's a WinForm or WPF app, the handler's code will run in the UI thread, and if it's a console app, it will run in the ThreadPool.
 
-The number of files already downloaded.
+So if you use an event handler in a console app, you'll be making a lot of calls to the ThreadPool. This can have a bad impact on the performance of your application, so either don't use `FileProgress`, or implement `IProgress<T>`, which doesn't use ThreadPool. The library provides `SyncProgress<T>`, which runs the handler directly on the thread that called the event. `SyncProgress<T>` should not directly access the UI and should contain as little code as possible.
 
-## ProgressChangedEventHandler
-
-[docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.progresschangedeventhandler?view=netcore-3.1)
-
-## MFile
-
-Indicates the game file type.
-
-`public enum MFile { Runtime, Library, Resource, Minecraft };`
-
-### Fields
-
-#### Runtime
-
-Java runtime. `CMLauncher.CheckJRE()` raises `FileChange` event with this type.
-
-#### Library
-
-Libraries (GAME\_DIR/libraries)
-
-#### Resource
-
-Resources and assets (GAME\_DIR/assets)
-
-#### Minecraft
-
-Minecraft jar file (GAME\_DIR/versions)
+```csharp
+// example
+IProgress<InstallerProgressChangedEventArgs> fileProgress = new SyncProgress<InstallerProgressChangedEventArgs>(e => 
+{ 
+    Console.WriteLine($"{e.ProgressedTasks} / {e.TotalTasks}");
+});
+```

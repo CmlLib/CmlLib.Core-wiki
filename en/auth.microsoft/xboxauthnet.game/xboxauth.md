@@ -21,8 +21,8 @@ authenticator.AddXboxAuthForJE(xbox => xbox.Basic());
 
 This is the most basic method. It only gets the minimum information (UserToken, XstsToken) needed to log in.
 
-Accounts that are not age-verified, and accounts that are under the age of 18 may experience issues when logging in this way (error codes `8015dc0c`, `8015dc0d`, `8015dc0e`).\
-You can work around this by using the [#full](xboxauth.md#full "mention") method or the [#sisu](xboxauth.md#sisu "mention") method.
+Accounts that are not age-verified, and accounts that are under the age of 18 may experience issues when logging in this way (error codes `8015dc0c`, `8015dc0d`, `8015dc0e`).  
+You can work around this by using the [#full](xboxauth.md#full) method or the [#sisu](xboxauth.md#sisu) method.
 
 ## Full
 
@@ -61,4 +61,4 @@ When using a authentication method that gets a DeviceToken, you can apply the De
 
 There are various error scenarios when authenticating with Xbox. If an error occurs during authentication, an `XboxAuthException` is thrown and you can get an ErrorCode and ErrorMessage.
 
-All ErrorCodes can be found [xboxauthexception.md](xboxauthexception.md "mention").
+All ErrorCodes can be found [XboxAuthException](xboxauthexception.md).

@@ -7,155 +7,210 @@ description: Set launch options
 ## Example
 
 ```csharp
-var launchOption = new MLaunchOption()
+var launchOption = new MLaunchOption 
 {
-    StartVersion = myversion,
-    Session = MSession.GetOfflineSession("tester123"),
+    Session = MSession.CreateOfflineSession("gamer123"),
+    Features = new string[] { "feature_name" },
 
-    Path = new MinecraftPath(),
-    MaximumRamMb = 4096,
     JavaPath = "javaw.exe",
-    JVMArguments = new string[] { },
+    MaximumRamMb = 4096,
+    MinimumRamMb = 1024,
+    DockName = "Minecraft",
+    DockIcon = "/path/icon.icns",
 
+    IsDemo = false,
+    ScreenWidth = 1600,
+    ScreenHeight = 900,
+    FullScreen = false,
+    QuickPlayPath = "/path/quickplay",
+    QuickPlaySingleplayer = "world name",
+    QuickPlayRealms = "realm id",
     ServerIp = "mc.hypixel.net",
     ServerPort = 25565,
 
-    ScreenWidth = 1600,
-    ScreenHeight = 900,
-
-    VersionType = "CmlLauncher",
-    GameLauncherName = "CmlLauncher",
+    ClientId = "clientid",
+    VersionType = "CmlLib",
+    GameLauncherName = "CmlLib",
     GameLauncherVersion = "2",
-
-    FullScreen = false,
-
-    // Only macOS
-    DockName = "",
-    DockIcon = "",
+    UserProperties = "{}",
+    
+    ArgumentDictionary = new Dictionary<string, string>
+    {
+        { "key", "value" },
+        { "auth_xuid", "12345678" }
+    },
+    JvmArgumentOverrides = new MArgument[]
+    {
+        new MArgument("--key=value")
+    },
+    ExtraJvmArguments = new MArgument[]
+    {
+        new MArgument("--key=value"),
+        MArgument.FromCommandLine("-Dminecraft.api.env=custom -Dminecraft.api.auth.host=https://invalid.invalid -Dminecraft.api.account.host=https://invalid.invalid -Dminecraft.api.session.host=https://invalid.invalid -Dminecraft.api.services.host=https://invalid.invalid"),
+    },
+    ExtraGameArguments = new MArgument[]
+    {
+        new MArgument("--key=value"),
+        new MArgument(["--key1", "--key2", "value2"]),
+    }
 };
 ```
 
-## Properties
-
-### StartVersion
-
-**Type: MVersion**
-
-The version you want to launch. If you launch the game using `CMLauncher`, you don't have to set this property. `CMLauncher` will automatically get the version and set this.
-
 ### Session
 
-**Type: MSession** _Optional_
+**Type: MSession**
 
-See [login-and-sessions](../login-and-sessions/ "mention") for how to log in Minecraft and get game session.
+See [Login and Session](../login-and-sessions/README.md) for how to log in Minecraft and get game session.
 
-Set the username, uuid, and access\_token of the player. It is used to connect to an online-mode server or a realm. A session created by `MSession.GetOfflineSession` can't connect these servers. If the value of this property is null, an `ArgumentException` will be thrown.
+Game session (Username, UUID, AccessToken, etc...). If the value is null, the default session with username `tester123` is used.
 
-### Path
+### Features
 
-**Type: MinecraftPath** _Optional_
+**Type: `IEnumerable<string>`**
 
-Sets base directory for launching. You should not set this property if you use `CMLauncher`.
-
-### JavaVersion
-
-**Type: string** _Optional_
-
-Sets the java version. It overrides default java version. The default java version is determined by [FileChecker.md](../more-apis/FileChecker.md "mention").
+Enable features.
 
 ### JavaPath
 
-**Type: string** _Optional_
+**Type: string**
 
-Sets the java path. It overrides default java binary path. The default java binary path is determined by [FileChecker.md](../more-apis/FileChecker.md "mention").
+Java binary path. If the value is null, `ArgumentNullException` is thrown.
 
 ### MaximumRamMb
 
-**Type: int** _Optional_
+**Type: int**
 
-Sets the `-Xmx` JVM parameter. It is used to set the maximum heap size of Minecraft.\
-If the value of this property is less than 1, `ArgumentException` will be thrown.\
-The default value is 1024. (1 GB) _Note: You can't set this property to any number higher than 1024 when using 32bit Java._
+`-Xmx` JVM parameter. It is used to set the maximum heap size of Minecraft.
+If the value is a negative value, `ArgumentOutOfRangeException` is thrown.
+The default value is 2048 (2GB) for X64, 1024 (1GB) for other platforms. _Note: You can't set this property to any number higher than 1024 when using 32bit Java._
 
 ### MinimumRamMb
 
-**Type: int** _Optional_
+**Type: int**
 
-Sets the `-Xms` JVM parameter. It is used to set the minimum heap size of Minecraft.\
-If you set this property higher than `MaximumRamMb`, `ArgumentException` will be thrown.
-
-### VersionType
-
-**Type: string** _Optional_
-
-Sets `${version_type}`. An empty value will set `${version_type}` to the `TypeStr` property of the `MVersion` class.\
-VersionType will be shown bottom left of main menu in minecraft. Old minecraft version doesn't support this option.
-
-### GameLauncherName
-
-**Type: string** _Optional_
-
-Sets `${launcher_name}`. An empty value will set `${launcher_name}` to `minecraft-launcher`, which is the same as the default value of the Mojang launcher.
-
-### GameLauncherVersion
-
-**Type: string** _Optional_
-
-Sets `${launcher_version}`. An empty value will set `${launcher_name}` to `2`, which is the same as the default value of the Mojang launcher.
-
-### ServerIp
-
-**Type: string** _Optional_
-
-Connecting to a server directly when Minecraft is loading is done.\
-This option doesn't work in 1.15. It's a Minecraft bug.\
-You can't use SRV record.
-
-### ServerPort
-
-**Type: int** _Optional_
-
-Sets the server port of the `ServerIp` property. The default value is 25565. Valid range : `0-65535`
-
-### JVMArguments
-
-**Type: string\[]** _Optional_
-
-Sets the JVM parameters. If this property is `null`, the launcher uses the default JVM parameters.\
-Default JVM parameters:
-
-```
--XX:+UnlockExperimentalVMOptions,
--XX:+UseG1GC,
--XX:G1NewSizePercent=20,
--XX:G1ReservePercent=20,
--XX:MaxGCPauseMillis=50,
--XX:G1HeapRegionSize=16M
-```
-
-### ScreenWidth / ScreenHeight
-
-**Type: int** _Optional_
-
-Sets the resolution of Minecraft. It works when value of the two options is bigger than 0. Old Minecraft versions don't support these options.\
-If value of the two options is 0, use default setting of minecraft. If one of these options is negative, `ArgumentException` will be thrown.
-
-### FullScreen
-
-**Type: bool** _Optional_
-
-If this property is true, Minecraft will be fullscreen (not permanently).\
-Old Minecraft versions don't support this option.\
-Some forge versions also don't support this option.
+`-Xms` JVM parameter. It is used to set the minimum heap size of Minecraft. If the value is a negative value or greater than `MaximumRamMb`, `ArgumentOutOfRangeException` is thrown.
 
 ### DockName
 
-**Type: string** _Optional_
+**Type: string**
 
-Sets the macOS dock name of Minecraft. In some macOS versions, you must set this option. [Common-Errors.md](../resources/Common-Errors.md "mention")
+macOS dock name of Minecraft. In some macOS versions, you must set this option. [Known Issues](../resources/Common-Errors.md)
 
 ### DockIcon
 
-**Type: string** _Optional_
+**Type: string**
 
-Sets the macOS dock icon of minecraft. It should be an absolute file path to an image that has the dimensions `256x256` and is of the `icns` format.
+macOS dock icon of minecraft. It should be an absolute file path to an image that has the dimensions `256x256` and is of the `icns` format.
+
+### IsDemo
+
+**Type: bool**
+
+Enable `is_demo_user` feature and launch a game in demo version.
+
+### ScreenWidth / ScreenHeight
+
+**Type: int**
+
+Initial window size of Minecraft. It works if the value of the two options is greater than 0. If the value of both options is 0, let the game decide the window size. If one of these options is negative, `ArgumentOutOfRangeException` will be thrown. Not all versions of Minecraft support this option.
+
+### FullScreen
+
+**Type: bool**
+
+Launch Minecraft as full screen. Not all versions of Minecraft support this option.
+
+### QuickPlayPath
+
+**Type: string**
+
+Set `QuickPlayPath` argument. [QuickPlay](https://minecraft.wiki/w/Quick_Play)
+
+### QuickPlaySingleplayer
+
+**Type: string**
+
+Set `QuickPlaySingleplayer` argument. [QuickPlay](https://minecraft.wiki/w/Quick_Play)
+
+### QuickPlayRealms
+
+**Type: string**
+
+Set `QuickPlayRealms` argument. [QuickPlay](https://minecraft.wiki/w/Quick_Play)
+
+### ServerIp / ServerPort
+
+**Type: string / int**
+
+Connecting to a server directly when Minecraft is loading is done. The default value of `ServerPort` is 25565. If `ServerPort` is not a valid port number (0-65535), `ArgumentOutOfRangeException` is thrown. If the starting version supports [QuickPlay](https://minecraft.wiki/w/Quick_Play), the launcher will enable QuickPlayMultiplayer feature, otherwise the launcher will append `--serverIp` and `--serverPort` arguments.
+
+_note1: Not all versions of Minecraft support this option._
+
+_note2: If you set a domain with an SRV record, the connection may fail. Set the actual address and port that the SRV record points to directly._
+
+### ClientId
+
+**Type: string**
+
+`${clientid}`
+
+### VersionType
+
+**Type: string**
+
+`${version_type}`. If the value is null, the `Type` property of the starting version is used. VersionType is displayed in the lower left corner of the main screen. Not all versions of Minecraft support this.
+
+### GameLauncherName
+
+**Type: string**
+
+`${launcher_name}`. The default value is `minecraft-launcher` , which is the same as the Mojang launcher.
+
+### GameLauncherVersion
+
+**Type: string**
+
+`${launcher_version}`. The default value is `2`, which is the same as the Mojang launcher.
+
+### UserProperties
+
+**Type: string**
+
+`${user_properties}`. for Twitch livestreaming
+
+### ArgumentDictionary
+
+**Type: `IReadOnlyDictionary<string, string>`**
+
+When building an argument in the launcher, `${variable_name}` will be replaced with the appropriate value. This option specifies `variable_name` as the key and the string to be replaced as the value.
+
+### JVMArgumentOverrides
+
+**Type: `IEnumerable<MArgument>`**
+
+Override all JVM arguments. When this option is not null, `ExtraJVMArguments` and `JVMArguments` are ignored.
+
+See [MArgument](../more-apis/margument.md)
+
+### ExtraJVMArguments
+
+**Type: `IEnumerable<MArgument>`**
+
+Set extra JVM arguments. See [MArgument](../more-apis/margument.md)
+
+Default arguments are:
+
+```
+-XX:+UnlockExperimentalVMOptions
+-XX:+UseG1GC
+-XX:G1NewSizePercent=20
+-XX:G1ReservePercent=20
+-XX:MaxGCPauseMillis=50
+-XX:G1HeapRegionSize=16M
+```
+
+### ExtraGameArguments
+
+**Type: `IEnumerable<MArgument>`**
+
+Set extra game arguments. See [MArgument](../more-apis/margument.md)

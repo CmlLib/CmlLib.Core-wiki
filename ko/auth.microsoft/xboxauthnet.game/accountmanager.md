@@ -6,9 +6,8 @@ description: 여러 계정 관리
 
 여러 계정을 관리하는 방법을 설명합니다. 각 계정은 `identifier` 이라는 고유한 값으로 식별됩니다.
 
-{% hint style="info" %}
-마인크래프트: 자바 에디션 계정에 대한 정보는 [jeloginhandler.md](../cmllib.core.auth.microsoft/jeloginhandler.md "mention")에 더 자세히 설명되어 있습니다.
-{% endhint %}
+!!! info
+    마인크래프트: 자바 에디션 계정에 대한 정보는 [JELoginHandler](../cmllib.core.auth.microsoft/jeloginhandler.md)에 더 자세히 설명되어 있습니다.
 
 ## 모든 계정 불러오기
 

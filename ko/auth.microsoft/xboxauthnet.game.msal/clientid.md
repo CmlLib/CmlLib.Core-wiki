@@ -14,8 +14,8 @@ Add - App Registration
 
 ![image](https://user-images.githubusercontent.com/17783561/154855003-4f5fc4ea-7083-47f9-818d-72216a548c27.png)
 
-Name: your app name\
-Account type: Accounts in any organizational directory (Any Azure AD directory - Multitenant) and personal Microsoft accounts (e.g. Skype, Xbox)\
+Name: your app name
+Account type: Accounts in any organizational directory (Any Azure AD directory - Multitenant) and personal Microsoft accounts (e.g. Skype, Xbox)
 Redirect URI: Public client/native, http://localhost
 
 ![image](https://user-images.githubusercontent.com/17783561/154855171-2198b328-9457-46e3-89b8-b1e295bfb5bd.png)
@@ -28,7 +28,7 @@ Go to App registrations - your app name
 
 ![image](https://user-images.githubusercontent.com/17783561/154855363-17386531-4fb6-4fa3-aab2-3dc1ed954d48.png)
 
-**In this screen, you can get Application (Client) ID**\
+**In this screen, you can get Application (Client) ID**
 Click Redirect URIs
 
 ![image](https://user-images.githubusercontent.com/17783561/154855473-19713858-8c6e-49f0-ab13-51c33fc245fb.png)
@@ -45,6 +45,6 @@ Click 'Save' button
 
 ## 4. Client ID 등록하기
 
-{% embed url="https://help.minecraft.net/hc/en-us/articles/16254801392141" %}
+https://help.minecraft.net/hc/en-us/articles/16254801392141
 
-{% embed url="https://github.com/CmlLib/CmlLib.Core.Auth.Microsoft/issues/16" %}
+https://github.com/CmlLib/CmlLib.Core.Auth.Microsoft/issues/16

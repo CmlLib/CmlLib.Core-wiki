@@ -17,7 +17,7 @@ var loginHandler = JELoginHandlerBuilder.BuildDefault();
 var session = await loginHandler.Authenticate();
 ```
 
-여기서 얻은 session 변수를 [MLaunchOption.md](../../cmllib.core/getting-started/MLaunchOption.md "mention")의 `Session` 속성으로 설정하세요.
+여기서 얻은 session 변수를 [실행 옵션 설정](../../cmllib.core/getting-started/MLaunchOption.md)의 [Session](../../cmllib.core/getting-started/MLaunchOption.md#session) 속성으로 설정하세요.
 
 ## 예제
 
@@ -29,14 +29,14 @@ var session = await loginHandler.Authenticate();
 
 ## 사용 방법
 
-### [jeloginhandler.md](jeloginhandler.md "mention")
+### [JELoginHandler](jeloginhandler.md)
 
 로그인, 로그아웃 기능과 계정 관리 기능을 제공합니다.
 
-### [jeloginhandlerbuilder.md](jeloginhandlerbuilder.md "mention")
+### [JELoginHandlerBuilder](jeloginhandlerbuilder.md)
 
 JELoginHandler 의 인스턴스를 만들어 주는 객체입니다.
 
-### [accountmanager.md](../xboxauthnet.game/accountmanager.md "mention")
+### [AccountManager](../xboxauthnet.game/accountmanager.md)
 
 여러 계정을 저장하고 불러올 수 있습니다.

@@ -2,11 +2,11 @@
 
 MSAL 을 통해 Microsoft OAuth 를 진행하는 방법을 제공합니다.
 
-먼저 [clientid.md](clientid.md "mention") 를 통해 [IPublicClientAppliction 를 초기화](msalclienthelper.md)해야 합니다.
+먼저 [ClientID](clientid.md) 를 통해 [IPublicClientAppliction 를 초기화](msalclienthelper.md)해야 합니다.
 
 ## 예시
 
-[jeloginhandler.md](../cmllib.core.auth.microsoft/jeloginhandler.md "mention") 에서 MSAL OAuth 를 사용한 예시입니다.
+[JELoginHandler](../cmllib.core.auth.microsoft/jeloginhandler.md) 에서 MSAL OAuth 를 사용한 예시입니다.
 
 ```csharp
 using XboxAuthNet.Game.Msal;

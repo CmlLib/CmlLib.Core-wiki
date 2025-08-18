@@ -10,4 +10,4 @@ Install nuget package `CmlLib.Core.Bedrock.Auth`.
 
 [Example](https://github.com/CmlLib/CmlLib.Core.Auth.Microsoft/blob/dev/tests/CmlLib.Core.Bedrock.Auth.Test/Sample.cs)
 
-See [cmllib.core.auth.microsoft](cmllib.core.auth.microsoft/ "mention") for details.
+See [CmlLib.Core.Auth.Microsoft](cmllib.core.auth.microsoft/README.md) for details.

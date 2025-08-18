@@ -6,9 +6,8 @@ description: Manage multiple accounts
 
 Describes how to manage multiple accounts. Each account is identified by a unique value called `identifier`.
 
-{% hint style="info" %}
-For more methods for Minecraft: Java Edition account, see [jeloginhandler.md](../cmllib.core.auth.microsoft/jeloginhandler.md "mention").
-{% endhint %}
+!!! info "Minecraft: Java Edition Accounts"
+    For more methods for Minecraft: Java Edition account, see [JELoginHandler](../cmllib.core.auth.microsoft/jeloginhandler.md).
 
 ## Get All Accounts
 

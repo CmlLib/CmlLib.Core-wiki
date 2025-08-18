@@ -1,27 +1,5 @@
 # Known Issues
 
-### Game crashed with Offline session (1.20\~)
-
-Use below code to create offline session.
-
-```csharp
-public static MSession CreateFakeSession(string username)
-{
-    return new MSession
-    {
-        Username = username,
-        UUID = "2749420bc7a54b05ab622b34e61b8a79", // fake UUID
-        AccessToken = "accesstoken", // fake access token
-        UserType = "Mojang"
-    };
-}
-
-// usage:
-// var session = CreateFakeSession("username123");
-```
-
-[ref](https://github.com/CmlLib/CmlLib.Core/issues/88)
-
 ### Can't load some texture in loading screen when using \`ServerIP\` option
 
 * [\[BUG\] When i provide server ip and port for auto connect to server on startup, the background does not load in 1.16.5 OptiFine](https://github.com/CmlLib/CmlLib.Core/issues/93)
@@ -37,15 +15,15 @@ Your xbox account would block multiplay feature. Check your account settings. [M
 
 [https://github.com/CmlLib/CmlLib.Core/issues/85](https://github.com/CmlLib/CmlLib.Core/issues/85)
 
-### Cannot find version \<version\_name>
+### Cannot find version `<version\_name>`
 
 Make sure that Mojang launcher can find your version and launch your version without any problem. CmlLib.Core will not able to find or launch the version which Mojang launcher can't.
 
 If this exception throws even target version is in versions directory (default: `<Your Minecraft Path>/versions`), check version directory name, version json file file, and `id` property is all same.\
 For example, assume you want to launch your own version named `myversion`. your version json file should be in `versions/myversion/myversion.json` and the `id` property of `myversion.json` should be `myversion`. so directory name `myversion` and the json file name `myversion.json` and the value of `id` property `myversion` is all same.
 
-If the launcher still throw this exception, call `launcher.GetAllVersions()` method before `launcher.CreateProcess`.\
-If you add new version into the version directory after the launcher is initialized, you should update version list through `GetAllVersions()` or `GetAllVersionsAsync()` method.
+If the launcher still throw this exception, call `launcher.GetAllVersionsAsync()` method before `launcher.BuildProcess`.\
+If you add new version into the version directory after the launcher is initialized, you should update version list through `GetAllVersionsAsync()` method.
 
 ### Could not create Java Virtual Machine
 

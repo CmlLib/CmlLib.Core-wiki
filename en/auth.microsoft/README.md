@@ -8,18 +8,18 @@ This documentation is out of date. The 3.1.0 documentation is [here](https://alp
 
 Version: 3.0.0
 
-## [cmllib.core.auth.microsoft](cmllib.core.auth.microsoft/ "mention")
+## [CmlLib.Core.Auth.Microsoft](cmllib.core.auth.microsoft/README.md)
 
 Log into Minecraft: Java Edition with a Microsoft Xbox account.
 
-## [cmllib.core.bedrock.auth.md](cmllib.core.bedrock.auth.md "mention")
+## [CmlLib.Core.Bedrock.Auth](cmllib.core.bedrock.auth.md)
 
 Issue authentication tokens to access Minecraft: Bedrock Edition servers with a Microsoft Xbox account.
 
-## [xboxauthnet.game](xboxauthnet.game/ "mention")
+## [XboxAuthNet.Game](xboxauthnet.game/README.md)
 
 Provides functionality commonly used by `CmlLib.Core.Auth.Microsoft` and `CmlLib.Core.Bedrock.Auth`.
 
-## [xboxauthnet.game.msal](xboxauthnet.game.msal/ "mention")
+## [XboxAuthNet.Game.Msal](xboxauthnet.game.msal/README.md)
 
 By default, `CmlLib.Core.Auth.Microsoft` and `CmlLib.Core.Bedrock.Auth` only work on Windows. XboxAuthNet.Game.Msal\` provides extensions for use on other platforms such as Linux and macOS.

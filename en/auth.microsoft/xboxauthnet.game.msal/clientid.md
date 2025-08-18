@@ -45,6 +45,6 @@ Click 'Save' button
 
 ## 4. Register Client ID
 
-{% embed url="https://help.minecraft.net/hc/en-us/articles/16254801392141" %}
+https://help.minecraft.net/hc/en-us/articles/16254801392141
 
-{% embed url="https://github.com/CmlLib/CmlLib.Core.Auth.Microsoft/issues/16" %}
+https://github.com/CmlLib/CmlLib.Core.Auth.Microsoft/issues/16

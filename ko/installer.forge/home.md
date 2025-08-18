@@ -6,7 +6,7 @@
 
 [GitHub](https://github.com/CmlLib/CmlLib.Core.Installer.Forge)
 
-[CmlLib.Core](../cmllib.core/) 를 위한 포지 모드 로더 인스톨러.
+[CmlLib.Core](../cmllib.core/README.md) 를 위한 포지 모드 로더 인스톨러.
 
 ## Features
 

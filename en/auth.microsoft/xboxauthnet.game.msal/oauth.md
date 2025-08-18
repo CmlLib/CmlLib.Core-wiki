@@ -6,7 +6,7 @@ You MUST initialize an [IPublicClientApplication](msalclienthelper.md) via [YOUR
 
 ## Example
 
-[jeloginhandler.md](../cmllib.core.auth.microsoft/jeloginhandler.md "mention") with MSAL OAuth.
+[JELoginHandler](../cmllib.core.auth.microsoft/jeloginhandler.md) with MSAL OAuth.
 
 ```csharp
 using XboxAuthNet.Game.Msal;
@@ -27,7 +27,7 @@ var session = await authenticator.ExecuteForLauncherAsync();
 authenticator.AddMsalOAuth(app, msal => msal.Interactive());
 ```
 
-Requests users to enter their Microsoft account. How the sign-in page is displayed is determined by the MSAL.&#x20;
+Requests users to enter their Microsoft account. How the sign-in page is displayed is determined by the MSAL.  
 
 ## EmbeddedWebView
 

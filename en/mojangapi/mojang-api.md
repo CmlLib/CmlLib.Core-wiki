@@ -4,7 +4,7 @@ If the request is failed, it throws appropriate exception. For example, `MojangE
 
 ## How to get `AccessToken` or `UUID`?
 
-You can get these token by Mojang Authentication or Microsoft Xbox Authentication. See [login-and-sessions](../cmllib.core/login-and-sessions/ "mention").
+You can get these token by Mojang Authentication or Microsoft Xbox Authentication. See [Login and Sessions](../cmllib.core/login-and-sessions/README.md).
 
 ```csharp
 var session = await loginHandler.Authenticate();

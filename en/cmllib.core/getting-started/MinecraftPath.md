@@ -8,12 +8,12 @@ You can customize Minecraft game directory path and structure where all game fil
 
 ## Example
 
-Initialize `CMLauncher` with custom Minecraft path and default directory structure.
+Initialize `MinecraftLauncher` with custom Minecraft path and default directory structure.
 
 ```csharp
 // initialize launcher with the specific path
 MinecraftPath myPath = new MinecraftPath("./games");
-CMLauncher launcher = new CMLauncher(myPath);
+MinecraftLauncher launcher = new MinecraftLauncher(myPath);
 
 // myPath.BasePath : ./games
 // myPath.Library : ./games/libraries
@@ -29,57 +29,54 @@ You can get default game directory path using `MinecraftPath.GetOSDefaultPath()`
 
 Default Minecraft path is:
 
-* Windows: `%appdata%.minecraft`
+* Windows: `%appdata%\.minecraft`
 * Linux: `$HOME/.minecraft`
 * macOS: `$HOME/Library/Application Support/minecraft`
 
 ## Default directory structure
 
 ```
-Root directory : MinecraftPath.BasePath
- | - assets : MinecraftPath.Assets
- |    | - indexes
- |    |    | - {asset id}.json : MinecraftPath.GetIndexFilePath(assetId)
- |    | - objects : MinecraftPath.GetAssetObjectPath(assetId)
- |    | - virtual
- |         | - legacy : MinecraftPath.GetAssetLegacyPath(assetId)
- |
- | - libraries : MinecraftPath.Library
- | - resources : MinecraftPath.Resource
- | - runtime : MinecraftPath.Runtime
- | - versions : MinecraftPath.Versions
-      | - {version name}
-            | - {version name}.jar : MinecraftPath.GetVersionJarPath("version_name")
-            | - {version name}.json : MinecraftPath.GetVersionJsonPath("version_name")
-            | - natives : MinecraftPath.GetNativePath("version_name")
+/ (MinecraftPath.BasePath)
+├── assets/ (MinecraftPath.Assets)
+│   ├── indexes/
+│   │   └── {asset_id}.json (MinecraftPath.GetIndexFilePath(assetId))
+│   ├── objects/ (MinecraftPath.GetAssetObjectPath(assetId))
+│   └── virtual/
+│       └── legacy/ (MinecraftPath.GetAssetLegacyPath(assetId))
+├── libraries/ (MinecraftPath.Library)
+├── resources/ (MinecraftPath.Resource)
+├── runtime/ (MinecraftPath.Runtime)
+└── versions/ (MinecraftPath.Versions)
+    └── {version_name}/
+        ├── {version_name}.jar (MinecraftPath.GetVersionJarPath("version_name"))
+        ├── {version_name}.json (MinecraftPath.GetVersionJsonPath("version_name"))
+        └── natives/ (MinecraftPath.GetNativePath("version_name"))
 ```
 
 ## Make custom directory structure
 
 There are two ways to make custom directory structure.
 
-{% hint style="info" %}
-All paths are stored as absolute paths, even when a relative path is passed.
-{% endhint %}
-
 ### Set properties
 
-Set path properties to what you want. All properties (`Libraries`, `Versions`, etc) are described in [#properties](MinecraftPath.md#properties "mention")
+Set path properties to what you want. All properties are described in [Properties](#properties)
+
+!!! info "Information"
+    Make sure to use absolute paths only.
 
 ```csharp
 MinecraftPath myPath = new MinecraftPath();
-myPath.Libraries = "./commons/libs";
-myPath.Versions = "./commons/versions";
+myPath.Libraries = myPath.BasePath + "/commons/libs";
+myPath.Versions = myPath.BasePath + "/commons/versions";
 myPath.Assets = MinecraftPath.GetOSDefaultPath() + "/assets";
 ```
 
 ### Inheritence
 
-{% hint style="info" %}
-When receiving a relative path as an argument, make sure to convert it to an absolute path and store it.
-{% endhint %}
+!!! info "Information"
+    When receiving a relative path as an argument, make sure to convert it to an absolute path and store it.
 
-Create derived class of `MinecraftPath`, and override methods. Each methods (`CreateDirs`, `NormalizePath`, etc) are described in [#methods](MinecraftPath.md#methods "mention").
+Create derived class of `MinecraftPath`, and override methods. Each methods (`CreateDirs`, `NormalizePath`, etc) are described in [Methods](#methods).
 
 ```csharp
 class MyMinecraftPath : MinecraftPath
@@ -99,117 +96,119 @@ class MyMinecraftPath : MinecraftPath
     }
 
     public override string GetVersionJarPath(string id)
-        => NormalizePath($"{Versions}/{id}/client.jar");
-    
-    public override string GetVersionJsonPath(string id)
-        => NormalizePath($"{Versions}/{id}/client.json");
+        => NormalizePath($"{Versions}/{id}/{id}.jar");
 
+    public override string GetVersionJsonPath(string id)
+        => NormalizePath($"{Versions}/{id}/{id}.json");
+
+    public override string GetNativePath(string id)
+        => NormalizePath($"{Versions}/{id}/natives");
+    
+    // NOTE: Minecraft may not recognize the changed path
+    public override string GetIndexFilePath(string assetId)
+        => NormalizePath($"{Assets}/indexes/{assetId}.json");
+
+    // NOTE: Minecraft may not recognize the changed path
     public override string GetAssetObjectPath(string assetId)
-        => NormalizePath($"{Assets}/files");
+        => NormalizePath($"{Assets}/objects");
+
+    // NOTE: Minecraft may not recognize the changed path
+    public override string GetAssetLegacyPath(string assetId)
+        => NormalizePath($"{Assets}/virtual/legacy");
+
+    // NOTE: Minecraft may not recognize the changed path
+    public override string GetLogConfigFilePath(string configId)
+        => NormalizePath($"{Assets}/log_configs/{configId}" + (!configId.EndsWith(".xml") ? ".xml" : ""));
 }
 ```
 
 ## API References
 
-<details>
+### Constructors
 
-<summary>Constructors</summary>
+??? abstract "Constructors"
 
+    **public MinecraftPath()**
 
+    Initialize instance with default path.  
+    Same as `new MinecraftPath(MinecraftPath.GetOSDefaultPath())`.
 
+    **public MinecraftPath(string p)**
 
+    Initialize instance with the specific path, `p`.  
+    Call `Initialize(p)` and `CreateDirs()`.
 
-**public MinecraftPath()**
+### Properties
 
-Initialize instance with default path.\
-Same as `new MinecraftPath(MinecraftPath.GetOSDefaultPath())`.
+??? abstract "Properties"
 
-**public MinecraftPath(string p)**
+    **BasePath**
 
-Initializze instance with the specific path, `p`.\
-Call `Initialize(p)` and `CreateDirs()`.
+    *Type: string*
 
-</details>
+    Root directory path
 
-<details>
+    **Assets**
 
-<summary>Properties</summary>
+    *Type: string*
 
-#### Properties
+    **Library**
 
-**BasePath**
+    *Type: string*
 
-_Type: string_
+    **Versions**
 
-Root directory path
+    *Type: string*
 
-**Assets**
+    **Runtime**
 
-_Type: string_
+    *Type: string*
 
-**Library**
+    The default download path of `MJava`
 
-_Type: string_
+    **Resource**
 
-**Versions**
+    *Type: string*
 
-_Type: string_
+    Old minecraft versions use this path as Assets directory.
 
-**Runtime**
+### Methods
 
-_Type: string_
+??? abstract "Methods"
 
-The default download path of `MJava`
+    **public void CreateDirs()**
 
-**Resource**
+    Create `BasePath`, `Assets`, `Library`, `Versions`, `Runtime`, `Resource` directory.
 
-_Type: string_
+    **public virtual string GetIndexFilePath(string assetId)**
 
-Old minecraft versions use this path as Assets directory.
+    Get asset index file path.
 
-</details>
+    **public virtual string GetAssetObjectPath(string assetId)**
 
-<details>
+    Get asset object directory path.
 
-<summary>Methods</summary>
+    **public virtual string GetAssetLegacyPath(string assetId)**
 
-#### Methods
+    Get asset legacy directory path.
 
-**public void CreateDirs()**
+    **public virtual string GetVersionJarPath(string id)**
 
-Create `BasePath`, `Assets`, `Library`, `Versions`, `Runtime`, `Resouce` directory.
+    Get client jar path.
 
-**public virtual string GetIndexFilePath(string assetId)**
+    **public virtual string GetVersionJsonPath(string id)**
 
-Get asset index file path.
+    Get client json path.
 
-**public virtual string GetAssetObjectPath(string assetId)**
+    **public virtual string GetNativePath(string id)**
 
-Get asset object directory path.
+    Get native directory path.  
+    Native dll files will be stored here.
 
-**public virtual string GetAssetLegacyPath(string assetId)**
+    **protected static string Dir(string path)**
 
-Get asset legacy directory path.
+    Normalize `path` and create directory.
 
-**public virtual string GetVersionJarPath(string id)**
+    **protected static string NormalizePath(string path)**
 
-Get client jar path.
-
-**public virtual string GetVersionJsonPath(string id)**
-
-Get client json path.
-
-**public virtual string GetNativePath(string id)**
-
-Get native directory path.\
-Native dll files will be stored here.
-
-**protected static string Dir(string path)**
-
-Normalize `path` and create directory.
-
-**protected static string NormalizePath(string path)**
-
-Normalize `path`. Convert relative path to absolute path and replace invalid directory separator. (In windows, replace `/` to `\`)
-
-</details>
+    Normalize `path`. Convert relative path to absolute path and replace invalid directory separator. (In windows, replace `/` to `\`)
