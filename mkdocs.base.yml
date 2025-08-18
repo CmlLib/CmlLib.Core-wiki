@@ -61,10 +61,10 @@ theme:
 extra:
   alternate:
     - name: English
-      link: /en/
+      link: /CmlLib.Core-wiki/en/
       lang: en
     - name: 한국어
-      link: /ko/
+      link: /CmlLib.Core-wiki/ko/
       lang: ko
 
 # Plugins
