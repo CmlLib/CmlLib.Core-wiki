@@ -33,11 +33,11 @@ using MojangAPI.Model;
 
 Sample program: [MojangAPISample](https://github.com/CmlLib/MojangAPI/tree/master/MojangAPISample)
 
-### [mojang-api](mojang-api.md)
+### [Mojang API](mojang-api.md)
 
 플레이어 프로필 가저오기, 이름이나 스킨 바꾸기, 통계 확인, 차단된 서버 확인, 게임 소유 확인 등등
 
-### [securityquestion](securityquestion.md)
+### [SecurityQuestion](securityquestion.md)
 
 Security question-answer flow
 

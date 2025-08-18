@@ -10,11 +10,11 @@ description: 엑스박스 게임에 로그인하기 위한 기반을 제공합�
 
 ## Authenticator
 
-### [oauth](oauth.md)
+### [OAuth](oauth.md)
 
 마이크로소프트 계정으로 OAuth 로그인 기능을 제공합니다.
 
-### [xboxauth](xboxauth.md)
+### [XboxAuth](xboxauth.md)
 
 마이크로소프트 OAuth 로그인 결과로 Xbox 계정에 로그인하는 기능을 제공합니다.
 
@@ -26,10 +26,10 @@ description: 엑스박스 게임에 로그인하기 위한 기반을 제공합�
 
 ## Account
 
-### [accountmanager](accountmanager.md)
+### [AccountManager](accountmanager.md)
 
 여러 계정을 관리하는 기능을 제공합니다.
 
-### [accounts](accounts.md)
+### [Accounts](accounts.md)
 
 각 계정을 관리하는 방법을 설명합니다.

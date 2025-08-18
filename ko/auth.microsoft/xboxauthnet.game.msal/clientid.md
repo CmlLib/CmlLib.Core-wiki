@@ -45,6 +45,6 @@ Click 'Save' button
 
 ## 4. Client ID 등록하기
 
-{% embed url="https://help.minecraft.net/hc/en-us/articles/16254801392141" %}
+https://help.minecraft.net/hc/en-us/articles/16254801392141
 
-{% embed url="https://github.com/CmlLib/CmlLib.Core.Auth.Microsoft/issues/16" %}
+https://github.com/CmlLib/CmlLib.Core.Auth.Microsoft/issues/16

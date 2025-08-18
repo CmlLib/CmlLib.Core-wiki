@@ -60,7 +60,7 @@ var launchOption = new MLaunchOption
 
 **Type: MSession**
 
-See [login-and-sessions](../login-and-sessions/README.md) for how to log in Minecraft and get game session.
+See [Login and Session](../login-and-sessions/README.md) for how to log in Minecraft and get game session.
 
 Game session (Username, UUID, AccessToken, etc...). If the value is null, the default session with username `tester123` is used.
 
@@ -190,13 +190,13 @@ When building an argument in the launcher, `${variable_name}` will be replaced w
 
 Override all JVM arguments. When this option is not null, `ExtraJVMArguments` and `JVMArguments` are ignored.
 
-See [margument.md](../more-apis/margument.md)
+See [MArgument](../more-apis/margument.md)
 
 ### ExtraJVMArguments
 
 **Type: `IEnumerable<MArgument>`**
 
-Set extra JVM arguments. See [margument.md](../more-apis/margument.md)
+Set extra JVM arguments. See [MArgument](../more-apis/margument.md)
 
 Default arguments are:
 
@@ -213,4 +213,4 @@ Default arguments are:
 
 **Type: `IEnumerable<MArgument>`**
 
-Set extra game arguments. See [margument.md](../more-apis/margument.md)
+Set extra game arguments. See [MArgument](../more-apis/margument.md)

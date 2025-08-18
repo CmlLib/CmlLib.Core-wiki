@@ -85,26 +85,26 @@ Older versions of Forge were not standalone. These versions require [ModLoader](
 
 | Game Version                              | File Name                    | SHA1 Checksum                             |
 | :---------------------------------------- | :--------------------------- | :---------------------------------------- |
-| 1.3.2, 1.4.1, 1.4.2, 1.4.3, 1.4.4         | asm-all-4.0.jar              | 2518725354c7a6a491a323249b9e86846b00df09 |
-| 1.3.2, 1.4.1, 1.4.2, 1.4.3, 1.4.4         | guava-12.0.1.jar             | b8e78b9af7bf45900e14c6f958486b6ca682195f |
-| 1.3.2, 1.4.1, 1.4.2, 1.4.3, 1.4.4         | argo-2.25.jar                | bb672829fde76cb163004752b86b0484bd0a7f4b |
-| 1.4.5, 1.4.6, 1.4.7                       | asm-all-4.0.jar              | 2518725354c7a6a491a323249b9e86846b00df09 |
-| 1.4.5, 1.4.6, 1.4.7                       | guava-12.0.1.jar             | b8e78b9af7bf45900e14c6f958486b6ca682195f |
-| 1.4.5, 1.4.6, 1.4.7                       | argo-2.25.jar                | bb672829fde76cb163004752b86b0484bd0a7f4b |
-| 1.4.5, 1.4.6, 1.4.7                       | bcprov-jdk15on-147.jar       | 2518725354c7a6a491a323249b9e86846b00df09 |
-| 1.5                                       | argo-small-3.2.jar           | bb672829fde76cb163004752b86b0484bd0a7f4b |
-| 1.5                                       | guava-14.0-rc3.jar           | 931ae21fa8014c3ce686aaa621eae565fefb1a6a |
-| 1.5                                       | asm-all-4.1.jar              | 054986e962b88d8660ae4566475658469595ef58 |
-| 1.5                                       | bcprov-jdk15on-1.48.jar      | 960dea7c9181ba0b17e8bab0c06a43f0a5f04e65 |
-| 1.5                                       | deobfuscation_data_1.5.zip   | 22e221a0d89516c1f721d6cab056a7e37471d0a6 |
-| 1.5                                       | scala-library.jar            | 458D046151AD179C85429ED7420FFB1EAF6DDF85 |
-| 1.5.1                                     | argo-small-3.2.jar           | bb672829fde76cb163004752b86b0484bd0a7f4b |
-| 1.5.1                                     | guava-14.0-rc3.jar           | 931ae21fa8014c3ce686aaa621eae565fefb1a6a |
-| 1.5.1                                     | asm-all-4.1.jar              | 054986e962b88d8660ae4566475658469595ef58 |
-| 1.5.1                                     | bcprov-jdk15on-1.48.jar      | 960dea7c9181ba0b17e8bab0c06a43f0a5f04e65 |
-| 1.5.1                                     | deobfuscation_data_1.5.1.zip | 446e55cd986582c70fcf12cb27bc00114c5adfd9 |
-| 1.5.1                                     | scala-library.jar            | 458D046151AD179C85429ED7420FFB1EAF6DDF85 |
-| 1.5.2                                     | deobfuscation_data_1.5.2.zip | 5f7c142d53776f16304c0bbe10542014abad6af8 |
+| 1.3.2, 1.4.1, 1.4.2, 1.4.3, 1.4.4         | asm-all-4.0.jar              | `2518725354c7a6a491a323249b9e86846b00df09` |
+| 1.3.2, 1.4.1, 1.4.2, 1.4.3, 1.4.4         | guava-12.0.1.jar             | `b8e78b9af7bf45900e14c6f958486b6ca682195f` |
+| 1.3.2, 1.4.1, 1.4.2, 1.4.3, 1.4.4         | argo-2.25.jar                | `bb672829fde76cb163004752b86b0484bd0a7f4b` |
+| 1.4.5, 1.4.6, 1.4.7                       | asm-all-4.0.jar              | `2518725354c7a6a491a323249b9e86846b00df09` |
+| 1.4.5, 1.4.6, 1.4.7                       | guava-12.0.1.jar             | `b8e78b9af7bf45900e14c6f958486b6ca682195f` |
+| 1.4.5, 1.4.6, 1.4.7                       | argo-2.25.jar                | `bb672829fde76cb163004752b86b0484bd0a7f4b` |
+| 1.4.5, 1.4.6, 1.4.7                       | bcprov-jdk15on-147.jar       | `2518725354c7a6a491a323249b9e86846b00df09` |
+| 1.5                                       | argo-small-3.2.jar           | `bb672829fde76cb163004752b86b0484bd0a7f4b` |
+| 1.5                                       | guava-14.0-rc3.jar           | `931ae21fa8014c3ce686aaa621eae565fefb1a6a` |
+| 1.5                                       | asm-all-4.1.jar              | `054986e962b88d8660ae4566475658469595ef58` |
+| 1.5                                       | bcprov-jdk15on-1.48.jar      | `960dea7c9181ba0b17e8bab0c06a43f0a5f04e65` |
+| 1.5                                       | deobfuscation_data_1.5.zip   | `22e221a0d89516c1f721d6cab056a7e37471d0a6` |
+| 1.5                                       | scala-library.jar            | `458D046151AD179C85429ED7420FFB1EAF6DDF85` |
+| 1.5.1                                     | argo-small-3.2.jar           | `bb672829fde76cb163004752b86b0484bd0a7f4b` |
+| 1.5.1                                     | guava-14.0-rc3.jar           | `931ae21fa8014c3ce686aaa621eae565fefb1a6a` |
+| 1.5.1                                     | asm-all-4.1.jar              | `054986e962b88d8660ae4566475658469595ef58` |
+| 1.5.1                                     | bcprov-jdk15on-1.48.jar      | `960dea7c9181ba0b17e8bab0c06a43f0a5f04e65` |
+| 1.5.1                                     | deobfuscation_data_1.5.1.zip | `446e55cd986582c70fcf12cb27bc00114c5adfd9` |
+| 1.5.1                                     | scala-library.jar            | `458D046151AD179C85429ED7420FFB1EAF6DDF85` |
+| 1.5.2                                     | deobfuscation_data_1.5.2.zip | `5f7c142d53776f16304c0bbe10542014abad6af8` |
 
 Locate these files in `<game_directory>/lib` .
 

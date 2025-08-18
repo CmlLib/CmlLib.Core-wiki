@@ -117,7 +117,7 @@ var exitCode = await processWrapper.WaitForExitTaskAsync();
 Console.WriteLine($"Exited with code {exitCode}");
 ```
 
-Launch the game process and output game logs to console. Wait for the game to exit and output the exit code. See [processwrapper.md](../utilities/processwrapper.md)
+Launch the game process and output game logs to console. Wait for the game to exit and output the exit code. See [ProcessWrapper](../utilities/processwrapper.md)
 
 !!! info "Process Object"
     The `process` variable is a standard .NET [Process](https://learn.microsoft.com/en-us/dotnet/api/system.diagnostics.process) object. You can launch it immediately with `process.Start();` without using `ProcessWrapper`.

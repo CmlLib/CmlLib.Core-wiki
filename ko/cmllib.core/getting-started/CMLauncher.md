@@ -85,7 +85,7 @@ launcher.ByteProgressChanged += (sender, args) =>
 };
 ```
 
-이벤트 헨들러를 추가하여 파일 설치 진행률을 콘솔에 출력합니다. 자세한 내용은 [Handling-Events](Handling-Events.md) 를 참고하세요.
+이벤트 헨들러를 추가하여 파일 설치 진행률을 콘솔에 출력합니다. 자세한 내용은 [이벤트 처리](Handling-Events.md) 를 참고하세요.
 
 ```csharp
 var versions = await launcher.GetAllVersionsAsync();

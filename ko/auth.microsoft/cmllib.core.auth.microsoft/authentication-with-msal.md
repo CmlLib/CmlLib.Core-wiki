@@ -33,7 +33,7 @@ await loginHandler.Signout();
 await loginHandler.SignoutWithBrowser();
 ```
 
-loginHandler 에 대한 더 자세한 정보는 [jeloginhandler](jeloginhandler.md)를 참고하세요.
+loginHandler 에 대한 더 자세한 정보는 [JELoginHandler](jeloginhandler.md)를 참고하세요.
 
 CLIENT-ID 를 발급받는 방법과 더 많은 MSAL 로그인 방식을 확인하려면 [XboxAuthNet.Game.Msal](../xboxauthnet.game.msal/README.md) 을 참고하세요.
 

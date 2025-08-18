@@ -13,6 +13,7 @@ repo_url: https://github.com/CmlLib/CmlLib.Core
 theme:
   name: material
   language: en
+  logo: https://avatars.githubusercontent.com/u/78353279?s=400&u=be1250f61cda305ace0d06e3d34d90539ccd2387&v=4
   features:
     - navigation.sections
     - navigation.top

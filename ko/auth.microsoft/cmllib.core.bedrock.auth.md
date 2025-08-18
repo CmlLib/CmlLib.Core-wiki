@@ -10,4 +10,4 @@ Nuget 패키지 `CmlLib.Core.Bedrock.Auth` 를 설치해 주세요.
 
 예제 코드
 
-`CmlLib.Core.Auth.Microsoft` 와 사용 방법이 유사합니다. 자세한 사용 방법은 [🧊 CmlLib Projects](cmllib.core.auth.microsoft/README.md)를 참고하세요.
+`CmlLib.Core.Auth.Microsoft` 와 사용 방법이 유사합니다. 자세한 사용 방법은 [CmlLib.Core.Auth.Microsoft](cmllib.core.auth.microsoft/README.md)를 참고하세요.

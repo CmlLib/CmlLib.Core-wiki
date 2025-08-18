@@ -15,7 +15,7 @@
 
 `IRulesEvaluator`의 기본 구현체인 `RulesEvaluator`는 Mojang 런처의 구현과 동일하게 동작합니다. 대부분의 경우 이 구현체로 충분합니다.
 
-다른 동작이 필요한 경우, 사용자 정의 `IRulesEvaluator`를 구현할 수 있습니다. [minecraftlauncherparameters](minecraftlauncherparameters.md) 에서 `IRulesEvaluator 를 바꿀 수 있습니다.`
+다른 동작이 필요한 경우, 사용자 정의 `IRulesEvaluator`를 구현할 수 있습니다. [MinecraftLauncherParameters](minecraftlauncherparameters.md) 에서 `IRulesEvaluator 를 바꿀 수 있습니다.`
 
 ### RulesEvaluatorContext
 

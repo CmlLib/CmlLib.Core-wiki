@@ -4,10 +4,10 @@
 
 ## 모드 로더 자동 설치
 
-* Forge: [홈](../../installer.forge/home.md)
-* Fabric: [Fabric-Installer](fabric-installer.md)
+* Forge: [Installer.Forge](../../installer.forge/home.md)
+* Fabric: [Fabric Installer](fabric-installer.md)
 * Quilt: [Quilt Installer](quilt-installer.md)
-* LiteLoader: [LiteLoader-Installer](liteloader-installer.md)
+* LiteLoader: [LiteLoader Installer](liteloader-installer.md)
 
 ## 서드파티 라이브러리
 

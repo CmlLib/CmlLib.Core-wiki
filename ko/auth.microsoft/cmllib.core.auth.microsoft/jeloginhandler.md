@@ -12,7 +12,7 @@ description: 로그인, 로그아웃, 계정 관리
 var loginHandler = JELoginHandlerBuilder.BuildDefault();
 ```
 
-계정 저장 방식 지정, HttpClient 설정 등 더 자세한 설정 방법은 [jeloginhandlerbuilder](jeloginhandlerbuilder.md) 문서를 참고하세요.
+계정 저장 방식 지정, HttpClient 설정 등 더 자세한 설정 방법은 [JELoginHandlerBuilder](jeloginhandlerbuilder.md) 문서를 참고하세요.
 
 ## 기본 로그인
 
@@ -37,10 +37,10 @@ var session = await loginHandler.AuthenticateInteractively();
 !!! info "Microsoft WebView2"
     이 메서드는 마이크로소프트 OAuth 로그인 페이지를 표시하기 위해서 [Microsoft WebView2](https://developer.microsoft.com/en-us/microsoft-edge/webview2/) 를 사용합니다. 이 내용을 반드시 숙지하고 있어야 합니다.
 
-    * **Microsoft WebView2 는 Windows 에서만 사용 가능합니다.** 다른 플랫폼에서 사용하기 위해서는 [authentication-with-msal](authentication-with-msal.md)가 필요합니다.
+    * **Microsoft WebView2 는 Windows 에서만 사용 가능합니다.** 다른 플랫폼에서 사용하기 위해서는 [Authentication with MSAL](authentication-with-msal.md)가 필요합니다.
     * WebView2 를 사용하기 위해서는 유저들은 (개발자와 최종 사용자 포함) **반드시 WebView2 Runtime이 설치되어 있어야 합니다.** [이 문서](https://learn.microsoft.com/en-us/microsoft-edge/webview2/concepts/distribution)를 참고하여 런처를 WebView2와 함께 배포하는 방법을 알아보세요. (예를 들어 런타임 설치를 direct download link 로 자동화 할 수 있습니다: [https://go.microsoft.com/fwlink/p/?LinkId=2124703](https://go.microsoft.com/fwlink/p/?LinkId=2124703))
 
-    만약 WebView2 없이 로그인을 하고 싶다면 [authentication-with-msal](authentication-with-msal.md)을 대신 사용할 수 있습니다.
+    만약 WebView2 없이 로그인을 하고 싶다면 [Authentication with MSAL](authentication-with-msal.md)을 대신 사용할 수 있습니다.
 
 ## 가장 최근에 플레이한 계정으로 로그인 {#silent}
 
@@ -73,7 +73,7 @@ foreach (var account in accounts)
 
 로그인에 성공한 계정은 자동으로 계정 정보가 파일에 저장됩니다. 위 코드는 저장되어 있는 모든 계정의 정보를 출력합니다.
 
-계정 정보를 파일에 저장하는 방식을 바꾸려면 [#withaccountmanager](jeloginhandlerbuilder.md#withaccountmanager)를 참고하세요.
+계정 정보를 파일에 저장하는 방식을 바꾸려면 [#WithAccountManager](jeloginhandlerbuilder.md#withaccountmanager)를 참고하세요.
 
 ## 계정 선택
 
@@ -223,7 +223,7 @@ Microsoft OAuth 모드를 설정합니다. `oauth => oauth.Interactive()` 대신
 
 `AddMicrosoftOAuthForJE` 와 `AddForceMicrosoftOAuthForJE` 메서드는 모장 마인크래프트 런처에서 사용하는 기본 `MicrosoftOAuthClientInfo` 를 자동으로 추가합니다.
 
-`AddMicrosoftOAuth` 는 Windows 플랫폼에서만 작동합니다. 다른 플랫폼(Linux, macOS) 에서 사용하기 위해서는 [authentication-with-msal](authentication-with-msal.md)을 사용하세요.
+`AddMicrosoftOAuth` 는 Windows 플랫폼에서만 작동합니다. 다른 플랫폼(Linux, macOS) 에서 사용하기 위해서는 [Authentication with MSAL](authentication-with-msal.md)을 사용하세요.
 
 ```csharp
 // XboxAuthNet.Game.Msal 예시
@@ -249,4 +249,4 @@ Xbox 로그인 모드 설정. `xbox => xbox.Basic()` 대신 사용할 수 있는
 
 ### 4. JEAuthenticator
 
-Minecraft: JE 로그인 모드 설정. [jeauthenticator](jeauthenticator.md) 참고.
+Minecraft: JE 로그인 모드 설정. [JEAuthenticator](jeauthenticator.md) 참고.

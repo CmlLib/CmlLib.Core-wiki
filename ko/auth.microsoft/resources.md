@@ -8,10 +8,10 @@ All libraries uses Microsoft.Extensions.Logging for logging. ([docs](https://lea
 
 | EventId | Meaning |
 |---------|---------|
-| 749xxx | Logs from [🧊 CmlLib Projects](xboxauthnet.game/README.md). |
-| 750xxx | Logs from [🧊 CmlLib Projects](xboxauthnet.game.msal/README.md). |
-| 751xxx | Logs from [🧊 CmlLib Projects](cmllib.core.auth.microsoft/README.md). |
-| 752xxx | Logs from [cmllib.core.bedrock.auth](cmllib.core.bedrock.auth.md). |
+| 749xxx | Logs from [XboxAuthNet.Game](xboxauthnet.game/README.md). |
+| 750xxx | Logs from [XboxAuthNet.Game.Msal](xboxauthnet.game.msal/README.md). |
+| 751xxx | Logs from [CmlLib.Core.Auth.Microsoft](cmllib.core.auth.microsoft/README.md). |
+| 752xxx | Logs from [CmlLib.Core.Bedrock.Auth](cmllib.core.bedrock.auth.md). |
 | xxx0xx | Trace |
 | xxx1xx | Debug |
 | xxx2xx | Information |
@@ -29,7 +29,7 @@ WebView2 와 Costura.Fody 를 함께 사용하면 문제가 발생합니다.
 
 ### 나이 관련 오류 (미성년자, 나이 인증, 부모 자녀인증 등등)
 
-1. Xbox 로그인 방식이 Full 혹은 Sisu  으로 설정되어 있는지 확인해 보세요. [xboxauth](xboxauthnet.game/xboxauth.md)
+1. Xbox 로그인 방식이 Full 혹은 Sisu  으로 설정되어 있는지 확인해 보세요. [XboxAuth](xboxauthnet.game/xboxauth.md)
 2. 로그인하려는 계정이 마인크래프트를 구매한 계정이 맞는지 확인해 보세요. 이 오류를 겪는 대부분의 유저들이 마인크래프트를 구매하지 않은 계정으로 로그인을 시도했었습니다.
 3. Mojang 런처를 켜고 로그아웃을 한 뒤 Mojang 런처에서 다시 로그인을 해보세요. 나이 관련 작업이 필요할 경우 Mojang 런처에서 방법을 알려줍니다.
 4. [Xbox 사이트](https://www.xbox.com)에서 로그아웃을 한 뒤 다시 로그인을 해보세요. 나이 관련 작업이 필요할 경우 로그인 직후 관련 페이지가 표시될 것입니다.
