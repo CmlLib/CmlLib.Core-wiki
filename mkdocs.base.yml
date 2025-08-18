@@ -1,6 +1,7 @@
 site_name: CmlLib.Core Wiki
 site_description: Documentation for CmlLib.Core
 site_author: CmlLib.Core Team
+site_url: https://cmllib.github.io/CmlLib.Core-wiki
 
 # Documentation directory
 docs_dir: docs

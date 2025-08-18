@@ -1,7 +1,7 @@
 INHERIT: mkdocs.base.yml
 
 site_name: CmlLib.Core 위키
-docs_dir: 'CmlLib.Core-wiki/ko'
+docs_dir: 'ko'
 site_dir: 'site/ko'
 
 theme:

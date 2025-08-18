@@ -1,6 +1,6 @@
 INHERIT: mkdocs.base.yml
 
-docs_dir: 'CmlLib.Core-wiki/en'
+docs_dir: 'en'
 site_dir: 'site/en'
 
 nav:
