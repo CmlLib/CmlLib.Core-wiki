@@ -2,9 +2,9 @@
 
 This is wiki for [CmlLib project](https://github.com/CmlLib).
 
-## [GOTO WIKI](https://alphabs.gitbook.io/cmllib/)
+## [GOTO WIKI](https://cmllib.github.io/CmlLib.Core-wiki/en/)
 
-## [한국어 위키](https://alphabs.gitbook.io/cmllib/v/ko)
+## [한국어 위키](https://cmllib.github.io/CmlLib.Core-wiki/ko/)
 
 ## Contribution
 
