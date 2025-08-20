@@ -195,7 +195,7 @@ Statistics stats = await mojang.GetStatistics(
 
 ### CheckGameOwnership
 
-_참고1: 이 API는 Xbox 계정에서만 작동합니다_\
+_참고1: 이 API는 Xbox 계정에서만 작동합니다_  
 _참고2: 이 API는 Xbox 게임 패스를 확인하지 않습니다. 사용자가 구매 대신 Xbox 게임 패스로 마인크래프트를 가지고 있다면, 이 API는 `false`를 반환합니다. 하지만 사용자는 마인크래프트를 소유하고 있으며 플레이할 수 있습니다._
 
 ```csharp

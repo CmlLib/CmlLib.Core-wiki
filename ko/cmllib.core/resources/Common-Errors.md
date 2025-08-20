@@ -1,6 +1,6 @@
 # 알려진 문제
 
-### \`ServerIP\` 옵션과 함께 게임 실행 시 로딩 스크린에서 텍스쳐 깨짐
+### `ServerIP` 옵션과 함께 게임 실행 시 로딩 스크린에서 텍스쳐 깨짐
 
 * [\[BUG\] When i provide server ip and port for auto connect to server on startup, the background does not load in 1.16.5 OptiFine](https://github.com/CmlLib/CmlLib.Core/issues/93)
 * Game crashed with texture related error message in 'Connecting...' loading screen.
@@ -15,7 +15,7 @@ Your xbox account would block multiplay feature. Check your account settings. [M
 
 [https://github.com/CmlLib/CmlLib.Core/issues/85](https://github.com/CmlLib/CmlLib.Core/issues/85)
 
-### Cannot find version `<version\_name>`
+### Cannot find version `<version_name>`
 
 Make sure that Mojang launcher can find your version and launch your version without any problem. CmlLib.Core will not able to find or launch the version which Mojang launcher can't.
 

@@ -41,6 +41,6 @@ This exception is thrown if something went wrong while logging into Minecraft JE
 
 If the OAuth token is from third-party client id, you should register the client ID. See the last part of [ClientID](../xboxauthnet.game.msal/clientid.md).
 
-### 404: NOT\_FOUND
+### 404: NOT_FOUND
 
 The user doesn't have the game. (Demo version)

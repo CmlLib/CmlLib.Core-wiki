@@ -59,13 +59,13 @@
 
 ## 🌐 MojangAPI
 
-* [Home](mojangapi/home.md)
+* [Home](mojangapi/README.md)
 * [Mojang API](mojangapi/mojang-api.md)
 * [SecurityQuestion](mojangapi/securityquestion.md)
 
 ## ⚒️ Installer.Forge
 
-* [Home](installer.forge/home.md)
+* [Home](installer.forge/README.md)
 * [Supported Versions](installer.forge/supported-versions.md)
 * [Getting Started](installer.forge/getting-started.md)
 * [MForge](installer.forge/mforge.md)

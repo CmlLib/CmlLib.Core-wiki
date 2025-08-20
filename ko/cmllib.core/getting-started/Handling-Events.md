@@ -60,7 +60,7 @@ await launcher.InstallAsync("1.20.4", CancellationToken.None);
 
 ## 성능 팁
 
-`FileProgress` 는 매우 많이 호출됩니다. (InstallAsync 호출할 때마다 4000번 \~ 8000번) 따라서 이벤트 헨들러에 시간이 많이 걸리는 작업을 넣는다면 프로그램의 성능에 영향을 끼칠 수 있습니다. 반면에 `ByteProgress` 는 1초에 3\~4번만 호출되기에 비교적 성능에 민감하지 않습니다.
+`FileProgress` 는 매우 많이 호출됩니다. (InstallAsync 호출할 때마다 4000번 ~ 8000번) 따라서 이벤트 헨들러에 시간이 많이 걸리는 작업을 넣는다면 프로그램의 성능에 영향을 끼칠 수 있습니다. 반면에 `ByteProgress` 는 1초에 3~4번만 호출되기에 비교적 성능에 민감하지 않습니다.
 
 이벤트 헨들러를 등록하면 내부적으로 `new Progress<T>(handler)` 으로 변환됩니다. [Progress<T\>](https://learn.microsoft.com/en-us/dotnet/api/system.progress-1?view=net-8.0)는 현재 `SynchronizationContext` 에 따라서 다른 동작을 합니다. 만약 WinForm 이나 WPF 앱이라면 헨들러의 코드는 UI 스레드에서 실행되고, 콘솔 앱이라면 ThreadPool 에서 실행될 것입니다.
 

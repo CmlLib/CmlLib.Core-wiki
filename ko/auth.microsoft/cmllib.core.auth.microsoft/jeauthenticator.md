@@ -43,6 +43,6 @@ authenticator.AddJEAuthenticator(je => je
 
 만약 OAuth 토큰을 써드파티의 클라이언트 아이디로부터 발급받는 경우라면, 클라이언트 아이디를 등록해야 합니다. [ClientID](../xboxauthnet.game.msal/clientid.md) 의 마지막 부분을 참고하세요.
 
-### 404: NOT\_FOUND
+### 404: NOT_FOUND
 
 유저가 게임을 가지고 있지 않은 경우. (데모 버전)

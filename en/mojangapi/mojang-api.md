@@ -195,7 +195,7 @@ Statistics stats = await mojang.GetStatistics(
 
 ### CheckGameOwnership
 
-_note1: this api only works on xbox account_\
+_note1: this api only works on xbox account_  
 _note2: this api does not check xbox game pass. if the user has xbox game pass instead of purchase minecraft, this api return `false`. but the user owns minecraft and can play it._
 
 ```csharp

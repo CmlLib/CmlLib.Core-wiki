@@ -8,7 +8,7 @@ you have a mission: read all markdown files in /ko and fix errors.
 - fix small typo
 - escape > as \> but do not escape inside of codeblock or URL, and do not escape <
 - if hyperlink has no title, reference mkdocs.ko.yml to find its title. for example, replace [login-and-sessions](../login-and-sessions/README.md) to [로그인과 세션](../login-and-sessions/README.md)
-- DO NOT insert \ or <br> for linebreak. just let it be
+- DO NOT insert \ or <br> for linebreak. if you find any legal linebreaks, replace it with double space.
 - DO NOT change the content of documents
 - if you find broken link or ambigious, let me know before working
 
@@ -32,6 +32,6 @@ RULES:
 - convert {% hint %} to Admonitions. we use python markdown extension. (??? or !!!)
 - fix small typo
 - escape > as \> but do not escape inside of codeblock or URL, and do not escape <
-- DO NOT insert \ or <br> for linebreak. just let it be
+- DO NOT insert \ or <br> for linebreak. if you find any legal linebreaks, replace it with double space.
 - DO NOT change the content of documents
 - if you find broken link or ambigious, let me know before working

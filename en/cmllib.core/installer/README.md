@@ -4,7 +4,7 @@ Automatically install mod loaders like Forge, Fabric without requiring users to 
 
 ## Automatic Mod Loader Installation
 
-* Forge: [Installer.Forge](../../installer.forge/home.md)
+* Forge: [Installer.Forge](../../installer.forge/README.md)
 * Fabric: [Fabric Installer](fabric-installer.md)
 * Quilt: [Quilt Installer](quilt-installer.md)
 * LiteLoader: [LiteLoader Installer](liteloader-installer.md)

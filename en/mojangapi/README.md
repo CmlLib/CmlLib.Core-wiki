@@ -1,10 +1,10 @@
 # Home
 
-![Discord](https://img.shields.io/discord/795952027443527690?label=discord\&logo=discord\&style=for-the-badge)
+![Discord](https://img.shields.io/discord/795952027443527690?label=discord&logo=discord&style=for-the-badge)
 
 [GitHub](https://github.com/CmlLib/MojangAPI)
 
-.NET Library for [Mojang API](https://wiki.vg/Mojang\_API), [Mojang Authentication](https://wiki.vg/Authentication) and [Microsoft Xbox Authentication](https://wiki.vg/Microsoft\_Authentication\_Scheme)
+.NET Library for [Mojang API](https://wiki.vg/Mojang_API), [Mojang Authentication](https://wiki.vg/Authentication) and [Microsoft Xbox Authentication](https://wiki.vg/Microsoft_Authentication_Scheme)
 
 * Asynchronous API
 * Getting Player Data

@@ -2,8 +2,8 @@
 
 This is required to get the skin change endpoint to work in case the services do not trust your IP yet.
 
-Most methods return `MojangAPIResponse` or class inherited from `MojangAPIResponse`.\
-You can check whether the request was successful or failed to check `IsSuccess` property in `MojangAPIResponse`.\
+Most methods return `MojangAPIResponse` or class inherited from `MojangAPIResponse`.  
+You can check whether the request was successful or failed to check `IsSuccess` property in `MojangAPIResponse`.  
 If `IsSuccess` is false, `Error` and `ErrorMessage` property tell you why the request failed.
 
 Example:

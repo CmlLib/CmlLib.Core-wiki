@@ -79,4 +79,4 @@ process.BeginOutputReadLine();
 
 ## [log4j2 vulnerability (CVE-2021-44228)](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-44228)
 
-`CmlLib 0.0.1` \~ `CmlLib.Core 3.3.3` 버전에서 실행한 마인크래프트는 log4j2 취약점을 가지고 있을 수 있습니다. `CmlLib.Core 3.3.4` 이후 버전에서 실행한 마인크래프트는 안전합니다.
+`CmlLib 0.0.1` ~ `CmlLib.Core 3.3.3` 버전에서 실행한 마인크래프트는 log4j2 취약점을 가지고 있을 수 있습니다. `CmlLib.Core 3.3.4` 이후 버전에서 실행한 마인크래프트는 안전합니다.

@@ -34,16 +34,16 @@ Access to this resource requires age verification.
 
 ### 0x8015dc0e
 
-ACCOUNT\_CHILD\_NOT\_IN\_FAMILY
+ACCOUNT_CHILD_NOT_IN_FAMILY
 
 ### 0x8015dc09
 
-ACCOUNT\_CREATION\_REQUIRED
+ACCOUNT_CREATION_REQUIRED
 
 ### 0x8015dc10
 
-ACCOUNT\_MAINTENANCE\_REQUIRED
+ACCOUNT_MAINTENANCE_REQUIRED
 
 ### Others
 
-All error codes: [here](https://github.com/microsoft/xbox-live-api/blob/730f579d41b64df5b57b52e629d12f23c6fb64ac/Source/Shared/errors\_legacy.h#L924)
+All error codes: [here](https://github.com/microsoft/xbox-live-api/blob/730f579d41b64df5b57b52e629d12f23c6fb64ac/Source/Shared/errors_legacy.h#L924)

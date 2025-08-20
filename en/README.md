@@ -10,11 +10,11 @@ Minecraft installation and launching
 
 Microsoft Xbox account login for Minecraft accounts
 
-## [MojangAPI](mojangapi/home.md)
+## [MojangAPI](mojangapi/README.md)
 
 Implementation of Mojang API. Changing username or skin, getting player profile, blocked Server, checking game ownership, etc...
 
-## [Installer.Forge](installer.forge/home.md)
+## [Installer.Forge](installer.forge/README.md)
 
 Forge Mod Loader Installer
 

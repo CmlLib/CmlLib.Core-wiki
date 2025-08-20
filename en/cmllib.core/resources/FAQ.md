@@ -79,4 +79,4 @@ All version which Mojang launcher can launch also can be launched by CmlLib.Core
 
 ## [log4j2 vulnerability (CVE-2021-44228)](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-44228)
 
-Minecraft launched by `CmlLib 0.0.1` \~ `CmlLib.Core 3.3.3` may have log4j2 vulnerability. It is safe after `CmlLib.Core 3.3.4` version.
+Minecraft launched by `CmlLib 0.0.1` ~ `CmlLib.Core 3.3.3` may have log4j2 vulnerability. It is safe after `CmlLib.Core 3.3.4` version.

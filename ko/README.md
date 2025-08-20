@@ -18,7 +18,7 @@ CmlLib 프로젝트는 커스텀 마인크래프트 런처 제작을 목적으�
 
 Mojang API 구현체. 유저네임이나 스킨 변경, 플레이어 프로필 가져오기, 차단된 서버 가져오기, 게임 소유 확인, 등등등...
 
-## [Installer.Forge](installer.forge/home.md)
+## [Installer.Forge](installer.forge/README.md)
 
 포지 모드 로더 인스톨러
 

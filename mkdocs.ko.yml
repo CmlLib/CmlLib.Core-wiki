@@ -70,11 +70,11 @@ nav:
     - 'CmlLib.Core.Bedrock.Auth': auth.microsoft/cmllib.core.bedrock.auth.md
     - '자료': auth.microsoft/resources.md
   - '🌐 MojangAPI':
-    - '홈': mojangapi/home.md
+    - '홈': mojangapi/README.md
     - 'Mojang API': mojangapi/mojang-api.md
     - 'SecurityQuestion': mojangapi/securityquestion.md
   - '⚒️ Installer.Forge':
-    - '홈': installer.forge/home.md
+    - '홈': installer.forge/README.md
     - '지원되는 버전': installer.forge/supported-versions.md
     - '시작하기': installer.forge/getting-started.md
     - 'MForge': installer.forge/mforge.md

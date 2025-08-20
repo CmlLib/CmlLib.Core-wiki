@@ -77,11 +77,11 @@ Versions not listed in this table are untested. Again, versions after 1.7.10 sho
 | 1.2.3     | ⚠️ 1.2.3-Forge1.4.1.64, requiring ModLoader        |
 | 1.1       | ⚠️1.1-Forge1.3.4.29, requiring ModLoader           |
 
-## For 1.1 \~ 1.2.4
+## For 1.1 ~ 1.2.4
 
 Older versions of Forge were not standalone. These versions require [ModLoader](https://mcarchive.net/mods/modloader). You have to patch ModLoader after installing these Forge versions.
 
-## For 1.3.2 \~ 1.5.2
+## For 1.3.2 ~ 1.5.2
 
 | Game Version                              | File Name                    | SHA1 Checksum                             |
 | :---------------------------------------- | :--------------------------- | :---------------------------------------- |
@@ -108,7 +108,7 @@ Older versions of Forge were not standalone. These versions require [ModLoader](
 
 Locate these files in `<game_directory>/lib` .
 
-## For 1.6.1 \~ 1.6.4
+## For 1.6.1 ~ 1.6.4
 
 Requires an additional JVM argument: `-Dfml.ignoreInvalidMinecraftCertificates=true`
 
