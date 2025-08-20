@@ -34,6 +34,8 @@ theme:
     - header.autohide
     - toc.follow
     - prefer_contrast
+  font:
+    text: 'Inter'
   palette:
     # Palette toggle for automatic mode
     - media: "(prefers-color-scheme)"
@@ -67,6 +69,9 @@ extra:
     - name: 한국어
       link: /CmlLib.Core-wiki/ko/
       lang: ko
+
+extra_css:
+  - stylesheets/extra.css
 
 # Plugins
 markdown_extensions:
