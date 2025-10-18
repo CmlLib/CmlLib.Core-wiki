@@ -67,6 +67,5 @@
     * [홈](installer.forge/README.md)
     * [지원되는 버전](installer.forge/supported-versions.md)
     * [시작하기](installer.forge/getting-started.md)
-    * [MForge](installer.forge/mforge.md)
-    * [ForgeVersionLoader](installer.forge/forgeversionloader.md)
+    * [ForgeInstaller](installer.forge/forgeinstaller.md)
 * [[AD] 커스텀 런처 주문제작](ad.md)

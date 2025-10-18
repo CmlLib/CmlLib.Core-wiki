@@ -67,5 +67,4 @@
     * [Home](installer.forge/README.md)
     * [Supported Versions](installer.forge/supported-versions.md)
     * [Getting Started](installer.forge/getting-started.md)
-    * [MForge](installer.forge/mforge.md)
-    * [ForgeVersionLoader](installer.forge/forgeversionloader.md)
+    * [ForgeInstaller](installer.forge/forgeinstaller.md)
