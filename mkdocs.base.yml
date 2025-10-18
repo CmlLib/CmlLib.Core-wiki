@@ -17,7 +17,6 @@ theme:
   logo: https://avatars.githubusercontent.com/u/78353279?s=400&u=be1250f61cda305ace0d06e3d34d90539ccd2387&v=4
   favicon: https://avatars.githubusercontent.com/u/78353279?s=400&u=be1250f61cda305ace0d06e3d34d90539ccd2387&v=4
   features:
-    - navigation.sections
     - navigation.top
     - navigation.indexes
     - navigation.footer
@@ -122,3 +121,24 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
+
+plugins:
+  - llmstxt:
+      full_output: llms-full.txt
+      markdown_description: This is the documentation for CmlLib.Core.
+      sections:
+        Introduction:
+          - README.md
+          - SUMMARY.md: INDEX for all pages
+        CmlLib.Core:
+          - cmllib.core/*.md
+        Auth.Microsoft:
+          - auth.microsoft/*.md
+        MojangAPI:
+          - mojangapi/*.md
+        Installer.Forge:
+          - installer.forge/*.md
+        런처 주문제작:
+          - ad.md
+  - literate-nav:
+      nav_file: SUMMARY.md

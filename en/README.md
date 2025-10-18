@@ -4,20 +4,22 @@ CmlLib project develops various .NET libraries for building custom Minecraft lau
 
 ## [CmlLib.Core](cmllib.core/README.md)
 
-Minecraft installation and launching
+Core library containing most launcher functionality:
+
+- Install and launch Minecraft
+- Supports **all vanilla** versions
+- Supports any modified client including Forge, NeoForge, Fabric, Quilt, etc.
 
 ## [Auth.Microsoft](auth.microsoft/README.md)
 
-Microsoft Xbox account login for Minecraft accounts
+Microsoft account authentication for Minecraft accounts
 
 ## [MojangAPI](mojangapi/README.md)
 
-Implementation of Mojang API. Changing username or skin, getting player profile, blocked Server, checking game ownership, etc...
+- Getting player profile, skin, cape, etc.
+- Changing username or skin
+- And more...
 
 ## [Installer.Forge](installer.forge/README.md)
 
-Forge Mod Loader Installer
-
-## Sample Launcher
-
-[CmlLib-Minecraft-Launcher](https://github.com/CmlLib/CmlLib-Minecraft-Launcher)
+Automatic Forge Mod Loader Installer
