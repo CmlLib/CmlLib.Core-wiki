@@ -20,7 +20,11 @@ Support:
 
 ## Install
 
-Use Nuget package [MojangAPI](https://www.nuget.org/packages/MojangAPI) or download dll from [release](https://github.com/CmlLib/MojangAPI/releases).
+Use Nuget package [MojangAPI](https://www.nuget.org/packages/MojangAPI)
+
+```
+dotnet add package MojangAPI
+```
 
 ## Usage
 

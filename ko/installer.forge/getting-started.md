@@ -1,8 +1,12 @@
-# Getting Started
+# 시작하기
 
-## Install
+## 설치
 
-Install nuget package [CmlLib.Core.Installer.Forge](https://www.nuget.org/packages/CmlLib.Core.Installer.Forge)
+nuget package [CmlLib.Core.Installer.Forge](https://www.nuget.org/packages/CmlLib.Core.Installer.Forge) 설치
+
+```
+dotnet add package CmlLib.Core.Installer.Forge
+```
 
 ## Example
 
@@ -47,6 +51,6 @@ processUtil.StartWithEvents();
 await processUtil.WaitForExitTaskAsync();
 ```
 
-## Sample Installer
+## 샘플 설치기
 
 [SampleForgeInstaller](https://github.com/CmlLib/CmlLib.Core.Installer.Forge/blob/main/SampleForgeInstaller/Program.cs)

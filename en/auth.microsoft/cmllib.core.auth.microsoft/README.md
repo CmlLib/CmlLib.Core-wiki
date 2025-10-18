@@ -8,6 +8,10 @@ description: 'Login, logout, and account management in Minecraft: Java Edition'
 
 Install nuget package [CmlLib.Core.Auth.Microsoft](https://www.nuget.org/packages/CmlLib.Core.Auth.Microsoft)
 
+```
+dotnet add package CmlLib.Core.Auth.Microsoft
+```
+
 ## Getting Started
 
 ```csharp

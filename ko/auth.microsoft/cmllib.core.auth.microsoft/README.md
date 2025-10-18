@@ -8,7 +8,11 @@ description: '마인크래프트: 자바 에디션의 로그인, 로그아웃, �
 
 nuget package [CmlLib.Core.Auth.Microsoft](https://www.nuget.org/packages/CmlLib.Core.Auth.Microsoft)
 
-## 간단한 사용 방법
+```
+dotnet add package CmlLib.Core.Auth.Microsoft
+```
+
+## 시작하기
 
 ```csharp
 using CmlLib.Core.Auth.Microsoft;
@@ -17,7 +21,7 @@ var loginHandler = JELoginHandlerBuilder.BuildDefault();
 var session = await loginHandler.Authenticate();
 ```
 
-여기서 얻은 session 변수를 [실행 옵션 설정](../../cmllib.core/getting-started/MLaunchOption.md)의 [Session](../../cmllib.core/getting-started/MLaunchOption.md#session) 속성으로 설정하세요.
+[실행 옵션](../../cmllib.core/getting-started/MLaunchOption.md)의 `Session` 속성으로 설정하세요.
 
 ## 예제
 

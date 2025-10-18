@@ -19,3 +19,11 @@ CmlLib.Core 는 **커스텀 마인크래프트 런처** 제작을 위한 .NET �
 * 크로스플랫폼(Windows, Linux, macOS)
 * 모장 API (스킨, 유저이름 변경 등)
 * 실행 과정 커스터마이징
+
+## API 참조
+
+정확한 타입 정보와 메서드 시그니처를 확인하려면 [API Reference](https://cmllib.github.io/CmlLib.Core/api/toc.html)를 참고하세요. LLM과 함께 사용하는 경우 이 URL을 반드시 같이 사용하세요.
+
+## LLM
+
+[llms.txt](https://cmllib.github.io/CmlLib.Core-wiki/en/llms.txt)를 제공합니다.

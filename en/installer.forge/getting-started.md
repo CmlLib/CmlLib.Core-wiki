@@ -4,6 +4,10 @@
 
 Install nuget package [CmlLib.Core.Installer.Forge](https://www.nuget.org/packages/CmlLib.Core.Installer.Forge)
 
+```
+dotnet add package CmlLib.Core.Installer.Forge
+```
+
 ## Example
 
 ```csharp

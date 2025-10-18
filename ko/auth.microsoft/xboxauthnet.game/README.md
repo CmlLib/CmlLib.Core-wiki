@@ -8,6 +8,10 @@ description: 엑스박스 게임에 로그인하기 위한 기반을 제공합�
 
 마인크래프트 자바 에디션에 로그인하기 위한 [CmlLib.Core.Auth.Microsoft](../cmllib.core.auth.microsoft/README.md), 배드락 에디션에 로그인하기 위한 [CmlLib.Core.Bedrock.Auth](../cmllib.core.bedrock.auth.md) 의 공통 기능은 모두 이 라이브러리에서 제공합니다.
 
+## 설치
+
+이 패키지는 수동으로 설치할 필요가 없습니다. `CmlLib.Core.Auth.Microsoft`가 이 패키지에 의존합니다.
+
 ## Authenticator
 
 ### [OAuth](oauth.md)

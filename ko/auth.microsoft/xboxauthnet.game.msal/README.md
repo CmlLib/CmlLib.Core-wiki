@@ -8,11 +8,15 @@ MSAL 을 사용하여 마이크로소프트 OAuth 를 진행할 수 있는 확�
 
 MSAL 을 사용하면 윈도우 뿐만 아니라 Linux, macOS 등 모든 플랫폼에서 로그인을 진행할 수 있습니다.
 
-## Install
+## 설치
 
 Nuget package [XboxAuthNet.Game.Msal](https://www.nuget.org/packages/XboxAuthNet.Game.Msal)
 
 이 패키지를 사용하기 위해서는 반드시 `IPublicClientApplication` 을 적절하게 초기화해야 합니다.
+
+```
+dotnet add package XboxAuthNet.Game.Msal
+```
 
 ## [ClientID](clientid.md)
 

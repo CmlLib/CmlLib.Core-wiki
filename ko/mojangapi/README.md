@@ -41,6 +41,6 @@ Sample program: [MojangAPISample](https://github.com/CmlLib/MojangAPI/tree/maste
 
 Security question-answer flow
 
-### Authentication
+### 인증
 
-로그인을 위해서 [로그인과 세션](../cmllib.core/login-and-sessions/README.md) 를 확인하거나 [CmlLib.Core.Auth.Microsoft](../auth.microsoft/cmllib.core.auth.microsoft/README.md) 라이브러리를 사용하세요.
+인증을 위해서는 [로그인과 세션](../cmllib.core/login-and-sessions/README.md) 또는 라이브러리 [CmlLib.Core.Auth.Microsoft](../auth.microsoft/cmllib.core.auth.microsoft/README.md)를 사용하세요.

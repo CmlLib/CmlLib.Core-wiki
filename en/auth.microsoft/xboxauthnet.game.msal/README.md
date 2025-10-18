@@ -14,6 +14,10 @@ Nuget package [XboxAuthNet.Game.Msal](https://www.nuget.org/packages/XboxAuthNet
 
 To use this package, you must properly initialize `IPublicClientApplication`.
 
+```
+dotnet add package XboxAuthNet.Game.Msal
+```
+
 ## [ClientID](clientid.md)
 
 Describes how to register Azure application for `IPublicClientApplication`.

@@ -8,6 +8,10 @@ It provides common functionality for Xbox game authentication, including Microso
 
 For example, the common functionality of [CmlLib.Core.Auth.Microsoft](../cmllib.core.auth.microsoft/README.md) for logging into Minecraft Java Edition and [CmlLib.Core.Bedrock.Auth](../cmllib.core.bedrock.auth.md) for logging into Badrock Edition are both provided by this library.
 
+## Install
+
+You don't need to install this package manually. `CmlLib.Core.Auth.Microsoft` depends this package.
+
 ## Authenticator
 
 ### [OAuth](oauth.md)
