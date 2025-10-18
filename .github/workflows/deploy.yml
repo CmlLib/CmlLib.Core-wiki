@@ -31,41 +31,47 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: 3.11
+          python-version: 3.10
 
-      # 3. Pip 캐시 설정 (빌드 속도 향상)
+      # 3. uv 설치
+      - name: Install uv
+        uses: astral-sh/setup-uv@v4
+        with:
+          version: "latest"
+
+      # 4. uv 캐시 설정 (빌드 속도 향상)
       - name: Cache dependencies
         uses: actions/cache@v4
         with:
-          path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          path: ~/.cache/uv
+          key: ${{ runner.os }}-uv-${{ hashFiles('**/pyproject.toml') }}
           restore-keys: |
-            ${{ runner.os }}-pip-
+            ${{ runner.os }}-uv-
 
-      # 4. 의존성 라이브러리 설치
+      # 5. 의존성 라이브러리 설치
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: uv sync
 
-      # 5. MkDocs 빌드 (영어, 한국어 버전 순차 실행)
+      # 6. MkDocs 빌드 (영어, 한국어 버전 순차 실행)
       # 이 부분이 핵심입니다. 두 개의 설정 파일을 모두 사용하여 빌드합니다.
       - name: Build MkDocs site
         run: |
           mkdocs build --config-file mkdocs.en.yml
           mkdocs build --config-file mkdocs.ko.yml
 
-      # 6. (선택사항) 루트 경로 리디렉션 페이지 생성
+      # 7. (선택사항) 루트 경로 리디렉션 페이지 생성
       # 사용자가 사이트 루트(/)로 접속했을 때 기본 언어(예: 영어)로 자동 이동시킵니다.
       - name: Create redirect page
         run: |
           echo '<!DOCTYPE html><html><head><meta http-equiv="refresh" content="0; url=./en/"></head><body></body></html>' > site/index.html
 
-      # 7. 빌드 결과물(site 폴더)을 아티팩트로 업로드
+      # 8. 빌드 결과물(site 폴더)을 아티팩트로 업로드
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./site
 
-      # 8. 아티팩트를 GitHub Pages에 배포
+      # 9. 아티팩트를 GitHub Pages에 배포
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
