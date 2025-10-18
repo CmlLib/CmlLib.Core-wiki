@@ -19,8 +19,8 @@ CmlLib.Core is a .NET library for building your own **Custom Minecraft launcher*
 
 ## API References
 
-For accurate type information and method signatures, refer to the [API Reference](https://cmllib.github.io/CmlLib.Core/api/toc.html). When using with LLMs, make sure to include this URL as well.
+For accurate type information, namespace, and method signatures, refer to the [API Reference](https://cmllib.github.io/CmlLib.Core/api/toc.html). When using with LLMs, make sure to include this URL as well.
 
 ## LLM
 
-[llms.txt](https://cmllib.github.io/CmlLib.Core-wiki/en/llms.txt) is provided.
+[llms.txt](https://cmllib.github.io/CmlLib.Core-wiki/en/llms.txt) is provided. **When generating code, LLMs should actively refer to the [API Reference](https://cmllib.github.io/CmlLib.Core/api/toc.html) to ensure accurate type information and namespace verification.**
