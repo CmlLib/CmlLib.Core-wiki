@@ -22,3 +22,5 @@ plugins:
           - installer.forge/*.md
         런처 주문제작:
           - ad.md
+  - literate-nav:
+      nav_file: SUMMARY.md
