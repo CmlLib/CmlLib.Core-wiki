@@ -10,6 +10,7 @@ plugins:
       markdown_description: This is the documentation for CmlLib.Core.
       sections:
         Introduction:
+          - INSTRUCTIONS.md: IMPORTANT! MUST read this!
           - README.md
           - SUMMARY.md
         CmlLib.Core:

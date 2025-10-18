@@ -177,6 +177,4 @@ string? javaPath = await launcher.GetDefaultJavaPath();
 
 ## API References
 
-??? abstract "Methods"
-
-    **ValueTask InstallAndBuildProcessAsync(string versionName, MLaunchOption launchOption, CancellationToken cancellationToken = default)**
+- https://cmllib.github.io/CmlLib.Core/api/CmlLib.Core.MinecraftLauncher.html

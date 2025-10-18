@@ -1,4 +1,5 @@
 * [🧊 CmlLib Projects](README.md)
+    * [LLM Instructions](INSTRUCTIONS.md)
 * [🚀 CmlLib.Core](cmllib.core/README.md)
     * [Home](cmllib.core/README.md)
     * [Getting Started](cmllib.core/getting-started/README.md)

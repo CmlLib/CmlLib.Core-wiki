@@ -60,3 +60,10 @@ var process = launcher.BuildProcess(version, new MLaunchOption
 });
 process.Start(); 
 ```
+
+## API References
+
+- https://cmllib.github.io/CmlLib.Core/api/CmlLib.Core.Version.IVersion.html
+- https://cmllib.github.io/CmlLib.Core/api/CmlLib.Core.VersionMetadata.VersionMetadataCollection.html
+- https://cmllib.github.io/CmlLib.Core/api/CmlLib.Core.VersionMetadata.IVersionMetadata.html
+- https://cmllib.github.io/CmlLib.Core/api/CmlLib.Core.VersionMetadata.MVersionType.html

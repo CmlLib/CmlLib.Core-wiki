@@ -214,3 +214,7 @@ Default arguments are:
 **Type: `IEnumerable<MArgument>`**
 
 Set extra game arguments. See [MArgument](../more-apis/margument.md)
+
+## API References
+
+- https://cmllib.github.io/CmlLib.Core/api/CmlLib.Core.ProcessBuilder.MLaunchOption.html

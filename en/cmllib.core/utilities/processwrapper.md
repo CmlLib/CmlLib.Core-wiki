@@ -39,3 +39,7 @@ else
     Console.WriteLine($"Game error occurred! Exit code: {exitCode}");
 }
 ```
+
+## API Reference
+
+- https://cmllib.github.io/CmlLib.Core/api/CmlLib.Core.ProcessBuilder.ProcessWrapper.html
