@@ -123,22 +123,5 @@ markdown_extensions:
   - pymdownx.tilde
 
 plugins:
-  - llmstxt:
-      full_output: llms-full.txt
-      markdown_description: This is the documentation for CmlLib.Core.
-      sections:
-        Introduction:
-          - README.md
-          - SUMMARY.md: INDEX for all pages
-        CmlLib.Core:
-          - cmllib.core/*.md
-        Auth.Microsoft:
-          - auth.microsoft/*.md
-        MojangAPI:
-          - mojangapi/*.md
-        Installer.Forge:
-          - installer.forge/*.md
-        런처 주문제작:
-          - ad.md
   - literate-nav:
       nav_file: SUMMARY.md
