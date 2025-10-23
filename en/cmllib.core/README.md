@@ -23,4 +23,4 @@ For accurate type information, namespace, and method signatures, refer to the [A
 
 ## LLM
 
-[llms.txt](https://cmllib.github.io/CmlLib.Core-wiki/en/llms.txt) is provided. **When generating code, LLMs should actively refer to the [API Reference](https://cmllib.github.io/CmlLib.Core/api/toc.html) to ensure accurate type information and namespace verification.**
+[llms.txt](https://cmllib.github.io/CmlLib.Core-wiki/en/llms.txt) is provided.

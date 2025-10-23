@@ -79,3 +79,5 @@ IProgress<InstallerProgressChangedEventArgs> fileProgress = new SyncProgress<Ins
 - [MinecraftLauncher](https://cmllib.github.io/CmlLib.Core/api/CmlLib.Core.MinecraftLauncher.html)
 - [ByteProgress](https://cmllib.github.io/CmlLib.Core/api/CmlLib.Core.ByteProgress.html)
 - [InstallerProgressChangedEventArgs](https://cmllib.github.io/CmlLib.Core/api/CmlLib.Core.Installers.InstallerProgressChangedEventArgs.html)
+- [FileProgressChanged](https://cmllib.github.io/CmlLib.Core/api/CmlLib.Core.MinecraftLauncher.html#CmlLib_Core_MinecraftLauncher_FileProgressChanged)
+- [ByteProgressChanged](https://cmllib.github.io/CmlLib.Core/api/CmlLib.Core.MinecraftLauncher.html#CmlLib_Core_MinecraftLauncher_ByteProgressChanged)

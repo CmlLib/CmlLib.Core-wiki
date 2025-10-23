@@ -59,7 +59,7 @@ There are two ways to make custom directory structure.
 
 ### Set properties
 
-Set path properties to what you want. All properties are described in [Properties](#properties)
+Set path properties to what you want. See [API Reference](#api-references) for more information.
 
 !!! info "Information"
     Make sure to use absolute paths only.
@@ -76,7 +76,7 @@ myPath.Assets = MinecraftPath.GetOSDefaultPath() + "/assets";
 !!! info "Information"
     When receiving a relative path as an argument, make sure to convert it to an absolute path and store it.
 
-Create derived class of `MinecraftPath`, and override methods. Each methods (`CreateDirs`, `NormalizePath`, etc) are described in [Methods](#methods).
+Create derived class of `MinecraftPath`, and override methods. Each methods (`CreateDirs`, `NormalizePath`, etc) are described in [API Reference](#api-references).
 
 ```csharp
 class MyMinecraftPath : MinecraftPath
@@ -124,4 +124,4 @@ class MyMinecraftPath : MinecraftPath
 
 ## API References
 
-- CmlLib.Core.Commons
+- [MinecraftPath](https://cmllib.github.io/CmlLib.Core.Commons/api/CmlLib.Core.MinecraftPath.html)

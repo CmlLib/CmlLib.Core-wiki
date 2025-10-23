@@ -9,11 +9,12 @@ Automatically install mod loaders like Forge, Fabric without requiring users to 
 * Quilt: [Quilt Installer](quilt-installer.md)
 * LiteLoader: [LiteLoader Installer](liteloader-installer.md)
 
-## Third-party Libraries
+## Community Projects
 
 Thanks to community contributions, there are installers that can be used with CmlLib.Core. These libraries are not official projects managed by CmlLib.
 
-* Optifine: [https://github.com/mzggr0914/Optifine.Installer](https://github.com/mzggr0914/Optifine.Installer)
+* Optifine: [mzggr0914/Optifine.Installer](https://github.com/mzggr0914/Optifine.Installer)
+* NeoForge: [CmlLib.Core.Installer.NeoForge](https://github.com/Gml-Launcher/CmlLib.Core.Installer.NeoForge)
 
 ## Direct Mod Loader Extraction
 
