@@ -74,7 +74,7 @@ IProgress<InstallerProgressChangedEventArgs> fileProgress = new SyncProgress<Ins
 });
 ```
 
-## API References
+## API Reference
 
 - [MinecraftLauncher](https://cmllib.github.io/CmlLib.Core/api/CmlLib.Core.MinecraftLauncher.html)
 - [ByteProgress](https://cmllib.github.io/CmlLib.Core/api/CmlLib.Core.ByteProgress.html)

@@ -89,3 +89,7 @@ authenticator.AddMicrosoftOAuthBrowserSignout(clientInfo, codeFlow =>
     codeFlow.WithUITitle("My Window");
 });
 ```
+
+## API Reference
+
+- [MicrosoftOAuthBuilder](https://cmllib.github.io/CmlLib.Core.Auth.Microsoft/api/XboxAuthNet.Game.OAuth.MicrosoftOAuthBuilder.html)

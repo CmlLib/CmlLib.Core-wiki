@@ -6,8 +6,8 @@ The `GetAllVersionsAsync` method returns all vanilla and locally installed versi
 
 ```csharp
 var launcher = new MinecraftLauncher();
-var versions = await launcher.GetAllVersionsAsync();
-foreach (var version in versions)
+VersionMetadataCollection versions = await launcher.GetAllVersionsAsync();
+foreach (IVersionMetadata version in versions)
 {
     Console.WriteLine("Name: " + version.Name);
     Console.WriteLine("Type: " + version.GetVersionType());
@@ -21,7 +21,7 @@ foreach (var version in versions)
 
 ```csharp
 var launcher = new MinecraftLauncher();
-var version = await launcher.GetVersionAsync("1.20.4");
+IVersion version = await launcher.GetVersionAsync("1.20.4");
 // version.Id
 // version.Jar
 // version.Libraries
@@ -36,7 +36,7 @@ In version 1.16.5, the Multiplayer button is disabled when launch the game with 
 
 ```csharp
 var launcher = new MinecraftLauncher();
-var version = (await launcher.GetVersionAsync("1.16.5")).ToMutableVersion();
+MinecraftVersion version = (await launcher.GetVersionAsync("1.16.5")).ToMutableVersion();
 
 // remove existing authlib
 version.LibraryList.RemoveAt(version.LibraryList.FindIndex(lib => lib.Name == "com.mojang:authlib:2.1.28"));
@@ -61,9 +61,9 @@ var process = launcher.BuildProcess(version, new MLaunchOption
 process.Start(); 
 ```
 
-## API References
+## API Reference
 
-- https://cmllib.github.io/CmlLib.Core/api/CmlLib.Core.Version.IVersion.html
-- https://cmllib.github.io/CmlLib.Core/api/CmlLib.Core.VersionMetadata.VersionMetadataCollection.html
-- https://cmllib.github.io/CmlLib.Core/api/CmlLib.Core.VersionMetadata.IVersionMetadata.html
-- https://cmllib.github.io/CmlLib.Core/api/CmlLib.Core.VersionMetadata.MVersionType.html
+- [IVersion](https://cmllib.github.io/CmlLib.Core/api/CmlLib.Core.Version.IVersion.html)
+- [VersionMetadataCollection](https://cmllib.github.io/CmlLib.Core/api/CmlLib.Core.VersionMetadata.VersionMetadataCollection.html)
+- [IVersionMetadata](https://cmllib.github.io/CmlLib.Core/api/CmlLib.Core.VersionMetadata.IVersionMetadata.html)
+- [MVersionType](https://cmllib.github.io/CmlLib.Core/api/CmlLib.Core.VersionMetadata.MVersionType.html)

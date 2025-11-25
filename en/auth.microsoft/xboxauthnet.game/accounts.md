@@ -43,3 +43,8 @@ For example, `JEGameAccount`, which represents a Minecraft Java Edition account,
 Indicates the last time this account was accessed.
 
 ### XboxTokens
+
+## API Reference
+
+- [JEGameAccount](https://cmllib.github.io/CmlLib.Core.Auth.Microsoft/api/CmlLib.Core.Auth.Microsoft.Sessions.JEGameAccount.html)
+- [IXboxGameAccountManager](https://cmllib.github.io/CmlLib.Core.Auth.Microsoft/api/XboxAuthNet.Game.Accounts.IXboxGameAccountManager.html)

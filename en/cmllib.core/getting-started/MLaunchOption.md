@@ -215,6 +215,6 @@ Default arguments are:
 
 Set extra game arguments. See [MArgument](../more-apis/margument.md)
 
-## API References
+## API Reference
 
-- https://cmllib.github.io/CmlLib.Core/api/CmlLib.Core.ProcessBuilder.MLaunchOption.html
+- [MLaunchOption](https://cmllib.github.io/CmlLib.Core/api/CmlLib.Core.ProcessBuilder.MLaunchOption.html)

@@ -44,3 +44,8 @@ If the OAuth token is from third-party client id, you should register the client
 ### 404: NOT_FOUND
 
 The user doesn't have the game. (Demo version)
+
+## API Reference
+
+- [Extensions](https://cmllib.github.io/CmlLib.Core.Auth.Microsoft/api/CmlLib.Core.Auth.Microsoft.Extensions.html)
+- [JEAuthenticatorBuilder](https://cmllib.github.io/CmlLib.Core.Auth.Microsoft/api/CmlLib.Core.Auth.Microsoft.Authenticators.JEAuthenticatorBuilder.html)

@@ -17,7 +17,7 @@ CmlLib.Core is a .NET library for building your own **Custom Minecraft launcher*
 * Crossplatform (Windows, Linux, macOS)
 * Highly customizable launch flow
 
-## API References
+## API Reference
 
 For accurate type information, namespace, and method signatures, refer to the [API Reference](https://cmllib.github.io/CmlLib.Core/api/toc.html). When using with LLMs, make sure to include this URL as well.
 

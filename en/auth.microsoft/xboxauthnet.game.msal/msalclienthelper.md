@@ -47,3 +47,7 @@ Create an `IPublicClientApplication` set up for Xbox authentication and return i
 ## ToMicrosoftOAuthResponse(AuthenticationResult result)
 
 Convert the MSAL login result, `AuthenticationResult`, to a `MicrosoftOAuthResponse` object used by `XboxAuthNet`.
+
+## API Reference
+
+- [MsalClientHelper](https://cmllib.github.io/CmlLib.Core.Auth.Microsoft/api/XboxAuthNet.Game.Msal.MsalClientHelper.html)

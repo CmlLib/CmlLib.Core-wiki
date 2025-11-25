@@ -45,6 +45,8 @@ Click 'Save' button
 
 ## 4. Register Client ID
 
+After creating your application in Azure, you need to allowlist your Client ID to prevent 403: FORBIDDEN errors from the Minecraft authentication API. Follow the guidance in the official Minecraft help article to ensure your application is recognized.
+
 https://help.minecraft.net/hc/en-us/articles/16254801392141
 
 https://github.com/CmlLib/CmlLib.Core.Auth.Microsoft/issues/16

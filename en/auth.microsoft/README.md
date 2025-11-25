@@ -19,3 +19,11 @@ Provides functionality commonly used by `CmlLib.Core.Auth.Microsoft` and `CmlLib
 ## [XboxAuthNet.Game.Msal](xboxauthnet.game.msal/README.md)
 
 By default, `CmlLib.Core.Auth.Microsoft` and `CmlLib.Core.Bedrock.Auth` only work on Windows. `XboxAuthNet.Game.Msal` provides extensions for use on other platforms such as Linux and macOS.
+
+## API Reference
+
+For accurate type information, namespace, and method signatures, refer to the [API Reference](https://cmllib.github.io/CmlLib.Core.Auth.Microsoft/api/toc.html). When using with LLMs, make sure to include this URL as well.
+
+## LLM
+
+[llms.txt](https://cmllib.github.io/CmlLib.Core-wiki/en/llms.txt) is provided.

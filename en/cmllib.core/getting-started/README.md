@@ -9,5 +9,3 @@ The latest version of the library is 4.x.x. It is recommended to use the command
 ```
 dotnet add package CmlLib.Core
 ```
-
-Go to next part ->

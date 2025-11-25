@@ -49,3 +49,8 @@ loginHandler.AccountManager.ClearAccounts();
 ```csharp
 loginHandler.AccountManager.SaveAccounts();
 ```
+
+## API Reference
+
+- [JEGameAccount](https://cmllib.github.io/CmlLib.Core.Auth.Microsoft/api/CmlLib.Core.Auth.Microsoft.Sessions.JEGameAccount.html)
+- [IXboxGameAccountManager](https://cmllib.github.io/CmlLib.Core.Auth.Microsoft/api/XboxAuthNet.Game.Accounts.IXboxGameAccountManager.html)

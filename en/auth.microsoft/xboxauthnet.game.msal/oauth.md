@@ -86,3 +86,7 @@ authenticator.AddMsalOAuth(app, msal => msal.FromResult(result));
 ```
 
 Use MSAL authentication result.
+
+## API Reference
+
+- [MsalOAuthBuilder](https://cmllib.github.io/CmlLib.Core.Auth.Microsoft/api/XboxAuthNet.Game.Msal.MsalOAuthBuilder.html)

@@ -42,4 +42,4 @@ else
 
 ## API Reference
 
-- https://cmllib.github.io/CmlLib.Core/api/CmlLib.Core.ProcessBuilder.ProcessWrapper.html
+- [ProcessWrapper](https://cmllib.github.io/CmlLib.Core/api/CmlLib.Core.ProcessBuilder.ProcessWrapper.html)

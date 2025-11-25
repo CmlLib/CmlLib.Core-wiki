@@ -122,6 +122,6 @@ class MyMinecraftPath : MinecraftPath
 }
 ```
 
-## API References
+# API Reference
 
 - [MinecraftPath](https://cmllib.github.io/CmlLib.Core.Commons/api/CmlLib.Core.MinecraftPath.html)

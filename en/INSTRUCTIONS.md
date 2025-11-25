@@ -56,12 +56,16 @@ do the following:
 - API Reference
     - [CmlLib.Core](https://cmllib.github.io/CmlLib.Core/api/toc.html)
     - [CmlLib.Core.Commons](https://cmllib.github.io/CmlLib.Core.Commons/api/toc.html)
+    - [CmlLib.Core.Auth.Microsoft](https://cmllib.github.io/CmlLib.Core.Auth.Microsoft/api/toc.html)
+    - [CmlLib.Core.Installer.Forge](https://cmllib.github.io/CmlLib.Core.Installer.Forge/api/toc.html)
 - NuGet packages:
     - [CmlLib.Core](https://www.nuget.org/packages/CmlLib.Core)
     - [CmlLib.Core.Auth.Microsoft](https://www.nuget.org/packages/CmlLib.Core.Auth.Microsoft)
+    - [CmlLib.Core.Installer.Forge](https://www.nuget.org/packages/CmlLib.Core.Installer.Forge)
 - Source codes:
     - [CmlLib.Core](https://github.com/CmlLib/CmlLib.Core)
     - [CmlLib.Core.Auth.Microsoft](https://github.com/CmlLib/CmlLib.Core.Auth.Microsoft)
+    - [CmlLib.Core.Installer.Forge](https://github.com/CmlLib/CmlLib.Core.Installer.Forge)
 - LLM metadata:
     - [llms.txt](https://cmllib.github.io/CmlLib.Core-wiki/en/llms.txt)
     - [llms-full.txt](https://cmllib.github.io/CmlLib.Core-wiki/en/llms-full.txt)

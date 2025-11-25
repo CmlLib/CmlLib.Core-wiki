@@ -131,3 +131,8 @@ If you MUST automate this, please consider supporting the project through https:
 ```
 
 If you want to disable this behavior, you can modify the [ForgeInstaller source code](https://github.com/CmlLib/CmlLib.Core.Installer.Forge/blob/main/CmlLib.Core.Installer.Forge/ForgeInstaller.cs) yourself.
+
+## API Reference
+
+- [ForgeInstaller](https://cmllib.github.io/CmlLib.Core.Installer.Forge/api/CmlLib.Core.Installer.Forge.ForgeInstaller.html)
+- [ForgeInstallOptions](https://cmllib.github.io/CmlLib.Core.Installer.Forge/api/CmlLib.Core.Installer.Forge.ForgeInstallOptions.html)

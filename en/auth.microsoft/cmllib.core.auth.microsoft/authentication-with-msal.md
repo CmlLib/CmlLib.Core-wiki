@@ -82,3 +82,11 @@ var session = await authenticator.ExecuteForLauncherAsync();
 ```
 
 For more methods in MSAL, such as `msal.Interactive()`, `msal.Silent()`, and more, see [OAuth](../xboxauthnet.game.msal/oauth.md).
+
+## API Reference
+
+- [JELoginHandler](https://cmllib.github.io/CmlLib.Core.Auth.Microsoft/api/CmlLib.Core.Auth.Microsoft.JELoginHandler.html)
+- [MsalClientHelper](https://cmllib.github.io/CmlLib.Core.Auth.Microsoft/api/XboxAuthNet.Game.Msal.MsalClientHelper.html)
+- [MsalCodeFlowProvider](https://cmllib.github.io/CmlLib.Core.Auth.Microsoft/api/XboxAuthNet.Game.Msal.OAuth.MsalCodeFlowProvider.html)
+- [MsalDeviceCodeProvider](https://cmllib.github.io/CmlLib.Core.Auth.Microsoft/api/XboxAuthNet.Game.Msal.OAuth.MsalDeviceCodeProvider.html)
+- [MsalOAuthBuilder](https://cmllib.github.io/CmlLib.Core.Auth.Microsoft/api/XboxAuthNet.Game.Msal.MsalOAuthBuilder.html)

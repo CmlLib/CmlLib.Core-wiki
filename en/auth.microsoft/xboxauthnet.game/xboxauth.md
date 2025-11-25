@@ -62,3 +62,7 @@ When using a authentication method that gets a DeviceToken, you can apply the De
 There are various error scenarios when authenticating with Xbox. If an error occurs during authentication, an `XboxAuthException` is thrown and you can get an ErrorCode and ErrorMessage.
 
 All ErrorCodes can be found [XboxAuthException](xboxauthexception.md).
+
+## API Reference
+
+- [XboxAuthBuilder](https://cmllib.github.io/CmlLib.Core.Auth.Microsoft/api/XboxAuthNet.Game.XboxAuth.XboxAuthBuilder.html)
