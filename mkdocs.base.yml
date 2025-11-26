@@ -68,6 +68,9 @@ extra:
     - name: 한국어
       link: /CmlLib.Core-wiki/ko/
       lang: ko
+  analytics:
+    provider: google
+    google: G-1BNRZFDF8G
 
 extra_css:
   - stylesheets/extra.css
