@@ -12,7 +12,7 @@ NeoForge Installer for [CmlLib.Core](../cmllib.core/README.md).
 
 ## Supported Neoforge Versions
 
-**1.20.2 ~ 1.21.10** Neoforge versions was successfully tested. [All test results](https://alphabs.gitbook.io/cmllib/installer.Neoforge/supported-versions)
+**1.20.2 ~ 1.21.10** Neoforge versions was successfully tested. [All test results](supported-versions.md)
 
 ## LLM
 

@@ -68,7 +68,7 @@ This finds and installs the latest NeoForge version available for Minecraft 1.21
 
 ## Installation Options
 
-To use features like installation progress display and cancellation, configure the appropriate values in `ForgeInstallOptions`.
+To use features like installation progress display and cancellation, configure the appropriate values in `NeoForgeInstallOptions`.
 
 ```csharp
 var installOptions = new NeoForgeInstallOptions
@@ -95,7 +95,7 @@ var installedVersionName = await neoForgeInstaller.Install("1.21.10", installOpt
 
 ## Important Note About Complete Installation
 
-`forgeInstaller.Install` does not fully install the NeoForge version. The version still needs additional files such as sound assets, Java runtime, and vanilla version files. Therefore, you should always call `launcher.InstallAsync` before launching the game.
+`neoForgeInstaller.Install` does not fully install the NeoForge version. The version still needs additional files such as sound assets, Java runtime, and vanilla version files. Therefore, you should always call `launcher.InstallAsync` before launching the game.
 
 ```csharp
 // Install NeoForge
