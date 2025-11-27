@@ -69,3 +69,8 @@
     * [Supported Versions](installer.forge/supported-versions.md)
     * [Getting Started](installer.forge/getting-started.md)
     * [ForgeInstaller](installer.forge/forgeinstaller.md)
+* [🦊 Installer.NeoForge](installer.neoforge/README.md)
+    * [Home](installer.neoforge/README.md)
+    * [Supported Versions](installer.neoforge/supported-versions.md)
+    * [Getting Started](installer.neoforge/getting-started.md)
+    * [NeoForgeInstaller](installer.neoforge/neoforgeinstaller.md)
