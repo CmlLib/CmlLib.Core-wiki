@@ -23,7 +23,3 @@ Microsoft account authentication for Minecraft accounts
 ## [Installer.Forge](installer.forge/README.md)
 
 Automatic Forge Mod Loader Installer
-
-## LLM
-
-We provides [llms.txt](https://cmllib.github.io/CmlLib.Core-wiki/en/llms.txt) and [llms-full.txt](https://cmllib.github.io/CmlLib.Core-wiki/en/llms-full.txt) for LLMs.

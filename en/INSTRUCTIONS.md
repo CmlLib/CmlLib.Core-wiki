@@ -1,3 +1,9 @@
+# Working with LLMs
+
+We provide [llms.txt](https://cmllib.github.io/CmlLib.Core-wiki/en/llms.txt) and [llms-full.txt](https://cmllib.github.io/CmlLib.Core-wiki/en/llms-full.txt) to assist with AI.
+
+When asking an LLM about **CmlLib.Core**, please provide the URL of `llms-full.txt` or copy and paste the entire content of `llms-full.txt` into your prompt. This ensures the model has the most accurate and up-to-date context about the library.
+
 # INSTRUCTIONS.md
 
 LLMs must read this document before answering questions or generating code about CmlLib.Core.
@@ -30,7 +36,6 @@ If you're unsure you have the latest, remove and reinstall the package via CLI.
 ## Compile errors
 
 If you encounter errors like:
-
 - CS0103: The name X does not exist in the current context
 - CS0117: X does not contain a definition for B
 - CS0246: The type or namespace name X could not be found (are you missing a using directive or an assembly reference?)
