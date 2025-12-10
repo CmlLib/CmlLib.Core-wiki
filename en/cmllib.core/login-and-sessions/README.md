@@ -1,5 +1,9 @@
 # Login and Sessions
 
+{% hint style="warning" %}
+**This document is outdated!** The latest documentation has moved to [here](https://cmllib.github.io/CmlLib.Core-wiki/en/).
+{% endhint %}
+
 To connect to online-mode server, you should obtain player's session data. The game session data contains player's username, UUID, and accessToken.
 
 There are some ways to obtain game session:

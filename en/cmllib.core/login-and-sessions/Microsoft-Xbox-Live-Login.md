@@ -1,6 +1,10 @@
 # Microsoft Xbox Account
 
-## [cmllib.core.auth.microsoft](../../auth.microsoft/cmllib.core.auth.microsoft/ "mention")
+{% hint style="warning" %}
+**This document is outdated!** The latest documentation has moved to [here](https://cmllib.github.io/CmlLib.Core-wiki/en/).
+{% endhint %}
+
+[cmllib.core.auth.microsoft](../../auth.microsoft/cmllib.core.auth.microsoft/ "mention")
 
 Microsoft login process is quite complex. I **highly** recommend you to use this library to add Microsoft login feature in your launcher.
 

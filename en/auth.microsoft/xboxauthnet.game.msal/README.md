@@ -4,6 +4,10 @@ description: Extension for MSAL OAuth
 
 # XboxAuthNet.Game.Msal
 
+{% hint style="warning" %}
+**This document is outdated!** The latest documentation has moved to [here](https://cmllib.github.io/CmlLib.Core-wiki/en/).
+{% endhint %}
+
 Provides an extension method to perform Microsoft OAuth using MSAL.
 
 With MSAL, you can sign in on any platform, including Linux and macOS, not just Windows.

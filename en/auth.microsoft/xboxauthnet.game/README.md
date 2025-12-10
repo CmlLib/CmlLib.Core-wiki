@@ -4,6 +4,10 @@ description: Provides the foundation for Xbox game authenticating.
 
 # XboxAuthNet.Game
 
+{% hint style="warning" %}
+**This document is outdated!** The latest documentation has moved to [here](https://cmllib.github.io/CmlLib.Core-wiki/en/).
+{% endhint %}
+
 It provides common functionality for Xbox game authentication, including Microsoft OAuth, Xbox authentication, and account management.
 
 For example, the common functionality of [cmllib.core.auth.microsoft](../cmllib.core.auth.microsoft/ "mention") for logging into Minecraft Java Edition and [cmllib.core.bedrock.auth.md](../cmllib.core.bedrock.auth.md "mention") for logging into Badrock Edition are both provided by this library.

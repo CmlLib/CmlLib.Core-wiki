@@ -4,6 +4,10 @@ description: Install Quilt mod loader
 
 # Quilt Installer
 
+{% hint style="warning" %}
+**This document is outdated!** The latest documentation has moved to [here](https://cmllib.github.io/CmlLib.Core-wiki/en/).
+{% endhint %}
+
 ### Get Minecraft versions
 
 ```csharp

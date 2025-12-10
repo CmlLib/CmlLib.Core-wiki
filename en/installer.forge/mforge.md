@@ -1,5 +1,9 @@
 # MForge
 
+{% hint style="warning" %}
+**This document is outdated!** The latest documentation has moved to [here](https://cmllib.github.io/CmlLib.Core-wiki/en/).
+{% endhint %}
+
 `MForge` is wrapper of Forge installer.
 
 ```csharp
@@ -25,7 +29,7 @@ await forge.Install("1.20.1", "47.1.0", forceUpdate: true);
 
 For `FileChanged` and `ProgressChanged`, see [Handling-Events.md](../cmllib.core/getting-started/Handling-Events.md "mention").
 
-With `InstallerOutput`, you can get logs from the forge installer. For example:&#x20;
+With `InstallerOutput`, you can get logs from the forge installer. For example:
 
 ```
 Forge installer 
@@ -59,4 +63,4 @@ Our efforts are supported by ads from the download page.
 If you MUST automate this, please consider supporting the project through https://www.patreon.com/LexManos
 ```
 
-If you don't want this, Modify [MForge source code](https://github.com/CmlLib/CmlLib.Core.Installer.Forge/blob/main/CmlLib.Core.Installer.Forge/MForge.cs) by yourself.&#x20;
+If you don't want this, Modify [MForge source code](https://github.com/CmlLib/CmlLib.Core.Installer.Forge/blob/main/CmlLib.Core.Installer.Forge/MForge.cs) by yourself.

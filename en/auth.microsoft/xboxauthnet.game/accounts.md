@@ -1,5 +1,9 @@
 # Accounts
 
+{% hint style="warning" %}
+**This document is outdated!** The latest documentation has moved to [here](https://cmllib.github.io/CmlLib.Core-wiki/en/).
+{% endhint %}
+
 ## ISessionStorage
 
 Sessions are stored in `ISessionStorage`, along with the various tokens obtained during the login process. One account is stored in one instance of `ISessionStorage`. For example, when a user named `Notch` logs in, they get a Microsoft OAuth token, an Xbox token, and a Minecraft JE token. All three would be stored in a single instance of `ISessionStorage`, which would only contain login information specific to the user `Notch`.

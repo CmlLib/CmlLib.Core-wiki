@@ -4,6 +4,10 @@ description: Login, logout, account managements.
 
 # JELoginHandler
 
+{% hint style="warning" %}
+**This document is outdated!** The latest documentation has moved to [here](https://cmllib.github.io/CmlLib.Core-wiki/en/).
+{% endhint %}
+
 ## Creating JELoginHandler instance
 
 ```csharp

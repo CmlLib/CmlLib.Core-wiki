@@ -4,6 +4,10 @@ description: Install Forge mod loader
 
 # Forge Installer
 
+{% hint style="warning" %}
+**This document is outdated!** The latest documentation has moved to [here](https://cmllib.github.io/CmlLib.Core-wiki/en/).
+{% endhint %}
+
 ## [Installer.Forge](../../installer.forge/home.md)
 
 [Use this library](../../installer.forge/home.md) to install Forge mod loader automatically.

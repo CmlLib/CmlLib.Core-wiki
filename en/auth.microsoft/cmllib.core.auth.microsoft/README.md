@@ -4,6 +4,10 @@ description: 'Login, logout, and account management in Minecraft: Java Edition'
 
 # CmlLib.Core.Auth.Microsoft
 
+{% hint style="warning" %}
+**This document is outdated!** The latest documentation has moved to [here](https://cmllib.github.io/CmlLib.Core-wiki/en/).
+{% endhint %}
+
 ## Install
 
 Install nuget package [CmlLib.Core.Auth.Microsoft](https://www.nuget.org/packages/CmlLib.Core.Auth.Microsoft)

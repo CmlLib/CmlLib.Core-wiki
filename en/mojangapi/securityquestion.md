@@ -1,5 +1,9 @@
 # SecurityQuestion
 
+{% hint style="warning" %}
+**This document is outdated!** The latest documentation has moved to [here](https://cmllib.github.io/CmlLib.Core-wiki/en/).
+{% endhint %}
+
 This is required to get the skin change endpoint to work in case the services do not trust your IP yet.
 
 Most methods return `MojangAPIResponse` or class inherited from `MojangAPIResponse`.\

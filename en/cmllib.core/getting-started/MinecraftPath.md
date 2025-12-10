@@ -4,6 +4,10 @@ description: Represents minecraft directory path and structure.
 
 # Minecraft Path
 
+{% hint style="warning" %}
+**This document is outdated!** The latest documentation has moved to [here](https://cmllib.github.io/CmlLib.Core-wiki/en/).
+{% endhint %}
+
 You can customize Minecraft game directory path and structure where all game files is stored.
 
 ## Example

@@ -1,5 +1,9 @@
 # Authentication with MSAL
 
+{% hint style="warning" %}
+**This document is outdated!** The latest documentation has moved to [here](https://cmllib.github.io/CmlLib.Core-wiki/en/).
+{% endhint %}
+
 `JELoginHandler` only works on Windows. To use it on another platform, you must use it with [XboxAuthNet.Game.Msal](../xboxauthnet.game.msal/).
 
 There are two ways to use `CmlLib.Core.Auth.Microsoft` with `XboxAuthNet.Game.Msal`.

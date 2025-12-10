@@ -1,5 +1,9 @@
 # Mojang API
 
+{% hint style="warning" %}
+**This document is outdated!** The latest documentation has moved to [here](https://cmllib.github.io/CmlLib.Core-wiki/en/).
+{% endhint %}
+
 If the request is failed, it throws appropriate exception. For example, `MojangException` is thrown when the mojang server returns error message.
 
 ## How to get `AccessToken` or `UUID`?
@@ -196,7 +200,7 @@ Statistics stats = await mojang.GetStatistics(
 ### CheckGameOwnership
 
 _note1: this api only works on xbox account_\
-_note2: this api does not check xbox game pass. if the user has xbox game pass instead of purchase minecraft, this api return `false`. but the user owns minecraft and can play it._
+&#xNAN;_&#x6E;ote2: this api does not check xbox game pass. if the user has xbox game pass instead of purchase minecraft, this api return `false`. but the user owns minecraft and can play it._
 
 ```csharp
 Mojang mojang = new Mojang(new HttpClient());

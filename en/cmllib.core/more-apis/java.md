@@ -1,5 +1,9 @@
 # Java
 
+{% hint style="warning" %}
+**This document is outdated!** The latest documentation has moved to [here](https://cmllib.github.io/CmlLib.Core-wiki/en/).
+{% endhint %}
+
 ### IJavaPathResolver
 
 `IJavaPathResolver` returns a list of installed Java versions and returns the path to the binary file for the given Java version.

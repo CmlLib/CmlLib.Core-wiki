@@ -4,6 +4,10 @@ description: Represents the errors during Xbox authentication.
 
 # XboxAuthException
 
+{% hint style="warning" %}
+**This document is outdated!** The latest documentation has moved to [here](https://cmllib.github.io/CmlLib.Core-wiki/en/).
+{% endhint %}
+
 `ErrorCode` and `ErrorMessage` describe the error in detail.
 
 **If you purchased Minecraft, most of the errors below will not occur. Make sure the account you are trying to log in with is the account that purchased Minecraft.**
@@ -46,4 +50,4 @@ ACCOUNT\_MAINTENANCE\_REQUIRED
 
 ### Others
 
-All error codes: [here](https://github.com/microsoft/xbox-live-api/blob/730f579d41b64df5b57b52e629d12f23c6fb64ac/Source/Shared/errors\_legacy.h#L924)
+All error codes: [here](https://github.com/microsoft/xbox-live-api/blob/730f579d41b64df5b57b52e629d12f23c6fb64ac/Source/Shared/errors_legacy.h#L924)

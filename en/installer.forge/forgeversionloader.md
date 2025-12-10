@@ -4,6 +4,10 @@ description: Get Forge version list
 
 # ForgeVersionLoader
 
+{% hint style="warning" %}
+**This document is outdated!** The latest documentation has moved to [here](https://cmllib.github.io/CmlLib.Core-wiki/en/).
+{% endhint %}
+
 Print all Forge versions of `1.20.1:`
 
 ```csharp

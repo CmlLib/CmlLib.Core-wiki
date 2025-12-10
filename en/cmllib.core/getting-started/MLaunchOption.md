@@ -4,6 +4,10 @@ description: Set launch options
 
 # Launch Options
 
+{% hint style="warning" %}
+**This document is outdated!** The latest documentation has moved to [here](https://cmllib.github.io/CmlLib.Core-wiki/en/).
+{% endhint %}
+
 ## Example
 
 ```csharp
@@ -124,25 +128,25 @@ Launch Minecraft as full screen. Not all versions of Minecraft support this opti
 
 **Type: string**
 
-Set `QuickPlayPath` argument. [QuickPlay](https://minecraft.wiki/w/Quick\_Play)
+Set `QuickPlayPath` argument. [QuickPlay](https://minecraft.wiki/w/Quick_Play)
 
 ### QuickPlaySingleplayer
 
 **Type: string**
 
-Set `QuickPlaySingleplayer` argument. [QuickPlay](https://minecraft.wiki/w/Quick\_Play)
+Set `QuickPlaySingleplayer` argument. [QuickPlay](https://minecraft.wiki/w/Quick_Play)
 
 ### QuickPlayRealms
 
 **Type: string**
 
-Set `QuickPlayRealms` argument. [QuickPlay](https://minecraft.wiki/w/Quick\_Play)
+Set `QuickPlayRealms` argument. [QuickPlay](https://minecraft.wiki/w/Quick_Play)
 
 ### ServerIp / ServerPort
 
 **Type: string / int**
 
-Connecting to a server directly when Minecraft is loading is done. The default value of `ServerPort` is 25565. If `ServerPort` is not a valid port number (0-65535), `ArgumentOutOfRangeException` is thrown. If the starting version supports [QuickPlay](https://minecraft.wiki/w/Quick\_Play), the launcher will enable QuickPlayMultiplayer feature, otherwise the launcher will append `--serverIp` and `--serverPort` arguments.
+Connecting to a server directly when Minecraft is loading is done. The default value of `ServerPort` is 25565. If `ServerPort` is not a valid port number (0-65535), `ArgumentOutOfRangeException` is thrown. If the starting version supports [QuickPlay](https://minecraft.wiki/w/Quick_Play), the launcher will enable QuickPlayMultiplayer feature, otherwise the launcher will append `--serverIp` and `--serverPort` arguments.
 
 _note1: Not all versions of Minecraft support this option._
 

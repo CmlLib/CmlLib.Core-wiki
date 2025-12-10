@@ -1,5 +1,9 @@
 # OAuth
 
+{% hint style="warning" %}
+**This document is outdated!** The latest documentation has moved to [here](https://cmllib.github.io/CmlLib.Core-wiki/en/).
+{% endhint %}
+
 Describes a way to proceed with Microsoft OAuth via MSAL.
 
 You MUST initialize an [IPublicClientApplication](msalclienthelper.md) via [YOUR CLIENT ID](clientid.md) before to use this!
@@ -27,7 +31,7 @@ var session = await authenticator.ExecuteForLauncherAsync();
 authenticator.AddMsalOAuth(app, msal => msal.Interactive());
 ```
 
-Requests users to enter their Microsoft account. How the sign-in page is displayed is determined by the MSAL.&#x20;
+Requests users to enter their Microsoft account. How the sign-in page is displayed is determined by the MSAL.
 
 ## EmbeddedWebView
 

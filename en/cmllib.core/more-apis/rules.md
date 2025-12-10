@@ -1,5 +1,9 @@
 # Rules
 
+{% hint style="warning" %}
+**This document is outdated!** The latest documentation has moved to [here](https://cmllib.github.io/CmlLib.Core-wiki/en/).
+{% endhint %}
+
 ## RulesEvaluator
 
 The `IRulesEvaluator` interface evaluates the given rules to determine whether a file or parameter should be used. Some parameters or files are only applicable in specific OS versions or when certain features are enabled.

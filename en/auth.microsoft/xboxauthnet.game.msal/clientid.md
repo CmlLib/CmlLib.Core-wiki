@@ -1,5 +1,9 @@
 # ClientID
 
+{% hint style="warning" %}
+**This document is outdated!** The latest documentation has moved to [here](https://cmllib.github.io/CmlLib.Core-wiki/en/).
+{% endhint %}
+
 For using MSAL, You should acquire your own Azure Client ID. This document describes how to acquire your own Azure Client ID for Xbox authentication.
 
 ## 1. Go to Azure Active Directory

@@ -1,5 +1,9 @@
 # Versions
 
+{% hint style="warning" %}
+**This document is outdated!** The latest documentation has moved to [here](https://cmllib.github.io/CmlLib.Core-wiki/en/).
+{% endhint %}
+
 ### Example: Print all versions
 
 The `GetAllVersionsAsync` method returns all vanilla and locally installed versions of Minecraft.

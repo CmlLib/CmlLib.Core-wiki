@@ -4,6 +4,10 @@ description: Download game files
 
 # GameInstaller
 
+{% hint style="warning" %}
+**This document is outdated!** The latest documentation has moved to [here](https://cmllib.github.io/CmlLib.Core-wiki/en/).
+{% endhint %}
+
 `IGameInstaller` checks for the existence and integrity of the file and downloads it if necessary.
 
 The GameInstaller fires events that indicate the progress of the installation. See [Handling-Events.md](../getting-started/Handling-Events.md "mention")

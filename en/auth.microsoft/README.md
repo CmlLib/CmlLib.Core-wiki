@@ -1,5 +1,9 @@
 # Home
 
+{% hint style="warning" %}
+**This document is outdated!** The latest documentation has moved to [here](https://cmllib.github.io/CmlLib.Core-wiki/en/).
+{% endhint %}
+
 [GitHub](https://github.com/CmlLib/CmlLib.Core.Auth.Microsoft)
 
 Version: 3.0.0

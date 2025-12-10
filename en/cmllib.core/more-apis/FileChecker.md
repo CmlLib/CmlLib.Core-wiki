@@ -4,6 +4,10 @@ description: Extract game files
 
 # FileExtractor
 
+{% hint style="warning" %}
+**This document is outdated!** The latest documentation has moved to [here](https://cmllib.github.io/CmlLib.Core-wiki/en/).
+{% endhint %}
+
 `IFileExtractor` extracts all `GameFile` from a given version.&#x20;
 
 The library provides five built-in extractors:
