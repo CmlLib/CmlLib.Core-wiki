@@ -47,7 +47,7 @@ Implement code to copy or download distributed files to the game directory for i
 
 ## Launching
 
-After loading versions, the installed version names will be displayed. Launch the game using the version name. See [Minecraft Launcher](../getting-started/CMLauncher.md)
+After loading versions, the installed version names will be displayed. Launch the game using the version name. See [Minecraft Launcher](../getting-started/MinecraftLauncher.md)
 
 ```csharp
 var versions = await launcher.GetAllVersionsAsync();

@@ -3,7 +3,7 @@
     * [홈](cmllib.core/README.md)
     * [시작하기](cmllib.core/getting-started/README.md)
         * [시작하기](cmllib.core/getting-started/README.md)
-        * [런처](cmllib.core/getting-started/CMLauncher.md)
+        * [런처](cmllib.core/getting-started/MinecraftLauncher.md)
         * [게임 경로 설정](cmllib.core/getting-started/MinecraftPath.md)
         * [버전](cmllib.core/getting-started/versions.md)
         * [실행 옵션 설정](cmllib.core/getting-started/MLaunchOption.md)

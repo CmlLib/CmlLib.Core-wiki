@@ -43,7 +43,7 @@ Forge, fabric 뿐만 아니라 어떤 형태의 클라이언트든 모두 파일
 
 ## 실행
 
-버전을 불러오면 설치된 버전의 이름이 표시됩니다. 해당 버전의 이름을 통해 게임을 실행하세요. [런처](../getting-started/CMLauncher.md) 참고
+버전을 불러오면 설치된 버전의 이름이 표시됩니다. 해당 버전의 이름을 통해 게임을 실행하세요. [런처](../getting-started/MinecraftLauncher.md) 참고
 
 ```csharp
 var versions = await launcher.GetAllVersionsAsync();

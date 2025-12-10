@@ -4,7 +4,7 @@
     * [Home](cmllib.core/README.md)
     * [Getting Started](cmllib.core/getting-started/README.md)
         * [Getting Started](cmllib.core/getting-started/README.md)
-        * [Minecraft Launcher](cmllib.core/getting-started/CMLauncher.md)
+        * [Minecraft Launcher](cmllib.core/getting-started/MinecraftLauncher.md)
         * [Minecraft Path](cmllib.core/getting-started/MinecraftPath.md)
         * [Versions](cmllib.core/getting-started/versions.md)
         * [Launch Options](cmllib.core/getting-started/MLaunchOption.md)
