@@ -1,25 +1,25 @@
 # Minecraft Launcher
 
-`MinecraftLauncher` is the core class of this library. It handles finding installed versions, downloading game files, and building the game process. It acts as the main entry point for most launcher operations.
+`MinecraftLauncher` — це основний клас цієї бібліотеки. Він відповідає за пошук встановлених версій, завантаження ігрових файлів та побудову процесу гри. Він виступає головною точкою входу для більшості операцій лаунчера.
 
-## Basic Usage Steps
+## Основні кроки використання
 
-Here is the typical flow of using `MinecraftLauncher`:
+Ось типовий порядок використання `MinecraftLauncher`:
 
-### 1. Initialize
+### 1. Ініціалізація
 
-First, create a `MinecraftPath` object, which represents the game directory (e.g., `%appdata%\.minecraft`). Then, initialize the `MinecraftLauncher` with this path.
+Спочатку створіть об'єкт `MinecraftPath`, який представляє директорію гри (наприклад, `%appdata%\.minecraft`). Потім ініціалізуйте `MinecraftLauncher` із цим шляхом.
 
 ```csharp
 var path = new MinecraftPath();
 var launcher = new MinecraftLauncher(path);
 ```
 
-You can customize the directory structure if needed. See [Minecraft Path](MinecraftPath.md) and [MinecraftLauncherParameters](../more-apis/minecraftlauncherparameters.md).
+За потреби ви можете налаштувати структуру директорій. Дивіться [MinecraftPath](MinecraftPath.md) та [MinecraftLauncherParameters](../more-apis/minecraftlauncherparameters.md).
 
-### 2. Versions
+### 2. Версії
 
-You can retrieve a list of all installed and available versions from Mojang's servers.
+Ви можете отримати список усіх встановлених та доступних версій із серверів Mojang.
 
 ```csharp
 var versions = await launcher.GetAllVersionsAsync();
@@ -29,14 +29,14 @@ foreach (var v in versions)
 }
 ```
 
-See [Versions](versions.md) for more details.
+Дивіться [Версії](versions.md) для отримання детальнішої інформації.
 
-### 3. Install & Event Handling
+### 3. Встановлення та обробка подій
 
-Before launching, you must ensure all game files (JARs, libraries, assets) are downloaded and valid. The `InstallAsync` method handles this. You can subscribe to events to monitor download progress.
+Перед запуском ви повинні переконатися, що всі файли гри (JAR, бібліотеки, асети) завантажені та є цілісними. Метод `InstallAsync` відповідає за це. Ви можете підписатися на події для відстеження прогресу завантаження.
 
 ```csharp
-// Event Handlers
+// Обробники подій
 launcher.FileProgressChanged += (sender, args) =>
 {
     Console.WriteLine($"Name: {args.Name}");
@@ -49,18 +49,18 @@ launcher.ByteProgressChanged += (sender, args) =>
     Console.WriteLine($"{args.ProgressedBytes} bytes / {args.TotalBytes} bytes");
 };
 
-// Install
+// Встановлення
 await launcher.InstallAsync("1.20.4");
 ```
 
-!!! info "Installation Recommendation"
-    Always call `InstallAsync` before launching. It checks file integrity and only downloads missing or corrupted files, so it's efficient to call every time.
+!!! info "Рекомендація щодо встановлення"
+    Завжди викликайте `InstallAsync` перед запуском. Він перевіряє цілісність файлів і завантажує лише відсутні або пошкоджені файли, тому його ефективно викликати кожного разу.
 
-See [Event Handling](Handling-Events.md).
+Дивіться [Обробка подій](Handling-Events.md).
 
-### 4. Launch
+### 4. Запуск
 
-Once installed, build the game process using `BuildProcessAsync`. This creates a standard .NET `Process` object configured with the correct arguments.
+Після встановлення побудуйте процес гри за допомогою `BuildProcessAsync`. Це створить стандартний об'єкт .NET `Process`, налаштований з відповідними аргументами.
 
 ```csharp
 var launchOption = new MLaunchOption
@@ -72,11 +72,11 @@ var launchOption = new MLaunchOption
 var process = await launcher.BuildProcessAsync("1.20.4", launchOption);
 ```
 
-See [Launch Options](MLaunchOption.md).
+Дивіться [Параметри запуску](MLaunchOption.md).
 
-### 5. Process Management
+### 5. Управління процесом
 
-You can use the helper class `ProcessWrapper` to easily handle game output and exit events.
+Ви можете використовувати допоміжний клас `ProcessWrapper`, щоб легко обробляти вивід гри та події завершення.
 
 ```csharp
 var processWrapper = new ProcessWrapper(process);
@@ -86,13 +86,13 @@ var exitCode = await processWrapper.WaitForExitTaskAsync();
 Console.WriteLine($"Exited with code {exitCode}");
 ```
 
-See [ProcessWrapper](../utilities/processwrapper.md).
+Дивіться [ProcessWrapper](../utilities/processwrapper.md).
 
 ---
 
-## Full Example
+## Повний приклад
 
-Here is the complete code combining all the steps above.
+Ось повний код, що об'єднує всі вищезазначені кроки.
 
 ```csharp
 using System;
@@ -100,13 +100,13 @@ using CmlLib.Core;
 using CmlLib.Core.Auth;
 using CmlLib.Core.ProcessBuilder;
 
-// 1. Initialize
+// 1. Ініціалізація
 var path = new MinecraftPath(); 
 var launcher = new MinecraftLauncher(path);
 
 Console.WriteLine($"Initialized launcher at: {path.BasePath}");
 
-// 2. List versions
+// 2. Список версій
 
 var versions = await launcher.GetAllVersionsAsync();
 foreach (var v in versions)
@@ -115,7 +115,7 @@ foreach (var v in versions)
 }
 var selectedVersion = "1.21.6";
 
-// 3. Add event handlers and Install
+// 3. Додавання обробників подій та встановлення
 launcher.FileProgressChanged += (sender, args) =>
 {
     Console.WriteLine($"Name: {args.Name}");
@@ -130,7 +130,7 @@ launcher.ByteProgressChanged += (sender, args) =>
 
 await launcher.InstallAsync(selectedVersion);
 
-// 4. Build Process
+// 4. Побудова процесу
 var launchOption = new MLaunchOption
 {
     MaximumRamMb = 4096,
@@ -139,77 +139,10 @@ var launchOption = new MLaunchOption
 
 var process = await launcher.BuildProcessAsync(selectedVersion, launchOption);
 
-// 5. Launch & Monitor
+// 5. Запуск та моніторинг
 var processWrapper = new ProcessWrapper(process);
 
 processWrapper.OutputReceived += (sender, log) => 
     Console.WriteLine($"[Game] {log}");
 
 processWrapper.StartWithEvents();
-var exitCode = await processWrapper.WaitForExitTaskAsync();
-Console.WriteLine($"Game exited with code: {exitCode}");
-```
-
-!!! tip ".NET Framework Optimization"
-    If you are using **.NET Framework**, set the `DefaultConnectionLimit` at the **start of your application** (before initializing `MinecraftLauncher`) to maximize download speed. This is not necessary in .NET Core or .NET 5+.
-
-    ```csharp
-    System.Net.ServicePointManager.DefaultConnectionLimit = 256;
-    ```
-
-## More Methods
-
-### Extract Files
-
-```csharp
-// by version name
-IEnumerable<GameFile> files = await launcher.ExtractFiles("1.20.4", cancellationToken);
-```
-
-```csharp
-// by IVersion 
-IVersion version = await launcher.GetVersionAsync("1.20.4", cancellationToken);
-IEnumerable<GameFile> files = await launcher.ExtractFiles(version, cancellationToken);
-```
-
-### Install Files
-
-```csharp
-// report install progress to launcher.FileProgressChanged, launcher.ByteProgressChanged
-await launcher.InstallAsync("1.20.4", cancellationToken); // by version name
-await launcher.InstallAsync(version, cancellationToken); // by IVersion 
-
-// report install progress to fileProgress, byteProgress
-await launcher.InstallAsync("1.20.4", fileProgress, byteProgress, cancellationToken); // by version name 
-await launcher.InstallAsync(version, fileProgress, byteProgress, cancellationToken); // by IVersion 
-```
-
-### Build game process
-
-```csharp
-// by version name
-Process process = await launcher.BuildProcessAsync("1.20.4", new MLaunchOption(), cancellationToken);
-```
-
-```csharp
-// by IVersion
-IVersion version = await launcher.GetVersionAsync("1.20.4", cancellationToken);
-Process process = launcher.BuildProcess(version, new MLaunchOption());
-```
-
-### Get Java Path
-
-```csharp
-IVersion version = await launcher.GetVersionAsync("1.20.4", cancellationToken);
-string? javaPath = await launcher.GetJavaPath(version);
-```
-
-Get the path to the first installed Java
-
-```csharp
-string? javaPath = await launcher.GetDefaultJavaPath();
-```
-
-## API References
-
-- https://cmllib.github.io/CmlLib.Core/api/CmlLib.Core.MinecraftLauncher.html
