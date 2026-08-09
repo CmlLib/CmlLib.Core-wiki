@@ -1,17 +1,17 @@
-# Resources
+# Ресурси
 
-## Logs
+## Логи
 
-All libraries uses Microsoft.Extensions.Logging for logging. ([docs](https://learn.microsoft.com/en-us/dotnet/core/extensions/logging?tabs=command-line))
+Усі бібліотеки використовують `Microsoft.Extensions.Logging` для логування. ([документація](https://learn.microsoft.com/en-us/dotnet/core/extensions/logging?tabs=command-line))
 
-### Log Event Id
+### ID подій логування (Log Event Id)
 
-| EventId | Meaning |
-|---------|---------|
-| 749xxx | Logs from xboxauthnet.game. |
-| 750xxx | Logs from xboxauthnet.game.msal. |
-| 751xxx | Logs from cmllib.core.auth.microsoft. |
-| 752xxx | Logs from cmllib.core.bedrock.auth.md. |
+| EventId | Значення |
+|---------|----------|
+| 749xxx | Логи з xboxauthnet.game. |
+| 750xxx | Логи з xboxauthnet.game.msal. |
+| 751xxx | Логи з cmllib.core.auth.microsoft. |
+| 752xxx | Логи з cmllib.core.bedrock.auth.md. |
 | xxx0xx | Trace |
 | xxx1xx | Debug |
 | xxx2xx | Information |
@@ -19,21 +19,21 @@ All libraries uses Microsoft.Extensions.Logging for logging. ([docs](https://lea
 | xxx4xx | Error |
 | xxx5xx | Critical |
 
-## Known Issues
+## Відомі проблеми
 
-### System.ArgumentException with Costura.Fody
+### System.ArgumentException з Costura.Fody
 
-[issue 19](https://github.com/CmlLib/CmlLib.Core.Auth.Microsoft/issues/19)
+[проблема #19](https://github.com/CmlLib/CmlLib.Core.Auth.Microsoft/issues/19)
 
-There is a issue when you use WebView2 and Costura.Fody together.
+Існує відома проблема при одночасному використанні WebView2 та Costura.Fody.
 
-### Age related issues (child, age verification, family account, etc)
+### Проблеми, пов'язані з віком (дитячий акаунт, перевірка віку, сімейний акаунт тощо)
 
-1. Make sure your Xbox authentication flow uses Full() or Sisu(). [XboxAuth](xboxauthnet.game/xboxauth.md)
-2. Make sure the account you're trying to sign in with is the one you purchased Minecraft with, as most users experiencing this error were trying to sign in with an account that didn't purchase Minecraft.
-3. Try turning on the Mojang Launcher, logging out, and logging back in from the Mojang Launcher. If you need to do anything age-related, the Mojang Launcher will tell you how.  
-4. Try signing out of the [Xbox](https://www.xbox.com) and signing back in. If you need to take any age-related actions, you should see a page shortly after signing in.
+1. Переконайтеся, що ваш процес автентифікації Xbox використовує `Full()` або `Sisu()`. [XboxAuth](xboxauthnet.game/xboxauth.md)
+2. Переконайтеся, що обліковий запис, через який ви намагаєтеся увійти, — це той самий акаунт, на який було придбано Minecraft. Більшість користувачів, які стикаються з цією помилкою, намагалися увійти з акаунту без купленої гри.
+3. Спробуйте запустити Mojang Launcher, вийти з облікового запису та увійти знову через Mojang Launcher. Якщо потрібно виконати будь-які дії, пов'язані з підтвердженням віку, Mojang Launcher підкаже, що саме робити.
+4. Спробуйте вийти з облікового запису на сайті [Xbox](https://www.xbox.com) та увійти знову. Якщо потрібно виконати дії щодо перевірки віку, відповідна сторінка з'явиться одразу після входу.
 
-You'll need a properly age verified account to log in to Minecraft. Age verification is usually done automatically by the Mojang Launcher, so accounts that can be logged in from the Mojang Launcher will not see this error.  
+Для входу в Minecraft потрібен обліковий запис із належним чином підтвердженим віком. Перевірка віку зазвичай виконується автоматично через Mojang Launcher, тому акаунти, які успішно входять через офіційний лаунчер, не стикатимуться з цією помилкою.
 
-Minors can log in from the Mojang Launcher if they go through both the age verification and family account registration process. However, if a parent has blocked them from playing the game, or if the account has been removed from the family, the error may occur again. Try logging in again from the Mojang Launcher and it will let you know what you need to do.
+Неповнолітні користувачі можуть увійти через Mojang Launcher, якщо вони пройшли як перевірку віку, так і процес реєстрації сімейного акаунту. Однак, якщо батьки заблокували можливість грати або якщо акаунт було видалено із сімейної групи, помилка може з'явитися знову. Спробуйте ще раз увійти через Mojang Launcher — він підкаже необхідні кроки для вирішення проблеми.
