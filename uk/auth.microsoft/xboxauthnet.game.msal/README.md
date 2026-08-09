@@ -1,31 +1,31 @@
 ---
-description: Extension for MSAL OAuth
+description: Розширення для MSAL OAuth
 ---
 
 # XboxAuthNet.Game.Msal
 
-Provides an extension method to perform Microsoft OAuth using MSAL.
+Надає методи розширення для виконання Microsoft OAuth за допомогою MSAL.
 
-With MSAL, you can sign in on any platform, including Linux and macOS, not just Windows.
+Завдяки MSAL ви можете виконувати вхід на будь-якій платформі, включаючи Linux та macOS, а не лише на Windows.
 
-## Install
+## Встановлення
 
-Nuget package [XboxAuthNet.Game.Msal](https://www.nuget.org/packages/XboxAuthNet.Game.Msal)
+NuGet-пакет [XboxAuthNet.Game.Msal](https://www.nuget.org/packages/XboxAuthNet.Game.Msal)
 
-To use this package, you must properly initialize `IPublicClientApplication`.
+Щоб використовувати цей пакет, необхідно правильно ініціалізувати `IPublicClientApplication`.
 
-```
+```bash
 dotnet add package XboxAuthNet.Game.Msal
 ```
 
 ## [ClientID](clientid.md)
 
-Describes how to register Azure application for `IPublicClientApplication`.
+Описує процес реєстрації застосунку в Azure для `IPublicClientApplication`.
 
 ## [MsalClientHelper](msalclienthelper.md)
 
-Describes how to initialize an `IPublicClientApplication` for Xbox games.
+Описує, як ініціалізувати `IPublicClientApplication` для ігор Xbox.
 
 ## [OAuth](oauth.md)
 
-Describes a way to perform Microsoft OAuth using MSAL.
+Описує спосіб виконання Microsoft OAuth за допомогою MSAL.
