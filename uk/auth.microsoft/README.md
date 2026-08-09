@@ -1,29 +1,29 @@
-# Home
+# Головна
 
 [GitHub](https://github.com/CmlLib/CmlLib.Core.Auth.Microsoft)
 
-Version: 3.0.0
+Версія: 3.0.0
 
 ## [CmlLib.Core.Auth.Microsoft](cmllib.core.auth.microsoft/README.md)
 
-Log into Minecraft: Java Edition with a Microsoft Xbox account.
+Вхід у Minecraft: Java Edition за допомогою облікового запису Microsoft Xbox.
 
 ## [CmlLib.Core.Bedrock.Auth](cmllib.core.bedrock.auth.md)
 
-Issue authentication tokens to access Minecraft: Bedrock Edition servers with a Microsoft Xbox account.
+Видача токенів автентифікації для доступу до серверів Minecraft: Bedrock Edition за допомогою облікового запису Microsoft Xbox.
 
 ## [XboxAuthNet.Game](xboxauthnet.game/README.md)
 
-Provides functionality commonly used by `CmlLib.Core.Auth.Microsoft` and `CmlLib.Core.Bedrock.Auth`.
+Забезпечує функціональність, яка зазвичай використовується в `CmlLib.Core.Auth.Microsoft` та `CmlLib.Core.Bedrock.Auth`.
 
 ## [XboxAuthNet.Game.Msal](xboxauthnet.game.msal/README.md)
 
-By default, `CmlLib.Core.Auth.Microsoft` and `CmlLib.Core.Bedrock.Auth` only work on Windows. `XboxAuthNet.Game.Msal` provides extensions for use on other platforms such as Linux and macOS.
+За замовчуванням `CmlLib.Core.Auth.Microsoft` та `CmlLib.Core.Bedrock.Auth` працюють лише на Windows. `XboxAuthNet.Game.Msal` надає розширення для використання на інших платформах, таких як Linux та macOS.
 
-## API Reference
+## Довідник API
 
-For accurate type information, namespace, and method signatures, refer to the [API Reference](https://cmllib.github.io/CmlLib.Core.Auth.Microsoft/api/toc.html). When using with LLMs, make sure to include this URL as well.
+Для отримання точної інформації про типи, простори імен та сигнатури методів зверніться до [Довідника API](https://cmllib.github.io/CmlLib.Core.Auth.Microsoft/api/toc.html). При використанні з LLM переконайтеся, що також включили це URL.
 
 ## LLM
 
-[llms.txt](https://cmllib.github.io/CmlLib.Core-wiki/en/llms.txt) is provided.
+Надається файл [llms.txt](https://cmllib.github.io/CmlLib.Core-wiki/en/llms.txt).
