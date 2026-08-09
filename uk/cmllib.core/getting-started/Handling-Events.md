@@ -1,22 +1,22 @@
 ---
-description: Show installer progress to user
+description: Відображення прогресу інсталятора користувачеві
 ---
 
-# Event Handling
+# Обробка подій
 
-The game installer provides two types of event:
+Інсталятор гри надає два типи подій:
 
-* `FileProgress` indicates the name, type, and number of files in progress.
-* `ByteProgress` indicates the size of files processed / the size of all files in bytes.
+* `FileProgress` вказує назву, тип та кількість файлів у процесі обробки.
+* `ByteProgress` вказує розмір оброблених файлів / розмір усіх файлів у байтах.
 
-And there are two ways to register an event handler:
+І існує два способи зареєструвати обробник подій:
 
-* Pass `IProgress<>` to the method of the game installer.
-* Register event handler. (will be invoked on the current `SynchronizationContext`, so it is safe to access UI components)
+* Передати `IProgress<>` у метод інсталятора гри.
+* Зареєструвати обробник подій (він буде викликаний у поточному `SynchronizationContext`, тому звертатися до компонентів UI безпечно).
 
-If the `IProgress<>` is passed to the method, any event handlers will be ignored.  
+Якщо в метод передано `IProgress<>`, будь-які зареєстровані обробники подій будуть ігноруватися.
 
-### Example (with IProgress)
+### Приклад (з IProgress)
 
 ```csharp
 var launcher = new MinecraftLauncher();
@@ -38,7 +38,7 @@ await launcher.InstallAsync(
     CancellationToken.None);
 ```
 
-### Example (with Event handler)
+### Приклад (з обробником подій)
 
 ```csharp
 var launcher = new MinecraftLauncher();
@@ -58,23 +58,23 @@ launcher.ByteProgressChanged += (_, e) =>
 await launcher.InstallAsync("1.20.4", CancellationToken.None);
 ```
 
-## Performance Tips
+## Поради щодо продуктивності
 
-`FileProgress` is called very frequently (4000 to 8000 times each time InstallAsync is called), so if you put time-consuming tasks in the event handler, it can affect the performance of your program. `ByteProgress`, on the other hand, is only called 3-4 times per second, so it's relatively less sensitive to performance.
+`FileProgress` викликається дуже часто (від 4000 до 8000 разів під час кожного виклику `InstallAsync`), тому виконання ресурсоємних завдань у цьому обробнику може негативно вплинути на продуктивність вашої програми. `ByteProgress`, з іншого боку, викликається лише 3–4 рази на секунду, тому він значно менш чутливий до продуктивності.
 
-When you register an event handler, it is internally converted to a `new Progress<T>(handler)`.  [Progress<T\>](https://learn.microsoft.com/en-us/dotnet/api/system.progress-1?view=net-8.0) will have different behavior depending on the current SynchronizationContext. If it's a WinForm or WPF app, the handler's code will run in the UI thread, and if it's a console app, it will run in the ThreadPool.
+Коли ви реєструєте обробник подій, він внутрішньо перетворюється на `new Progress<T>(handler)`. [Progress<T>](https://learn.microsoft.com/en-us/dotnet/api/system.progress-1?view=net-8.0) поводиться по-різному залежно від поточного `SynchronizationContext`. У застосунках WinForms або WPF код обробника виконуватиметься в UI-потоці, а в консольних застосунках — у `ThreadPool`.
 
-So if you use an event handler in a console app, you'll be making a lot of calls to the ThreadPool. This can have a bad impact on the performance of your application, so either don't use `FileProgress`, or implement `IProgress<T>`, which doesn't use ThreadPool. The library provides `SyncProgress<T>`, which runs the handler directly on the thread that called the event. `SyncProgress<T>` should not directly access the UI and should contain as little code as possible.
+Тому, якщо ви використовуєте обробник подій у консольному застосунку, це генеруватиме велику кількість викликів до `ThreadPool`. Це може негативно вплинути на продуктивність вашого застосунку, тому або не використовуйте `FileProgress`, або реалізуйте `IProgress<T>`, який не задіює `ThreadPool`. Бібліотека надає `SyncProgress<T>`, який запускає обробник безпосередньо у тому потоці, який викликав подію. `SyncProgress<T>` не повинен мати прямого доступу до UI та має містити якомога менше коду.
 
 ```csharp
-// example
+// приклад
 IProgress<InstallerProgressChangedEventArgs> fileProgress = new SyncProgress<InstallerProgressChangedEventArgs>(e => 
 { 
     Console.WriteLine($"{e.ProgressedTasks} / {e.TotalTasks}");
 });
 ```
 
-## API Reference
+## Довідник API
 
 - [MinecraftLauncher](https://cmllib.github.io/CmlLib.Core/api/CmlLib.Core.MinecraftLauncher.html)
 - [ByteProgress](https://cmllib.github.io/CmlLib.Core/api/CmlLib.Core.ByteProgress.html)
