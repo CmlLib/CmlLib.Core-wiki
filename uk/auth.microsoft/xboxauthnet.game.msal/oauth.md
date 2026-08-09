@@ -1,12 +1,12 @@
 # OAuth
 
-Describes a way to proceed with Microsoft OAuth via MSAL.
+Описує спосіб виконання Microsoft OAuth через MSAL.
 
-You MUST initialize an [IPublicClientApplication](msalclienthelper.md) via [YOUR CLIENT ID](clientid.md) before to use this!
+Перед використанням ви **ОБОВ'ЯЗКОВО** повинні ініціалізувати [IPublicClientApplication](msalclienthelper.md) за допомогою [ВАШОГО CLIENT ID](clientid.md)!
 
-## Example
+## Приклад
 
-[JELoginHandler](../cmllib.core.auth.microsoft/jeloginhandler.md) with MSAL OAuth.
+[JELoginHandler](../cmllib.core.auth.microsoft/jeloginhandler.md) з MSAL OAuth.
 
 ```csharp
 using XboxAuthNet.Game.Msal;
@@ -27,7 +27,7 @@ var session = await authenticator.ExecuteForLauncherAsync();
 authenticator.AddMsalOAuth(app, msal => msal.Interactive());
 ```
 
-Requests users to enter their Microsoft account. How the sign-in page is displayed is determined by the MSAL.  
+Запитує в користувачів введення даних облікового запису Microsoft. Спосіб відображення сторінки входу визначається за допомогою MSAL.
 
 ## EmbeddedWebView
 
@@ -37,7 +37,7 @@ authenticator.AddMsalOAuth(app, msal => msal.EmbeddedWebView());
 
 ![](https://user-images.githubusercontent.com/17783561/154946636-960d3673-bb51-4f3a-ae92-f36940b8e3ad.png)
 
-Prompts the user to enter their Microsoft account. Use WebView2 to display the login page.
+Пропонує користувачеві увійти в обліковий запис Microsoft. Використовує WebView2 для відображення сторінки входу.
 
 ## SystemBrowser
 
@@ -47,7 +47,7 @@ authenticator.AddMsalOAuth(app, msal => msal.SystemBrowser());
 
 ![](https://user-images.githubusercontent.com/17783561/154945056-2f0d961b-f69b-4cea-a08a-9c3b050995f6.png)
 
-Prompts the user to enter their Microsoft account. Open the system's default browser to display the sign-in page.
+Пропонує користувачеві увійти в обліковий запис Microsoft. Відкриває системний браузер за замовчуванням для відображення сторінки входу.
 
 ## Silent
 
@@ -55,12 +55,11 @@ Prompts the user to enter their Microsoft account. Open the system's default bro
 authenticator.AddMsalOAuth(app, msal => msal.Silent());
 ```
 
-Attempts to sign in using the account information cached in the MSAL.
+Намагається виконати вхід за допомогою даних облікового запису, збережених у кеші MSAL.
 
 ## DeviceCode
 
 ```csharp
-
 authenticator.AddMsalOAuth(app, msal => msal.DeviceCode(deviceCode =>
 {
     Console.WriteLine(deviceCode.Message);
@@ -68,13 +67,13 @@ authenticator.AddMsalOAuth(app, msal => msal.DeviceCode(deviceCode =>
 }));
 ```
 
-Attempt to sign in using the DeviceCode method. This method doesn't require a web browser or UI on the client, but it does allow the client to log in from a different device.
+Спроба виконати вхід за допомогою методу DeviceCode (код пристрою). Цей метод не вимагає наявності веббраузера або графічного інтерфейсу (UI) на клієнтському пристрої, але дозволяє увійти з іншого пристрою.
 
-If you're building a launcher that only works on the console or no GUI environment, use this method for login. The login can be done on a completely different device than the one running your launcher. For example, a user can log in from their mobile phone.
+Якщо ви створюєте лаунчер, який працює лише в консольному середовищі або без графічного інтерфейсу, використовуйте цей метод для входу. Вхід можна виконати з абсолютно іншого пристрою, ніж той, на якому запущено ваш лаунчер (наприклад, з мобільного телефону).
 
-The example code outputs the following message to the console:
+Приклад коду виводить у консоль наступне повідомлення:
 
-```
+```text
 To sign in, use a web browser to open the page https://www.microsoft.com/link and enter the code XXXXXXXX to authenticate.
 ```
 
@@ -85,8 +84,8 @@ var result = await app.AcquireTokenInteractive(MsalClientHelper.XboxScopes).Exec
 authenticator.AddMsalOAuth(app, msal => msal.FromResult(result));
 ```
 
-Use MSAL authentication result.
+Використовує готовий результат автентифікації MSAL.
 
-## API Reference
+## Довідник API
 
 - [MsalOAuthBuilder](https://cmllib.github.io/CmlLib.Core.Auth.Microsoft/api/XboxAuthNet.Game.Msal.MsalOAuthBuilder.html)
