@@ -1,15 +1,15 @@
 ---
-description: Manage multiple accounts
+description: Управління кількома обліковими записами
 ---
 
 # AccountManager
 
-Describes how to manage multiple accounts. Each account is identified by a unique value called `identifier`.
+Описує процес управління кількома обліковими записами. Кожен обліковий запис ідентифікується унікальним значенням — `identifier`.
 
-!!! info "Minecraft: Java Edition Accounts"
-    For more methods for Minecraft: Java Edition account, see [JELoginHandler](../cmllib.core.auth.microsoft/jeloginhandler.md).
+!!! info "Облікові записи Minecraft: Java Edition"
+    Додаткові методи для облікових записів Minecraft: Java Edition дивіться у розділі [JELoginHandler](../cmllib.core.auth.microsoft/jeloginhandler.md).
 
-## Get All Accounts
+## Отримання всіх облікових записів
 
 ```csharp
 var accounts = loginHandler.AccountManager.GetAccounts();
@@ -19,38 +19,38 @@ foreach (var account in accounts)
 }
 ```
 
-## Get Account by Identifier
+## Отримання облікового запису за ідентифікатором
 
 ```csharp
 var accounts = loginHandler.AccountManager.GetAccounts();
 var account = accounts.GetAccount("identifier");
 ```
 
-## Get the Most Recent Account
+## Отримання останнього використаного облікового запису
 
 ```csharp
 var account = loginHandler.AccountManager.GetDefaultAccount();
 ```
 
-## Create New Empty Account
+## Створення нового порожнього облікового запису
 
 ```csharp
 var account = loginHandler.AccountManager.NewAccount();
 ```
 
-## Clear All Accounts
+## Очищення всіх облікових записів
 
 ```csharp
 loginHandler.AccountManager.ClearAccounts();
 ```
 
-## Save
+## Збереження
 
 ```csharp
 loginHandler.AccountManager.SaveAccounts();
 ```
 
-## API Reference
+## Довідник API
 
 - [JEGameAccount](https://cmllib.github.io/CmlLib.Core.Auth.Microsoft/api/CmlLib.Core.Auth.Microsoft.Sessions.JEGameAccount.html)
 - [IXboxGameAccountManager](https://cmllib.github.io/CmlLib.Core.Auth.Microsoft/api/XboxAuthNet.Game.Accounts.IXboxGameAccountManager.html)
