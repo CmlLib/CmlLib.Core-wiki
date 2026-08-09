@@ -4,30 +4,30 @@ description: Microsoft OAuth
 
 # OAuth
 
-## Example
+## Приклад
 
-Add `Authenticator` through the extension methods of `ICompositeAuthenticator`.
+Додайте `Authenticator` за допомогою методів розширення `ICompositeAuthenticator`.
 
 ```csharp
 using XboxAuthNet.Game;
 
 var clientInfo = new MicrosoftOAuthClientInfo("<MICROSOFT_OAUTH_CLIENT_ID>", "<MICROSOFT_OAUTH_SCOPES>");
-var authenticator = // create authenticator using login handlers
+var authenticator = // створення автентифікатора з використанням login handlers
 
-// example 1
+// приклад 1
 authenticator.AddForceMicrosoftOAuth(clientInfo, oauth => oauth.Interactive());
 
-// example 2
+// приклад 2
 authenticator.AddMicrosoftOAuth(clientInfo, oauth => oauth.Silent());
 ```
 
 ## AddMicrosoftOAuth / AddForceMicrosoftOAuth
 
-`AddMicrosoftOAuth` validates the cached Microsoft OAuth session and, if the session is valid, doesn't proceed authentication and moves on to the next authenticator.
+`AddMicrosoftOAuth` перевіряє кешовану сесію Microsoft OAuth і, якщо сесія є дійсною, не продовжує процес автентифікації та переходить до наступного автентифікатора.
 
-The Force method does not validate the Microsoft OAuth session and proceeds authentication unconditionally.
+Метод `Force` не перевіряє сесію Microsoft OAuth та виконує автентифікацію безумовно.
 
-## Setting OAuth Mode
+## Налаштування режиму OAuth
 
 ### Interactive
 
@@ -38,23 +38,23 @@ authenticator.AddMicrosoftOAuth(clientInfo, oauth => oauth.Interactive());
 ```csharp
 authenticator.AddMicrosoftOAuth(clientInfo, oauth => oauth.Interactive(new MicrosoftOAuthParameters
 {
-    // OAuth setting
-    // example: set prompt mode
+    // налаштування OAuth
+    // приклад: встановлення режиму запиту (prompt)
     Prompt = MicrosoftOAuthPromptModes.SelectAccount
 }));
 ```
 
 ![](https://user-images.githubusercontent.com/17783561/154854388-38c473f1-7860-4a47-bdbe-622de37eef8b.png)
 
-A window will pop up prompting the user to enter the email and password for their Microsoft account and proceed to sign in.
+З'явиться вікно із запитом до користувача ввести електронну пошту та пароль від облікового запису Microsoft для продовження входу.
 
-!!! info "Microsoft WebView2 Requirements"
-    This method uses [Microsoft WebView2](https://developer.microsoft.com/en-us/microsoft-edge/webview2/) for displaying Microsoft OAuth login page. You must know that:
+!!! info "Вимоги до Microsoft WebView2"
+    Цей метод використовує [Microsoft WebView2](https://developer.microsoft.com/en-us/microsoft-edge/webview2/) для відображення сторінки входу Microsoft OAuth. Зверніть увагу:
 
-    * **Microsoft WebView2 is only available on Windows.** For another platform, see [Authentication with MSAL](../cmllib.core.auth.microsoft/authentication-with-msal.md).
-    * To run WebView2, The users (including developer and end user) **must have the WebView2 Runtime installed**. See [this document](https://learn.microsoft.com/en-us/microsoft-edge/webview2/concepts/distribution) to distribute your launcher with WebView2. (For example, you can automate runtime installation with direct download link: [https://go.microsoft.com/fwlink/p/?LinkId=2124703](https://go.microsoft.com/fwlink/p/?LinkId=2124703))
+    * **Microsoft WebView2 доступний лише на Windows.** Для інших платформ дивіться [Автентифікація за допомогою MSAL](../cmllib.core.auth.microsoft/authentication-with-msal.md).
+    * Для роботи WebView2 у користувачів (як розробників, так і кінцевих користувачів) **має бути встановлений WebView2 Runtime**. Дивіться [цей документ](https://learn.microsoft.com/en-us/microsoft-edge/webview2/concepts/distribution) для розповсюдження вашого лаунчера разом із WebView2. (Наприклад, ви можете автоматизувати встановлення середовища виконання за допомогою прямого посилання на завантаження: [https://go.microsoft.com/fwlink/p/?LinkId=2124703](https://go.microsoft.com/fwlink/p/?LinkId=2124703)).
 
-    If you don't want to use WebView2, see [Authentication with MSAL](../cmllib.core.auth.microsoft/authentication-with-msal.md).
+    Якщо ви не бажаєте використовувати WebView2, дивіться [Автентифікація за допомогою MSAL](../cmllib.core.auth.microsoft/authentication-with-msal.md).
 
 ### Silent
 
@@ -62,34 +62,34 @@ A window will pop up prompting the user to enter the email and password for thei
 authenticator.AddMicrosoftOAuth(clientInfo, oauth => oauth.Silent());
 ```
 
-Proceed with the login without prompting the user for a login. If the cached session hasn't expired, the token will be used; if it has, it will attempt to refresh it. If the refresh fails, a `MicrosoftOAuthException` exception is thrown.
+Виконує вхід без відображення вікна запиту користувачеві. Якщо кешована сесія ще не закінчилася, буде використано наявний токен; якщо термін дії закінчився, буде здійснено спробу його оновити. Якщо оновлення не вдалося, буде викинуто виняток `MicrosoftOAuthException`.
 
 ### Signout
 
-Clears only cached OAuth sessions. The browser on user may still have user's login information.
+Очищує лише кешовані сесії OAuth. Браузер користувача все ще може містити дані входу.
 
 ```csharp
 authenticator.AddMicrosoftOAuthSignout(clientInfo);
 ```
 
-### Signout with Clearing Browser Cache
+### Signout з очищенням кешу браузера (Signout with Clearing Browser Cache)
 
-Displays the OAuth sign out page and clears the session.
+Відображає сторінку виходу з OAuth та очищує сесію.
 
 ```csharp
 authenticator.AddMicrosoftOAuthBrowserSignout(clientInfo);
 ```
 
-or, you can set browser options:
+або ви можете налаштувати параметри браузера:
 
 ```csharp
 authenticator.AddMicrosoftOAuthBrowserSignout(clientInfo, codeFlow =>
 {
-    // set more options like UI title, UI parents, etc... 
+    // додаткові налаштування, такі як заголовок вікна (UI title), батьківські елементи тощо... 
     codeFlow.WithUITitle("My Window");
 });
 ```
 
-## API Reference
+## Довідник API
 
 - [MicrosoftOAuthBuilder](https://cmllib.github.io/CmlLib.Core.Auth.Microsoft/api/XboxAuthNet.Game.OAuth.MicrosoftOAuthBuilder.html)
