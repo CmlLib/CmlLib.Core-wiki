@@ -1,10 +1,10 @@
 ---
-description: Set launch options
+description: Налаштування параметрів запуску
 ---
 
-# Launch Options
+# Параметри запуску
 
-## Example
+## Приклад
 
 ```csharp
 var launchOption = new MLaunchOption 
@@ -23,8 +23,8 @@ var launchOption = new MLaunchOption
     ScreenHeight = 900,
     FullScreen = false,
     QuickPlayPath = "/path/quickplay",
-    QuickPlaySingleplayer = "world name",
-    QuickPlayRealms = "realm id",
+    QuickPlaySingleplayer = "назва світу",
+    QuickPlayRealms = "id realm",
     ServerIp = "mc.hypixel.net",
     ServerPort = 25565,
 
@@ -46,7 +46,7 @@ var launchOption = new MLaunchOption
     ExtraJvmArguments = new MArgument[]
     {
         new MArgument("--key=value"),
-        MArgument.FromCommandLine("-Dminecraft.api.env=custom -Dminecraft.api.auth.host=https://invalid.invalid -Dminecraft.api.account.host=https://invalid.invalid -Dminecraft.api.session.host=https://invalid.invalid -Dminecraft.api.services.host=https://invalid.invalid"),
+        MArgument.FromCommandLine("-Dminecraft.api.env=custom -Dminecraft.api.auth.host=[https://invalid.invalid](https://invalid.invalid) -Dminecraft.api.account.host=[https://invalid.invalid](https://invalid.invalid) -Dminecraft.api.session.host=[https://invalid.invalid](https://invalid.invalid) -Dminecraft.api.services.host=[https://invalid.invalid](https://invalid.invalid)"),
     },
     ExtraGameArguments = new MArgument[]
     {
@@ -58,147 +58,147 @@ var launchOption = new MLaunchOption
 
 ### Session
 
-**Type: MSession**
+**Тип: MSession**
 
-See [Login and Session](../login-and-sessions/README.md) for how to log in Minecraft and get game session.
+Дивіться [Вхід та сесії](../login-and-sessions/README.md), щоб дізнатися, як увійти в Minecraft та отримати ігрову сесію.
 
-Game session (Username, UUID, AccessToken, etc...). If the value is null, the default session with username `tester123` is used.
+Дані ігрової сесії (ім'я користувача, UUID, AccessToken тощо). Якщо значення дорівнює null, використовується стандартна сесія з ім'ям користувача `tester123`.
 
 ### Features
 
-**Type: `IEnumerable<string>`**
+**Тип: `IEnumerable<string>`**
 
-Enable features.
+Увімкнення додаткових функцій (features).
 
 ### JavaPath
 
-**Type: string**
+**Тип: string**
 
-Java binary path. If the value is null, `ArgumentNullException` is thrown.
+Шлях до виконуваного файлу Java. Якщо значення дорівнює null, буде викинуто виключення `ArgumentNullException`.
 
 ### MaximumRamMb
 
-**Type: int**
+**Тип: int**
 
-`-Xmx` JVM parameter. It is used to set the maximum heap size of Minecraft.
-If the value is a negative value, `ArgumentOutOfRangeException` is thrown.
-The default value is 2048 (2GB) for X64, 1024 (1GB) for other platforms. _Note: You can't set this property to any number higher than 1024 when using 32bit Java._
+Параметр JVM `-Xmx`. Використовується для встановлення максимального розміру купи (heap) Minecraft.
+Якщо значення від'ємне, буде викинуто `ArgumentOutOfRangeException`.
+Значення за замовчуванням — 2048 (2 ГБ) для x64, 1024 (1 ГБ) для інших платформ. _Примітка: Ви не можете встановити значення більше ніж 1024 при використанні 32-бітної Java._
 
 ### MinimumRamMb
 
-**Type: int**
+**Тип: int**
 
-`-Xms` JVM parameter. It is used to set the minimum heap size of Minecraft. If the value is a negative value or greater than `MaximumRamMb`, `ArgumentOutOfRangeException` is thrown.
+Параметр JVM `-Xms`. Використовується для встановлення мінімального розміру купи (heap) Minecraft. Якщо значення від'ємне або більше за `MaximumRamMb`, буде викинуто `ArgumentOutOfRangeException`.
 
 ### DockName
 
-**Type: string**
+**Тип: string**
 
-macOS dock name of Minecraft. In some macOS versions, you must set this option. [Known Issues](../resources/Common-Errors.md)
+Назва Minecraft у Dock на macOS. У деяких версіях macOS обов'язково потрібно задавати цей параметр. [Відомі проблеми](../resources/Common-Errors.md)
 
 ### DockIcon
 
-**Type: string**
+**Тип: string**
 
-macOS dock icon of minecraft. It should be an absolute file path to an image that has the dimensions `256x256` and is of the `icns` format.
+Іконка Minecraft у Dock на macOS. Це має бути абсолютний шлях до файлу зображення у форматі `icns` з роздільною здатністю `256x256`.
 
 ### IsDemo
 
-**Type: bool**
+**Тип: bool**
 
-Enable `is_demo_user` feature and launch a game in demo version.
+Увімкнення функції `is_demo_user` та запуск гри у демо-режимі.
 
 ### ScreenWidth / ScreenHeight
 
-**Type: int**
+**Тип: int**
 
-Initial window size of Minecraft. It works if the value of the two options is greater than 0. If the value of both options is 0, let the game decide the window size. If one of these options is negative, `ArgumentOutOfRangeException` will be thrown. Not all versions of Minecraft support this option.
+Початковий розмір вікна Minecraft. Працює, якщо значення обох параметрів більше за 0. Якщо значення обох параметрів дорівнює 0, розмір вікна визначає сама гра. Якщо один із цих параметрів від'ємний, буде викинуто `ArgumentOutOfRangeException`. Не всі версії Minecraft підтримують цей параметр.
 
 ### FullScreen
 
-**Type: bool**
+**Тип: bool**
 
-Launch Minecraft as full screen. Not all versions of Minecraft support this option.
+Запуск Minecraft у повноекранному режимі. Не всі версії Minecraft підтримують цей параметр.
 
 ### QuickPlayPath
 
-**Type: string**
+**Тип: string**
 
-Set `QuickPlayPath` argument. [QuickPlay](https://minecraft.wiki/w/Quick_Play)
+Встановлює аргумент `QuickPlayPath`. [QuickPlay](https://minecraft.wiki/w/Quick_Play)
 
 ### QuickPlaySingleplayer
 
-**Type: string**
+**Тип: string**
 
-Set `QuickPlaySingleplayer` argument. [QuickPlay](https://minecraft.wiki/w/Quick_Play)
+Встановлює аргумент `QuickPlaySingleplayer`. [QuickPlay](https://minecraft.wiki/w/Quick_Play)
 
 ### QuickPlayRealms
 
-**Type: string**
+**Тип: string**
 
-Set `QuickPlayRealms` argument. [QuickPlay](https://minecraft.wiki/w/Quick_Play)
+Встановлює аргумент `QuickPlayRealms`. [QuickPlay](https://minecraft.wiki/w/Quick_Play)
 
 ### ServerIp / ServerPort
 
-**Type: string / int**
+**Тип: string / int**
 
-Connecting to a server directly when Minecraft is loading is done. The default value of `ServerPort` is 25565. If `ServerPort` is not a valid port number (0-65535), `ArgumentOutOfRangeException` is thrown. If the starting version supports [QuickPlay](https://minecraft.wiki/w/Quick_Play), the launcher will enable QuickPlayMultiplayer feature, otherwise the launcher will append `--serverIp` and `--serverPort` arguments.
+Пряме підключення до сервера одразу після завершення завантаження Minecraft. Значення за замовчуванням для `ServerPort` — 25565. Якщо `ServerPort` не є коректним номером порту (0-65535), буде викинуто `ArgumentOutOfRangeException`. Якщо версія, що запускається, підтримує [QuickPlay](https://minecraft.wiki/w/Quick_Play), лаунчер увімкне функцію QuickPlayMultiplayer, інакше додасть аргументи `--serverIp` та `--serverPort`.
 
-_note1: Not all versions of Minecraft support this option._
+_примітка 1: Не всі версії Minecraft підтримують цей параметр._
 
-_note2: If you set a domain with an SRV record, the connection may fail. Set the actual address and port that the SRV record points to directly._
+_примітка 2: Якщо ви вкажете домен із записом SRV, з'єднання може не вдатися. Вказуйте безпосередньо реальну адресу та порт, на які вказує запис SRV._
 
 ### ClientId
 
-**Type: string**
+**Тип: string**
 
 `${clientid}`
 
 ### VersionType
 
-**Type: string**
+**Тип: string**
 
-`${version_type}`. If the value is null, the `Type` property of the starting version is used. VersionType is displayed in the lower left corner of the main screen. Not all versions of Minecraft support this.
+`${version_type}`. Якщо значення дорівнює null, використовується властивість `Type` версії, що запускається. VersionType відображається у лівому нижньому кутку головного екрана. Не всі версії Minecraft підтримують це.
 
 ### GameLauncherName
 
-**Type: string**
+**Тип: string**
 
-`${launcher_name}`. The default value is `minecraft-launcher` , which is the same as the Mojang launcher.
+`${launcher_name}`. Значення за замовчуванням — `minecraft-launcher`, що відповідає офіційному лаунчеру Mojang.
 
 ### GameLauncherVersion
 
-**Type: string**
+**Тип: string**
 
-`${launcher_version}`. The default value is `2`, which is the same as the Mojang launcher.
+`${launcher_version}`. Значення за замовчуванням — `2`, що відповідає офіційному лаунчеру Mojang.
 
 ### UserProperties
 
-**Type: string**
+**Тип: string**
 
-`${user_properties}`. for Twitch livestreaming
+`${user_properties}`. Використовується для стрімінгу на Twitch.
 
 ### ArgumentDictionary
 
-**Type: `IReadOnlyDictionary<string, string>`**
+**Тип: `IReadOnlyDictionary<string, string>`**
 
-When building an argument in the launcher, `${variable_name}` will be replaced with the appropriate value. This option specifies `variable_name` as the key and the string to be replaced as the value.
+Під час формування аргументів у лаунчері `${variable_name}` буде замінено на відповідне значення. Цей параметр визначає `variable_name` як ключ, а рядок для заміни — як значення.
 
 ### JVMArgumentOverrides
 
-**Type: `IEnumerable<MArgument>`**
+**Тип: `IEnumerable<MArgument>`**
 
-Override all JVM arguments. When this option is not null, `ExtraJVMArguments` and `JVMArguments` are ignored.
+Перевизначення всіх аргументів JVM. Якщо цей параметр не дорівнює null, `ExtraJVMArguments` та `JVMArguments` ігноруються.
 
-See [MArgument](../more-apis/margument.md)
+Дивіться [MArgument](../more-apis/margument.md)
 
 ### ExtraJVMArguments
 
-**Type: `IEnumerable<MArgument>`**
+**Тип: `IEnumerable<MArgument>`**
 
-Set extra JVM arguments. See [MArgument](../more-apis/margument.md)
+Встановлення додаткових аргументів JVM. Дивіться [MArgument](../more-apis/margument.md)
 
-Default arguments are:
+Стандартні аргументи:
 
 ```
 -XX:+UnlockExperimentalVMOptions
@@ -211,10 +211,10 @@ Default arguments are:
 
 ### ExtraGameArguments
 
-**Type: `IEnumerable<MArgument>`**
+**Тип: `IEnumerable<MArgument>`**
 
-Set extra game arguments. See [MArgument](../more-apis/margument.md)
+Встановлення додаткових аргументів гри. Дивіться [MArgument](../more-apis/margument.md)
 
-## API Reference
+## Довідник API
 
 - [MLaunchOption](https://cmllib.github.io/CmlLib.Core/api/CmlLib.Core.ProcessBuilder.MLaunchOption.html)
