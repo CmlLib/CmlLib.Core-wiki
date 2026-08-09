@@ -1,49 +1,49 @@
 ---
-description: Represents the errors during Xbox authentication.
+description: Репозиторій пердставляє помилки під час автентифікації Xbox
 ---
 
 # XboxAuthException
 
-`ErrorCode` and `ErrorMessage` describe the error in detail.
+`ErrorCode` та `ErrorMessage` детально описують помилку.
 
-**If you purchased Minecraft, most of the errors below will not occur. Make sure the account you are trying to log in with is the account that purchased Minecraft.**
+**Якщо ви придбали Minecraft, більшість з описаних нижче помилок не виникне. Переконайтеся, що обліковий запис, під яким ви намагаєтеся увійти, є саме тим обліковим записом, з якого було придбано Minecraft.**
 
-Age-related issues can be resolved by changing the login mode to `Full` or `Sisu`. [XboxAuth](xboxauth.md)
+Проблеми, пов'язані з віком, можна вирішити, змінивши режим входу на `Full` або `Sisu`. [XboxAuth](xboxauth.md)
 
 ## ErrorCode
 
 ### 0x8015dc03
 
-The device or user was banned.
+Пристрій або користувача було заблоковано (забанено).
 
 ### 0x8015dc04
 
-The device or user was banned.
+Пристрій або користувача було заблоковано (забанено).
 
 ### 0x8015dc0b
 
-This resource is not available in the country associated with the user.
+Цей ресурс недоступний у країні, пов'язаній із користувачем.
 
 ### 0x8015dc0c
 
-Access to this resource requires age verification.
+Доступ до цього ресурсу вимагає перевірки віку.
 
 ### 0x8015dc0d
 
-Access to this resource requires age verification.
+Доступ до цього ресурсу вимагає перевірки віку.
 
 ### 0x8015dc0e
 
-ACCOUNT_CHILD_NOT_IN_FAMILY
+ACCOUNT_CHILD_NOT_IN_FAMILY (Дитячий акаунт не перебуває у сімейній групі).
 
 ### 0x8015dc09
 
-ACCOUNT_CREATION_REQUIRED
+ACCOUNT_CREATION_REQUIRED (Потрібне створення облікового запису Xbox).
 
 ### 0x8015dc10
 
-ACCOUNT_MAINTENANCE_REQUIRED
+ACCOUNT_MAINTENANCE_REQUIRED (Потрібне обслуговування/оновлення даних облікового запису).
 
-### Others
+### Інші коди
 
-All error codes: [here](https://github.com/microsoft/xbox-live-api/blob/730f579d41b64df5b57b52e629d12f23c6fb64ac/Source/Shared/errors_legacy.h#L924)
+Усі коди помилок можна переглянути [тут](https://github.com/microsoft/xbox-live-api/blob/730f579d41b64df5b57b52e629d12f23c6fb64ac/Source/Shared/errors_legacy.h#L924).
