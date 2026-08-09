@@ -1,23 +1,23 @@
-# Accounts
+# Облікові записи
 
 ## ISessionStorage
 
-Sessions are stored in `ISessionStorage`, along with the various tokens obtained during the login process. One account is stored in one instance of `ISessionStorage`. For example, when a user named `Notch` logs in, they get a Microsoft OAuth token, an Xbox token, and a Minecraft JE token. All three would be stored in a single instance of `ISessionStorage`, which would only contain login information specific to the user `Notch`.
+Сесії зберігаються в `ISessionStorage` разом із різними токенами, отриманими під час процесу входу. Один обліковий запис зберігається в одному екземплярі `ISessionStorage`. Наприклад, коли користувач з ім'ям `Notch` входить у систему, він отримує токен Microsoft OAuth, токен Xbox та токен Minecraft JE. Усі три токени зберігатимуться в єдиному екземплярі `ISessionStorage`, який міститиме лише інформацію для входу, що стосується саме користувача `Notch`.
 
-There are three implementations of `ISessionStorage`: `InMemorySessionStorage`, which stores all information in memory; `JsonSessionStorage`, which manages it as an in-memory Json object; and `JsonFileSessionStorage`, which manages it as a Json file.
+Існує три реалізації `ISessionStorage`: `InMemorySessionStorage`, яка зберігає всю інформацію в оперативній пам'яті; `JsonSessionStorage`, яка керує нею як об'єктом JSON у пам'яті; та `JsonFileSessionStorage`, яка керує нею у вигляді JSON-файлу.
 
-### Example
+### Приклад
 
 ```csharp
 var sessionStorage = new InMemorySessionStorage();
 
-// save data
+// збереження даних
 sessionStorage.Set<string>("myData", "HelloWorld");
 
-// load data
+// завантаження даних
 var myData = sessionStorage.Get<string>("myData");
 
-// save and load data via ISessionSource
+// збереження та завантаження даних через ISessionSource
 var sessionSource = MicrosoftOAuthSessionSource.Default;
 sessionSource.Set(sessionStorage, new MicrosoftOAuthResponse());
 var oauth = sessionSource.Get(sessionStorage);
@@ -25,26 +25,26 @@ var oauth = sessionSource.Get(sessionStorage);
 
 ## XboxGameAccount
 
-XboxGameAccount has an ISessionStorage internally and provides additional functionality.
+`XboxGameAccount` містить внутрішній екземпляр `ISessionStorage` та надає додаткову функціональність:
 
-* Provides an identifier to distinguish between ISessionStorages.
-* Provides properties to easily access the session information held by the ISessionStorage (e.g. LastAccess, XboxTokens).
+* Надає ідентифікатор для розрізнення між екземплярами `ISessionStorage`.
+* Надає властивості для зручного доступу до інформації про сесію, що міститься в `ISessionStorage` (наприклад, `LastAccess`, `XboxTokens`).
 
 ### Identifier
 
-To manage multiple accounts, you need to manage multiple ISessionStorages, and you need an identifier to distinguish each ISessionStorage.
+Щоб управляти кількома обліковими записами, необхідно керувати кількома екземплярами `ISessionStorage`, для чого потрібен ідентифікатор, який дозволяє відрізнити кожен `ISessionStorage`.
 
-If two accounts have the same identifier, they are considered to be the same account, even if the ISessionStorage contains different data.
+Якщо два облікові записи мають однаковий ідентифікатор, вони вважаються одним і тим самим акаунтом, навіть якщо їхні `ISessionStorage` містять різні дані.
 
-For example, `JEGameAccount`, which represents a Minecraft Java Edition account, uses the user's UUID as the identifier.
+Наприклад, `JEGameAccount`, який представляє обліковий запис Minecraft Java Edition, використовує UUID користувача як ідентифікатор.
 
 ### LastAccess
 
-Indicates the last time this account was accessed.
+Вказує на час останнього звернення (доступу) до цього облікового запису.
 
 ### XboxTokens
 
-## API Reference
+## Довідник API
 
 - [JEGameAccount](https://cmllib.github.io/CmlLib.Core.Auth.Microsoft/api/CmlLib.Core.Auth.Microsoft.Sessions.JEGameAccount.html)
 - [IXboxGameAccountManager](https://cmllib.github.io/CmlLib.Core.Auth.Microsoft/api/XboxAuthNet.Game.Accounts.IXboxGameAccountManager.html)
