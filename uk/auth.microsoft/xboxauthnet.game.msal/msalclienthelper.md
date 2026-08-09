@@ -1,10 +1,10 @@
 ---
-description: Provides helper methods for initializing IPublicClientApplication.
+description: Надає допоміжні методи для ініціалізації IPublicClientApplication.
 ---
 
 # MsalClientHelper
 
-## Example
+## Приклад
 
 ```csharp
 using XboxAuthNet.Game.Msal;
@@ -12,42 +12,40 @@ using XboxAuthNet.Game.Msal;
 IPublicClientApplication app = await MsalClientHelper.BuildApplicationWithCache("<CLIENT-ID>");
 ```
 
-Fill your Azure App Id in `<CLIENT-ID>`. For more information, see the [ClientID](clientid.md).
+Укажіть ваш Azure App ID замість `<CLIENT-ID>`. Для отримання додаткової інформації дивіться [ClientID](clientid.md).
 
 ## CreateDefaultApplicationBuilder(string cid)
 
-Initializing a `PublicClientApplicationBuilder` instance set up for Xbox authentication.
+Ініціалізує екземпляр `PublicClientApplicationBuilder`, налаштований для автентифікації Xbox.
 
 ## RegisterCache(IPublicClientApplication app, MsalCacheSettings cacheSettings)
 
-Apply the cache settings object, `cacheSettings`, to `app`.
+Застосовує об'єкт налаштувань кешу `cacheSettings` до `app`.
 
 ## RegisterCache(IPublicClientApplication app, StorageCreationProperties storageProperties)
 
-Apply the cache settings object `storageProperties` to `app`.
+Застосовує об'єкт налаштувань кешу `storageProperties` до `app`.
 
 ## BuildApplication(string cid)
 
-Initializing an `IPublicClientApplication` set up for Xbox authentication.
+Ініціалізує `IPublicClientApplication`, налаштований для автентифікації Xbox.
 
 ## BuildApplicationWithCache(string cid)
 
-Initializing an `IPublicClientApplication` set up for Xbox authentication and returns it with the default account cache settings applied.
-
-The default cache settings are:
+Ініціалізує `IPublicClientApplication`, налаштований для автентифікації Xbox, та повертає його із застосованими стандартними налаштуваннями кешу облікових записів.
 
 ## BuildApplicationWithCache(string cid, MsalCacheSettings cacheSettings)
 
-Initializing an `IPublicClientApplication` set up for Xbox authentication, applies the cache settings, `cacheSettings`, and returns it.
+Ініціалізує `IPublicClientApplication`, налаштований для автентифікації Xbox, застосовує налаштування кешу `cacheSettings` та повертає його.
 
 ## BuildApplicationWithCache(string cid, StorageCreationProperties storageProperties)
 
-Create an `IPublicClientApplication` set up for Xbox authentication and return it with the cache settings, `storageProperties`.
+Створює `IPublicClientApplication`, налаштований для автентифікації Xbox, та повертає його з налаштуваннями кешу `storageProperties`.
 
 ## ToMicrosoftOAuthResponse(AuthenticationResult result)
 
-Convert the MSAL login result, `AuthenticationResult`, to a `MicrosoftOAuthResponse` object used by `XboxAuthNet`.
+Конвертує результат входу MSAL (`AuthenticationResult`) в об'єкт `MicrosoftOAuthResponse`, який використовується в `XboxAuthNet`.
 
-## API Reference
+## Довідник API
 
 - [MsalClientHelper](https://cmllib.github.io/CmlLib.Core.Auth.Microsoft/api/XboxAuthNet.Game.Msal.MsalClientHelper.html)
