@@ -1,39 +1,39 @@
 ---
-description: Provides the foundation for Xbox game authenticating.
+description: Надає основу для автентифікації в іграх Xbox
 ---
 
 # XboxAuthNet.Game
 
-It provides common functionality for Xbox game authentication, including Microsoft OAuth, Xbox authentication, and account management.
+Бібліотека надає спільний функціонал для автентифікації в іграх Xbox, включаючи Microsoft OAuth, автентифікацію Xbox та управління обліковими записами.
 
-For example, the common functionality of [CmlLib.Core.Auth.Microsoft](../cmllib.core.auth.microsoft/README.md) for logging into Minecraft Java Edition and [CmlLib.Core.Bedrock.Auth](../cmllib.core.bedrock.auth.md) for logging into Badrock Edition are both provided by this library.
+Наприклад, спільний функціонал [CmlLib.Core.Auth.Microsoft](../cmllib.core.auth.microsoft/README.md) для входу в Minecraft Java Edition та [CmlLib.Core.Bedrock.Auth](../cmllib.core.bedrock.auth.md) для входу в Bedrock Edition реалізовано саме за допомогою цієї бібліотеки.
 
-## Install
+## Встановлення
 
-You don't need to install this package manually. `CmlLib.Core.Auth.Microsoft` depends this package.
+Вам не потрібно встановлювати цей пакет вручну. `CmlLib.Core.Auth.Microsoft` залежить від цього пакета.
 
-## Authenticator
+## Authenticator (Автентифікатор)
 
 ### [OAuth](oauth.md)
 
-Provides OAuth sign-in with a Microsoft account.
+Забезпечує вхід через OAuth за допомогою облікового запису Microsoft.
 
 ### [XboxAuth](xboxauth.md)
 
-Provides for Xbox authentication with a Microsoft OAuth token.
+Забезпечує автентифікацію Xbox за допомогою токена Microsoft OAuth.
 
-### Extensions
+### Розширення (Extensions)
 
-Authentication are designed to be easily extensible: you can easily add new authenticator, and you can freely reorder them.
+Процес автентифікації розроблено легкорозширюваним: ви можете легко додавати нові автентифікатори та вільно змінювати їхній порядок.
 
-For example, there is extension library for Microsoft OAuth using MSAL library, [xboxauthnet.game.msal](../xboxauthnet.game.msal/README.md).
+Наприклад, існує бібліотека розширення для Microsoft OAuth з використанням бібліотеки MSAL — [xboxauthnet.game.msal](../xboxauthnet.game.msal/README.md).
 
-## Account
+## Account (Облікові записи)
 
 ### [AccountManager](accountmanager.md)
 
-Manage account list.
+Управління списком облікових записів.
 
 ### [Accounts](accounts.md)
 
-Manage each account.
+Управління кожним окремим обліковим записом.
