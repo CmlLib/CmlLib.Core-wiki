@@ -1,51 +1,51 @@
 # ClientID
 
-For using MSAL, You should acquire your own Azure Client ID. This document describes how to acquire your own Azure Client ID for Xbox authentication.
+Для використання MSAL вам потрібно отримати власний Azure Client ID. У цьому документі описано, як отримати власний Azure Client ID для автентифікації Xbox.
 
-## 1. Go to Azure Active Directory
+## 1. Перехід до Azure Active Directory
 
-Open [Azure Portal](https://portal.azure.com/) and find Azure Active Directory menu.
+Відкрийте [Azure Portal](https://portal.azure.com/) та знайдіть меню **Azure Active Directory**.
 
 ![image](https://user-images.githubusercontent.com/17783561/154854882-79918bb0-f317-4ab8-aac9-4b51f4086be9.png)
 
-## 2. App registration
+## 2. Реєстрація застосунку (App registration)
 
-Add - App Registration
+Додати — Реєстрація застосунку (**App Registration**)
 
 ![image](https://user-images.githubusercontent.com/17783561/154855003-4f5fc4ea-7083-47f9-818d-72216a548c27.png)
 
-Name: your app name  
-Account type: Accounts in any organizational directory (Any Azure AD directory - Multitenant) and personal Microsoft accounts (e.g. Skype, Xbox)  
-Redirect URI: Public client/native, http://localhost
+* **Назва (Name):** назва вашого застосунку  
+* **Тип облікового запису (Account type):** Облікові записи в будь-якому організаційному каталозі (Будь-який каталог Azure AD — Багатоорендний) та особисті облікові записи Microsoft (наприклад, Skype, Xbox)  
+* **URI перенаправлення (Redirect URI):** Public client/native, `http://localhost`
 
 ![image](https://user-images.githubusercontent.com/17783561/154855171-2198b328-9457-46e3-89b8-b1e295bfb5bd.png)
 
-Click 'Register' button.
+Натисніть кнопку **Register** (Зареєструвати).
 
-## 3. Authentication manage
+## 3. Управління автентифікацією (Authentication manage)
 
-Go to App registrations - your app name
+Перейдіть до **App registrations** — назва вашого застосунку
 
 ![image](https://user-images.githubusercontent.com/17783561/154855363-17386531-4fb6-4fa3-aab2-3dc1ed954d48.png)
 
-**In this screen, you can get Application (Client) ID**  
-Click Redirect URIs
+**На цьому екрані ви можете отримати Application (Client) ID**  
+Натисніть **Redirect URIs**
 
 ![image](https://user-images.githubusercontent.com/17783561/154855473-19713858-8c6e-49f0-ab13-51c33fc245fb.png)
 
-Add 'Msal Only'
+Додайте **Msal Only**
 
 ![image](https://user-images.githubusercontent.com/17783561/154855535-6b1abe22-a310-4038-89ad-b5c1cc006327.png)
 
-Scroll down and 'Allow public client flows'
+Прокрутіть вниз та увімкніть **Allow public client flows** (Дозволити потоки публічних клієнтів)
 
 ![image](https://user-images.githubusercontent.com/17783561/154855569-e5e8441e-30ad-4930-af5d-5e790ad9e1ce.png)
 
-Click 'Save' button
+Натисніть кнопку **Save** (Зберегти).
 
-## 4. Register Client ID
+## 4. Реєстрація Client ID
 
-After creating your application in Azure, you need to allowlist your Client ID to prevent 403: FORBIDDEN errors from the Minecraft authentication API. Follow the guidance in the official Minecraft help article to ensure your application is recognized.
+Після створення застосунку в Azure вам необхідно внести свій Client ID до білого списку (allowlist), щоб запобігти виникненню помилок `403: FORBIDDEN` від API автентифікації Minecraft. Дотримуйтесь інструкцій в офіційній довідковій статті Minecraft, щоб переконатися, що ваш застосунок розпізнається:
 
 https://help.minecraft.net/hc/en-us/articles/16254801392141
 
