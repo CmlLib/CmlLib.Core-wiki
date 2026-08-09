@@ -1,16 +1,16 @@
 ---
-description: Builder for initializing JELoginHandler
+description: Будівельник (builder) для ініціалізації JELoginHandler
 ---
 
 # JELoginHandlerBuilder
 
 ```csharp
-// Build with default options
+// Створення зі стандартними параметрами
 var loginHandler = JELoginHandlerBuilder.BuildDefault();
 ```
 
 ```csharp
-// Build with options
+// Створення з налаштованими параметрами
 var loginHandler = new JELoginHandlerBuilder()
     .WithHttpClient(httpClient)
     .WithAccountManager("accounts.json")
@@ -21,19 +21,19 @@ var session = await loginHandler.Authenticate();
 
 ### WithHttpClient
 
-Set `HttpClient`. All HTTP requests are handled by this.
+Встановлює `HttpClient`. Усі HTTP-запити будуть оброблятися через нього.
 
 ### WithAccountManager
 
-Set `IXboxGameAccount` which `JELoginHandler` will use. Default is `JsonXboxGameAccountManager` with the `<MINECRAFT-PATH>/cml_accounts.json` file.
+Встановлює `IXboxGameAccountManager`, який використовуватиме `JELoginHandler`. За замовчуванням використовується `JsonXboxGameAccountManager` із файлом `<ШЛЯХ-ДО-MINECRAFT>/cml_accounts.json`.
 
-If you pass a string type, this method will call `WithAccountManager(new JsonXboxGameAccountManager(filePath, JEGameAccount.FromSessionStorage))`.
+Якщо ви передаєте строковий тип (шлях до файлу), цей метод викличе `WithAccountManager(new JsonXboxGameAccountManager(filePath, JEGameAccount.FromSessionStorage))`.
 
 ### WithLogger
 
-Set [ILogger](https://learn.microsoft.com/en-us/dotnet/api/microsoft.extensions.logging.ilogger?view=dotnet-plat-ext-7.0) for logging. This library use [Microsoft.Extensions.Logging](https://learn.microsoft.com/en-us/dotnet/core/extensions/logging?tabs=command-line) to logging.
+Встановлює [ILogger](https://learn.microsoft.com/en-us/dotnet/api/microsoft.extensions.logging.ilogger?view=dotnet-plat-ext-7.0) для логування. Ця бібліотека використовує [Microsoft.Extensions.Logging](https://learn.microsoft.com/en-us/dotnet/core/extensions/logging?tabs=command-line) для запису логів.
 
-## API Reference
+## Довідник API
 
 - [JELoginHandler](https://cmllib.github.io/CmlLib.Core.Auth.Microsoft/api/CmlLib.Core.Auth.Microsoft.JELoginHandler.html)
 - [JELoginHandlerBuilder](https://cmllib.github.io/CmlLib.Core.Auth.Microsoft/api/CmlLib.Core.Auth.Microsoft.JELoginHandlerBuilder.html)
