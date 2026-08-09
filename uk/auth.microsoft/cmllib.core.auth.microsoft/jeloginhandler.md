@@ -1,27 +1,27 @@
 ---
-description: Login, logout, account managements.
+description: Вхід, вихід, управління обліковими записами.
 ---
 
 # JELoginHandler
 
-## Creating JELoginHandler instance
+## Створення екземпляра JELoginHandler
 
 ```csharp
 var loginHandler = JELoginHandlerBuilder.BuildDefault();
 ```
 
-For more detailed initialization, which includes specifying how accounts are stored, setting up HttpClient, and more, please refer to [JELoginHandlerBuilder](jeloginhandlerbuilder.md).
+Для детальнішого налаштування ініціалізації, що включає вказування способу збереження облікових записів, налаштування `HttpClient` тощо, зверніться до [JELoginHandlerBuilder](jeloginhandlerbuilder.md).
 
-## Basic Authentication
+## Базова автентифікація
 
 ```csharp
 var session = await loginHandler.Authenticate();
 // var session = await loginHandler.Authenticate(selectedAccount, cancellationToken);
 ```
 
-This method tries [#authenticating-with-the-most-recent-account](jeloginhandler.md#authenticating-with-the-most-recent-account) first and if it fails, tries [#authenticating-with-new-account](jeloginhandler.md#authenticating-with-new-account).
+Цей метод спочатку намагається виконати [автентифікацію з останнім використаним обліковим записом](jeloginhandler.md#authenticating-with-the-most-recent-account), а у разі невдачі — [автентифікацію з новим обліковим записом](jeloginhandler.md#authenticating-with-new-account).
 
-## Authenticating with New Account
+## Автентифікація з новим обліковим записом
 
 ```csharp
 var session = await loginHandler.AuthenticateInteractively();
@@ -30,30 +30,30 @@ var session = await loginHandler.AuthenticateInteractively();
 
 ![](https://user-images.githubusercontent.com/17783561/154854388-38c473f1-7860-4a47-bdbe-622de37eef8b.png)
 
-Add a new account to sign in. Show the user the Microsoft OAuth page to enter their Microsoft account.
+Додає новий обліковий запис для входу. Відображає користувачеві сторінку Microsoft OAuth для введення даних облікового запису Microsoft.
 
-!!! info "Microsoft WebView2 Requirements"
-    This method uses [Microsoft WebView2](https://developer.microsoft.com/en-us/microsoft-edge/webview2/) for displaying Microsoft OAuth login page. You must know that:
+!!! info "Вимоги до Microsoft WebView2"
+    Цей метод використовує [Microsoft WebView2](https://developer.microsoft.com/en-us/microsoft-edge/webview2/) для відображення сторінки входу Microsoft OAuth. Зверніть увагу:
 
-    * **Microsoft WebView2 is only available on Windows.** For another platform, see [Authentication with MSAL](authentication-with-msal.md).
-    * To run WebView2, The users (including developer and end user) **must have the WebView2 Runtime installed**. See [this document](https://learn.microsoft.com/en-us/microsoft-edge/webview2/concepts/distribution) to distribute your launcher with WebView2. (For example, you can automate runtime installation with direct download link: [https://go.microsoft.com/fwlink/p/?LinkId=2124703](https://go.microsoft.com/fwlink/p/?LinkId=2124703))
+    * **Microsoft WebView2 доступний лише на Windows.** Для інших платформ дивіться [Автентифікація за допомогою MSAL](authentication-with-msal.md).
+    * Для роботи WebView2 у користувачів (як розробників, так і кінцевих користувачів) **має бути встановлений WebView2 Runtime**. Дивіться [цей документ](https://learn.microsoft.com/en-us/microsoft-edge/webview2/concepts/distribution) для розповсюдження вашого лаунчера разом із WebView2. (Наприклад, ви можете автоматизувати встановлення середовища виконання за допомогою прямого посилання на завантаження: https://go.microsoft.com/fwlink/p/?LinkId=2124703.
 
-    If you don't want to use WebView2, see [Authentication with MSAL](authentication-with-msal.md).
+    Якщо ви не бажаєте використовувати WebView2, дивіться [Автентифікація за допомогою MSAL](authentication-with-msal.md).
 
-## Authenticating with the Most Recent Account
+## Автентифікація з останнім використаним обліковим записом
 
 ```csharp
 var session = await loginHandler.AuthenticateSilently();
 // var session = await loginHandler.AuthenticateSilently(selectedAccount, cancellationToken);
 ```
 
-Using the saved account information of the most account, log in.
+Виконує вхід за допомогою збережених даних останнього використаного облікового запису.
 
-* If the user is already logged in, this method returns the logged in information immediately.
-* If the user's login information has expired, try to refresh it. No user interaction nor webview is required during this process.
-* If there is no saved login information or if refresh failed, an `MicrosoftOAuthException` will be thrown. In this case you should authenticate again using new account methods like [#authenticating-with-new-account](jeloginhandler.md#authenticating-with-new-account).
+* Якщо користувач уже увійшов, метод одразу повертає інформацію про сесію.
+* Якщо термін дії даних входу закінчився, виконується спроба їх оновити. Під час цього процесу не потрібно ані взаємодії з користувачем, ані відображення webview.
+* Якщо збережені дані входу відсутні або оновлення не вдалося, буде викинуто виняток `MicrosoftOAuthException`. У такому разі слід повторно виконати вхід через методи для нового облікового запису, такі як [автентифікація з новим обліковим записом](jeloginhandler.md#authenticating-with-new-account).
 
-## List Accounts
+## Список облікових записів
 
 ```csharp
 var accounts = loginHandler.AccountManager.GetAccounts();
@@ -69,32 +69,32 @@ foreach (var account in accounts)
 }
 ```
 
-After a successful login, the account is saved. Above code list all saved account lists.
+Після успішного входу обліковий запис зберігається. Наведений вище код виводить список усіх збережених облікових записів.
 
-## Select Account
+## Вибір облікового запису
 
-Select account by index number:
+Вибір облікового запису за порядковим номером (індексом):
 
 ```csharp
 var accounts = loginHandler.AccountManager.GetAccounts();
 var selectedAccount = accounts.ElementAt(1);
 ```
 
-All account has **unique string** to identify them. Select account by identifier:
+Усі облікові записи мають **унікальний рядок** для ідентифікації. Вибір облікового запису за ідентифікатором:
 
 ```csharp
 var accounts = loginHandler.AccountManager.GetAccounts();
 var selectedAccount = accounts.GetAccount("Identifier");
 ```
 
-Select account by JE username:
+Вибір облікового запису за нікнеймом JE:
 
 ```csharp
 var accounts = loginHandler.AccountManager.GetAccounts();
 var selectedAccount = accounts.GetJEAccountByUsername("username");
 ```
 
-## Authenticating with the Selected Account
+## Автентифікація з вибраним обліковим записом
 
 ```csharp
 var accounts = loginHandler.AccountManager.GetAccounts();
@@ -102,22 +102,22 @@ var selectedAccount = accounts.ElementAt(1);
 var session = await loginHandler.Authenticate(selectedAccount);
 ```
 
-Load account list and authenticate with second account (index number 1).
+Завантажує список облікових записів та виконує вхід з другим акаунтом (індекс 1).
 
-## Signing out from the most Recent Account
+## Вихід з останнього використаного облікового запису
 
-!!! info "Browser Cache"
-    `Signout` method does not clear WebView2 browser cache. For clearing it, call `SignoutWithBrowser` instead.
+!!! info "Кеш браузера"
+    Метод `Signout` не очищує кеш браузера WebView2. Для його очищення використовуйте метод `SignoutWithBrowser`.
 
 ```csharp
 await loginHandler.Signout();
 // await loginHandler.SignoutWithBrowser();
 ```
 
-## Signing out from the Selected Account
+## Вихід з вибраного облікового запису
 
-!!! info "Browser Cache"
-    `Signout` method does not clear WebView2 browser cache. For clearing it, call `SignoutWithBrowser` instead.
+!!! info "Кеш браузера"
+    Метод `Signout` не очищує кеш браузера WebView2. Для його очищення використовуйте метод `SignoutWithBrowser`.
 
 ```csharp
 var accounts = loginHandler.AccountManager.GetAccounts();
@@ -126,14 +126,14 @@ await loginHandler.Signout(selectedAccount);
 // await loginHandler.SignoutWithBrowser();
 ```
 
-Load account list and sign out from second account (index number 1).
+Завантажує список облікових записів та виконує вихід з другого акаунта (індекс 1).
 
-## Authenticating with More Options
+## Автентифікація з додатковими параметрами
 
 ```csharp
 using XboxAuthNet.Game;
 
-// 1. Create Authenticator 
+// 1. Створення автентифікатора 
 var authenticator = loginHandler.CreateAuthenticator(account, default);
 
 // 2. OAuth
@@ -145,56 +145,56 @@ authenticator.AddXboxAuthForJE(xbox => xbox.Basic());
 // 4. JEAuthenticator
 authenticator.AddJEAuthenticator();
 
-// Execute authenticator
+// Виконання автентифікації
 var session = await authenticator.ExecuteForLauncherAsync();
 ```
 
-The login process has four main steps. There are many methods to customize authentication flow in each main step. You must select only one method for each step.
+Процес входу складається з чотирьох основних кроків. Існує багато методів для налаштування процесу автентифікації на кожному з них. Для кожного кроку необхідно обрати лише один метод.
 
-### 1. Create Authenticator
+### 1. Створення автентифікатора (Create Authenticator)
 
 ```csharp
 var authenticator = loginHandler.CreateAuthenticator(account, default);
 ```
 
-Initialize `Authenticator` instance with the specific account to login. Another ways to initialize this:
+Ініціалізує екземпляр `Authenticator` для конкретного облікового запису. Інші способи ініціалізації:
 
 ```csharp
 var authenticator = loginHandler.CreateAuthenticatorWithNewAccount(default);
 ```
 
-Initialize `Authenticator` with new empty account.
+Ініціалізує `Authenticator` для нового порожнього облікового запису.
 
 ```csharp
 var authenticator = loginHandler.CreateAuthenticatorWithDefaultAccount(default);
 ```
 
-Initialize `Authenticator` with the most recent account.
+Ініціалізує `Authenticator` для останнього використаного облікового запису.
 
-You can pass [CancellationToken](https://learn.microsoft.com/en-us/dotnet/api/system.threading.cancellationtoken?view=net-7.0) instead of `default`.
+Замість `default` можна передати [CancellationToken](https://learn.microsoft.com/en-us/dotnet/api/system.threading.cancellationtoken?view=net-7.0).
 
 ### 2. OAuth
 
 ```csharp
 authenticator.AddMicrosoftOAuthForJE(oauth => oauth.Interactive());
 
-// above code is same as
+// аналогічно до:
 // authenticator.AddMicrosoftOAuth(JELoginHandler.DefaultMicrosoftOAuthClientInfo, oauth => oauth.Interactive());
 
-// another OAuth method can be:
+// іншими методами OAuth могут бути:
 // 1) authenticator.AddForceMicrosoftOAuthForJE(oauth => oauth.Interactive());
 // 2) authenticator.AddMicrosoftOAuthForJE(oauth => oauth.Silent());
 // ...
 ```
 
-Set Microsoft OAuth mode. Instead of `oauth => oauth.Interactive()`, there are many options you can replace with. See [OAuth](../xboxauthnet.game/oauth.md).
+Встановлює режим Microsoft OAuth. Замість `oauth => oauth.Interactive()` можна обрати інші варіанти. Дивіться [OAuth](../xboxauthnet.game/oauth.md).
 
-`AddMicrosoftOAuthForJE` and `AddForceMicrosoftOAuthForJE` methods add default `MicrosoftOAuthClientInfo` which Mojang Minecraft launcher uses so that you don't need to pass it everytime you use.
+Методи `AddMicrosoftOAuthForJE` та `AddForceMicrosoftOAuthForJE` додають стандартну інформацію клієнта `MicrosoftOAuthClientInfo`, яку використовує офіційний лаунчер Mojang Minecraft, тому її не потрібно передавати щоразу.
 
-Note that the default Microsoft OAuth is only available on Windows platform. For another platform (Linux, macOS) you need [xboxauthnet.game.msal](../xboxauthnet.game.msal/README.md).
+Зверніть увагу, що стандартний Microsoft OAuth доступний лише на платформі Windows. Для інших платформ (Linux, macOS) потрібен [xboxauthnet.game.msal](../xboxauthnet.game.msal/README.md).
 
 ```csharp
-// example for XboxAuthNet.Game.Msal
+// приклад для XboxAuthNet.Game.Msal
 authenticator.AddMsalOAuth(app, msal => msal.Interactive());
 ```
 
@@ -203,24 +203,24 @@ authenticator.AddMsalOAuth(app, msal => msal.Interactive());
 ```csharp
 authenticator.AddXboxAuthForJE(xbox => xbox.Basic());
 
-// above code is same as
+// аналогічно до:
 // authenticator.AddXboxAuth(xbox => xbox.WithRelyingParty(JELoginHandler.RelyingParty).Basic());
 
-// another xbox auth method can be:
+// іншими методами автентифікації Xbox можуть бути:
 // 1) authenticator.AddXboxAuthForJE(xbox => xbox.Full());
 // 2) authenticator.AddXboxAuthForJE(xbox => xbox.Sisu("<CLIENT-ID>"));
 // ...
 ```
 
-Set Xbox authentication mode. Instead of `xbox => xbox.Basic()`, there are many options you can replace with. See [XboxAuth](../xboxauthnet.game/xboxauth.md).
+Встановлює режим автентифікації Xbox. Замість `xbox => xbox.Basic()` можна обрати інші варіанти. Дивіться [XboxAuth](../xboxauthnet.game/xboxauth.md).
 
-`AddXboxAuthForJE` and `AddForceXboxAuthForJE` methods add default xbox authentication relying party which is used for Minecraft: JE authentication so that you don't need to pass it everytime you use.
+Методи `AddXboxAuthForJE` та `AddForceXboxAuthForJE` додають стандартну довірену сторону (relying party) автентифікації Xbox, що використовується для Minecraft: JE, тому її не потрібно передавати щоразу.
 
 ### 4. JEAuthenticator
 
-Set Minecraft: JE authentication mode. See [JEAuthenticator](jeauthenticator.md).
+Встановлює режим автентифікації Minecraft: JE. Дивіться [JEAuthenticator](jeauthenticator.md).
 
-## API Reference
+## Довідник API
 
 - [JELoginHandler](https://cmllib.github.io/CmlLib.Core.Auth.Microsoft/api/CmlLib.Core.Auth.Microsoft.JELoginHandler.html)
 - [Extensions](https://cmllib.github.io/CmlLib.Core.Auth.Microsoft/api/CmlLib.Core.Auth.Microsoft.Extensions.html)
