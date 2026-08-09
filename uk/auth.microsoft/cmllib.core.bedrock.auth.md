@@ -1,13 +1,13 @@
 # CmlLib.Core.Bedrock.Auth
 
-A library that issues tokens to join to servers for Minecraft: BE.
+Бібліотека, яка видає токени для підключення до серверів Minecraft: BE.
 
-## Install
+## Встановлення
 
-Install nuget package `CmlLib.Core.Bedrock.Auth`.
+Встановіть NuGet-пакет `CmlLib.Core.Bedrock.Auth`.
 
-## Usage
+## Використання
 
-[Example](https://github.com/CmlLib/CmlLib.Core.Auth.Microsoft/blob/dev/tests/CmlLib.Core.Bedrock.Auth.Test/Sample.cs)
+[Приклад](https://github.com/CmlLib/CmlLib.Core.Auth.Microsoft/blob/dev/tests/CmlLib.Core.Bedrock.Auth.Test/Sample.cs)
 
-See [CmlLib.Core.Auth.Microsoft](cmllib.core.auth.microsoft/README.md) for details.
+Дивіться [CmlLib.Core.Auth.Microsoft](cmllib.core.auth.microsoft/README.md) для отримання детальної інформації.
