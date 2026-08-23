@@ -6,6 +6,8 @@ This is wiki for [CmlLib project](https://github.com/CmlLib).
 
 ## [한국어 위키](https://cmllib.github.io/CmlLib.Core-wiki/ko/)
 
+№№ [ПЕРЕЙТИ ДО ВІКІ](https://cmllib.github.io/CmlLib.Core-wiki/uk/)
+
 ## Contribution
 
 Make pull request for anything you want to update!
