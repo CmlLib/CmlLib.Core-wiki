@@ -146,3 +146,70 @@ processWrapper.OutputReceived += (sender, log) =>
     Console.WriteLine($"[Game] {log}");
 
 processWrapper.StartWithEvents();
+var exitCode = await processWrapper.WaitForExitTaskAsync();
+Console.WriteLine($"Гра завершилася з кодом: {exitCode}");
+```
+
+!!! tip "Оптимізація для .NET Framework"
+    Якщо ви використовуєте **.NET Framework**, встановіть `DefaultConnectionLimit` на **початку вашого застосунку** (до ініціалізації `MinecraftLauncher`), щоб максимізувати швидкість завантаження. У .NET Core або .NET 5+ у цьому немає потреби.
+
+    ```csharp
+    System.Net.ServicePointManager.DefaultConnectionLimit = 256;
+    ```
+
+## Додаткові методи
+
+### Витягнення файлів
+
+```csharp
+// за назвою версії
+IEnumerable<GameFile> files = await launcher.ExtractFiles("1.20.4", cancellationToken);
+```
+
+```csharp
+// за екземпляром IVersion 
+IVersion version = await launcher.GetVersionAsync("1.20.4", cancellationToken);
+IEnumerable<GameFile> files = await launcher.ExtractFiles(version, cancellationToken);
+```
+
+### Встановлення файлів
+
+```csharp
+// повідомлення про прогрес встановлення через launcher.FileProgressChanged, launcher.ByteProgressChanged
+await launcher.InstallAsync("1.20.4", cancellationToken); // за назвою версії
+await launcher.InstallAsync(version, cancellationToken); // за екземпляром IVersion 
+
+// повідомлення про прогрес встановлення через fileProgress, byteProgress
+await launcher.InstallAsync("1.20.4", fileProgress, byteProgress, cancellationToken); // за назвою версії 
+await launcher.InstallAsync(version, fileProgress, byteProgress, cancellationToken); // за екземпляром IVersion 
+```
+
+### Створення процесу гри
+
+```csharp
+// за назвою версії
+Process process = await launcher.BuildProcessAsync("1.20.4", new MLaunchOption(), cancellationToken);
+```
+
+```csharp
+// за екземпляром IVersion
+IVersion version = await launcher.GetVersionAsync("1.20.4", cancellationToken);
+Process process = launcher.BuildProcess(version, new MLaunchOption());
+```
+
+### Отримання шляху до Java
+
+```csharp
+IVersion version = await launcher.GetVersionAsync("1.20.4", cancellationToken);
+string? javaPath = await launcher.GetJavaPath(version);
+```
+
+Отримання шляху до першої встановленої Java
+
+```csharp
+string? javaPath = await launcher.GetDefaultJavaPath();
+```
+
+## Довідник API
+
+- https://cmllib.github.io/CmlLib.Core/api/CmlLib.Core.MinecraftLauncher.html

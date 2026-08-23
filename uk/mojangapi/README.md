@@ -34,7 +34,6 @@ dotnet add package MojangAPI
 ```csharp
 using MojangAPI;
 using MojangAPI.Model;
-
 ```
 
 Приклад програми: [MojangAPISample](https://github.com/CmlLib/MojangAPI/tree/master/MojangAPISample)

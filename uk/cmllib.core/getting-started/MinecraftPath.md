@@ -122,6 +122,6 @@ class MyMinecraftPath : MinecraftPath
 }
 ```
 
-# Довідник API
+# Довідник API {#довідник-api}
 
 - [MinecraftPath](https://cmllib.github.io/CmlLib.Core.Commons/api/CmlLib.Core.MinecraftPath.html)

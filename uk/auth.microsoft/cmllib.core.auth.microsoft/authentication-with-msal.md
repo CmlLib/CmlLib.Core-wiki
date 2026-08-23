@@ -60,4 +60,33 @@ var loginHandler = new JELoginHandlerBuilder()
     .Build();
 
 // створення автентифікатора для останнього використаного облікового запису
-var authent
+var authenticator = loginHandler.CreateAuthenticatorWithDefaultAccount();
+authenticator.AddMsalOAuth(app, msal => msal.Silent());
+authenticator.AddXboxAuthForJE(xbox => xbox.Basic());
+authenticator.AddJEAuthenticator();
+var session = await authenticator.ExecuteForLauncherAsync();
+```
+
+Вихід з облікового запису:
+
+```csharp
+var app = await MsalClientHelper.BuildApplicationWithCache("CLIENT-ID");
+var loginHandler = new JELoginHandlerBuilder()
+    .Build();
+    
+var authenticator = loginHandler.CreateAuthenticatorWithDefaultAccount();
+authenticator.AddMsalOAuth(app, msal => msal.ClearSession());
+authenticator.AddXboxAuthSignout();
+authenticator.AddJESignout();
+var session = await authenticator.ExecuteForLauncherAsync();
+```
+
+Для отримання додаткової інформації про методи в MSAL, такі як `msal.Interactive()`, `msal.Silent()` тощо, дивіться [OAuth](../xboxauthnet.game.msal/oauth.md).
+
+## Довідник API
+
+- [JELoginHandler](https://cmllib.github.io/CmlLib.Core.Auth.Microsoft/api/CmlLib.Core.Auth.Microsoft.JELoginHandler.html)
+- [MsalClientHelper](https://cmllib.github.io/CmlLib.Core.Auth.Microsoft/api/XboxAuthNet.Game.Msal.MsalClientHelper.html)
+- [MsalCodeFlowProvider](https://cmllib.github.io/CmlLib.Core.Auth.Microsoft/api/XboxAuthNet.Game.Msal.OAuth.MsalCodeFlowProvider.html)
+- [MsalDeviceCodeProvider](https://cmllib.github.io/CmlLib.Core.Auth.Microsoft/api/XboxAuthNet.Game.Msal.OAuth.MsalDeviceCodeProvider.html)
+- [MsalOAuthBuilder](https://cmllib.github.io/CmlLib.Core.Auth.Microsoft/api/XboxAuthNet.Game.Msal.MsalOAuthBuilder.html)

@@ -46,7 +46,7 @@ var launchOption = new MLaunchOption
     ExtraJvmArguments = new MArgument[]
     {
         new MArgument("--key=value"),
-        MArgument.FromCommandLine("-Dminecraft.api.env=custom -Dminecraft.api.auth.host=[https://invalid.invalid](https://invalid.invalid) -Dminecraft.api.account.host=[https://invalid.invalid](https://invalid.invalid) -Dminecraft.api.session.host=[https://invalid.invalid](https://invalid.invalid) -Dminecraft.api.services.host=[https://invalid.invalid](https://invalid.invalid)"),
+        MArgument.FromCommandLine("-Dminecraft.api.env=custom -Dminecraft.api.auth.host=https://invalid.invalid -Dminecraft.api.account.host=https://invalid.invalid -Dminecraft.api.session.host=https://invalid.invalid -Dminecraft.api.services.host=https://invalid.invalid"),
     },
     ExtraGameArguments = new MArgument[]
     {

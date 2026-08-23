@@ -51,7 +51,7 @@ process.BeginOutputReadLine();
  |         "sha1": "1584b57c1a0b5e593fad1f5b8f78536ca640547b",
  |         "size": 143138,
  |         "totalSize": 129336389,
- |         "url": "[https://launchermeta.mojang.com/v1/packages/1584b57c1a0b5e593fad1f5b8f78536ca640547b/1.12.json](https://launchermeta.mojang.com/v1/packages/1584b57c1a0b5e593fad1f5b8f78536ca640547b/1.12.json)"
+ |         "url": "https://launchermeta.mojang.com/v1/packages/1584b57c1a0b5e593fad1f5b8f78536ca640547b/1.12.json"
  |     },
  |     "assets": "1.12",
  |     "complianceLevel": 0,
@@ -59,12 +59,12 @@ process.BeginOutputReadLine();
 -|          "client": {
 -|              "sha1": "0f275bc1547d01fa5f56ba34bdc87d981ee12daf",
 -|              "size": 10180113,
--|              "url": "[https://launcher.mojang.com/v1/objects/0f275bc1547d01fa5f56ba34bdc87d981ee12daf/client.jar](https://launcher.mojang.com/v1/objects/0f275bc1547d01fa5f56ba34bdc87d981ee12daf/client.jar)"
+-|              "url": "https://launcher.mojang.com/v1/objects/0f275bc1547d01fa5f56ba34bdc87d981ee12daf/client.jar"
 -|          },
 -|          "server": {
 -|              "sha1": "886945bfb2b978778c3a0288fd7fab09d315b25f",
 -|              "size": 30222121,
--|              "url": "[https://launcher.mojang.com/v1/objects/886945bfb2b978778c3a0288fd7fab09d315b25f/server.jar](https://launcher.mojang.com/v1/objects/886945bfb2b978778c3a0288fd7fab09d315b25f/server.jar)"
+-|              "url": "https://launcher.mojang.com/v1/objects/886945bfb2b978778c3a0288fd7fab09d315b25f/server.jar"
 -|          }
 -|     },
 *|      "id": "1.12.2-modified", <== переконайтеся, що id такий самий, як і назва версії

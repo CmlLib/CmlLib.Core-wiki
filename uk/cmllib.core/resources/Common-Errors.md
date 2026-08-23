@@ -2,7 +2,7 @@
 
 ### Не завантажуються деякі текстури на екрані завантаження при використанні параметру `ServerIP`
 
-* [\[BUG\] When i provide server ip and port for auto connect to server on startup, the background does not load in 1.16.5 OptiFine](https://github.com/CmlLib/CmlLib.Core/issues/93)
+* [\[БАГ\] Якщо вказати IP-адресу та порт сервера для автопідключення під час запуску, фон не завантажується в 1.16.5 OptiFine](https://github.com/CmlLib/CmlLib.Core/issues/93)
 * Гра завершується з помилкою, пов'язаною з текстурами, на екрані завантаження «Connecting...» («Підключення...»).
 
 На жаль, це баги самого Minecraft, і ми не можемо їх виправити.

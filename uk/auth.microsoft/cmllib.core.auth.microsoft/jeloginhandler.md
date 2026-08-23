@@ -21,7 +21,7 @@ var session = await loginHandler.Authenticate();
 
 Цей метод спочатку намагається виконати [автентифікацію з останнім використаним обліковим записом](jeloginhandler.md#authenticating-with-the-most-recent-account), а у разі невдачі — [автентифікацію з новим обліковим записом](jeloginhandler.md#authenticating-with-new-account).
 
-## Автентифікація з новим обліковим записом
+## Автентифікація з новим обліковим записом {#authenticating-with-new-account}
 
 ```csharp
 var session = await loginHandler.AuthenticateInteractively();
@@ -36,11 +36,11 @@ var session = await loginHandler.AuthenticateInteractively();
     Цей метод використовує [Microsoft WebView2](https://developer.microsoft.com/en-us/microsoft-edge/webview2/) для відображення сторінки входу Microsoft OAuth. Зверніть увагу:
 
     * **Microsoft WebView2 доступний лише на Windows.** Для інших платформ дивіться [Автентифікація за допомогою MSAL](authentication-with-msal.md).
-    * Для роботи WebView2 у користувачів (як розробників, так і кінцевих користувачів) **має бути встановлений WebView2 Runtime**. Дивіться [цей документ](https://learn.microsoft.com/en-us/microsoft-edge/webview2/concepts/distribution) для розповсюдження вашого лаунчера разом із WebView2. (Наприклад, ви можете автоматизувати встановлення середовища виконання за допомогою прямого посилання на завантаження: https://go.microsoft.com/fwlink/p/?LinkId=2124703.
+    * Для роботи WebView2 у користувачів (як розробників, так і кінцевих користувачів) **має бути встановлений WebView2 Runtime**. Дивіться [цей документ](https://learn.microsoft.com/en-us/microsoft-edge/webview2/concepts/distribution) для розповсюдження вашого лаунчера разом із WebView2. (Наприклад, ви можете автоматизувати встановлення середовища виконання за допомогою прямого посилання на завантаження: [https://go.microsoft.com/fwlink/p/?LinkId=2124703](https://go.microsoft.com/fwlink/p/?LinkId=2124703))
 
     Якщо ви не бажаєте використовувати WebView2, дивіться [Автентифікація за допомогою MSAL](authentication-with-msal.md).
 
-## Автентифікація з останнім використаним обліковим записом
+## Автентифікація з останнім використаним обліковим записом {#authenticating-with-the-most-recent-account}
 
 ```csharp
 var session = await loginHandler.AuthenticateSilently();
