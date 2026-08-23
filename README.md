@@ -13,3 +13,5 @@ This is wiki for [CmlLib project](https://github.com/CmlLib).
 Make pull request for anything you want to update!
 
 수정하고 싶은 내용이 있다면 자유롭게 pull request 를 만들어 주세요.
+
+Створюйте pull request для всього, що ви бажаєте оновити!
