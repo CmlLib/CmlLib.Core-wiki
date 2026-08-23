@@ -38,6 +38,7 @@ jobs:
         run: |
           uv run mkdocs build --config-file mkdocs.en.yml
           uv run mkdocs build --config-file mkdocs.ko.yml
+          uv run mkdocs build --config-file mkdocs.uk.yml
 
       - name: Create redirect page
         run: |
