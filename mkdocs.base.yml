@@ -68,6 +68,9 @@ extra:
     - name: 한국어
       link: /CmlLib.Core-wiki/ko/
       lang: ko
+    - name: Українська
+      link: /CmlLib.Core-wiki/uk/
+      lang: uk
   analytics:
     provider: google
     google: G-1BNRZFDF8G
